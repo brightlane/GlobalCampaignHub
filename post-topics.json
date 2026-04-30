@@ -1578,7 +1578,7 @@
     {
       "slug": "illumeo-professional-development-2026",
       "merchant": "gh-illumeo",
-      "published": false,
+      "published": true,
       "title_en": "Illumeo Review 2026 — Best Platform for Finance and Accounting CPE?",
       "category_en": "Education",
       "metaDesc_en": "Illumeo review 2026. Online CPE courses for CPAs, accountants, and finance professionals. Quality, cost, and how it compares to other CPE providers.",
@@ -1614,7 +1614,8 @@
           "q": "Does Illumeo provide certificates for completed courses?",
           "a": "Yes. Certificates are issued on course completion with the information needed for state board reporting."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "jalbum-photo-gallery-2026",
