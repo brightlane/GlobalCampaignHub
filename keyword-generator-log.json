@@ -79,5 +79,32 @@
       "tr": 2,
       "ko": 2
     }
+  },
+  {
+    "date": "2026-04-30",
+    "generated": 50,
+    "total_after": 412,
+    "lang_breakdown": {
+      "en": 3,
+      "ja": 3,
+      "de": 3,
+      "pt-br": 3,
+      "ko": 2,
+      "pl": 2,
+      "fr": 3,
+      "zh": 2,
+      "es": 2,
+      "ar": 3,
+      "id": 3,
+      "it": 3,
+      "hi": 2,
+      "th": 2,
+      "pt": 3,
+      "ru": 2,
+      "nl": 2,
+      "zh-tw": 3,
+      "tr": 2,
+      "vi": 2
+    }
   }
 ]

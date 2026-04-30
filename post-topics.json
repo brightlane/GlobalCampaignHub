@@ -2084,7 +2084,7 @@
     {
       "slug": "how-to-start-screen-printing-in-2026-beginner-guide-1833",
       "merchant": "gh-ryonet",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "How to Start Screen Printing in 2026: Beginner Guide",
       "category_en": "Print",
@@ -2121,7 +2121,8 @@
           "q": "What languages are supported?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "best-spotify-music-converters-in-2026-compared-1834",
