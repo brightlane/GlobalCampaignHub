@@ -376,5 +376,31 @@
       "th": 1,
       "vi": 1
     }
+  },
+  {
+    "date": "2026-04-30",
+    "generated": 50,
+    "total_after": 962,
+    "lang_breakdown": {
+      "en": 4,
+      "zh": 3,
+      "de": 3,
+      "it": 3,
+      "pt-br": 4,
+      "ko": 3,
+      "es": 3,
+      "vi": 2,
+      "fr": 3,
+      "ar": 3,
+      "ru": 2,
+      "id": 3,
+      "zh-tw": 3,
+      "tr": 2,
+      "hi": 2,
+      "nl": 2,
+      "pt": 2,
+      "th": 1,
+      "pl": 2
+    }
   }
 ]
