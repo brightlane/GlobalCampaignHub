@@ -696,7 +696,7 @@
     {
       "slug": "canvas-on-the-cheap-guide-2026",
       "merchant": "gh-canvasonthecheap",
-      "published": false,
+      "published": true,
       "title_en": "Canvas on the Cheap 2026 — How to Get the Lowest Price on Canvas Prints",
       "category_en": "Print & Signs",
       "metaDesc_en": "How to get the best deals on Canvas on the Cheap in 2026. Sale timing, discount stacking, quality assessment, and size guide for the cheapest quality canvas prints online.",
@@ -732,7 +732,8 @@
           "q": "What sizes does Canvas on the Cheap offer?",
           "a": "A wide range from small 8x10 prints to large gallery pieces. Check their site for current size availability."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "easy-canvas-prints-guide-2026",
