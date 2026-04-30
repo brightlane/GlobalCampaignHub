@@ -1,0 +1,73 @@
+name: 🌍 GLOBAL CAMPAIGN HUB ENGINE
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '*/10 * * * *'
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛰️ Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: ⚙️ Setup Pages
+        uses: actions/configure-pages@v5
+      - name: ✅ Validate Required Files
+        run: |
+          echo "── Checking required files ──"
+          test -f index.html              && echo "✓ index.html"              || (echo "✗ index.html MISSING"              && exit 1)
+          test -f affiliate.json          && echo "✓ affiliate.json"          || (echo "✗ affiliate.json MISSING"          && exit 1)
+          test -f inject.js               && echo "✓ inject.js"               || (echo "✗ inject.js MISSING"               && exit 1)
+          test -f post-topics.json        && echo "✓ post-topics.json"        || (echo "✗ post-topics.json MISSING"        && exit 1)
+          test -f llms.txt                && echo "✓ llms.txt"                || echo "⚠ llms.txt missing"
+          test -f auto-topic-generator.js && echo "✓ auto-topic-generator.js" || echo "⚠ auto-topic-generator.js missing"
+          test -f sitemap.xml             && echo "✓ sitemap.xml"             || echo "⚠ sitemap.xml missing"
+      - name: 🔧 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: 🎯 Auto-Generate Priority Topics
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.LC_API_KEY }}
+        run: |
+          if [ -f auto-topic-generator.js ]; then
+            node auto-topic-generator.js
+          else
+            echo "⚠ auto-topic-generator.js not found — skipping"
+          fi
+      - name: 💉 Blog Injector — 15 Languages
+        run: node inject.js
+      - name: 💾 Commit All Changes
+        run: |
+          git config user.name  "Global Campaign Hub Engine"
+          git config user.email "engine@globalcampaignhub.bot"
+          git add blog*.html sitemap.xml llms.txt post-topics.json injector-log.json
+          git diff --cached --quiet && echo "Nothing to commit" || git commit -m "🌍 Auto-inject: $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git stash
+          git pull --rebase origin main
+          git stash pop
+          git push
+      - name: 📤 Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
