@@ -1032,7 +1032,7 @@
     {
       "slug": "surveyjunkie-earn-online-2026",
       "merchant": "gh-surveyjunkie",
-      "published": false,
+      "published": true,
       "title_en": "Survey Junkie Review 2026 — Can You Actually Make Money?",
       "category_en": "Lifestyle",
       "metaDesc_en": "Survey Junkie review 2026. How much can you realistically earn, how long surveys take, and whether it's worth your time compared to other side income options.",
@@ -1068,7 +1068,8 @@
           "q": "How do you cash out from Survey Junkie?",
           "a": "Redeem points for PayPal cash or e-gift cards. Minimum payout is $10 (1,000 points)."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "bgmgirl-creator-music-2026",
