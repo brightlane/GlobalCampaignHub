@@ -57,7 +57,7 @@ const GH_POSTS = (function() {
     'gh-efile':               { name: 'E-File.com',              lc: '007949155896007874', cat: 'Tax' },
     'gh-etax':                { name: 'E TAX LLC',               lc: '007949027749003958', cat: 'Tax' },
     'gh-taxextension':        { name: 'TaxExtension.com',        lc: '007949121281006198', cat: 'Tax' },
-    'gh-eztaxreturn':         { name: 'ezTaxReturn.com',         lc: '',                   cat: 'Tax' },  // direct URL — no LC code in affiliate.json
+    'gh-eztaxreturn':         { name: 'ezTaxReturn.com',         lc: '007949027749003958', cat: 'Tax' },  // redirected to E TAX LLC
 
     // ── SOFTWARE ──
     'gh-nordvpn':             { name: 'NordVPN',                 lc: '007949085070005891', cat: 'Software' },
@@ -155,7 +155,7 @@ const GH_POSTS = (function() {
     // Build affiliate URL with full UTM tracking
     affLink(merchantId, pos, slug, langCode) {
       const m = MERCHANTS[merchantId];
-      if (!m || !m.lc) return '#';
+      if (!m) return '#';
       return affLink(merchantId, m.lc, pos, slug, langCode || 'en');
     },
 
