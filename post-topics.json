@@ -1326,7 +1326,7 @@
     {
       "slug": "wolters-kluwer-medical-books-2026",
       "merchant": "gh-wolterskluwer",
-      "published": false,
+      "published": true,
       "title_en": "Wolters Kluwer Medical Textbooks 2026 — Where to Buy Lippincott Direct",
       "category_en": "Education",
       "metaDesc_en": "How to buy Lippincott medical and nursing textbooks directly from Wolters Kluwer in 2026. Current editions, digital vs print, and best pricing through Shop LWW.",
@@ -1362,7 +1362,8 @@
           "q": "How do I know if a textbook is the current edition?",
           "a": "Shop LWW lists current editions directly. Check the copyright year and edition number before ordering from any source."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "ayurveda-experience-review-2026",
