@@ -822,7 +822,7 @@
     {
       "slug": "sidify-spotify-converter-2026",
       "merchant": "gh-sidify",
-      "published": false,
+      "published": true,
       "title_en": "Sidify Music Converter Review 2026 — Download Spotify Songs Legally?",
       "category_en": "Software",
       "metaDesc_en": "Sidify music converter review 2026. Convert Spotify, Apple Music, and Tidal to MP3 for offline listening. Is it legal and how does it work?",
@@ -858,7 +858,8 @@
           "q": "What audio quality does Sidify output?",
           "a": "Sidify converts at the quality available from your streaming service. Premium subscriptions offer higher quality source audio for conversion."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "graeter-ice-cream-delivery-2026",
