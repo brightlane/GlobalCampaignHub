@@ -906,7 +906,7 @@
     {
       "slug": "camano-island-coffee-review-2026",
       "merchant": "gh-camanoislandcoffee",
-      "published": false,
+      "published": true,
       "title_en": "Camano Island Coffee Review 2026 — Best Organic Coffee Subscription?",
       "category_en": "Lifestyle",
       "metaDesc_en": "Camano Island Coffee review 2026. Fair trade, organic, small-batch coffee delivered to your door. How does it compare to other coffee subscriptions?",
@@ -942,7 +942,8 @@
           "q": "What's the best Camano Island Coffee for beginners?",
           "a": "Their signature blend is the best starting point. It's balanced, approachable, and representative of their roasting style."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "pm-training-pmp-2026",
