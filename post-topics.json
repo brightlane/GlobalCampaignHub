@@ -2256,7 +2256,7 @@
     {
       "slug": "la-fuente-imports-review-2026-authentic-or-not-1837",
       "merchant": "gh-lafuente",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "La Fuente Imports Review 2026: Authentic or Not?",
       "category_en": "Auto",
@@ -2293,7 +2293,8 @@
           "q": "What languages are supported?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "how-to-file-taxes-free-online-in-2026-1838",
