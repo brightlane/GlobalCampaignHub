@@ -1872,7 +1872,7 @@
     {
       "slug": "hrcp-hr-certification-2026",
       "merchant": "gh-hrcp",
-      "published": false,
+      "published": true,
       "title_en": "HRCP Review 2026 — Best PHR and SPHR Certification Prep?",
       "category_en": "Education",
       "metaDesc_en": "HRCP HR certification prep review 2026. PHR and SPHR exam preparation for HR professionals. Course quality, pass rates, and comparison with SHRM prep.",
@@ -1908,7 +1908,8 @@
           "q": "Is HRCP HRCI-approved?",
           "a": "Check HRCP's current accreditation status on their site — HRCI approval is the key quality indicator for PHR/SPHR prep courses."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "oakstone-cme-review-2026",
