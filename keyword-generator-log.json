@@ -639,5 +639,30 @@
       "pl": 3,
       "zh-tw": 2
     }
+  },
+  {
+    "date": "2026-04-30",
+    "generated": 50,
+    "total_after": 1462,
+    "lang_breakdown": {
+      "en": 5,
+      "ko": 3,
+      "hi": 5,
+      "fr": 3,
+      "ru": 3,
+      "id": 3,
+      "it": 2,
+      "ar": 3,
+      "es": 2,
+      "pt-br": 2,
+      "vi": 1,
+      "tr": 3,
+      "zh": 1,
+      "pt": 4,
+      "pl": 3,
+      "zh-tw": 3,
+      "nl": 3,
+      "de": 1
+    }
   }
 ]

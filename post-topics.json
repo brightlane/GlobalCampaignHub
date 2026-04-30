@@ -2987,7 +2987,7 @@
     {
       "slug": "hipaa-certification-online-in-2026-fast-and-employeraccepted-5010",
       "merchant": "gh-learntasticahca",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "HIPAA Certification Online in 2026: Fast and Employer-Accepted",
       "category_en": "Education",
@@ -3024,7 +3024,8 @@
           "q": "What languages are supported?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "camano-island-coffee-review-2026-freshest-by-mail-5011",
