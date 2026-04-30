@@ -933,5 +933,32 @@
       "vi": 1,
       "zh-tw": 1
     }
+  },
+  {
+    "date": "2026-04-30",
+    "generated": 50,
+    "total_after": 550,
+    "lang_breakdown": {
+      "en": 4,
+      "de": 4,
+      "zh": 4,
+      "fr": 3,
+      "es": 4,
+      "ko": 4,
+      "it": 2,
+      "pt-br": 4,
+      "tr": 2,
+      "id": 2,
+      "hi": 2,
+      "ja": 1,
+      "ar": 2,
+      "zh-tw": 4,
+      "ru": 1,
+      "pl": 2,
+      "pt": 2,
+      "vi": 1,
+      "th": 1,
+      "nl": 1
+    }
   }
 ]
