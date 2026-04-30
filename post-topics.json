@@ -402,7 +402,7 @@
     {
       "slug": "movavi-video-editor-2026",
       "merchant": "gh-movavi",
-      "published": false,
+      "published": true,
       "title_en": "Movavi Video Editor 2026 — The Best One-Time Purchase Editor?",
       "category_en": "Software",
       "metaDesc_en": "Movavi Video Editor review 2026. Why buy once instead of subscribing? Features, performance on Mac and Windows, and who it's best for.",
@@ -438,7 +438,8 @@
           "q": "Can Movavi handle 4K video?",
           "a": "Yes. Movavi handles 4K footage smoothly with GPU acceleration enabled."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "tenorshare-iphone-tools-2026",
