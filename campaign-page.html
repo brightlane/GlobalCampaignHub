@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Dynamic meta — populated by JS on load -->
+  <title id="meta-title">GlobalCampaignHub — Verified Merchant Deals</title>
+  <meta name="description"   id="meta-desc"      content="Verified merchant deals and buyer guides at GlobalCampaignHub."/>
+  <meta name="keywords"      id="meta-keywords"   content=""/>
+  <meta name="robots"        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
+  <meta name="author"        content="GlobalCampaignHub"/>
+  <link rel="canonical"      id="meta-canonical"  href="https://brightlane.github.io/GlobalCampaignHub/campaign-page.html"/>
+
+  <!-- Hreflang — 20 language/region pairs -->
+  <link rel="alternate" hreflang="en"       id="hl-en"       href="https://brightlane.github.io/GlobalCampaignHub/campaign-page.html"/>
+  <link rel="alternate" hreflang="en-us"    id="hl-en-us"    href="https://brightlane.github.io/GlobalCampaignHub/campaign-page.html?lang=en-us"/>
+  <link rel="alternate" hreflang="en-gb"    id="hl-en-gb"    href="https://brightlane.github.io/GlobalCampaignHub/campaign-page.html?lang=en-gb"/>
+  <link rel="alternate" hreflang="zh"       id="hl-zh"       href="https://brightlane.github.io/GlobalCampaignHub/blog-zh.html"/>
+  <link rel="alternate" hreflang="zh-tw"    id="hl-zh-tw"    href="https://brightlane.github.io/GlobalCampaignHub/blog-zh-tw.html"/>
+  <link rel="alternate" hreflang="es"       id="hl-es"       href="https://brightlane.github.io/GlobalCampaignHub/blog-es.html"/>
+  <link rel="alternate" hreflang="fr"       id="hl-fr"       href="https://brightlane.github.io/GlobalCampaignHub/blog-fr.html"/>
+  <link rel="alternate" hreflang="de"       id="hl-de"       href="https://brightlane.github.io/GlobalCampaignHub/blog-de.html"/>
+  <link rel="alternate" hreflang="pt"       id="hl-pt"       href="https://brightlane.github.io/GlobalCampaignHub/blog-pt.html"/>
+  <link rel="alternate" hreflang="pt-br"    id="hl-pt-br"    href="https://brightlane.github.io/GlobalCampaignHub/blog-pt-br.html"/>
+  <link rel="alternate" hreflang="ja"       id="hl-ja"       href="https://brightlane.github.io/GlobalCampaignHub/blog-ja.html"/>
+  <link rel="alternate" hreflang="ko"       id="hl-ko"       href="https://brightlane.github.io/GlobalCampaignHub/blog-ko.html"/>
+  <link rel="alternate" hreflang="hi"       id="hl-hi"       href="https://brightlane.github.io/GlobalCampaignHub/blog-hi.html"/>
+  <link rel="alternate" hreflang="it"       id="hl-it"       href="https://brightlane.github.io/GlobalCampaignHub/blog-it.html"/>
+  <link rel="alternate" hreflang="nl"       id="hl-nl"       href="https://brightlane.github.io/GlobalCampaignHub/blog-nl.html"/>
+  <link rel="alternate" hreflang="pl"       id="hl-pl"       href="https://brightlane.github.io/GlobalCampaignHub/blog-pl.html"/>
+  <link rel="alternate" hreflang="ar"       id="hl-ar"       href="https://brightlane.github.io/GlobalCampaignHub/blog-ar.html"/>
+  <link rel="alternate" hreflang="ru"       id="hl-ru"       href="https://brightlane.github.io/GlobalCampaignHub/blog-ru.html"/>
+  <link rel="alternate" hreflang="tr"       id="hl-tr"       href="https://brightlane.github.io/GlobalCampaignHub/blog-tr.html"/>
+  <link rel="alternate" hreflang="id"       id="hl-id"       href="https://brightlane.github.io/GlobalCampaignHub/blog-id.html"/>
+  <link rel="alternate" hreflang="vi"       id="hl-vi"       href="https://brightlane.github.io/GlobalCampaignHub/blog-vi.html"/>
+  <link rel="alternate" hreflang="th"       id="hl-th"       href="https://brightlane.github.io/GlobalCampaignHub/blog-th.html"/>
+  <link rel="alternate" hreflang="x-default" href="https://brightlane.github.io/GlobalCampaignHub/campaign-page.html"/>
+
+  <!-- Open Graph — 8 locale alternates -->
+  <meta property="og:type"              content="article"/>
+  <meta property="og:site_name"         content="GlobalCampaignHub"/>
+  <meta property="og:title"             id="og-title"   content="GlobalCampaignHub"/>
+  <meta property="og:description"       id="og-desc"    content="Verified merchant deals at GlobalCampaignHub."/>
+  <meta property="og:url"               id="og-url"     content="https://brightlane.github.io/GlobalCampaignHub/campaign-page.html"/>
+  <meta property="og:image"             content="https://brightlane.github.io/GlobalCampaignHub/og-image.png"/>
+  <meta property="og:image:width"       content="1200"/>
+  <meta property="og:image:height"      content="630"/>
+  <meta property="og:locale"            content="en_US"/>
+  <meta property="og:locale:alternate"  content="zh_CN"/>
+  <meta property="og:locale:alternate"  content="es_ES"/>
+  <meta property="og:locale:alternate"  content="fr_FR"/>
+  <meta property="og:locale:alternate"  content="de_DE"/>
+  <meta property="og:locale:alternate"  content="pt_BR"/>
+  <meta property="og:locale:alternate"  content="ja_JP"/>
+  <meta property="og:locale:alternate"  content="ko_KR"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image"/>
+  <meta name="twitter:title"       id="tw-title" content="GlobalCampaignHub"/>
+  <meta name="twitter:description" id="tw-desc"  content="Verified merchant deals at GlobalCampaignHub."/>
+  <meta name="twitter:image"       content="https://brightlane.github.io/GlobalCampaignHub/og-image.png"/>
+
+  <!-- JSON-LD Schema Stack — populated by JS -->
+  <script id="jsonld-app"        type="application/ld+json"></script>
+  <script id="jsonld-org"        type="application/ld+json"></script>
+  <script id="jsonld-faq"        type="application/ld+json"></script>
+  <script id="jsonld-breadcrumb" type="application/ld+json"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root{--bg:#0a0b0d;--bg2:#111318;--bg3:#1a1d24;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);--text:#e8e9ed;--muted:#8a8d99;--dim:#555866;--accent:#e8ff47;--accent2:#47ffb8;--accent3:#ff6b47;--font-head:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;--radius:12px;--radius-lg:20px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.75;overflow-x:hidden;font-size:15px}
+    a{color:inherit;text-decoration:none}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.4}
+
+    /* Language ticker */
+    .lang-strip{background:#050608;color:var(--dim);overflow:hidden;white-space:nowrap;padding:9px 0;font-size:0.72rem;letter-spacing:0.05em;border-bottom:1px solid var(--border)}
+    .ticker-wrap{display:flex}
+    .ticker{display:inline-block;animation:ticker 40s linear infinite;padding-right:60px}
+    @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    /* Sticky nav */
+    .nav{position:fixed;top:33px;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,4vw,60px);height:60px;background:rgba(10,11,13,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+    .nav-logo{font-family:var(--font-head);font-weight:900;font-size:1rem;letter-spacing:-0.02em;display:flex;align-items:center;gap:10px}
+    .nav-badge{background:var(--accent);color:#0a0b0d;font-size:0.55rem;font-weight:700;letter-spacing:0.1em;padding:2px 7px;border-radius:20px;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center;gap:16px}
+    .nav-link{font-size:0.8rem;color:var(--muted);transition:color .2s}.nav-link:hover{color:var(--text)}
+    .nav-cta{background:var(--accent);color:#0a0b0d;font-family:var(--font-head);font-weight:700;font-size:0.78rem;padding:9px 20px;border-radius:8px;transition:transform .15s,box-shadow .15s;white-space:nowrap}
+    .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,255,71,0.3)}
+
+    /* Hero */
+    .hero{padding:clamp(120px,14vw,160px) clamp(20px,4vw,60px) clamp(60px,6vw,80px);max-width:1100px;margin:0 auto;position:relative}
+    .orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+    .orb-1{width:500px;height:500px;background:radial-gradient(circle,rgba(232,255,71,0.07) 0%,transparent 70%);top:-80px;right:-80px}
+    .orb-2{width:350px;height:350px;background:radial-gradient(circle,rgba(71,255,184,0.05) 0%,transparent 70%);bottom:0;left:150px}
+    .breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.72rem;color:var(--dim);margin-bottom:20px}
+    .breadcrumb a{color:var(--dim);transition:color .15s}.breadcrumb a:hover{color:var(--accent)}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-head);font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+    .hero-eyebrow::before{content:'';width:24px;height:2px;background:var(--accent)}
+    .hero h1{font-family:var(--font-head);font-size:clamp(2rem,5vw,4.2rem);font-weight:900;line-height:1.05;letter-spacing:-0.035em;margin-bottom:20px;max-width:800px}
+    .hero h1 .hl{color:var(--accent)}
+    .hero-sub{font-size:clamp(0.95rem,1.8vw,1.1rem);color:var(--muted);max-width:560px;line-height:1.75;margin-bottom:32px}
+    .proof-row{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:36px;align-items:center}
+    .proof-chip{display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;color:var(--muted);background:var(--bg2);border:1px solid var(--border);padding:6px 14px;border-radius:20px}
+    .proof-chip strong{color:var(--text)}
+    .hero-cta-row{display:flex;gap:14px;flex-wrap:wrap}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#0a0b0d;font-family:var(--font-head);font-weight:700;font-size:0.92rem;padding:14px 30px;border-radius:var(--radius);transition:transform .15s,box-shadow .15s}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(232,255,71,0.25)}
+    .btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text);font-family:var(--font-head);font-weight:600;font-size:0.92rem;padding:14px 30px;border-radius:var(--radius);border:1px solid var(--border2);transition:border-color .2s}
+    .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+    /* Tabs */
+    .section{padding:clamp(50px,5vw,70px) clamp(20px,4vw,60px);max-width:1100px;margin:0 auto}
+    .section-label{font-family:var(--font-head);font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+    .section-title{font-family:var(--font-head);font-size:clamp(1.5rem,2.8vw,2.2rem);font-weight:800;letter-spacing:-0.025em;margin-bottom:8px}
+    .section-sub{color:var(--muted);font-size:0.9rem;margin-bottom:28px}
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+    .tab-btn{font-family:var(--font-head);font-size:0.75rem;font-weight:700;padding:8px 18px;border-radius:8px;border:1px solid var(--border2);color:var(--muted);background:transparent;cursor:pointer;transition:all .2s}
+    .tab-btn.active,.tab-btn:hover{background:var(--accent);color:#0a0b0d;border-color:var(--accent)}
+    .tab-panel{display:none}.tab-panel.active{display:block}
+    .use-case-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;display:flex;flex-direction:column;gap:14px}
+    .use-case-card h3{font-family:var(--font-head);font-size:1.1rem;font-weight:800}
+    .use-case-card p{font-size:0.88rem;color:var(--muted);line-height:1.7}
+
+    /* Social proof / testimonials */
+    .proof-strip{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:32px clamp(20px,4vw,60px)}
+    .proof-inner{max-width:1100px;margin:0 auto}
+    .testimonials{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:24px}
+    .testimonial{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:20px}
+    .testimonial-text{font-size:0.88rem;color:var(--muted);line-height:1.7;margin-bottom:14px;font-style:italic}
+    .testimonial-author{font-family:var(--font-head);font-size:0.72rem;font-weight:700;color:var(--accent)}
+    .stars{color:var(--accent);font-size:0.8rem;margin-bottom:8px;letter-spacing:2px}
+
+    /* Pricing */
+    .pricing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+    .pricing-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;position:relative;transition:border-color .2s}
+    .pricing-card.popular{border-color:var(--accent)}
+    .popular-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#0a0b0d;font-family:var(--font-head);font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 14px;border-radius:20px;white-space:nowrap}
+    .pricing-name{font-family:var(--font-head);font-size:0.85rem;font-weight:700;margin-bottom:8px;color:var(--muted)}
+    .pricing-price{font-family:var(--font-head);font-size:2rem;font-weight:900;margin-bottom:4px}
+    .pricing-period{font-size:0.75rem;color:var(--dim);margin-bottom:16px}
+    .pricing-features{list-style:none;margin-bottom:20px}
+    .pricing-features li{font-size:0.82rem;color:var(--muted);padding:5px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+    .pricing-features li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0}
+    .pricing-cta{display:block;text-align:center;background:var(--accent);color:#0a0b0d;font-family:var(--font-head);font-weight:700;font-size:0.82rem;padding:11px 20px;border-radius:8px;transition:transform .15s}
+    .pricing-card:not(.popular) .pricing-cta{background:transparent;color:var(--text);border:1px solid var(--border2)}
+    .pricing-cta:hover{transform:translateY(-1px)}
+
+    /* FAQ */
+    .faq-list{margin-top:8px}
+    .faq-item{border-top:1px solid var(--border)}.faq-item:last-child{border-bottom:1px solid var(--border)}
+    .faq-q{font-family:var(--font-head);font-weight:700;font-size:0.9rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 0;user-select:none}
+    .faq-icon{width:24px;height:24px;flex-shrink:0;border:1px solid var(--border2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--accent);transition:transform .25s}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+    .faq-a{font-size:0.87rem;color:var(--muted);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease}
+    .faq-item.open .faq-a{max-height:400px;padding-bottom:18px}
+
+    /* Final CTA */
+    .final-cta{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:48px;text-align:center;position:relative;overflow:hidden}
+    .final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(232,255,71,0.06) 0%,transparent 60%);pointer-events:none}
+    .final-cta h2{font-family:var(--font-head);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;margin-bottom:12px;letter-spacing:-0.02em}
+    .final-cta p{color:var(--muted);margin-bottom:28px;font-size:0.95rem}
+    .benefit-list{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:32px}
+    .benefit{display:inline-flex;align-items:center;gap:6px;font-size:0.8rem;color:var(--text);background:var(--bg3);border:1px solid var(--border);padding:6px 14px;border-radius:20px}
+    .benefit::before{content:'✓';color:var(--accent);font-weight:700}
+
+    /* Lang pills */
+    .lang-pills{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:20px}
+    .lang-pill{font-size:0.72rem;color:var(--dim);border:1px solid var(--border);padding:5px 12px;border-radius:20px;transition:border-color .15s}
+    .lang-pill:hover{border-color:var(--accent);color:var(--accent)}
+
+    /* Footer */
+    .footer{padding:36px clamp(20px,4vw,60px);border-top:1px solid var(--border)}
+    .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+    .footer-logo{font-family:var(--font-head);font-weight:800;font-size:0.9rem}
+    .footer-links{display:flex;gap:20px}
+    .footer-link{font-size:0.78rem;color:var(--dim);transition:color .15s}.footer-link:hover{color:var(--accent)}
+    .footer-copy{font-size:0.72rem;color:var(--dim)}
+    .disclosure{max-width:1100px;margin:0 auto;padding:0 clamp(20px,4vw,60px) 32px;font-size:0.72rem;color:var(--dim);line-height:1.7}
+
+    @media(max-width:768px){.nav-links .nav-link{display:none}.testimonials{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <!-- Language Ticker -->
+  <div class="lang-strip" aria-label="Supported languages">
+    <div class="ticker-wrap">
+      <div class="ticker">English &nbsp;·&nbsp; Español &nbsp;·&nbsp; Français &nbsp;·&nbsp; Deutsch &nbsp;·&nbsp; Português &nbsp;·&nbsp; Português BR &nbsp;·&nbsp; 日本語 &nbsp;·&nbsp; 中文 &nbsp;·&nbsp; 繁體中文 &nbsp;·&nbsp; 한국어 &nbsp;·&nbsp; हिन्दी &nbsp;·&nbsp; Italiano &nbsp;·&nbsp; Nederlands &nbsp;·&nbsp; Polski &nbsp;·&nbsp; العربية &nbsp;·&nbsp; Русский &nbsp;·&nbsp; Türkçe &nbsp;·&nbsp; Bahasa Indonesia &nbsp;·&nbsp; Tiếng Việt &nbsp;·&nbsp; ภาษาไทย &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+      <div class="ticker" aria-hidden="true">English &nbsp;·&nbsp; Español &nbsp;·&nbsp; Français &nbsp;·&nbsp; Deutsch &nbsp;·&nbsp; Português &nbsp;·&nbsp; Português BR &nbsp;·&nbsp; 日本語 &nbsp;·&nbsp; 中文 &nbsp;·&nbsp; 繁體中文 &nbsp;·&nbsp; 한국어 &nbsp;·&nbsp; हिन्दी &nbsp;·&nbsp; Italiano &nbsp;·&nbsp; Nederlands &nbsp;·&nbsp; Polski &nbsp;·&nbsp; العربية &nbsp;·&nbsp; Русский &nbsp;·&nbsp; Türkçe &nbsp;·&nbsp; Bahasa Indonesia &nbsp;·&nbsp; Tiếng Việt &nbsp;·&nbsp; ภาษาไทย &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+    </div>
+  </div>
+
+  <!-- Sticky Nav -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-logo">GlobalCampaignHub <span class="nav-badge">✓ Verified</span></div>
+    <div class="nav-links">
+      <a href="index.html"    class="nav-link" aria-label="Directory">Directory</a>
+      <a href="blog.html"     class="nav-link" aria-label="Blog">Blog</a>
+      <a href="inventory.html" class="nav-link" aria-label="All Merchants">All Merchants</a>
+      <a href="#" id="nav-cta" class="nav-cta" aria-label="Visit merchant">Get Deal →</a>
+    </div>
+  </nav>
+
+  <!-- Page root — all content injected here -->
+  <div id="page-root"></div>
+
+  <footer class="footer" aria-label="Site footer">
+    <div class="footer-inner">
+      <div class="footer-logo">GlobalCampaignHub</div>
+      <div class="footer-links">
+        <a href="blog.html"     class="footer-link">Blog</a>
+        <a href="inventory.html" class="footer-link">All Merchants</a>
+        <a href="sitemap.xml"   class="footer-link">Sitemap</a>
+        <a href="llms.txt"      class="footer-link">llms.txt</a>
+      </div>
+      <div class="footer-copy">© 2026 GlobalCampaignHub</div>
+    </div>
+  </footer>
+  <div class="disclosure" role="contentinfo">
+    <strong>Affiliate Disclosure:</strong> This page contains affiliate links. We earn a commission when you purchase through our links, at no additional cost to you. All merchants are verified through LinkConnector (Account 007949). Tracking: gh- atid prefix on all links.
+  </div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+//  GLOBALCAMPAIGNHUB CAMPAIGN PAGE
+//  Reads ?kw= param, renders full SEO landing page for that keyword
+//  Each keyword gets: hreflang×20, OG×8, 3×JSON-LD, FAQ schema
+// ═══════════════════════════════════════════════════════════════
+
+const BASE = 'https://brightlane.github.io/GlobalCampaignHub';
+const TODAY = new Date().toISOString().slice(0, 10);
+
+// ── All targeted keywords — merchant data attached
+const ALL_KEYWORDS = [
+  { kw: 'halloween-costumes-2026',           title: 'Halloween Costumes 2026',               merchant: 'HalloweenCostumes.com',    cat: 'Lifestyle',  lc: '007949053344002874', atid: 'gh-halloweencostumes',   volume: '8.8M',  blogSlug: 'halloween-costumes-guide-2026',         desc: 'The largest selection of Halloween costumes online for adults, kids, couples, and groups. Shop early for the best availability.' },
+  { kw: 'adult-halloween-costumes',           title: 'Adult Halloween Costumes',               merchant: 'HalloweenCostumes.com',    cat: 'Lifestyle',  lc: '007949053344002874', atid: 'gh-halloweencostumes',   volume: '3.2M',  blogSlug: 'halloween-costumes-guide-2026',         desc: 'Thousands of adult Halloween costume styles from classic to creative. Ships fast with easy returns.' },
+  { kw: 'make-money-online-surveys',          title: 'Make Money Online with Surveys',         merchant: 'Survey Junkie',            cat: 'Lifestyle',  lc: '007949033344001882', atid: 'gh-surveyjunkie',        volume: '2.4M',  blogSlug: 'surveyjunkie-earn-online-2026',         desc: 'Survey Junkie pays real cash for your opinions. 20M+ members. Redeem via PayPal or gift cards.' },
+  { kw: 'file-taxes-online',                  title: 'File Taxes Online — Best Options 2026',  merchant: 'E-file.com',               cat: 'Tax',        lc: '007949021469002241', atid: 'gh-efile',               volume: '2.4M',  blogSlug: 'efile-vs-turbotax-2026',               desc: 'E-file.com is IRS-authorized and significantly cheaper than TurboTax for the same federal return.' },
+  { kw: 'best-vpn-2026',                      title: 'Best VPN 2026 — Full Review',            merchant: 'NordVPN',                  cat: 'Software',   lc: '007949143344006843', atid: 'gh-nordvpn',             volume: '2.1M',  blogSlug: 'nordvpn-review-2026',                  desc: 'NordVPN leads for speed, streaming access, and verified no-logs policy. Best price on 2-year plans.' },
+  { kw: 'online-tax-filing',                  title: 'Online Tax Filing 2026 — Compare & Save', merchant: 'E-file.com',              cat: 'Tax',        lc: '007949021469002241', atid: 'gh-efile',               volume: '1.9M',  blogSlug: 'efile-vs-turbotax-2026',               desc: 'Compare online tax filing options for 2026. E-file.com delivers accurate federal returns at the lowest price.' },
+  { kw: 'best-video-editor-2026',             title: 'Best Video Editor 2026 — Honest Review',  merchant: 'Wondershare Filmora',     cat: 'Software',   lc: '007949165260004532', atid: 'gh-filmora',             volume: '1.9M',  blogSlug: 'filmora-ai-features-2026',             desc: 'Filmora leads with AI auto-subtitles, background removal, and noise cancellation. Best for creators in 2026.' },
+  { kw: 'tax-extension-2026',                 title: 'Tax Extension 2026 — File in 5 Minutes', merchant: 'TaxExtension.com',         cat: 'Tax',        lc: '007949033342002305', atid: 'gh-taxextension',        volume: '1.8M',  blogSlug: 'tax-extension-deadline-guide-2026',    desc: 'File IRS Form 4868 in 5 minutes. Get 6 more months automatically. Eliminate the failure-to-file penalty.' },
+  { kw: 'royalty-free-music-youtube',         title: 'Royalty Free Music for YouTube 2026',     merchant: 'BGM Girl',                cat: 'Lifestyle',  lc: '007949153344007992', atid: 'gh-bgmgirl',             volume: '1.8M',  blogSlug: 'bgmgirl-creator-music-2026',           desc: 'BGM Girl licenses cover YouTube (monetized), Twitch VODs, and podcasts. DMCA-safe on all platforms.' },
+  { kw: 'free-tax-filing-online',             title: 'Free Tax Filing Online 2026',             merchant: 'E-file.com',               cat: 'Tax',        lc: '007949021469002241', atid: 'gh-efile',               volume: '1.6M',  blogSlug: 'efile-vs-turbotax-2026',               desc: 'Free federal tax filing for qualifying filers. E-file.com is IRS-authorized with a simple interview format.' },
+  { kw: 'recover-deleted-photos-iphone',      title: 'Recover Deleted Photos iPhone 2026',      merchant: 'Tenorshare',              cat: 'Software',   lc: '007949163344008992', atid: 'gh-tenorshare',          volume: '1.6M',  blogSlug: 'tenorshare-iphone-tools-2026',         desc: 'Tenorshare UltData recovers deleted photos, messages, and WhatsApp data from iPhone backup or directly.' },
+  { kw: 'no-code-app-builder',                title: 'Best No-Code App Builder 2026',           merchant: 'Appy Pie',                cat: 'Software',   lc: '007949153344007442', atid: 'gh-appypie',             volume: '1.4M',  blogSlug: 'appy-pie-no-code-tools-2026',          desc: 'Appy Pie builds iOS and Android apps, websites, and chatbots without coding. 10M+ tools created.' },
+  { kw: 'online-cpr-certification',           title: 'Online CPR Certification 2026',           merchant: 'LearnTastic CPR',         cat: 'Education',  lc: '007949143344006112', atid: 'gh-learntasticcpr',      volume: '1.4M',  blogSlug: 'learnstastic-cpr-certification-2026',  desc: 'Complete online CPR and AED certification in 90 minutes. Instant certificate. Accepted by most employers.' },
+  { kw: 'custom-banners-online',              title: 'Custom Banners Online — Best Price 2026', merchant: 'BuildASign',              cat: 'Print',      lc: '007949043344001995', atid: 'gh-buildasign',          volume: '1.4M',  blogSlug: 'buildasign-custom-prints-2026',        desc: 'BuildASign has produced 10M+ custom signs. Banners, yard signs, and canvas prints with 1-3 day production.' },
+  { kw: 'adobe-acrobat-alternative',          title: 'Adobe Acrobat Alternative 2026 — Save $200/yr', merchant: 'Wondershare PDFelement', cat: 'Software', lc: '007949165372004532', atid: 'gh-pdfelement',         volume: '1.3M',  blogSlug: 'pdfelement-vs-acrobat-2026',           desc: 'PDFelement does 90% of what Acrobat does at a fraction of the price. One-time purchase, no subscription.' },
+  { kw: 'photo-to-canvas-print',              title: 'Photo to Canvas Print — Best Sites 2026', merchant: 'Easy Canvas Prints',      cat: 'Print',      lc: '007949063344003112', atid: 'gh-easycanvasprints',    volume: '1.2M',  blogSlug: 'easy-canvas-prints-guide-2026',        desc: 'Easy Canvas Prints delivers accurate color reproduction and consistent quality. Best for gifts.' },
+  { kw: 'spotify-to-mp3-converter',           title: 'Spotify to MP3 Converter 2026',          merchant: 'Sidify',                  cat: 'Software',   lc: '007949163344007882', atid: 'gh-sidify',              volume: '1.2M',  blogSlug: 'sidify-spotify-converter-2026',        desc: 'Sidify converts Spotify, Apple Music, and Tidal to DRM-free MP3. Keeps ID3 tags. Up to 5x speed.' },
+  { kw: 'iphone-data-recovery',               title: 'iPhone Data Recovery Software 2026',      merchant: 'Tenorshare',              cat: 'Software',   lc: '007949163344008992', atid: 'gh-tenorshare',          volume: '1.2M',  blogSlug: 'tenorshare-iphone-tools-2026',         desc: 'Tenorshare UltData is the most comprehensive iPhone data recovery tool. Recover without backup.' },
+  { kw: 'order-blood-test-without-doctor',    title: 'Order Blood Tests Without a Doctor 2026', merchant: 'Personalabs',             cat: 'Health',     lc: '007949133344005442', atid: 'gh-personalabs',         volume: '1.2M',  blogSlug: 'personalabs-lab-tests-2026',           desc: 'Personalabs lets you order blood tests, STD panels, and health screenings online. Tests at LabCorp and Quest.' },
+  { kw: 'custom-engraved-gifts',              title: 'Custom Engraved Gifts — Best Options 2026', merchant: 'Etching Expressions',  cat: 'Print',      lc: '007949083344004332', atid: 'gh-etchingexpressions',  volume: '1.1M',  blogSlug: 'etching-expressions-gifts-2026',       desc: 'Laser engraved gifts on glassware, wood, metal, and leather. Corporate bulk ordering available.' },
+  { kw: 'best-cpa-exam-prep-2026',            title: 'Best CPA Exam Prep 2026 — Pass Faster',   merchant: 'Surgent CPA',            cat: 'Education',  lc: '007949123344006122', atid: 'gh-surgent',             volume: '880K',  blogSlug: 'surgent-cpa-exam-prep-2026',           desc: 'Surgent AI predicts your exam score with ReadySCORE. Pass in 40% less time than traditional review.' },
+  { kw: 'cheap-pet-medications-online',       title: 'Cheap Pet Medications Online 2026',        merchant: 'BudgetPetCare',          cat: 'Pet Care',   lc: '007949103344005118', atid: 'gh-budgetpetcare',       volume: '980K',  blogSlug: 'budget-pet-care-guide-2026',           desc: 'Save 30-50% on pet medications at BudgetPetCare.com. Same FDA-approved products at lower prices.' },
+  { kw: 'nordvpn-review',                     title: 'NordVPN Review 2026 — Still the Best?',   merchant: 'NordVPN',                 cat: 'Software',   lc: '007949143344006843', atid: 'gh-nordvpn',             volume: '1.8M',  blogSlug: 'nordvpn-review-2026',                  desc: 'NordVPN tested for speed, streaming, and security in 2026. 6,000+ servers, audited no-logs policy.' },
+  { kw: 'pmp-certification-2026',             title: 'PMP Certification 2026 — 98% Pass Rate',  merchant: 'PM Training',             cat: 'Education',  lc: '007949143344006992', atid: 'gh-pmtraining',          volume: '980K',  blogSlug: 'pm-training-pmp-2026',                 desc: 'PM Training PMP prep has a documented 98% first-time pass rate. Live instruction, 40 PDUs included.' },
+  { kw: 'vpn-for-streaming',                  title: 'Best VPN for Streaming 2026',             merchant: 'NordVPN',                 cat: 'Software',   lc: '007949143344006843', atid: 'gh-nordvpn',             volume: '1.2M',  blogSlug: 'nordvpn-streaming-guide-2026',         desc: 'NordVPN unblocks Netflix, BBC iPlayer, Disney+, and Hulu reliably. Obfuscated servers bypass blocks.' },
+  { kw: 'ashwagandha-supplement-review',      title: 'Best Ashwagandha Supplement 2026',        merchant: 'The Ayurveda Experience', cat: 'Health',     lc: '007949163344008221', atid: 'gh-ayurvedaexperience',  volume: '980K',  blogSlug: 'ayurveda-experience-review-2026',      desc: 'Ashwagandha has strong clinical evidence for stress and cortisol reduction. Ayurveda Experience formulates from traditional sources.' },
+  { kw: 'custom-yard-signs',                  title: 'Custom Yard Signs Online 2026',           merchant: 'BuildASign',              cat: 'Print',      lc: '007949043344001995', atid: 'gh-buildasign',          volume: '980K',  blogSlug: 'buildasign-custom-prints-2026',        desc: 'BuildASign custom yard signs in standard and custom sizes. Fast production, bulk pricing available.' },
+  { kw: 'cheapest-vinyl-banners-online',      title: 'Cheapest Vinyl Banners Online 2026',      merchant: 'BannersOnTheCheap',       cat: 'Print',      lc: '007949073344003661', atid: 'gh-bannersonthecheap',   volume: '980K',  blogSlug: 'banners-on-the-cheap-guide-2026',      desc: 'Banners on the Cheap runs 50-70% off promotions almost continuously. Lowest price on standard vinyl banners.' },
+  { kw: 'best-pdf-editor-2026',               title: 'Best PDF Editor 2026 — Full Comparison',  merchant: 'Wondershare PDFelement', cat: 'Software',   lc: '007949165372004532', atid: 'gh-pdfelement',          volume: '980K',  blogSlug: 'pdfelement-vs-acrobat-2026',           desc: 'PDFelement vs Acrobat vs UPDF compared for 2026. Best value PDF editor for individuals and teams.' },
+  { kw: 'series-7-exam-prep',                 title: 'Series 7 Exam Prep 2026 — Pass First Time', merchant: 'The Securities Institute', cat: 'Education', lc: '007949113344005987', atid: 'gh-securitiesinstitute', volume: '880K', blogSlug: 'securities-institute-exam-prep-2026',  desc: 'Series 7 passes only 65% of first-time takers. Securities Institute prep gives you the edge you need.' },
+  { kw: 'budget-coilovers-review',            title: 'Budget Coilovers Review 2026 — Best Value', merchant: 'Maxpeedingrods US',    cat: 'Auto',       lc: '007949133344006421', atid: 'gh-maxpeedingrodsus',    volume: '880K',  blogSlug: 'maxpeedingrods-review-2026',           desc: 'Maxpeedingrods coilovers deliver adjustable suspension at a price that makes experimentation affordable.' },
+  { kw: 'best-chess-set-online',              title: 'Best Chess Set Online 2026 — Buying Guide', merchant: 'The Chess Store',       cat: 'Lifestyle',  lc: '007949103344005112', atid: 'gh-thechessstore',       volume: '880K',  blogSlug: 'chess-store-buying-guide-2026',        desc: 'The Chess Store carries beginner to tournament-grade Staunton sets, chess clocks, and accessories.' },
+  { kw: 'soundproofing-materials-cheap',      title: 'Cheapest Soundproofing Materials 2026',   merchant: 'Trademark Soundproofing', cat: 'Hardware',  lc: '007949133344006118', atid: 'gh-trademarksoundproofing', volume: '880K', blogSlug: 'soundproofing-guide-2026',             desc: 'Trademark Soundproofing sells acoustic panels, mass loaded vinyl, and foam at competitive pricing.' },
+  { kw: 'ai-video-editor',                    title: 'Best AI Video Editor 2026',               merchant: 'Wondershare Filmora',     cat: 'Software',   lc: '007949165260004532', atid: 'gh-filmora',             volume: '740K',  blogSlug: 'filmora-ai-features-2026',             desc: 'Filmora AI auto-subtitles (15+ languages), background removal, and noise cancellation are genuinely useful.' },
+  { kw: 'visio-alternative',                  title: 'Best Visio Alternative 2026 — Save Money', merchant: 'Edraw',                 cat: 'Software',   lc: '007949165246006886', atid: 'gh-edraw',               volume: '980K',  blogSlug: 'edraw-mind-map-review-2026',           desc: 'EdrawMax imports Visio files, covers 280+ diagram types, and offers a perpetual license. Best Visio replacement.' },
+  { kw: 'lippincott-nursing-textbooks',       title: 'Lippincott Nursing Textbooks 2026 — Buy Direct', merchant: 'Wolters Kluwer (LWW)', cat: 'Education', lc: '007949165370003224', atid: 'gh-wolterskluwer',       volume: '740K',  blogSlug: 'wolters-kluwer-medical-books-2026',    desc: 'Buy Lippincott medical and nursing textbooks directly from Wolters Kluwer. Current editions guaranteed.' },
+  { kw: 'historical-swords-online',           title: 'Historical Swords Online — Best Sources 2026', merchant: 'MuseumReplicas.com', cat: 'Lifestyle',  lc: '007949113344005442', atid: 'gh-museumreplicas',      volume: '880K',  blogSlug: 'museum-replicas-collectibles-2026',    desc: 'MuseumReplicas.com carries medieval European, Viking, Japanese, and fantasy replica swords and armor.' },
+  { kw: 'gourmet-food-gift-baskets',          title: 'Gourmet Food Gift Baskets 2026',          merchant: 'Tasty Ribbon',            cat: 'Lifestyle',  lc: '007949153344007881', atid: 'gh-tastyribbon',         volume: '1.2M',  blogSlug: 'tasty-ribbon-food-gifts-2026',         desc: 'Tasty Ribbon curates gourmet food gifts for personal and corporate occasions. Bulk ordering available.' },
+  { kw: 'best-organic-coffee-subscription',   title: 'Best Organic Coffee Subscription 2026',   merchant: 'Camano Island Coffee',    cat: 'Lifestyle',  lc: '007949053344002441', atid: 'gh-camanoislandcoffee',  volume: '880K',  blogSlug: 'camano-island-coffee-review-2026',     desc: 'Camano Island has been roasting fair trade organic coffee since 1994. Ships within days of roasting.' },
+  { kw: 'nexgard-canada-online',              title: 'Buy NexGard Canada Online — Save 20-40%',  merchant: 'CanadaPetCare.com',      cat: 'Pet Care',   lc: '007949083344004721', atid: 'gh-canadapetcare',       volume: '880K',  blogSlug: 'canada-pet-care-vs-vet-2026',          desc: 'CanadaPetCare.com is a licensed Canadian online pet pharmacy. Same Health Canada approved medications at lower prices.' },
+  { kw: 'spotify-to-mp3',                     title: 'Spotify to MP3 — Best Converter 2026',   merchant: 'Sidify',                  cat: 'Software',   lc: '007949163344007882', atid: 'gh-sidify',              volume: '880K',  blogSlug: 'sidify-spotify-converter-2026',        desc: 'Sidify converts Spotify to DRM-free MP3 or FLAC at up to 5x speed while preserving all metadata.' },
+  { kw: 'ai-pdf-editor',                      title: 'Best AI PDF Editor 2026',                 merchant: 'UPDF',                    cat: 'Software',   lc: '007949163344008112', atid: 'gh-updf',                volume: '720K',  blogSlug: 'updf-pdf-editor-review-2026',          desc: 'UPDF summarizes long documents, answers questions about content, and translates — features Acrobat lacks.' },
+  { kw: 'cpr-certification-online-fast',      title: 'Fast Online CPR Certification 2026',      merchant: 'LearnTastic CPR',         cat: 'Education',  lc: '007949143344006112', atid: 'gh-learntasticcpr',      volume: '980K',  blogSlug: 'learnstastic-cpr-certification-2026',  desc: 'Complete online CPR certification in 90 minutes. Instant certificate accepted by most employers nationwide.' },
+  { kw: 'cheap-pet-supplies-online',          title: 'Cheapest Pet Supplies Online 2026',       merchant: 'BudgetPetWorld',          cat: 'Pet Care',   lc: '007949113344005224', atid: 'gh-budgetpetworld',      volume: '680K',  blogSlug: 'budgetpetworld-review-2026',           desc: 'BudgetPetWorld ships pet medications and supplies internationally at budget-friendly prices.' },
+  { kw: 'discount-pet-medications',           title: 'Discount Pet Medications — Save 30-50%',  merchant: 'DiscountPetCare',         cat: 'Pet Care',   lc: '007949123344005441', atid: 'gh-discountpetcare',     volume: '880K',  blogSlug: 'discountpetcare-review-2026',          desc: 'DiscountPetCare offers FDA-approved and internationally approved pet medications at genuine discount pricing.' },
+  { kw: 'photo-canvas-cheap',                 title: 'Cheapest Canvas Prints Online 2026',      merchant: 'Canvas on the Cheap',     cat: 'Print',      lc: '007949073344003662', atid: 'gh-canvasonthecheap',    volume: '980K',  blogSlug: 'canvas-on-the-cheap-guide-2026',       desc: 'Canvas on the Cheap runs 50-70% off sales regularly. Sign up for email to get early access.' },
+  { kw: 'phr-certification-exam-prep',        title: 'PHR Certification Exam Prep 2026',        merchant: 'HRCP',                    cat: 'Education',  lc: '007949093344005114', atid: 'gh-hrcp',                volume: '680K',  blogSlug: 'hrcp-hr-certification-2026',           desc: 'HRCP PHR and SPHR prep is developed by working HR professionals mapped to current HRCI exam outlines.' },
+  { kw: 'order-lab-tests-online',             title: 'Order Lab Tests Online Without a Doctor',  merchant: 'Personalabs',            cat: 'Health',     lc: '007949133344005442', atid: 'gh-personalabs',         volume: '880K',  blogSlug: 'personalabs-lab-tests-2026',           desc: 'Personalabs provides access to LabCorp and Quest tests directly. No doctor required for most panels.' },
+  { kw: 'combat-flip-flops-review',           title: 'Combat Flip Flops Review 2026',           merchant: 'Combat Flip Flops',       cat: 'Lifestyle',  lc: '007949143344006881', atid: 'gh-combatflipflops',     volume: '480K',  blogSlug: 'combat-flip-flops-mission-2026',       desc: 'US Army Ranger-founded brand funding landmine clearance in Afghanistan. Transparent impact reporting.' },
+  { kw: 'best-ice-cream-shipped',             title: 'Best Ice Cream Shipped Nationwide 2026',  merchant: "Graeter's Ice Cream",     cat: 'Lifestyle',  lc: '007949073344004112', atid: 'gh-graeters',            volume: '880K',  blogSlug: 'graeter-ice-cream-delivery-2026',      desc: "Graeter's French pot process has been producing Cincinnati's finest ice cream since 1870. Ships nationwide." },
+  { kw: 'royalty-free-background-music',      title: 'Royalty Free Background Music 2026',      merchant: 'BGM Girl',                cat: 'Lifestyle',  lc: '007949153344007992', atid: 'gh-bgmgirl',             volume: '740K',  blogSlug: 'bgmgirl-creator-music-2026',           desc: 'BGM Girl licenses cover all major content platforms. YouTube monetized, Twitch VODs, podcasts, TikTok.' },
+  { kw: 'cme-credits-online-physicians',      title: 'CME Credits Online for Physicians 2026',  merchant: 'Oakstone Medical',        cat: 'Education',  lc: '007949103344005432', atid: 'gh-oakstone',            volume: '620K',  blogSlug: 'oakstone-cme-review-2026',             desc: 'Oakstone ACCME-accredited audio CME — complete continuing medical education during your commute.' },
+  { kw: 'screen-printing-equipment-beginners', title: 'Screen Printing Equipment for Beginners 2026', merchant: 'Ryonet',           cat: 'Print',      lc: '007949084633004512', atid: 'gh-ryonet',              volume: '880K',  blogSlug: 'ryonet-screen-printing-2026',          desc: 'Ryonet supplies screen printing equipment, inks, and complete starter kits for beginners and pros.' },
+  { kw: 'tactical-knives-online',             title: 'Best Tactical Knives Online 2026',         merchant: 'Viper Tec',              cat: 'Lifestyle',  lc: '007949133344006224', atid: 'gh-vipertec',            volume: '880K',  blogSlug: 'vipertec-tactical-knives-2026',        desc: 'Viper Tec carries folding knives, fixed blades, and everyday carry tools at competitive pricing.' },
+  { kw: 'mexican-folk-art-online',            title: 'Authentic Mexican Folk Art Online 2026',   merchant: 'La Fuente Imports',       cat: 'Auto',       lc: '007949083344003992', atid: 'gh-lafuente',            volume: '680K',  blogSlug: 'la-fuente-imports-review-2026',        desc: 'La Fuente imports Talavera pottery, Day of the Dead figures, and alebrijes directly from Mexican artisan communities.' },
+  { kw: 'survey-junkie-review',               title: 'Survey Junkie Review 2026 — Real Earnings', merchant: 'Survey Junkie',         cat: 'Lifestyle',  lc: '007949033344001882', atid: 'gh-surveyjunkie',        volume: '1.8M',  blogSlug: 'surveyjunkie-earn-online-2026',        desc: 'Survey Junkie is legitimate. Realistic earnings are $40-100/month for active members. PayPal payout.' },
+  { kw: 'golf-accessories-online',            title: 'Best Golf Accessories Online 2026',        merchant: 'ReadyGolf',               cat: 'Lifestyle',  lc: '007949103344004551', atid: 'gh-readygolf',           volume: '880K',  blogSlug: 'readygolf-guide-2026',                 desc: 'ReadyGolf stocks golf equipment, accessories, and custom personalized items for every level of player.' },
+  { kw: 'buy-guns-online-marketplace',        title: 'Buy Guns Online — Best Marketplace 2026', merchant: 'GunsInternational',        cat: 'Lifestyle',  lc: '007949093344004221', atid: 'gh-gunsinternational',   volume: '1.2M',  blogSlug: 'gunsinternational-marketplace-2026',   desc: 'GunsInternational connects buyers and sellers with an extensive listing database for new and used firearms.' },
+  { kw: 'collectible-knives-online',          title: 'Collectible Knives Online — Best Sources 2026', merchant: 'Atlanta Cutlery',   cat: 'Lifestyle',  lc: '007949123344005771', atid: 'gh-atlantacutlery',      volume: '680K',  blogSlug: 'atlanta-cutlery-review-2026',          desc: 'Atlanta Cutlery has carried knives, swords, and edged weapons for collectors since 1971.' },
+  { kw: 'luxury-car-service-nyc',             title: 'Luxury Car Service NYC 2026',             merchant: 'Carmel Car & Limo',       cat: 'Lifestyle',  lc: '007949053344002881', atid: 'gh-carmellimo',          volume: '980K',  blogSlug: 'carmel-limo-service-2026',             desc: 'Carmel Car & Limo provides professional airport transfers, corporate travel, and special event services in NYC.' },
+  { kw: 'fair-trade-coffee-delivery',         title: 'Fair Trade Coffee Delivered 2026',         merchant: 'Camano Island Coffee',    cat: 'Lifestyle',  lc: '007949053344002441', atid: 'gh-camanoislandcoffee',  volume: '680K',  blogSlug: 'camano-island-coffee-review-2026',     desc: 'Camano Island ships fair trade organic coffee within days of roasting. Maximum freshness guaranteed.' },
+  { kw: 'personalized-gifts-online',          title: 'Best Personalized Gifts Online 2026',      merchant: 'Etching Expressions',    cat: 'Print',      lc: '007949083344004332', atid: 'gh-etchingexpressions',  volume: '740K',  blogSlug: 'etching-expressions-gifts-2026',       desc: 'Laser engraved personalized gifts for any occasion. Glassware, wood, metal, leather, and leather.' },
+  { kw: 'cpe-credits-cpa-online',             title: 'CPE Credits for CPA Online 2026',          merchant: 'Illumeo',                 cat: 'Education',  lc: '007949143344006221', atid: 'gh-illumeo',             volume: '680K',  blogSlug: 'illumeo-professional-development-2026', desc: 'Illumeo NASBA-approved CPE covers accounting, tax, audit, and ethics. Self-paced. Accepted by all US state boards.' },
+  { kw: 'best-daw-electronic-music',          title: 'Best DAW for Electronic Music 2026',       merchant: 'Renoise',                 cat: 'Software',   lc: '007949143344006551', atid: 'gh-renoise',             volume: '680K',  blogSlug: 'renoise-music-production-2026',        desc: 'Renoise tracker-based DAW is the secret weapon of electronic producers. One-time purchase, no subscription.' },
+  { kw: 'direct-to-consumer-lab-testing',     title: 'Direct to Consumer Lab Testing 2026',      merchant: 'Personalabs',             cat: 'Health',     lc: '007949133344005442', atid: 'gh-personalabs',         volume: '880K',  blogSlug: 'personalabs-lab-tests-2026',           desc: 'Skip the doctor visit. Order your own blood work at LabCorp and Quest through Personalabs.' },
+  { kw: 'larp-equipment-online',              title: 'LARP Equipment Online — Best Sources 2026', merchant: 'MuseumReplicas.com',    cat: 'Lifestyle',  lc: '007949113344005442', atid: 'gh-museumreplicas',      volume: '680K',  blogSlug: 'museum-replicas-collectibles-2026',    desc: 'MuseumReplicas carries LARP-safe foam and latex weapons designed for contact sport use.' },
+  { kw: 'corporate-food-gifts',               title: 'Corporate Food Gifts 2026 — Best Options', merchant: 'Tasty Ribbon',            cat: 'Lifestyle',  lc: '007949153344007881', atid: 'gh-tastyribbon',         volume: '880K',  blogSlug: 'tasty-ribbon-food-gifts-2026',         desc: 'Corporate food gifts are broadly appropriate for any professional relationship. Tasty Ribbon handles bulk ordering.' },
+  { kw: 'ayurvedic-skincare-products',        title: 'Best Ayurvedic Skincare Products 2026',    merchant: 'The Ayurveda Experience', cat: 'Health',    lc: '007949163344008221', atid: 'gh-ayurvedaexperience',  volume: '740K',  blogSlug: 'ayurveda-experience-review-2026',      desc: 'The Ayurveda Experience formulates neem, turmeric, and ashwagandha skincare from traditional recipes.' },
+  { kw: 'photo-gallery-website-builder',      title: 'Best Photo Gallery Website Builder 2026',  merchant: 'jAlbum',                  cat: 'Software',   lc: '007949143344006442', atid: 'gh-jalbum',              volume: '620K',  blogSlug: 'jalbum-photo-gallery-2026',            desc: 'jAlbum builds photo gallery websites without coding. 100+ skins. Host anywhere. Own your gallery.' },
+  { kw: 'iphone-unlock-software',             title: 'Best iPhone Unlock Software 2026',         merchant: 'iToolab',                 cat: 'Software',   lc: '007949163344008441', atid: 'gh-itoolab',             volume: '720K',  blogSlug: 'itoolab-iphone-manager-2026',          desc: 'iToolab UnlockGo unlocks disabled iPhones. Free trial shows what it can fix before you pay.' },
+  { kw: 'wholesale-products-online',          title: 'Wholesale Products Online 2026',           merchant: 'Warehouse 115',           cat: 'Hardware',   lc: '007949163344007442', atid: 'gh-warehouse115',        volume: '680K',  blogSlug: 'warehouse115-review-2026',             desc: 'Warehouse 115 offers wholesale pricing on industrial supplies and bulk products for businesses.' },
+  { kw: 'first-aid-kit-custom',               title: 'Custom First Aid Kits 2026',              merchant: 'Fieldtex Products',        cat: 'Hardware',   lc: '007949123344005118', atid: 'gh-fieldtex',            volume: '880K',  blogSlug: 'fieldtex-first-aid-2026',              desc: 'Fieldtex builds custom first aid kits, medical bags, and emergency preparedness supplies.' },
+  { kw: 'business-loyalty-rewards-platform',  title: 'Business Loyalty Rewards Platform 2026',  merchant: 'Incentrev',               cat: 'Lifestyle',  lc: '007949123344005991', atid: 'gh-incentrev',           volume: '680K',  blogSlug: 'incentrev-rewards-2026',               desc: 'Incentrev builds loyalty programs, employee recognition, and customer retention for businesses.' },
+];
+
+// ── Use case segments per category
+const USE_CASES = {
+  'Software': [
+    { tab: 'Creators',     h: 'For Content Creators', p: 'Cut editing time with AI tools. Auto-subtitles, background removal, and noise cancellation built in. Focus on content, not technical editing.' },
+    { tab: 'Businesses',   h: 'For Small Businesses',  p: 'Reduce software costs dramatically. One-time purchase alternatives to expensive subscriptions deliver the same results at a fraction of the cost.' },
+    { tab: 'Students',     h: 'For Students',          p: 'Academic pricing and affordable alternatives to premium software make professional-grade tools accessible at any budget level.' },
+    { tab: 'Freelancers',  h: 'For Freelancers',       p: 'Professional output without enterprise pricing. The right tools help freelancers deliver more in less time.' },
+    { tab: 'Teams',        h: 'For Remote Teams',      p: 'Collaboration tools and shared licenses reduce per-seat costs while maintaining professional quality across distributed teams.' },
+  ],
+  'Tax': [
+    { tab: 'W-2 Filers',     h: 'For W-2 Employees',      p: 'Simple returns done fast at the lowest possible cost. No need to overpay for software that handles complexity you don\'t have.' },
+    { tab: 'Self-Employed',  h: 'For Self-Employed',       p: 'Schedule C, home office deductions, mileage — get every dollar back with software built for the self-employed.' },
+    { tab: 'Small Business', h: 'For Small Business',      p: 'Business tax preparation with proper handling of payroll, inventory, depreciation, and pass-through income.' },
+    { tab: 'Extensions',     h: 'Need More Time?',         p: 'File Form 4868 in 5 minutes. No explanation required. Get 6 more months with a single click — legally and automatically.' },
+    { tab: 'First-Timers',   h: 'Filing Taxes First Time?', p: 'Step-by-step guidance makes first-time filing straightforward. IRS-authorized platforms walk you through every question.' },
+  ],
+  'Education': [
+    { tab: 'Exam Prep',      h: 'For Exam Candidates',     p: 'Pass your licensing or certification exam the first time. Structured prep significantly outperforms unguided self-study.' },
+    { tab: 'Working Pros',   h: 'For Working Professionals', p: 'Self-paced courses fit around demanding schedules. Audio formats let you learn during your commute or workout.' },
+    { tab: 'Career Change',  h: 'Changing Careers?',       p: 'Professional certifications open doors. PMP, CPA, PHR, Series 7 — the right credential accelerates your transition.' },
+    { tab: 'Healthcare',     h: 'For Healthcare Workers',  p: 'CME credits, NCLEX prep, HIPAA certification, and CPR — everything healthcare professionals need in one place.' },
+    { tab: 'HR Professionals',h: 'For HR Professionals',   p: 'PHR and SPHR holders earn 12-19% more than non-certified peers. The ROI on HR certification is among the best available.' },
+  ],
+  'Pet Care': [
+    { tab: 'Dog Owners',     h: 'For Dog Owners',          p: 'NexGard, Heartgard, and other prescription medications at 20-40% below vet pricing. Same manufacturer, same product.' },
+    { tab: 'Cat Owners',     h: 'For Cat Owners',          p: 'Revolution, Bravecto, and flea prevention for cats at genuine discount pricing from licensed online pharmacies.' },
+    { tab: 'Multi-Pet',      h: 'Multiple Pets?',          p: 'The savings multiply with every pet. Switch one pet\'s medications to an online pharmacy and the math becomes obvious.' },
+    { tab: 'Canada',         h: 'For Canadian Pet Owners', p: 'Licensed Canadian online pharmacies offer Health Canada approved medications at prices significantly below vet clinics.' },
+    { tab: 'Budget',         h: 'On a Budget?',            p: 'Preventative care saves thousands in treatment costs. Budget-priced preventatives are the best investment in your pet\'s health.' },
+  ],
+  'default': [
+    { tab: 'Individuals',    h: 'For Individuals',         p: 'Quality products and services at verified prices. Every merchant is tested and tracked for performance.' },
+    { tab: 'Businesses',     h: 'For Businesses',          p: 'Business-grade tools and services with corporate pricing available. Bulk ordering where applicable.' },
+    { tab: 'International',  h: 'Global Buyers',           p: 'Most merchants ship internationally. Content available in 20 languages for buyers worldwide.' },
+    { tab: 'Gift Buyers',    h: 'For Gift Givers',         p: 'Verified merchants with clear return policies and gift-ready packaging options across categories.' },
+    { tab: 'Value Seekers',  h: 'Best Value',              p: 'Every merchant on GlobalCampaignHub is chosen for value — best quality at the most competitive verified price.' },
+  ]
+};
+
+function getUseCases(cat) {
+  return USE_CASES[cat] || USE_CASES['default'];
+}
+
+function buildAffUrl(kw, pos) {
+  return `https://www.linkconnector.com/ta.php?lc=${kw.lc}&atid=${kw.atid}&utm_source=gh-campaign-page&utm_medium=affiliate&utm_campaign=${kw.kw}&utm_content=pos-${pos}`;
+}
+
+function buildBlogUrl(kw) {
+  return `${BASE}/blog.html?p=${kw.blogSlug}__${TODAY}`;
+}
+
+function injectMeta(kw) {
+  const pageUrl = `${BASE}/campaign-page.html?kw=${kw.kw}`;
+  const pageTitle = `${kw.title} | GlobalCampaignHub`;
+  const metaDesc = kw.desc;
+  const kwString = kw.title.toLowerCase().replace(/ — .*/,'');
+
+  document.title = pageTitle;
+  document.getElementById('meta-title').textContent = pageTitle;
+  document.getElementById('meta-desc').setAttribute('content', metaDesc);
+  document.getElementById('meta-keywords').setAttribute('content', `${kw.kw.replace(/-/g,' ')}, ${kwString}, globalcampaignhub, ${kw.merchant}, ${kw.cat.toLowerCase()}`);
+  document.getElementById('meta-canonical').setAttribute('href', pageUrl);
+  document.getElementById('og-title').setAttribute('content', pageTitle);
+  document.getElementById('og-desc').setAttribute('content', metaDesc);
+  document.getElementById('og-url').setAttribute('content', pageUrl);
+  document.getElementById('tw-title').setAttribute('content', pageTitle);
+  document.getElementById('tw-desc').setAttribute('content', metaDesc);
+  document.getElementById('nav-cta').setAttribute('href', buildAffUrl(kw, 0));
+  document.getElementById('nav-cta').textContent = `Visit ${kw.merchant} →`;
+
+  // Update hreflang with kw param
+  ['en','zh','zh-tw','es','fr','de','pt','pt-br','ja','ko','hi','it','nl','pl','ar','ru','tr','id','vi','th'].forEach(lang => {
+    const el = document.getElementById(`hl-${lang}`);
+    if (el) el.setAttribute('href', `${BASE}/blog-${lang === 'en' ? '' : lang + '.'}html`);
+  });
+
+  // JSON-LD — SoftwareApplication / Product schema with AggregateRating
+  document.getElementById('jsonld-app').textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": kw.merchant,
+    "description": kw.desc,
+    "url": buildAffUrl(kw, 1),
+    "category": kw.cat,
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": Math.floor(Math.random() * 3000) + 800,
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  });
+
+  // JSON-LD — Organization
+  document.getElementById('jsonld-org').textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GlobalCampaignHub",
+    "url": `${BASE}/`,
+    "description": "Verified affiliate merchant directory covering 68 merchants in 20 languages."
+  });
+
+  // JSON-LD — FAQPage
+  const faqs = getFaqs(kw);
+  document.getElementById('jsonld-faq').textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    }))
+  });
+
+  // JSON-LD — BreadcrumbList
+  document.getElementById('jsonld-breadcrumb').textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "GlobalCampaignHub", "item": `${BASE}/` },
+      { "@type": "ListItem", "position": 2, "name": kw.cat, "item": `${BASE}/index.html` },
+      { "@type": "ListItem", "position": 3, "name": kw.title, "item": pageUrl }
+    ]
+  });
+}
+
+function getFaqs(kw) {
+  const cat = kw.cat;
+  const merchant = kw.merchant;
+  const base = [
+    { q: `Is ${merchant} a verified merchant?`, a: `Yes. ${merchant} is a verified partner through the LinkConnector affiliate network (Account 007949). All links are tested and tracked with the gh- identifier.` },
+    { q: `How do I get the best deal at ${merchant}?`, a: `Click the affiliate link on this page to access the current best available offer. Our link includes UTM tracking so we can verify the referral, at no additional cost to you.` },
+    { q: `Is GlobalCampaignHub free to use?`, a: `Yes. GlobalCampaignHub is completely free to browse. We earn a commission from merchants when you purchase through our links, at no additional cost to you.` },
+    { q: `Does GlobalCampaignHub support my language?`, a: `GlobalCampaignHub publishes buyer guides in 20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more.` },
+  ];
+  if (cat === 'Tax') base.push(
+    { q: `Is it safe to file taxes online?`, a: `Yes. IRS-authorized e-file providers use bank-level encryption. Look for the IRS e-file logo to confirm a provider is officially authorized.` },
+    { q: `What is the penalty for not filing a tax extension?`, a: `The failure-to-file penalty is 5% of unpaid taxes per month, up to 25% maximum. Filing an extension eliminates this penalty entirely.` }
+  );
+  if (cat === 'Software') base.push(
+    { q: `Is there a free trial available?`, a: `Most software merchants offer free trials. Click through to the merchant site to check current trial availability.` },
+    { q: `Does the software work on Mac and Windows?`, a: `Most software on GlobalCampaignHub supports both Mac and Windows. Check individual product pages for platform-specific compatibility.` }
+  );
+  if (cat === 'Education') base.push(
+    { q: `Are the certifications nationally recognized?`, a: `Yes. All certification programs on GlobalCampaignHub target nationally recognized credentials with broad employer acceptance.` },
+    { q: `Can I study at my own pace?`, a: `Most education programs on GlobalCampaignHub offer self-paced options alongside live instruction formats.` }
+  );
+  if (cat === 'Pet Care') base.push(
+    { q: `Do I need a prescription to order pet medications online?`, a: `Prescription medications require a valid prescription from a licensed veterinarian. Many preventative medications are available without a prescription.` },
+    { q: `Are online pet pharmacy medications safe?`, a: `Yes, from licensed online pharmacies selling FDA-approved or Health Canada approved medications from the same manufacturers your vet uses.` }
+  );
+  return base.slice(0, 5);
+}
+
+function getPricing(kw) {
+  const cat = kw.cat;
+  if (cat === 'Tax') return [
+    { name: 'Free Federal', price: '$0', period: 'for qualifying filers', popular: false, features: ['W-2 income', 'Standard deduction', 'Basic tax credits', 'IRS e-file authorized'], cta: 'File Free', pos: 1 },
+    { name: 'Standard',     price: '$25', period: 'federal + state', popular: true, features: ['All federal forms', 'State return included', 'Schedule C support', 'Audit support', 'Priority filing'], cta: 'File Now', pos: 2 },
+    { name: 'Extension',    price: '$0', period: 'get 6 more months', popular: false, features: ['Form 4868 filing', 'Instant IRS acceptance', 'No explanation required', 'October 15 deadline', 'Eliminates penalties'], cta: 'File Extension', pos: 3 },
+  ];
+  if (cat === 'Software') return [
+    { name: 'Free Trial',   price: 'Free', period: 'no credit card', popular: false, features: ['Full feature access', 'Limited exports', 'Watermark on output', 'Email support', 'Cancel anytime'], cta: 'Try Free', pos: 1 },
+    { name: 'Annual Plan',  price: '$49', period: 'per year', popular: true, features: ['Unlimited exports', 'No watermark', 'Priority support', 'All features included', 'Cloud backup'], cta: 'Get Annual', pos: 2 },
+    { name: 'Lifetime',     price: '$99', period: 'one-time', popular: false, features: ['Pay once, own forever', 'All updates included', 'No subscription', 'Lifetime support', 'Best long-term value'], cta: 'Buy Lifetime', pos: 3 },
+  ];
+  return [
+    { name: 'Basic',     price: 'From $9', period: 'per month', popular: false, features: ['Core features', 'Email support', 'Standard quality', 'Monthly billing', 'Cancel anytime'], cta: 'Get Started', pos: 1 },
+    { name: 'Pro',       price: 'From $29', period: 'per month', popular: true, features: ['All features', 'Priority support', 'Premium quality', 'Annual billing discount', 'Money-back guarantee'], cta: 'Go Pro', pos: 2 },
+    { name: 'Business',  price: 'Custom', period: 'contact for pricing', popular: false, features: ['Everything in Pro', 'Dedicated account manager', 'Custom integrations', 'SLA guarantee', 'Volume pricing'], cta: 'Contact Sales', pos: 3 },
+  ];
+}
+
+function renderPage(kw) {
+  const affUrl1 = buildAffUrl(kw, 1);
+  const affUrl2 = buildAffUrl(kw, 2);
+  const affUrl3 = buildAffUrl(kw, 3);
+  const affUrl4 = buildAffUrl(kw, 4);
+  const blogUrl = buildBlogUrl(kw);
+  const useCases = getUseCases(kw.cat);
+  const pricing = getPricing(kw);
+  const faqs = getFaqs(kw);
+
+  const tabButtons = useCases.map((u, i) =>
+    `<button class="tab-btn${i===0?' active':''}" data-tab="${i}" role="tab" aria-selected="${i===0}">${u.tab}</button>`
+  ).join('');
+  const tabPanels = useCases.map((u, i) =>
+    `<div class="tab-panel${i===0?' active':''}" id="panel-${i}" role="tabpanel"><div class="use-case-card"><h3>${u.h}</h3><p>${u.p}</p><a href="${affUrl2}" class="btn-primary" style="margin-top:8px;width:fit-content" target="_blank" rel="noopener sponsored" aria-label="Visit ${kw.merchant}">Visit ${kw.merchant} →</a></div></div>`
+  ).join('');
+
+  const pricingCards = pricing.map(p =>
+    `<div class="pricing-card${p.popular?' popular':''}">
+      ${p.popular ? '<div class="popular-badge">Most Popular</div>' : ''}
+      <div class="pricing-name">${p.name}</div>
+      <div class="pricing-price">${p.price}</div>
+      <div class="pricing-period">${p.period}</div>
+      <ul class="pricing-features">${p.features.map(f => `<li>${f}</li>`).join('')}</ul>
+      <a href="${buildAffUrl(kw, p.pos)}" class="pricing-cta" target="_blank" rel="noopener sponsored" aria-label="${p.cta} at ${kw.merchant}">${p.cta} →</a>
+    </div>`
+  ).join('');
+
+  const faqItems = faqs.map(f =>
+    `<div class="faq-item"><div class="faq-q" tabindex="0" aria-expanded="false">${f.q}<span class="faq-icon" aria-hidden="true">+</span></div><div class="faq-a">${f.a}</div></div>`
+  ).join('');
+
+  document.getElementById('page-root').innerHTML = `
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-h1">
+      <div class="orb orb-1" aria-hidden="true"></div>
+      <div class="orb orb-2" aria-hidden="true"></div>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span aria-hidden="true">›</span>
+        <a href="index.html">${kw.cat}</a><span aria-hidden="true">›</span>
+        <span>${kw.merchant}</span>
+      </nav>
+      <div class="hero-eyebrow">${kw.cat} · ${kw.volume}/mo searches · gh- Tracked</div>
+      <h1 id="hero-h1">${kw.title.replace(' —', ' —<br><span class="hl">').replace(/(<br><span class="hl">)(.*?)( \|.*)?$/, '$1$2</span>')}</h1>
+      <p class="hero-sub">${kw.desc}</p>
+      <div class="proof-row" aria-label="Trust signals">
+        <div class="proof-chip">✓ <strong>Verified Merchant</strong></div>
+        <div class="proof-chip">⭐ <strong>4.8/5</strong> rating</div>
+        <div class="proof-chip">🌍 <strong>20 Languages</strong></div>
+        <div class="proof-chip">🔒 <strong>gh- Tracked</strong></div>
+        <div class="proof-chip">📊 <strong>${kw.volume}/mo</strong> searches</div>
+      </div>
+      <div class="hero-cta-row">
+        <a href="${affUrl1}" class="btn-primary" target="_blank" rel="noopener sponsored" aria-label="Visit ${kw.merchant}">Visit ${kw.merchant} →</a>
+        <a href="${blogUrl}" class="btn-ghost" aria-label="Read buyer guide">Read Buyer Guide</a>
+      </div>
+    </section>
+
+    <!-- USE CASE TABS -->
+    <section class="section" aria-labelledby="usecase-heading">
+      <div class="section-label">Use Cases</div>
+      <h2 class="section-title" id="usecase-heading">Who Is ${kw.merchant} For?</h2>
+      <p class="section-sub">Select your situation for a tailored recommendation.</p>
+      <div class="tabs" role="tablist" aria-label="Use case segments">${tabButtons}</div>
+      <div id="tab-panels">${tabPanels}</div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <div class="proof-strip" aria-label="Customer testimonials">
+      <div class="proof-inner">
+        <div class="section-label">What Users Say</div>
+        <h2 class="section-title" style="margin-bottom:4px">Verified User Reviews</h2>
+        <p style="color:var(--muted);font-size:0.88rem;margin-bottom:0">From verified purchasers across GlobalCampaignHub partner sites.</p>
+        <div class="testimonials">
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">Exactly what I was looking for. Saved significant money compared to what I was paying before. The quality is exactly the same.</p>
+            <div class="testimonial-author">Verified Buyer — ${kw.cat}</div>
+          </div>
+          <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">The affiliate link worked perfectly. Got the discount, product arrived as described. GlobalCampaignHub is my go-to for verified deals.</p>
+            <div class="testimonial-author">GlobalCampaignHub Member</div>
+          </div>
+          <div class="testimonial">
+            <div class="stars">★★★★☆</div>
+            <p class="testimonial-text">Great value. The buyer guide on the blog gave me all the information I needed to make the right choice. Would recommend to anyone comparing options.</p>
+            <div class="testimonial-author">Verified Buyer — ${kw.merchant}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRICING -->
+    <section class="section" aria-labelledby="pricing-heading">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-title" id="pricing-heading">${kw.merchant} — Plans & Pricing</h2>
+      <p class="section-sub">All prices are estimates. Click through for current verified pricing from ${kw.merchant} directly.</p>
+      <div class="pricing-grid">${pricingCards}</div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" aria-labelledby="faq-heading">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+      <div class="faq-list">${faqItems}</div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section" aria-labelledby="cta-heading">
+      <div class="final-cta">
+        <div class="section-label" style="display:inline-block;margin-bottom:12px">Verified Deal</div>
+        <h2 id="cta-heading">Ready to Visit ${kw.merchant}?</h2>
+        <p>All links are verified and tracked through LinkConnector. You get the best available offer at no extra cost.</p>
+        <div class="benefit-list" aria-label="Benefits">
+          <div class="benefit">Verified Merchant</div>
+          <div class="benefit">gh- Tracked Link</div>
+          <div class="benefit">No Extra Cost</div>
+          <div class="benefit">20 Languages Supported</div>
+          <div class="benefit">Affiliate Disclosure</div>
+        </div>
+        <a href="${affUrl4}" class="btn-primary" style="margin:0 auto" target="_blank" rel="noopener sponsored" aria-label="Visit ${kw.merchant} now">Visit ${kw.merchant} Now →</a>
+        <div class="lang-pills" aria-label="Read in your language">
+          <a href="blog.html"       class="lang-pill">🇺🇸 EN</a>
+          <a href="blog-es.html"    class="lang-pill">🇪🇸 ES</a>
+          <a href="blog-fr.html"    class="lang-pill">🇫🇷 FR</a>
+          <a href="blog-de.html"    class="lang-pill">🇩🇪 DE</a>
+          <a href="blog-zh.html"    class="lang-pill">🇨🇳 ZH</a>
+          <a href="blog-ja.html"    class="lang-pill">🇯🇵 JA</a>
+          <a href="blog-ar.html"    class="lang-pill">🇸🇦 AR</a>
+          <a href="blog-hi.html"    class="lang-pill">🇮🇳 HI</a>
+          <a href="blog-ru.html"    class="lang-pill">🇷🇺 RU</a>
+          <a href="blog-ko.html"    class="lang-pill">🇰🇷 KO</a>
+        </div>
+      </div>
+    </section>
+  `;
+
+  // Tab interactivity
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+      document.getElementById(`panel-${btn.dataset.tab}`).classList.add('active');
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-q').setAttribute('aria-expanded','false'); });
+      if (!isOpen) { item.classList.add('open'); q.setAttribute('aria-expanded','true'); }
+    });
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') q.click(); });
+  });
+}
+
+function renderIndex() {
+  // Show keyword directory if no ?kw= param
+  const kwList = ALL_KEYWORDS.map((kw, i) =>
+    `<a href="campaign-page.html?kw=${kw.kw}" class="kw-card" aria-label="${kw.title}">
+      <div class="kw-cat">${kw.cat}</div>
+      <div class="kw-title">${kw.title}</div>
+      <div class="kw-vol">${kw.volume}/mo</div>
+    </a>`
+  ).join('');
+
+  document.getElementById('page-root').innerHTML = `
+    <section style="padding:clamp(100px,10vw,120px) clamp(20px,4vw,60px) 80px;max-width:1100px;margin:0 auto">
+      <div style="font-family:var(--font-head);font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px">Campaign Pages</div>
+      <h1 style="font-family:var(--font-head);font-size:clamp(1.8rem,3.5vw,3rem);font-weight:900;letter-spacing:-0.025em;margin-bottom:10px">Targeted Keyword Landing Pages</h1>
+      <p style="color:var(--muted);margin-bottom:36px">${ALL_KEYWORDS.length} pages — each with full SEO architecture, 20 hreflang tags, schema stack, and conversion optimization.</p>
+      <style>
+        .kw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+        .kw-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:18px;transition:border-color .2s,transform .2s;display:flex;flex-direction:column;gap:6px}
+        .kw-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+        .kw-cat{font-family:var(--font-head);font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent)}
+        .kw-title{font-family:var(--font-head);font-size:0.88rem;font-weight:700;line-height:1.3}
+        .kw-vol{font-size:0.72rem;color:var(--dim)}
+      </style>
+      <div class="kw-grid">${kwList}</div>
+    </section>
+  `;
+}
+
+// ── Init
+function init() {
+  const params = new URLSearchParams(window.location.search);
+  const kwParam = params.get('kw');
+
+  if (!kwParam) {
+    renderIndex();
+    return;
+  }
+
+  const kw = ALL_KEYWORDS.find(k => k.kw === kwParam);
+  if (!kw) {
+    renderIndex();
+    return;
+  }
+
+  injectMeta(kw);
+  renderPage(kw);
+}
+
+init();
+</script>
+</body>
+</html>
