@@ -234,7 +234,7 @@
     {
       "slug": "filmora-ai-features-2026",
       "merchant": "gh-filmora",
-      "published": false,
+      "published": true,
       "title_en": "Wondershare Filmora AI Features 2026 — Complete Guide",
       "category_en": "Software",
       "metaDesc_en": "All Wondershare Filmora AI features explained for 2026. Auto-subtitles, background remover, noise cancellation, AI portrait mode — what they do and how well they work.",
@@ -270,7 +270,8 @@
           "q": "How accurate are Filmora's auto-subtitles?",
           "a": "95%+ accuracy on clear speech in supported languages. Accuracy drops with heavy accents, background noise, or fast speech."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "pdfelement-vs-acrobat-2026",
