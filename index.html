@@ -1,166 +1,138 @@
-// ═══════════════════════════════════════════════════════════════════════
-//   GLOBALCAMPAIGNHUB LANGUAGE REDIRECT v1.0
-//   Detects browser language and redirects to the correct blog file
-//   Covers all 20 supported languages
-//   Add <script src="language-redirect.js"></script> to index.html
-// ═══════════════════════════════════════════════════════════════════════
-
-// ── KEYWORD_INJECTOR_DATA ──
-  const GH_TOP_KEYWORDS = [
-    { keyword: "halloween costumes 2026", volume: 8800000, merchant: "gh-halloweencostumes", affUrl: "https://www.linkconnector.com/ta.php?lc=007949053344002874&atid=gh-halloweencostumes&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=halloween-costumes-guide-2026&utm_content=kw-pos-1", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=halloween-costumes-guide-2026__2026-04-30", cat: "Lifestyle" },
-    { keyword: "adult halloween costumes", volume: 3200000, merchant: "gh-halloweencostumes", affUrl: "https://www.linkconnector.com/ta.php?lc=007949053344002874&atid=gh-halloweencostumes&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=halloween-costumes-guide-2026&utm_content=kw-pos-2", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=halloween-costumes-guide-2026__2026-04-30", cat: "Lifestyle" },
-    { keyword: "make money online surveys", volume: 2400000, merchant: "gh-surveyjunkie", affUrl: "https://www.linkconnector.com/ta.php?lc=007949033344001882&atid=gh-surveyjunkie&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=surveyjunkie-earn-online-2026&utm_content=kw-pos-3", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=surveyjunkie-earn-online-2026__2026-04-30", cat: "Lifestyle" },
-    { keyword: "file taxes online", volume: 2400000, merchant: "gh-efile", affUrl: "https://www.linkconnector.com/ta.php?lc=007949021469002241&atid=gh-efile&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=efile-vs-turbotax-2026&utm_content=kw-pos-4", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=efile-vs-turbotax-2026__2026-04-30", cat: "Tax" },
-    { keyword: "best vpn 2026", volume: 2100000, merchant: "gh-nordvpn", affUrl: "https://www.linkconnector.com/ta.php?lc=007949143344006843&atid=gh-nordvpn&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=nordvpn-review-2026&utm_content=kw-pos-5", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=nordvpn-review-2026__2026-04-30", cat: "Software" },
-    { keyword: "kids halloween costumes", volume: 2100000, merchant: "gh-halloweencostumes", affUrl: "https://www.linkconnector.com/ta.php?lc=007949053344002874&atid=gh-halloweencostumes&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=halloween-kids-costume-guide-2026&utm_content=kw-pos-6", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=halloween-kids-costume-guide-2026__2026-04-30", cat: "Lifestyle" },
-    { keyword: "online tax filing", volume: 1900000, merchant: "gh-efile", affUrl: "https://www.linkconnector.com/ta.php?lc=007949021469002241&atid=gh-efile&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=efile-vs-turbotax-2026&utm_content=kw-pos-7", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=efile-vs-turbotax-2026__2026-04-30", cat: "Tax" },
-    { keyword: "best video editor 2026", volume: 1900000, merchant: "gh-filmora", affUrl: "https://www.linkconnector.com/ta.php?lc=007949165260004532&atid=gh-filmora&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=filmora-ai-features-2026&utm_content=kw-pos-8", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=filmora-ai-features-2026__2026-04-30", cat: "Software" },
-    { keyword: "tax extension 2026", volume: 1800000, merchant: "gh-taxextension", affUrl: "https://www.linkconnector.com/ta.php?lc=007949033342002305&atid=gh-taxextension&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=tax-extension-deadline-guide-2026&utm_content=kw-pos-9", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=tax-extension-deadline-guide-2026__2026-04-30", cat: "Tax" },
-    { keyword: "nordvpn review", volume: 1800000, merchant: "gh-nordvpn", affUrl: "https://www.linkconnector.com/ta.php?lc=007949143344006843&atid=gh-nordvpn&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=nordvpn-review-2026&utm_content=kw-pos-10", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=nordvpn-review-2026__2026-04-30", cat: "Software" }
-  ];
-  const GH_KW_UPDATED = '2026-04-30';
-
+<script>
 (function() {
   const BASE = 'https://brightlane.github.io/GlobalCampaignHub';
+  const PREF_KEY = 'gh_lang_pref';
 
-  // ── Language → blog file map
   const LANG_MAP = {
-    'zh': 'blog-zh.html', 'zh-cn': 'blog-zh.html', 'zh-sg': 'blog-zh.html',
-    'zh-tw': 'blog-zh-tw.html', 'zh-hk': 'blog-zh-tw.html', 'zh-mo': 'blog-zh-tw.html',
-    'es': 'blog-es.html', 'es-mx': 'blog-es.html', 'es-ar': 'blog-es.html',
-    'es-co': 'blog-es.html', 'es-cl': 'blog-es.html', 'es-pe': 'blog-es.html',
-    'es-ve': 'blog-es.html', 'es-ec': 'blog-es.html',
-    'fr': 'blog-fr.html', 'fr-be': 'blog-fr.html', 'fr-ca': 'blog-fr.html', 'fr-ch': 'blog-fr.html',
-    'de': 'blog-de.html', 'de-at': 'blog-de.html', 'de-ch': 'blog-de.html',
-    'pt-br': 'blog-pt-br.html', 'pt': 'blog-pt.html', 'pt-pt': 'blog-pt.html',
-    'ja': 'blog-ja.html', 'ko': 'blog-ko.html', 'ko-kr': 'blog-ko.html',
-    'it': 'blog-it.html', 'it-ch': 'blog-it.html',
-    'nl': 'blog-nl.html', 'nl-be': 'blog-nl.html',
-    'pl': 'blog-pl.html', 'hi': 'blog-hi.html',
-    'ar': 'blog-ar.html', 'ar-sa': 'blog-ar.html', 'ar-ae': 'blog-ar.html',
-    'ar-eg': 'blog-ar.html', 'ar-dz': 'blog-ar.html', 'ar-ma': 'blog-ar.html',
-    'ar-iq': 'blog-ar.html', 'ar-sy': 'blog-ar.html',
-    'ru': 'blog-ru.html', 'ru-ru': 'blog-ru.html',
-    'tr': 'blog-tr.html', 'tr-tr': 'blog-tr.html',
-    'id': 'blog-id.html', 'id-id': 'blog-id.html',
-    'vi': 'blog-vi.html', 'vi-vn': 'blog-vi.html',
-    'th': 'blog-th.html', 'th-th': 'blog-th.html',
-    'en': null, 'en-us': null, 'en-gb': null, 'en-au': null, 'en-ca': null, 'en-nz': null, 'en-in': null
+    'zh': 'blog-zh.html','zh-cn': 'blog-zh.html','zh-sg': 'blog-zh.html',
+    'zh-tw': 'blog-zh-tw.html','zh-hk': 'blog-zh-tw.html','zh-mo': 'blog-zh-tw.html',
+    'es': 'blog-es.html','es-mx': 'blog-es.html','es-ar': 'blog-es.html',
+    'fr': 'blog-fr.html','de': 'blog-de.html',
+    'pt-br': 'blog-pt-br.html','pt': 'blog-pt.html',
+    'ja': 'blog-ja.html','ko': 'blog-ko.html',
+    'it': 'blog-it.html','nl': 'blog-nl.html','pl': 'blog-pl.html',
+    'hi': 'blog-hi.html','ar': 'blog-ar.html','ru': 'blog-ru.html',
+    'tr': 'blog-tr.html','id': 'blog-id.html','vi': 'blog-vi.html','th': 'blog-th.html',
+    'en': null
   };
 
-  const currentPath = window.location.pathname;
-  const isHomepage = currentPath.endsWith('/') || 
-                     currentPath.endsWith('/index.html') || 
-                     currentPath.endsWith('/GlobalCampaignHub/');
-  const isEnglishBlog = currentPath.endsWith('/blog.html');
+  const RTL_LANGS = ['ar','he','fa'];
+
+  const normalize = (l='') => l.toLowerCase();
+
+  const cleanPath = location.pathname.split('?')[0].replace(/\/+$/, '');
+  const isHomepage = cleanPath === '' || cleanPath === '/' || cleanPath.endsWith('/index.html');
+  const isEnglishBlog = cleanPath.endsWith('/blog.html');
 
   if (!isHomepage && !isEnglishBlog) return;
 
-  const PREF_KEY = 'gh_lang_pref';
-  const savedPref = localStorage.getItem(PREF_KEY);
-  if (savedPref === 'dismissed') return;
+  const saved = normalize(localStorage.getItem(PREF_KEY));
 
-  if (savedPref && LANG_MAP[savedPref] !== undefined) {
-    const target = LANG_MAP[savedPref];
-    if (target && !currentPath.endsWith(target)) {
-      window.location.href = BASE + '/' + target;
+  if (saved === 'dismissed' || saved === 'en') return;
+
+  if (saved && LANG_MAP.hasOwnProperty(saved)) {
+    const target = LANG_MAP[saved];
+    if (target && !cleanPath.endsWith('/' + target)) {
+      location.href = BASE + '/' + target;
     }
     return;
   }
 
-  const langs = navigator.languages || [navigator.language || navigator.userLanguage || 'en'];
-  let targetFile = null;
-  let detectedLang = 'en';
+  const langs = navigator.languages || [navigator.language || 'en'];
 
-  for (const lang of langs) {
-    const lower = lang.toLowerCase();
-    if (LANG_MAP.hasOwnProperty(lower)) {
-      detectedLang = lower;
-      targetFile = LANG_MAP[lower];
+  let detected = 'en';
+  let file = null;
+
+  for (const l of langs) {
+    const lang = normalize(l);
+    if (LANG_MAP[lang] !== undefined) {
+      detected = lang;
+      file = LANG_MAP[lang];
       break;
     }
-    const prefix = lower.split('-')[0];
-    if (LANG_MAP.hasOwnProperty(prefix)) {
-      detectedLang = prefix;
-      targetFile = LANG_MAP[prefix];
+    const prefix = lang.split('-')[0];
+    if (LANG_MAP[prefix] !== undefined) {
+      detected = prefix;
+      file = LANG_MAP[prefix];
       break;
     }
   }
 
-  if (!targetFile || currentPath.endsWith(targetFile)) return;
+  if (!file || cleanPath.endsWith('/' + file)) return;
 
-  showLanguageBanner(targetFile, detectedLang);
+  showBanner(file, detected);
 
-  function showLanguageBanner(file, lang) {
-    const NATIVE_NAMES = {
-      'zh': '中文', 'zh-tw': '繁體中文', 'es': 'Español', 'fr': 'Français',
-      'de': 'Deutsch', 'pt': 'Português', 'pt-br': 'Português (BR)', 'ja': '日本語',
-      'ko': '한국어', 'it': 'Italiano', 'nl': 'Nederlands', 'pl': 'Polski',
-      'hi': 'हिन्दी', 'ar': 'العربية', 'ru': 'Русский', 'tr': 'Türkçe',
-      'id': 'Bahasa Indonesia', 'vi': 'Tiếng Việt', 'th': 'ภาษาไทย'
+  function showBanner(file, lang) {
+    const names = {
+      zh:'中文','zh-tw':'繁體中文','es':'Español','fr':'Français','de':'Deutsch',
+      pt:'Português','pt-br':'Português (BR)','ja':'日本語','ko':'한국어',
+      it:'Italiano','nl':'Nederlands','pl':'Polski','hi':'हिन्दी',
+      ar:'العربية','ru':'Русский','tr':'Türkçe','id':'Bahasa Indonesia',
+      vi:'Tiếng Việt','th':'ภาษาไทย'
     };
 
-    const nativeName = NATIVE_NAMES[lang] || lang.toUpperCase();
-    const targetUrl = BASE + '/' + file;
-    const isRtl = lang === 'ar';
+    const nativeName = names[lang] || lang.toUpperCase();
+    const url = BASE + '/' + file;
+    const isRtl = RTL_LANGS.includes(lang);
 
     const banner = document.createElement('div');
     banner.id = 'gh-lang-banner';
-    banner.setAttribute('role', 'alert');
-    banner.setAttribute('aria-live', 'polite');
+    banner.setAttribute('role','status');
+
     banner.style.cssText = `
-      position: fixed; bottom: 20px; ${isRtl ? 'left' : 'right'}: 20px;
-      z-index: 9999; background: #111318; border: 1px solid rgba(232,255,71,0.4);
-      border-radius: 12px; padding: 14px 18px; display: flex; align-items: center;
-      gap: 12px; font-family: system-ui, -apple-system, sans-serif; font-size: 13px;
-      color: #e8e9ed; box-shadow: 0 8px 32px rgba(0,0,0,0.4); max-width: 320px;
-      direction: ${isRtl ? 'rtl' : 'ltr'}; animation: gh-slide-in 0.3s ease;
+      position:fixed;bottom:20px;${isRtl?'left':'right'}:20px;
+      z-index:9999;background:#111318;border:1px solid rgba(232,255,71,.4);
+      border-radius:12px;padding:14px 18px;display:flex;align-items:center;
+      gap:12px;font:13px system-ui;color:#e8e9ed;
+      box-shadow:0 8px 32px rgba(0,0,0,.4);max-width:320px;
+      direction:${isRtl?'rtl':'ltr'};
     `;
 
     banner.innerHTML = `
-      <style>
-        @keyframes gh-slide-in { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        #gh-lang-banner .gh-switch-btn { background: #e8ff47; color: #0a0b0d; border: none; border-radius: 6px; padding: 6px 12px; font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap; }
-        #gh-lang-banner .gh-dismiss-btn { background: transparent; border: none; color: #555866; cursor: pointer; font-size: 16px; padding: 0 4px; line-height: 1; }
-        #gh-lang-banner .gh-dismiss-btn:hover { color: #e8e9ed; }
-      </style>
-      <span style="font-size:18px">🌐</span>
-      <span style="flex:1;color:#8a8d99">Read in <strong style="color:#e8e9ed">${nativeName}</strong>?</span>
-      <button class="gh-switch-btn" id="gh-switch">Switch</button>
-      <button class="gh-dismiss-btn" id="gh-dismiss" aria-label="Dismiss">✕</button>
+      <span>🌐</span>
+      <span style="flex:1;color:#8a8d99">
+        Read in <strong style="color:#e8e9ed">${nativeName}</strong>?
+      </span>
+      <button id="gh-switch">Switch</button>
+      <button id="gh-dismiss">✕</button>
     `;
 
     document.body.appendChild(banner);
 
-    document.getElementById('gh-switch').addEventListener('click', function() {
+    const btn = (id) => document.getElementById(id);
+
+    btn('gh-switch').onclick = () => {
       localStorage.setItem(PREF_KEY, lang);
-      window.location.href = targetUrl;
-    });
+      location.href = url;
+    };
 
-    document.getElementById('gh-dismiss').addEventListener('click', function() {
-      localStorage.setItem(PREF_KEY, 'dismissed');
-      banner.style.opacity = '0';
-      banner.style.transform = 'translateY(10px)';
-      banner.style.transition = 'opacity 0.2s, transform 0.2s';
-      setTimeout(() => banner.remove(), 200);
-    });
+    btn('gh-dismiss').onclick = () => {
+      localStorage.setItem(PREF_KEY,'dismissed');
+      banner.remove();
+    };
 
-    setTimeout(function() {
-      const liveBanner = document.getElementById('gh-lang-banner');
-      if (liveBanner) document.getElementById('gh-dismiss').click();
-    }, 8000);
+    // smarter auto-dismiss (15s or on scroll)
+    const timer = setTimeout(() => banner.remove(), 15000);
+    window.addEventListener('scroll', () => {
+      clearTimeout(timer);
+      banner.remove();
+    }, { once:true });
   }
 
-  window.GH_setLanguage = function(langCode) {
-    const file = LANG_MAP[langCode.toLowerCase()];
-    if (file !== undefined) {
-      localStorage.setItem(PREF_KEY, langCode.toLowerCase());
-      if (file) window.location.href = BASE + '/' + file;
+  // manual controls
+  window.GH_setLanguage = function(lang) {
+    lang = normalize(lang);
+    if (LANG_MAP[lang] !== undefined) {
+      localStorage.setItem(PREF_KEY, lang);
+      if (LANG_MAP[lang]) location.href = BASE + '/' + LANG_MAP[lang];
+      else location.reload();
     }
   };
 
   window.GH_resetLanguage = function() {
     localStorage.removeItem(PREF_KEY);
-    window.location.reload();
+    location.reload();
   };
+
 })();
+</script>
