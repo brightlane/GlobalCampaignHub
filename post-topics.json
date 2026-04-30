@@ -1956,7 +1956,7 @@
     {
       "slug": "securities-institute-exam-prep-2026",
       "merchant": "gh-securitiesinstitute",
-      "published": false,
+      "published": true,
       "title_en": "Securities Institute of America Review 2026 — FINRA Exam Prep",
       "category_en": "Education",
       "metaDesc_en": "Securities Institute of America review 2026. Series 7, Series 63, Series 65, and other FINRA exam preparation. Pass rates, course quality, and study materials.",
@@ -1992,7 +1992,8 @@
           "q": "What is the passing score for the Series 7?",
           "a": "72% (90 out of 125 questions correct)."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     }
   ]
 }
