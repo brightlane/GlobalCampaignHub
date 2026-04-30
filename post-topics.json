@@ -1914,7 +1914,7 @@
     {
       "slug": "oakstone-cme-review-2026",
       "merchant": "gh-oakstone",
-      "published": false,
+      "published": true,
       "title_en": "Oakstone Medical CME Review 2026 — Best Continuing Medical Education?",
       "category_en": "Education",
       "metaDesc_en": "Oakstone Medical CME review 2026. Continuing medical education for physicians, nurses, and healthcare professionals. Accreditation, course quality, and specialty coverage.",
@@ -1950,7 +1950,8 @@
           "q": "What specialties does Oakstone cover?",
           "a": "Oakstone covers dozens of medical specialties. Check their catalog for current specialty availability."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "securities-institute-exam-prep-2026",
