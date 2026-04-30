@@ -1662,7 +1662,7 @@
     {
       "slug": "renoise-music-production-2026",
       "merchant": "gh-renoise",
-      "published": false,
+      "published": true,
       "title_en": "Renoise Review 2026 — The Best DAW You've Never Heard Of",
       "category_en": "Software",
       "metaDesc_en": "Renoise DAW review 2026. Tracker-based music production software beloved by electronic music producers. What makes it unique and who it's for.",
@@ -1698,7 +1698,8 @@
           "q": "Does Renoise support VST plugins?",
           "a": "Yes. Renoise supports VST2, VST3, and AU plugins on compatible platforms."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "learnstastic-cpr-certification-2026",
