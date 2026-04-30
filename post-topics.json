@@ -1746,7 +1746,7 @@
     {
       "slug": "edraw-mind-map-review-2026",
       "merchant": "gh-edraw",
-      "published": false,
+      "published": true,
       "title_en": "Edraw Mind Map Review 2026 — Best Diagramming Software for Teams?",
       "category_en": "Software",
       "metaDesc_en": "Edraw Mind Map and EdrawMax review 2026. Mind mapping, flowcharts, org charts, and business diagrams. How does it compare to Visio and Lucidchart?",
@@ -1782,7 +1782,8 @@
           "q": "Is EdrawMax a one-time purchase?",
           "a": "EdrawMax offers both subscription and perpetual license options. The perpetual license is available for individuals and teams."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "itoolab-iphone-manager-2026",
