@@ -1536,7 +1536,7 @@
     {
       "slug": "tasty-ribbon-food-gifts-2026",
       "merchant": "gh-tastyribbon",
-      "published": false,
+      "published": true,
       "title_en": "Tasty Ribbon Review 2026 — Gourmet Food Gift Baskets Worth Buying?",
       "category_en": "Lifestyle",
       "metaDesc_en": "Tasty Ribbon gourmet food gift review 2026. Corporate food gifts, holiday gift baskets, and specialty food collections. Quality, value, and ordering guide.",
@@ -1572,7 +1572,8 @@
           "q": "How far in advance should I order for holiday gifts?",
           "a": "Order at least 2-3 weeks before major holidays. Holiday demand creates production and shipping delays — ordering early ensures on-time delivery."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "illumeo-professional-development-2026",
