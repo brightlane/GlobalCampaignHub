@@ -780,7 +780,7 @@
     {
       "slug": "nordvpn-streaming-guide-2026",
       "merchant": "gh-nordvpn",
-      "published": false,
+      "published": true,
       "title_en": "NordVPN for Streaming 2026 — Unblock Netflix, BBC iPlayer, and More",
       "category_en": "Software",
       "metaDesc_en": "How to use NordVPN to access streaming services from any country in 2026. Netflix, BBC iPlayer, Disney+, Hulu — which servers work and how to set it up.",
@@ -816,7 +816,8 @@
           "q": "Is using a VPN for streaming legal?",
           "a": "VPN use is legal in most countries. Bypassing geo-restrictions may violate streaming service terms of service — it's a civil matter, not a criminal one."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "sidify-spotify-converter-2026",
