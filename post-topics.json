@@ -3331,7 +3331,7 @@
     {
       "slug": "itoolab-review-2026-best-iphone-unlock-software-5018",
       "merchant": "gh-itoolab",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "iToolab Review 2026: Best iPhone Unlock Software?",
       "category_en": "Software",
@@ -3368,7 +3368,8 @@
           "q": "What languages are supported?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "where-to-buy-home-improvement-parts-online-in-2026-5019",
