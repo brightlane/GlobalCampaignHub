@@ -1200,7 +1200,7 @@
     {
       "slug": "maxpeedingrods-review-2026",
       "merchant": "gh-maxpeedingrodsus",
-      "published": false,
+      "published": true,
       "title_en": "Maxpeedingrods Review 2026 — Affordable Performance Parts Worth Buying?",
       "category_en": "Auto",
       "metaDesc_en": "Maxpeedingrods review 2026. Affordable coilovers, turbo kits, and performance parts. Are they good quality or too cheap to trust on your car?",
@@ -1236,7 +1236,8 @@
           "q": "Does Maxpeedingrods ship to Australia?",
           "a": "Yes. Maxpeedingrods ships internationally including to Australia through their AU-specific catalog."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "la-fuente-imports-review-2026",
