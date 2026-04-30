@@ -1242,7 +1242,7 @@
     {
       "slug": "la-fuente-imports-review-2026",
       "merchant": "gh-lafuente",
-      "published": false,
+      "published": true,
       "title_en": "La Fuente Imports Review 2026 — Mexican Folk Art and Decor",
       "category_en": "Lifestyle",
       "metaDesc_en": "La Fuente Imports review 2026. Authentic Mexican folk art, Talavera pottery, Day of the Dead decor, and home accessories imported directly from Mexican artisans.",
@@ -1278,7 +1278,8 @@
           "q": "Are Talavera pieces from La Fuente handmade?",
           "a": "Yes. Authentic Talavera pottery is handmade and hand-painted. Natural variation in color and pattern is a characteristic of genuine Talavera."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "bugatchi-mens-fashion-2026",
