@@ -1368,7 +1368,7 @@
     {
       "slug": "ayurveda-experience-review-2026",
       "merchant": "gh-ayurvedaexperience",
-      "published": false,
+      "published": true,
       "title_en": "The Ayurveda Experience Review 2026 — Legitimate or Wellness Trend?",
       "category_en": "Health",
       "metaDesc_en": "The Ayurveda Experience review 2026. Ancient Indian wellness system applied to modern skincare and health products. What works, what's marketing, and what's worth trying.",
@@ -1404,7 +1404,8 @@
           "q": "What is the best Ayurvedic product for stress?",
           "a": "Ashwagandha has the strongest clinical evidence for stress reduction and cortisol management among Ayurvedic herbs."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "personalabs-lab-tests-2026",
