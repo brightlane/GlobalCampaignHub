@@ -654,7 +654,7 @@
     {
       "slug": "buildasign-custom-prints-2026",
       "merchant": "gh-buildasign",
-      "published": false,
+      "published": true,
       "title_en": "BuildASign Custom Banners and Signs 2026 — Complete Ordering Guide",
       "category_en": "Print & Signs",
       "metaDesc_en": "BuildASign ordering guide for 2026. Custom banners, yard signs, canvas prints — what to order, what sizes to choose, and how to get the best price.",
@@ -690,7 +690,8 @@
           "q": "Does BuildASign offer bulk discounts?",
           "a": "Yes. Bulk pricing applies at 10, 25, and 50+ units on most products."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "canvas-on-the-cheap-guide-2026",
