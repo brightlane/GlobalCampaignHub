@@ -2342,7 +2342,7 @@
     {
       "slug": "ashwagandha-in-2026-what-the-research-actually-shows-1839",
       "merchant": "gh-ayurvedaexperience",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "Ashwagandha in 2026: What the Research Actually Shows",
       "category_en": "Health",
@@ -2379,7 +2379,8 @@
           "q": "What languages are supported?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "efilecom-review-2026-cheaper-than-turbotax-1840",

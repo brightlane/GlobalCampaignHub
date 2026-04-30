@@ -241,5 +241,32 @@
       "zh-tw": 3,
       "pt": 2
     }
+  },
+  {
+    "date": "2026-04-30",
+    "generated": 50,
+    "total_after": 712,
+    "lang_breakdown": {
+      "en": 3,
+      "ko": 2,
+      "pt-br": 3,
+      "zh": 2,
+      "ja": 3,
+      "pl": 2,
+      "ar": 3,
+      "id": 3,
+      "es": 2,
+      "de": 3,
+      "fr": 3,
+      "th": 3,
+      "it": 3,
+      "zh-tw": 3,
+      "vi": 2,
+      "hi": 2,
+      "pt": 2,
+      "tr": 2,
+      "ru": 2,
+      "nl": 2
+    }
   }
 ]
