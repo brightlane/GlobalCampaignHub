@@ -864,7 +864,7 @@
     {
       "slug": "graeter-ice-cream-delivery-2026",
       "merchant": "gh-graeters",
-      "published": false,
+      "published": true,
       "title_en": "Graeter's Ice Cream Delivery Review 2026 — Worth the Premium?",
       "category_en": "Lifestyle",
       "metaDesc_en": "Graeter's Ice Cream delivery review 2026. Is the Cincinnati legend's shipped ice cream worth the premium price? Quality, shipping, and what to order first.",
@@ -900,7 +900,8 @@
           "q": "Does Graeter's ship nationwide?",
           "a": "Yes. Graeter's ships ice cream to all 50 states."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "camano-island-coffee-review-2026",
