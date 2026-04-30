@@ -948,7 +948,7 @@
     {
       "slug": "pm-training-pmp-2026",
       "merchant": "gh-pmtraining",
-      "published": false,
+      "published": true,
       "title_en": "PM Training PMP Certification 2026 — 98% Pass Rate Explained",
       "category_en": "Education",
       "metaDesc_en": "PM Training PMP certification review 2026. How they achieve a 98% first-time pass rate and whether their course is the best PMP prep available.",
@@ -984,7 +984,8 @@
           "q": "How long does PM Training PMP prep take?",
           "a": "Most students complete the program in 4-6 weeks of part-time study alongside the live sessions."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "updf-pdf-editor-review-2026",
