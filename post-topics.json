@@ -360,7 +360,7 @@
     {
       "slug": "budget-pet-care-guide-2026",
       "merchant": "gh-budgetpetcare",
-      "published": false,
+      "published": true,
       "title_en": "Budget Pet Care Guide 2026 — Cut Costs Without Cutting Corners",
       "category_en": "Pet Care",
       "metaDesc_en": "How to reduce pet care costs in 2026 without compromising your pet's health. Online pharmacies, generic medications, and smart vet visit strategies.",
@@ -396,7 +396,8 @@
           "q": "How much can I save on pet medications online?",
           "a": "Average savings are 30-50% compared to vet office pricing for the identical product."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "movavi-video-editor-2026",
