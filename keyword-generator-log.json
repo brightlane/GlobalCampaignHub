@@ -907,5 +907,31 @@
       "pl": 3,
       "th": 1
     }
+  },
+  {
+    "date": "2026-04-30",
+    "generated": 50,
+    "total_after": 500,
+    "lang_breakdown": {
+      "en": 3,
+      "de": 4,
+      "zh": 3,
+      "fr": 3,
+      "es": 3,
+      "id": 3,
+      "tr": 3,
+      "ar": 3,
+      "ru": 3,
+      "pt": 4,
+      "ja": 2,
+      "pt-br": 1,
+      "pl": 3,
+      "ko": 1,
+      "hi": 3,
+      "nl": 3,
+      "it": 3,
+      "vi": 1,
+      "zh-tw": 1
+    }
   }
 ]
