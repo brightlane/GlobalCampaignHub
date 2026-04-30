@@ -31,6 +31,15 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: GoogleOther
+Allow: /
+
+User-agent: GoogleOther-Image
+Allow: /
+
+User-agent: GoogleOther-Video
+Allow: /
+
 # ═══════════════════════════════════════
 #  BING / MICROSOFT
 # ═══════════════════════════════════════
@@ -48,6 +57,9 @@ User-agent: BingPreview
 Allow: /
 
 User-agent: adidxbot
+Allow: /
+
+User-agent: MicrosoftPreview
 Allow: /
 
 # ═══════════════════════════════════════
@@ -191,6 +203,9 @@ Allow: /
 User-agent: Gemini
 Allow: /
 
+User-agent: Bard
+Allow: /
+
 # ═══════════════════════════════════════
 #  META AI (Facebook / Instagram)
 # ═══════════════════════════════════════
@@ -243,6 +258,57 @@ User-agent: Diffbot
 Allow: /
 
 # ═══════════════════════════════════════
+#  XAI / GROK (Elon Musk / X)
+# ═══════════════════════════════════════
+User-agent: xAI
+Allow: /
+
+User-agent: Grok
+Allow: /
+
+# ═══════════════════════════════════════
+#  MISTRAL AI
+# ═══════════════════════════════════════
+User-agent: MistralBot
+Allow: /
+
+# ═══════════════════════════════════════
+#  APPLE INTELLIGENCE / SIRI
+# ═══════════════════════════════════════
+User-agent: Siri
+Allow: /
+
+# ═══════════════════════════════════════
+#  HUBSPOT
+# ═══════════════════════════════════════
+User-agent: HubSpot
+Allow: /
+
+# ═══════════════════════════════════════
+#  LINKEDIN AI
+# ═══════════════════════════════════════
+User-agent: LinkedInBot
+Allow: /
+
+# ═══════════════════════════════════════
+#  WRITER AI
+# ═══════════════════════════════════════
+User-agent: WriterBot
+Allow: /
+
+# ═══════════════════════════════════════
+#  IASKBOT (Chinese AI search)
+# ═══════════════════════════════════════
+User-agent: iaskspider
+Allow: /
+
+# ═══════════════════════════════════════
+#  TIMBOT (AI search)
+# ═══════════════════════════════════════
+User-agent: Timbot
+Allow: /
+
+# ═══════════════════════════════════════
 #  SEO TOOLS
 # ═══════════════════════════════════════
 User-agent: SemrushBot
@@ -255,6 +321,18 @@ User-agent: MJ12bot
 Allow: /
 
 User-agent: DotBot
+Allow: /
+
+User-agent: DataForSeoBot
+Allow: /
+
+User-agent: serpstatbot
+Allow: /
+
+User-agent: SEOkicks
+Allow: /
+
+User-agent: Screaming Frog SEO Spider
 Allow: /
 
 # ═══════════════════════════════════════
@@ -291,6 +369,12 @@ User-agent: Discordbot
 Allow: /
 
 User-agent: Rogerbot
+Allow: /
+
+User-agent: Snapchat
+Allow: /
+
+User-agent: redditbot
 Allow: /
 
 # ═══════════════════════════════════════
