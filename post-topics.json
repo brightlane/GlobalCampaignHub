@@ -990,7 +990,7 @@
     {
       "slug": "updf-pdf-editor-review-2026",
       "merchant": "gh-updf",
-      "published": false,
+      "published": true,
       "title_en": "UPDF Review 2026 — The AI-Powered PDF Editor Worth Switching To?",
       "category_en": "Software",
       "metaDesc_en": "UPDF PDF editor review 2026. AI summarization, editing, annotation, and conversion. How does this newer PDF editor compare to Adobe Acrobat and PDFelement?",
@@ -1026,7 +1026,8 @@
           "q": "How good is UPDF's AI summarization?",
           "a": "UPDF's AI summarization is among the best available in a PDF editor. It produces accurate, concise summaries of complex documents."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "surveyjunkie-earn-online-2026",
