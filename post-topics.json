@@ -1074,7 +1074,7 @@
     {
       "slug": "bgmgirl-creator-music-2026",
       "merchant": "gh-bgmgirl",
-      "published": false,
+      "published": true,
       "title_en": "BGM Girl Review 2026 — Best Royalty-Free Music for Creators",
       "category_en": "Services",
       "metaDesc_en": "BGM Girl review 2026 for content creators. YouTube-safe, Twitch-safe, podcast-safe music. What the license covers and how it compares to other royalty-free services.",
@@ -1110,7 +1110,8 @@
           "q": "Can I use BGM Girl music for commercial projects?",
           "a": "Yes. BGM Girl licenses cover commercial use including business videos and paid productions."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "chess-store-buying-guide-2026",
