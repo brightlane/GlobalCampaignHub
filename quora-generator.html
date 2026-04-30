@@ -155,72 +155,102 @@
 const BASE = 'https://brightlane.github.io/GlobalCampaignHub';
 const TODAY = new Date().toISOString().slice(0,10);
 
+// ── LC CODES UPDATED FROM affiliate.json ──
 const MERCHANTS = [
-  { id:'gh-efile',               name:'E-file.com',              cat:'Tax',       lc:'007949021469002241', vol:'2.4M/mo', desc:'IRS-authorized federal tax filing',
+  // ── TAX ──
+  { id:'gh-efile',               name:'E-File.com',              cat:'Tax',       lc:'007949155896007874', vol:'2.4M/mo', desc:'IRS-authorized federal tax filing',
     questions:['What is the cheapest way to file taxes online?','Is E-file.com legitimate and safe?','How do I file my federal taxes online without TurboTax?','What is the best free tax filing website?','Can I file my taxes online for free?'] },
-  { id:'gh-taxextension',        name:'TaxExtension.com',        cat:'Tax',       lc:'007949033342002305', vol:'1.8M/mo', desc:'IRS Form 4868 tax extension filing',
+  { id:'gh-taxextension',        name:'TaxExtension.com',        cat:'Tax',       lc:'007949121281006198', vol:'1.8M/mo', desc:'IRS Form 4868 tax extension filing',
     questions:['How do I file a tax extension online?','What happens if I miss the April tax deadline?','How long does a tax extension give you?','Is filing a tax extension bad for you?','How do I get more time to file my taxes?'] },
-  { id:'gh-eztaxreturn',         name:'ezTaxReturn.com',         cat:'Tax',       lc:'007949053344004952', vol:'1.2M/mo', desc:'Free federal tax filing',
+  { id:'gh-eztaxreturn',         name:'ezTaxReturn.com',         cat:'Tax',       lc:'', vol:'1.2M/mo', desc:'Free federal tax filing',
     questions:['Which online tax service is actually free?','How do I file my taxes for free in 2026?','What are the best free tax filing options?','Is ezTaxReturn really free to use?','How do I file a simple tax return for free?'] },
-  { id:'gh-nordvpn',             name:'NordVPN',                 cat:'Software',  lc:'007949143344006843', vol:'2.1M/mo', desc:'Top-rated VPN service',
+
+  // ── SOFTWARE ──
+  { id:'gh-nordvpn',             name:'NordVPN',                 cat:'Software',  lc:'007949085070005891', vol:'2.1M/mo', desc:'Top-rated VPN service',
     questions:['What is the best VPN in 2026?','Does NordVPN actually work with Netflix?','Is NordVPN worth the money?','What VPN should I use for privacy?','How do I unblock streaming services from another country?','NordVPN vs ExpressVPN — which is better?'] },
-  { id:'gh-filmora',             name:'Wondershare Filmora',     cat:'Software',  lc:'007949165260004532', vol:'1.9M/mo', desc:'AI video editing software',
+  { id:'gh-filmora',             name:'Wondershare Filmora',     cat:'Software',  lc:'007949048607004532', vol:'1.9M/mo', desc:'AI video editing software',
     questions:['What is the best video editing software for beginners?','Is Filmora good for YouTube videos?','What is the best AI video editor in 2026?','How do I add subtitles to videos automatically?','What video editor is better than iMovie?'] },
-  { id:'gh-pdfelement',          name:'Wondershare PDFelement',  cat:'Software',  lc:'007949165372004532', vol:'1.3M/mo', desc:'Adobe Acrobat alternative PDF editor',
+  { id:'gh-pdfelement',          name:'Wondershare PDFelement',  cat:'Software',  lc:'007949139355006776', vol:'1.3M/mo', desc:'Adobe Acrobat alternative PDF editor',
     questions:['What is a good alternative to Adobe Acrobat?','How do I edit a PDF without Adobe?','Is PDFelement as good as Adobe Acrobat?','What is the best one-time purchase PDF editor?','How do I save money on PDF software?'] },
-  { id:'gh-sidify',              name:'Sidify',                  cat:'Software',  lc:'007949163344007882', vol:'1.2M/mo', desc:'Spotify and Apple Music converter',
+  { id:'gh-sidify',              name:'Sidify',                  cat:'Software',  lc:'007949114496007306', vol:'1.2M/mo', desc:'Spotify and Apple Music converter',
     questions:['How do I convert Spotify music to MP3?','Is it legal to download Spotify songs?','How do I listen to Spotify offline without premium?','What is the best Spotify to MP3 converter?','Can you save Apple Music songs as MP3?'] },
-  { id:'gh-movavi',              name:'Movavi Software',         cat:'Software',  lc:'007949153344007119', vol:'880K/mo', desc:'One-time purchase video editor',
+  { id:'gh-movavi',              name:'Movavi Software',         cat:'Software',  lc:'007949109440006513', vol:'880K/mo', desc:'One-time purchase video editor',
     questions:['What video editor does not require a subscription?','Is Movavi worth buying?','What is the best affordable video editing software?','How do I edit 4K videos without a subscription?','What video editor should I buy once and own forever?'] },
-  { id:'gh-tenorshare',          name:'Tenorshare',              cat:'Software',  lc:'007949163344008992', vol:'1.6M/mo', desc:'iPhone recovery and repair tools',
+  { id:'gh-tenorshare',          name:'Tenorshare',              cat:'Software',  lc:'007949139287006847', vol:'1.6M/mo', desc:'iPhone recovery and repair tools',
     questions:['How do I recover deleted photos from my iPhone?','My iPhone is stuck on the Apple logo — what do I do?','How do I unlock a disabled iPhone?','What is the best iPhone data recovery software?','How do I recover deleted messages from iPhone?'] },
-  { id:'gh-appypie',             name:'Appy Pie',                cat:'Software',  lc:'007949153344007442', vol:'1.4M/mo', desc:'No-code app and website builder',
+  { id:'gh-appypie',             name:'Appy Pie',                cat:'Software',  lc:'007949090967005541', vol:'1.4M/mo', desc:'No-code app and website builder',
     questions:['How do I create a mobile app without coding?','What is the best no-code app builder?','How much does it cost to build an app without a developer?','What is the best chatbot builder without coding?','How do I build a website without knowing how to code?'] },
-  { id:'gh-updf',                name:'UPDF',                    cat:'Software',  lc:'007949163344008112', vol:'720K/mo', desc:'AI-enhanced PDF editor',
+  { id:'gh-updf',                name:'UPDF',                    cat:'Software',  lc:'007949147521007728', vol:'720K/mo', desc:'AI-enhanced PDF editor',
     questions:['What is the best AI PDF editor?','How do I summarize a long PDF with AI?','Is UPDF better than Adobe Acrobat?','How do I translate a PDF document?','What PDF editor has AI features?'] },
-  { id:'gh-boardvitals',         name:'BoardVitals',             cat:'Education', lc:'007949114675005824', vol:'820K/mo', desc:'Medical board exam prep',
+  { id:'gh-itoolab',             name:'iToolab',                 cat:'Software',  lc:'007949108972006513', vol:'600K/mo', desc:'iPhone & Android repair toolkit',
+    questions:['How do I fix a bricked iPhone?','What is the best iOS system repair tool?','How do I recover data from a broken Android phone?','Is iToolab safe to use?','What software can fix iPhone boot loops?'] },
+  { id:'gh-famisafe',            name:'Famisafe',                cat:'Software',  lc:'007949154258006788', vol:'500K/mo', desc:'Parental control and family safety app',
+    questions:['What is the best parental control app in 2026?','How do I monitor my child\'s phone activity?','Can I track my kid\'s location on their phone?','What is the best app to limit screen time for kids?','Is Famisafe better than Qustodio?'] },
+  { id:'gh-iskysoft',            name:'iSkysoft',                cat:'Software',  lc:'007949099000005679', vol:'450K/mo', desc:'Video, PDF and data tools',
+    questions:['What is a good alternative to Adobe video tools?','How do I convert video files on Mac?','Is iSkysoft software safe to download?','What is the best one-time purchase video converter?','How do I edit PDFs on Mac without Adobe?'] },
+  { id:'gh-edraw',               name:'Edraw (Mind/Max)',        cat:'Software',  lc:'007949165249006886', vol:'420K/mo', desc:'Mind mapping and diagram software',
+    questions:['What is the best mind mapping software?','Is EdrawMind better than MindMeister?','What is the best alternative to Visio?','How do I create professional diagrams without Visio?','What is the best one-time purchase diagram tool?'] },
+
+  // ── EDUCATION ──
+  { id:'gh-boardvitals',         name:'BoardVitals',             cat:'Education', lc:'007949154901006218', vol:'820K/mo', desc:'Medical board exam prep',
     questions:['What is the best question bank for USMLE Step 2?','How do I prepare for the NCLEX exam?','Is BoardVitals good for board exam prep?','What question bank should I use for medical boards?','How long should I study for the USMLE?'] },
-  { id:'gh-surgent',             name:'Surgent CPA',             cat:'Education', lc:'007949123344006122', vol:'880K/mo', desc:'AI-powered CPA exam prep',
+  { id:'gh-surgent',             name:'Surgent CPA',             cat:'Education', lc:'007949163206006249', vol:'880K/mo', desc:'AI-powered CPA exam prep',
     questions:['What is the best CPA review course in 2026?','How do I pass the CPA exam faster?','Is Surgent CPA review worth it?','Surgent vs Becker — which CPA course should I choose?','How long does it take to pass all four CPA exam sections?'] },
-  { id:'gh-pmtraining',          name:'PM Training',             cat:'Education', lc:'007949143344006992', vol:'980K/mo', desc:'PMP certification with 98% pass rate',
+  { id:'gh-pmtraining',          name:'PM Training',             cat:'Education', lc:'007949081796006139', vol:'980K/mo', desc:'PMP certification with 98% pass rate',
     questions:['What is the best PMP exam prep course?','How do I pass the PMP exam on the first try?','Is PMP certification worth it in 2026?','How long does PMP certification take?','What is the difference between PMP and PRINCE2?'] },
-  { id:'gh-learntasticcpr',      name:'LearnTastic CPR',         cat:'Education', lc:'007949143344006112', vol:'1.4M/mo', desc:'Online CPR and AED certification',
+  { id:'gh-learntasticcpr',      name:'LearnTastic CPR',         cat:'Education', lc:'007949155036007841', vol:'1.4M/mo', desc:'Online CPR and AED certification',
     questions:['Can I get CPR certified online?','Is online CPR certification accepted by employers?','How long does online CPR certification take?','Where can I get a CPR certificate quickly?','Is online CPR certification legitimate?'] },
-  { id:'gh-securitiesinstitute', name:'Securities Institute',    cat:'Education', lc:'007949113344005987', vol:'880K/mo', desc:'FINRA securities licensing exam prep',
+  { id:'gh-securitiesinstitute', name:'Securities Institute',    cat:'Education', lc:'007949108329007101', vol:'880K/mo', desc:'FINRA securities licensing exam prep',
     questions:['How do I pass the Series 7 exam?','What is the best study material for the Series 7?','How hard is the Series 7 exam?','What is the passing score for the Series 7?','How do I prepare for FINRA licensing exams?'] },
-  { id:'gh-illumeo',             name:'Illumeo',                 cat:'Education', lc:'007949143344006221', vol:'680K/mo', desc:'NASBA-approved CPE for CPAs',
+  { id:'gh-illumeo',             name:'Illumeo',                 cat:'Education', lc:'007949034133001545', vol:'680K/mo', desc:'NASBA-approved CPE for CPAs',
     questions:['Where can I get cheap CPE credits for my CPA license?','What is the best online CPE provider for CPAs?','How many CPE credits do I need to maintain my CPA license?','Is Illumeo a legitimate CPE provider?','Where can I get NASBA-approved CPE courses?'] },
-  { id:'gh-canadapetcare',       name:'CanadaPetCare',           cat:'Pet Care',  lc:'007949083344004721', vol:'880K/mo', desc:'Licensed Canadian online pet pharmacy',
+
+  // ── PET CARE ──
+  { id:'gh-canadapetcare',       name:'CanadaPetCare',           cat:'Pet Care',  lc:'007949063057005492', vol:'880K/mo', desc:'Licensed Canadian online pet pharmacy',
     questions:['Where can I buy NexGard cheaper in Canada?','Is it safe to buy pet medications online in Canada?','How much can I save on pet medications with an online pharmacy?','Can I fill my pet\'s prescription at an online pharmacy?','Where to buy Heartgard online in Canada?'] },
-  { id:'gh-budgetpetcare',       name:'BudgetPetCare',           cat:'Pet Care',  lc:'007949103344005118', vol:'980K/mo', desc:'Affordable pet medications',
+  { id:'gh-budgetpetcare',       name:'BudgetPetCare',           cat:'Pet Care',  lc:'007949124366007614', vol:'980K/mo', desc:'Affordable pet medications',
     questions:['Where can I buy cheap pet medications online?','Is it safe to buy pet meds from online pharmacies?','How do I save money on flea and tick prevention?','What is the cheapest way to prevent heartworm in dogs?','Are generic pet medications as effective as name brands?'] },
-  { id:'gh-personalabs',         name:'Personalabs',             cat:'Health',    lc:'007949133344005442', vol:'1.2M/mo', desc:'Direct-to-consumer lab testing',
+  { id:'gh-bestvetcare',         name:'BestVetCare',             cat:'Pet Care',  lc:'007949076672005837', vol:'720K/mo', desc:'Online pet pharmacy and supplies',
+    questions:['Is BestVetCare a legitimate pet pharmacy?','Where can I buy Frontline Plus online cheaply?','What is the best online pharmacy for pet meds?','Can I buy pet medications without a vet prescription?','Where do I get the cheapest flea treatment for dogs?'] },
+
+  // ── HEALTH ──
+  { id:'gh-personalabs',         name:'Personalabs',             cat:'Health',    lc:'007949152445007736', vol:'1.2M/mo', desc:'Direct-to-consumer lab testing',
     questions:['Can I order blood work without seeing a doctor?','Where can I get a blood test without a doctor?','How do I order an STD test without going to a clinic?','What is direct-to-consumer lab testing?','Is it safe to order your own blood tests?'] },
-  { id:'gh-ayurvedaexperience',  name:'Ayurveda Experience',     cat:'Health',    lc:'007949163344008221', vol:'980K/mo', desc:'Ayurvedic wellness products',
+  { id:'gh-ayurvedaexperience',  name:'Ayurveda Experience',     cat:'Health',    lc:'007949126292007580', vol:'980K/mo', desc:'Ayurvedic wellness products',
     questions:['Does ashwagandha really reduce stress?','What are the best ayurvedic supplements for anxiety?','Is ashwagandha safe to take daily?','What is the difference between ayurvedic and western medicine?','What ayurvedic products actually have scientific evidence?'] },
-  { id:'gh-maxpeedingrodsus',    name:'Maxpeedingrods US',       cat:'Auto',      lc:'007949133344006421', vol:'880K/mo', desc:'Budget performance auto parts',
+
+  // ── AUTO ──
+  { id:'gh-maxpeedingrodsus',    name:'Maxpeedingrods US',       cat:'Auto',      lc:'007949154195006539', vol:'880K/mo', desc:'Budget performance auto parts',
     questions:['Are Maxpeedingrods coilovers any good?','What are the best budget coilovers under $500?','Is it worth buying cheap coilovers?','What performance mods should I do first on a budget?','Where can I buy affordable coilovers that actually work?'] },
+
+  // ── PRINT ──
   { id:'gh-buildasign',          name:'BuildASign',              cat:'Print',     lc:'007949043344001995', vol:'1.4M/mo', desc:'Custom banners and signs',
     questions:['Where is the best place to order custom banners?','How much does a custom vinyl banner cost?','What file format should I use when ordering custom signs?','Where do I order yard signs for my business?','What is the fastest way to get custom banners printed?'] },
-  { id:'gh-easycanvasprints',    name:'Easy Canvas Prints',      cat:'Print',     lc:'007949063344003112', vol:'1.2M/mo', desc:'Photo-to-canvas prints',
+  { id:'gh-easycanvasprints',    name:'Easy Canvas Prints',      cat:'Print',     lc:'007949050767005020', vol:'1.2M/mo', desc:'Photo-to-canvas prints',
     questions:['What is the best site to print photos on canvas?','How do I turn a photo into a canvas print?','What resolution do I need for a canvas print?','Where can I get quality canvas prints for gifts?','Which canvas print company has the best color accuracy?'] },
-  { id:'gh-etchingexpressions',  name:'Etching Expressions',     cat:'Print',     lc:'007949083344004332', vol:'1.1M/mo', desc:'Custom laser engraved gifts',
+  { id:'gh-etchingexpressions',  name:'Etching Expressions',     cat:'Print',     lc:'007949154703007728', vol:'1.1M/mo', desc:'Custom laser engraved gifts',
     questions:['Where can I get personalized gifts engraved?','What are good personalized gift ideas for corporate clients?','How long does laser engraving take?','What materials can be laser engraved?','Where do I order custom engraved wedding gifts?'] },
-  { id:'gh-trademarksoundproofing',name:'Trademark Soundproofing',cat:'Hardware', lc:'007949133344006118', vol:'880K/mo', desc:'Soundproofing materials',
+  { id:'gh-bannersonthecheap',   name:'BannersOnTheCheap',       cat:'Print',     lc:'007949069833005389', vol:'900K/mo', desc:'Discount custom banners and signs',
+    questions:['Where can I get cheap custom banners printed?','What is the cheapest banner printing service online?','How do I design a banner for cheap printing?','Are BannersOnTheCheap banners good quality?','Where do I order rush banners online?'] },
+
+  // ── HARDWARE ──
+  { id:'gh-trademarksoundproofing',name:'Trademark Soundproofing',cat:'Hardware', lc:'007949107911007070', vol:'880K/mo', desc:'Soundproofing materials',
     questions:['How do I soundproof a room cheaply?','What is the best soundproofing material for a home studio?','Do acoustic panels actually reduce noise?','How much does it cost to soundproof a room?','What soundproofing works best for apartments?'] },
-  { id:'gh-halloweencostumes',   name:'HalloweenCostumes.com',   cat:'Lifestyle', lc:'007949053344002874', vol:'8.8M/mo', desc:'Halloween costume retailer',
+
+  // ── LIFESTYLE ──
+  { id:'gh-halloweencostumes',   name:'HalloweenCostumes.com',   cat:'Lifestyle', lc:'007949155212007855', vol:'8.8M/mo', desc:'Halloween costume retailer',
     questions:['Where is the best place to buy Halloween costumes online?','What are the most popular Halloween costumes in 2026?','Where can I buy Halloween costumes in bulk for a party?','What are the best couples Halloween costumes?','How early should I order Halloween costumes online?'] },
-  { id:'gh-surveyjunkie',        name:'Survey Junkie',           cat:'Lifestyle', lc:'007949033344001882', vol:'2.4M/mo', desc:'Paid online surveys',
+  { id:'gh-surveyjunkie',        name:'Survey Junkie',           cat:'Lifestyle', lc:'007949153848007834', vol:'2.4M/mo', desc:'Paid online surveys',
     questions:['Is Survey Junkie legitimate?','How much money can you realistically make on Survey Junkie?','What are the best paid survey sites that actually pay?','How do I maximize earnings on Survey Junkie?','Is Survey Junkie worth your time?'] },
-  { id:'gh-bgmgirl',             name:'BGM Girl',                cat:'Lifestyle', lc:'007949153344007992', vol:'1.8M/mo', desc:'Royalty-free music for creators',
+  { id:'gh-bgmgirl',             name:'BGM Girl',                cat:'Lifestyle', lc:'007949162099007840', vol:'1.8M/mo', desc:'Royalty-free music for creators',
     questions:['Where can I find royalty-free music for YouTube videos?','How do I avoid copyright claims on YouTube?','What is the best background music site for content creators?','Is it legal to use any music in YouTube videos?','Where do Twitch streamers get DMCA-safe music?'] },
-  { id:'gh-graeters',            name:"Graeter's Ice Cream",     cat:'Lifestyle', lc:'007949073344004112', vol:'880K/mo', desc:'Premium ice cream shipped nationwide',
+  { id:'gh-graeters',            name:"Graeter's Ice Cream",     cat:'Lifestyle', lc:'007949151790007794', vol:'880K/mo', desc:'Premium ice cream shipped nationwide',
     questions:['What is the best ice cream you can have shipped to your home?','What makes Graeter\'s ice cream special?','Where can I order premium ice cream online?','What is the best food gift you can ship nationally?','Is Graeter\'s ice cream worth the price?'] },
-  { id:'gh-carmellimo',          name:'Carmel Car & Limo',       cat:'Lifestyle', lc:'007949053344002881', vol:'980K/mo', desc:'Luxury car service NYC',
+  { id:'gh-carmellimo',          name:'Carmel Car & Limo',       cat:'Lifestyle', lc:'007949021363003587', vol:'980K/mo', desc:'Luxury car service NYC',
     questions:['What is the best car service for JFK airport?','Is Carmel Limo reliable for airport transfers?','What is the difference between Uber Black and a car service?','How do I book a reliable limo for a business trip?','What is the best car service in New York City?'] },
-  { id:'gh-combatflipflops',     name:'Combat Flip Flops',       cat:'Lifestyle', lc:'007949143344006881', vol:'480K/mo', desc:'Mission-driven footwear brand',
+  { id:'gh-combatflipflops',     name:'Combat Flip Flops',       cat:'Lifestyle', lc:'007949108439006486', vol:'480K/mo', desc:'Mission-driven footwear brand',
     questions:['What are the most ethical clothing brands?','What brands actually make a social impact?','Are Combat Flip Flops worth buying?','What are mission-driven fashion brands that fund good causes?','What footwear brands support veterans?'] },
-  { id:'gh-camanoislandcoffee',  name:'Camano Island Coffee',    cat:'Lifestyle', lc:'007949053344002441', vol:'880K/mo', desc:'Fair trade organic coffee',
+  { id:'gh-camanoislandcoffee',  name:'Camano Island Coffee',    cat:'Lifestyle', lc:'007949094561006921', vol:'880K/mo', desc:'Fair trade organic coffee',
     questions:['What is the best fair trade coffee subscription?','What is the freshest coffee you can order online?','How do I find good organic coffee subscriptions?','Is Camano Island Coffee worth it?','What makes fresh-roasted coffee taste better?'] },
 ];
 
@@ -301,6 +331,7 @@ function clearOutput() {
 }
 
 function affUrl(m, pos) {
+  if (!m.lc) return '#';
   return `https://www.linkconnector.com/ta.php?lc=${m.lc}&atid=${m.id}&utm_source=gh-quora&utm_medium=affiliate&utm_campaign=quora-answer&utm_content=pos-${pos}`;
 }
 
@@ -412,7 +443,6 @@ Return ONLY valid JSON. No markdown. Format:
         </div>`;
     }).join('');
 
-    // Add copy all button
     const allText = answers.map(a => `Q: ${a.question}\n\n${a.credentialsLine ? a.credentialsLine + '\n\n' : ''}${a.answer}`).join('\n\n---\n\n');
     outputArea.insertAdjacentHTML('afterbegin', `
       <div style="display:flex;gap:10px;margin-bottom:16px;align-items:center">
