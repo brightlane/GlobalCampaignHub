@@ -1494,7 +1494,7 @@
     {
       "slug": "etching-expressions-gifts-2026",
       "merchant": "gh-etchingexpressions",
-      "published": false,
+      "published": true,
       "title_en": "Etching Expressions Review 2026 — Best Custom Engraved Gifts?",
       "category_en": "Lifestyle",
       "metaDesc_en": "Etching Expressions review 2026. Custom laser engraved gifts for weddings, corporate events, and personal occasions. Quality, turnaround, and what to order.",
@@ -1530,7 +1530,8 @@
           "q": "Does Etching Expressions do corporate bulk orders?",
           "a": "Yes. Corporate bulk ordering is available for employee gifts, client gifts, and event merchandise."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "tasty-ribbon-food-gifts-2026",
