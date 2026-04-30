@@ -66,7 +66,7 @@
     {
       "slug": "tax-extension-deadline-guide-2026",
       "merchant": "gh-taxextension",
-      "published": false,
+      "published": true,
       "title_en": "IRS Tax Extension 2026 — File in 5 Minutes, Get 6 More Months",
       "category_en": "Tax",
       "metaDesc_en": "How to file a federal tax extension in 2026. Form 4868 filed online in minutes. Avoid the failure-to-file penalty with an automatic 6-month extension.",
@@ -102,7 +102,8 @@
           "q": "Is filing a tax extension bad?",
           "a": "No. Extensions are routine. The IRS processes millions each year with no negative consequences for the filer."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "eztaxreturn-review-2026",

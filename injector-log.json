@@ -21,5 +21,34 @@
       "pl",
       "hi"
     ]
+  },
+  {
+    "date": "2026-04-30",
+    "slug": "tax-extension-deadline-guide-2026",
+    "merchant": "gh-taxextension",
+    "title": "IRS Tax Extension 2026 — File in 5 Minutes, Get 6 More Months",
+    "languages_injected": [],
+    "languages_skipped": [
+      "en",
+      "zh",
+      "zh-tw",
+      "es",
+      "fr",
+      "de",
+      "pt",
+      "pt-br",
+      "ja",
+      "ko",
+      "it",
+      "nl",
+      "pl",
+      "hi",
+      "ar",
+      "ru",
+      "tr",
+      "id",
+      "vi",
+      "th"
+    ]
   }
 ]
