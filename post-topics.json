@@ -150,7 +150,7 @@
     {
       "slug": "nordvpn-review-2026",
       "merchant": "gh-nordvpn",
-      "published": false,
+      "published": true,
       "title_en": "NordVPN Review 2026 — Still the Best VPN?",
       "category_en": "Software",
       "metaDesc_en": "NordVPN review 2026. Speed, security, streaming access, and pricing. Is NordVPN still the top choice or have competitors caught up?",
@@ -186,7 +186,8 @@
           "q": "Is NordVPN safe?",
           "a": "Yes. NordVPN uses AES-256 encryption and has had its no-logs policy independently audited multiple times."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "depositphotos-review-2026",
