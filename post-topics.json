@@ -2428,7 +2428,7 @@
     {
       "slug": "best-discount-pet-medication-sites-in-2026-compared-1841",
       "merchant": "gh-discountpetcare",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "Best Discount Pet Medication Sites in 2026: Compared",
       "category_en": "Pet Care",
@@ -2465,7 +2465,8 @@
           "q": "What languages are supported?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "best-gourmet-food-gift-baskets-in-2026-compared-1842",
