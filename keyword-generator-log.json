@@ -2,27 +2,27 @@
   "2026-04-30": {
     "date": "2026-04-30",
     "generated": 50,
-    "total_before": 50,
-    "total_after": 100,
+    "total_before": 100,
+    "total_after": 150,
     "lang_breakdown": {
-      "en": 4,
-      "fr": 5,
-      "ja": 2,
-      "de": 7,
-      "es": 2,
-      "nl": 1,
-      "it": 2,
-      "hi": 3,
+      "ar": 3,
       "ru": 4,
-      "ko": 4,
-      "tr": 3,
-      "pl": 2,
-      "th": 2,
+      "hi": 5,
+      "ja": 2,
       "id": 2,
-      "pt": 4,
-      "zh": 2,
-      "vi": 1
+      "zh-tw": 3,
+      "en": 7,
+      "es": 1,
+      "th": 3,
+      "zh": 3,
+      "tr": 4,
+      "de": 4,
+      "it": 1,
+      "pl": 2,
+      "fr": 3,
+      "pt": 1,
+      "nl": 2
     },
-    "timestamp": "2026-04-30T23:45:08.205Z"
+    "timestamp": "2026-04-30T23:48:17.807Z"
   }
 }
