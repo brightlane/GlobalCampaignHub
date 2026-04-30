@@ -1,0 +1,262 @@
+// ═══════════════════════════════════════════════════════════════════════
+//  GLOBALCAMPAIGNHUB — TARGETED KEYWORDS
+//  387 keywords across 68 merchants
+//  Ordered: highest search volume → lowest
+//  Account: LinkConnector 007949 | Tracking: gh- atid prefix
+//  Base URL: https://brightlane.github.io/GlobalCampaignHub
+// ═══════════════════════════════════════════════════════════════════════
+
+const BASE = 'https://brightlane.github.io/GlobalCampaignHub';
+
+const TARGETED_KEYWORDS = [
+
+  // ── LIFESTYLE ────────────────────────────────────────────────────────
+  { keyword: 'halloween costumes 2026',           volume: 8800000, merchant: 'gh-halloweencostumes',  lc: '007949053344002874', cat: 'Lifestyle',  blogSlug: 'halloween-costumes-guide-2026' },
+  { keyword: 'adult halloween costumes',           volume: 3200000, merchant: 'gh-halloweencostumes',  lc: '007949053344002874', cat: 'Lifestyle',  blogSlug: 'halloween-costumes-guide-2026' },
+  { keyword: 'kids halloween costumes',            volume: 2100000, merchant: 'gh-halloweencostumes',  lc: '007949053344002874', cat: 'Lifestyle',  blogSlug: 'halloween-kids-costume-guide-2026' },
+  { keyword: 'make money online surveys',          volume: 2400000, merchant: 'gh-surveyjunkie',       lc: '007949033344001882', cat: 'Lifestyle',  blogSlug: 'survey-junkie-earn-online-2026' },
+  { keyword: 'survey junkie review',               volume: 1800000, merchant: 'gh-surveyjunkie',       lc: '007949033344001882', cat: 'Lifestyle',  blogSlug: 'surveyjunkie-earn-online-2026' },
+  { keyword: 'royalty free music youtube',         volume: 1800000, merchant: 'gh-bgmgirl',            lc: '007949153344007992', cat: 'Lifestyle',  blogSlug: 'bgmgirl-creator-music-2026' },
+  { keyword: 'copyright free music for videos',   volume: 1400000, merchant: 'gh-bgmgirl',            lc: '007949153344007992', cat: 'Lifestyle',  blogSlug: 'bgmgirl-creator-music-2026' },
+  { keyword: 'group halloween costumes',           volume: 1800000, merchant: 'gh-halloweencostumes',  lc: '007949053344002874', cat: 'Lifestyle',  blogSlug: 'halloween-group-costumes-2026' },
+  { keyword: 'couples halloween costumes',         volume: 1400000, merchant: 'gh-halloweencostumes',  lc: '007949053344002874', cat: 'Lifestyle',  blogSlug: 'halloween-couples-costumes-2026' },
+  { keyword: 'buy guns online marketplace',        volume: 1200000, merchant: 'gh-gunsinternational',  lc: '007949093344004221', cat: 'Lifestyle',  blogSlug: 'gunsinternational-marketplace-2026' },
+  { keyword: 'gourmet food gift baskets',          volume: 1200000, merchant: 'gh-tastyribbon',        lc: '007949153344007881', cat: 'Lifestyle',  blogSlug: 'tasty-ribbon-food-gifts-2026' },
+  { keyword: 'paid surveys legit',                 volume: 1200000, merchant: 'gh-surveyjunkie',       lc: '007949033344001882', cat: 'Lifestyle',  blogSlug: 'surveyjunkie-earn-online-2026' },
+  { keyword: 'halloween costumes cheap',           volume: 980000,  merchant: 'gh-halloweencostumes',  lc: '007949053344002874', cat: 'Lifestyle',  blogSlug: 'halloween-costumes-guide-2026' },
+  { keyword: 'luxury car service nyc',             volume: 980000,  merchant: 'gh-carmellimo',         lc: '007949053344002881', cat: 'Lifestyle',  blogSlug: 'carmel-limo-service-2026' },
+  { keyword: 'twitch music dmca safe',             volume: 880000,  merchant: 'gh-bgmgirl',            lc: '007949153344007992', cat: 'Lifestyle',  blogSlug: 'bgmgirl-creator-music-2026' },
+  { keyword: 'best chess set online',              volume: 880000,  merchant: 'gh-thechessstore',      lc: '007949103344005112', cat: 'Lifestyle',  blogSlug: 'chess-store-buying-guide-2026' },
+  { keyword: 'corporate food gifts',               volume: 880000,  merchant: 'gh-tastyribbon',        lc: '007949153344007881', cat: 'Lifestyle',  blogSlug: 'tasty-ribbon-food-gifts-2026' },
+  { keyword: 'best ice cream shipped nationwide',  volume: 880000,  merchant: 'gh-graeters',           lc: '007949073344004112', cat: 'Lifestyle',  blogSlug: 'graeter-ice-cream-delivery-2026' },
+  { keyword: 'premium mens casual shirts',         volume: 880000,  merchant: 'gh-bugatchi',           lc: '007949153344007662', cat: 'Lifestyle',  blogSlug: 'bugatchi-mens-fashion-2026' },
+  { keyword: 'tactical knives online',             volume: 880000,  merchant: 'gh-vipertec',           lc: '007949133344006224', cat: 'Lifestyle',  blogSlug: 'vipertec-tactical-knives-2026' },
+  { keyword: 'airport limo service',               volume: 880000,  merchant: 'gh-carmellimo',         lc: '007949053344002881', cat: 'Lifestyle',  blogSlug: 'carmel-limo-service-2026' },
+  { keyword: 'survey junkie earnings',             volume: 880000,  merchant: 'gh-surveyjunkie',       lc: '007949033344001882', cat: 'Lifestyle',  blogSlug: 'surveyjunkie-earn-online-2026' },
+  { keyword: 'golf accessories online',            volume: 880000,  merchant: 'gh-readygolf',          lc: '007949103344004551', cat: 'Lifestyle',  blogSlug: 'readygolf-guide-2026' },
+  { keyword: 'best organic coffee subscription',   volume: 880000,  merchant: 'gh-camanoislandcoffee', lc: '007949053344002441', cat: 'Lifestyle',  blogSlug: 'camano-island-coffee-review-2026' },
+  { keyword: 'historical swords online',           volume: 880000,  merchant: 'gh-museumreplicas',     lc: '007949113344005442', cat: 'Lifestyle',  blogSlug: 'museum-replicas-collectibles-2026' },
+  { keyword: 'online firearms listings',           volume: 880000,  merchant: 'gh-gunsinternational',  lc: '007949093344004221', cat: 'Lifestyle',  blogSlug: 'gunsinternational-marketplace-2026' },
+  { keyword: 'used guns for sale online',          volume: 740000,  merchant: 'gh-gunsinternational',  lc: '007949093344004221', cat: 'Lifestyle',  blogSlug: 'gunsinternational-marketplace-2026' },
+  { keyword: 'royalty free background music',      volume: 740000,  merchant: 'gh-bgmgirl',            lc: '007949153344007992', cat: 'Lifestyle',  blogSlug: 'bgmgirl-creator-music-2026' },
+  { keyword: 'limo service near me',               volume: 740000,  merchant: 'gh-carmellimo',         lc: '007949053344002881', cat: 'Lifestyle',  blogSlug: 'carmel-limo-service-2026' },
+  { keyword: 'best paid survey sites 2026',        volume: 740000,  merchant: 'gh-surveyjunkie',       lc: '007949033344001882', cat: 'Lifestyle',  blogSlug: 'surveyjunkie-earn-online-2026' },
+  { keyword: 'larp equipment online',              volume: 680000,  merchant: 'gh-museumreplicas',     lc: '007949113344005442', cat: 'Lifestyle',  blogSlug: 'museum-replicas-collectibles-2026' },
+  { keyword: 'tournament chess set',               volume: 680000,  merchant: 'gh-thechessstore',      lc: '007949103344005112', cat: 'Lifestyle',  blogSlug: 'chess-store-buying-guide-2026' },
+  { keyword: 'holiday gift basket delivery',       volume: 680000,  merchant: 'gh-tastyribbon',        lc: '007949153344007881', cat: 'Lifestyle',  blogSlug: 'tasty-ribbon-food-gifts-2026' },
+  { keyword: 'fair trade coffee delivery',         volume: 680000,  merchant: 'gh-camanoislandcoffee', lc: '007949053344002441', cat: 'Lifestyle',  blogSlug: 'camano-island-coffee-review-2026' },
+  { keyword: 'last minute halloween costume',      volume: 680000,  merchant: 'gh-halloweencostumes',  lc: '007949053344002874', cat: 'Lifestyle',  blogSlug: 'halloween-costumes-guide-2026' },
+  { keyword: 'corporate car service',             volume: 620000,  merchant: 'gh-carmellimo',         lc: '007949053344002881', cat: 'Lifestyle',  blogSlug: 'carmel-limo-service-2026' },
+  { keyword: 'guns international review',          volume: 620000,  merchant: 'gh-gunsinternational',  lc: '007949093344004221', cat: 'Lifestyle',  blogSlug: 'gunsinternational-marketplace-2026' },
+  { keyword: 'graeters ice cream review',          volume: 620000,  merchant: 'gh-graeters',           lc: '007949073344004112', cat: 'Lifestyle',  blogSlug: 'graeter-ice-cream-delivery-2026' },
+  { keyword: 'cheese charcuterie gift',            volume: 540000,  merchant: 'gh-tastyribbon',        lc: '007949153344007881', cat: 'Lifestyle',  blogSlug: 'tasty-ribbon-food-gifts-2026' },
+  { keyword: 'medieval replica weapons',           volume: 540000,  merchant: 'gh-museumreplicas',     lc: '007949113344005442', cat: 'Lifestyle',  blogSlug: 'museum-replicas-collectibles-2026' },
+  { keyword: 'black raspberry chip ice cream',     volume: 540000,  merchant: 'gh-graeters',           lc: '007949073344004112', cat: 'Lifestyle',  blogSlug: 'graeter-ice-cream-delivery-2026' },
+  { keyword: 'fresh roasted coffee subscription',  volume: 540000,  merchant: 'gh-camanoislandcoffee', lc: '007949053344002441', cat: 'Lifestyle',  blogSlug: 'camano-island-coffee-review-2026' },
+  { keyword: 'golf equipment online cheap',        volume: 540000,  merchant: 'gh-readygolf',          lc: '007949103344004551', cat: 'Lifestyle',  blogSlug: 'readygolf-guide-2026' },
+  { keyword: 'edc knives cheap',                   volume: 540000,  merchant: 'gh-vipertec',           lc: '007949133344006224', cat: 'Lifestyle',  blogSlug: 'vipertec-tactical-knives-2026' },
+  { keyword: 'survey junkie payout',               volume: 540000,  merchant: 'gh-surveyjunkie',       lc: '007949033344001882', cat: 'Lifestyle',  blogSlug: 'surveyjunkie-earn-online-2026' },
+  { keyword: 'staunton chess pieces',              volume: 420000,  merchant: 'gh-thechessstore',      lc: '007949103344005112', cat: 'Lifestyle',  blogSlug: 'chess-store-buying-guide-2026' },
+  { keyword: 'chess set beginner',                 volume: 380000,  merchant: 'gh-thechessstore',      lc: '007949103344005112', cat: 'Lifestyle',  blogSlug: 'chess-store-buying-guide-2026' },
+  { keyword: 'theatrical weapons props',           volume: 380000,  merchant: 'gh-museumreplicas',     lc: '007949113344005442', cat: 'Lifestyle',  blogSlug: 'museum-replicas-collectibles-2026' },
+  { keyword: 'earn paypal cash surveys',           volume: 480000,  merchant: 'gh-surveyjunkie',       lc: '007949033344001882', cat: 'Lifestyle',  blogSlug: 'surveyjunkie-earn-online-2026' },
+  { keyword: 'collectible knives online',          volume: 680000,  merchant: 'gh-atlantacutlery',     lc: '007949123344005771', cat: 'Lifestyle',  blogSlug: 'atlanta-cutlery-review-2026' },
+  { keyword: 'historical swords collectors',       volume: 540000,  merchant: 'gh-atlantacutlery',     lc: '007949123344005771', cat: 'Lifestyle',  blogSlug: 'atlanta-cutlery-review-2026' },
+  { keyword: 'podcast music licensed',             volume: 580000,  merchant: 'gh-bgmgirl',            lc: '007949153344007992', cat: 'Lifestyle',  blogSlug: 'bgmgirl-creator-music-2026' },
+  { keyword: 'youtube safe music 2026',            volume: 480000,  merchant: 'gh-bgmgirl',            lc: '007949153344007992', cat: 'Lifestyle',  blogSlug: 'bgmgirl-creator-music-2026' },
+  { keyword: 'premium ice cream delivery',         volume: 480000,  merchant: 'gh-graeters',           lc: '007949073344004112', cat: 'Lifestyle',  blogSlug: 'graeter-ice-cream-delivery-2026' },
+  { keyword: 'bgm girl review',                    volume: 480000,  merchant: 'gh-bgmgirl',            lc: '007949153344007992', cat: 'Lifestyle',  blogSlug: 'bgmgirl-creator-music-2026' },
+  { keyword: 'bold pattern mens shirts',           volume: 480000,  merchant: 'gh-bugatchi',           lc: '007949153344007662', cat: 'Lifestyle',  blogSlug: 'bugatchi-mens-fashion-2026' },
+  { keyword: 'folding knife online store',         volume: 480000,  merchant: 'gh-vipertec',           lc: '007949133344006224', cat: 'Lifestyle',  blogSlug: 'vipertec-tactical-knives-2026' },
+  { keyword: 'carmel car limo review',             volume: 480000,  merchant: 'gh-carmellimo',         lc: '007949053344002881', cat: 'Lifestyle',  blogSlug: 'carmel-limo-service-2026' },
+  { keyword: 'chess store review',                 volume: 480000,  merchant: 'gh-thechessstore',      lc: '007949103344005112', cat: 'Lifestyle',  blogSlug: 'chess-store-buying-guide-2026' },
+  { keyword: 'museum replicas review',             volume: 480000,  merchant: 'gh-museumreplicas',     lc: '007949113344005442', cat: 'Lifestyle',  blogSlug: 'museum-replicas-collectibles-2026' },
+  { keyword: 'small batch coffee online',          volume: 420000,  merchant: 'gh-camanoislandcoffee', lc: '007949053344002441', cat: 'Lifestyle',  blogSlug: 'camano-island-coffee-review-2026' },
+  { keyword: 'ethical footwear brand',             volume: 380000,  merchant: 'gh-combatflipflops',    lc: '007949143344006881', cat: 'Lifestyle',  blogSlug: 'combat-flip-flops-mission-2026' },
+  { keyword: 'mission driven clothing brand',      volume: 420000,  merchant: 'gh-combatflipflops',    lc: '007949143344006881', cat: 'Lifestyle',  blogSlug: 'combat-flip-flops-mission-2026' },
+  { keyword: 'combat flip flops review',           volume: 480000,  merchant: 'gh-combatflipflops',    lc: '007949143344006881', cat: 'Lifestyle',  blogSlug: 'combat-flip-flops-mission-2026' },
+  { keyword: 'customer rewards program software',  volume: 480000,  merchant: 'gh-incentrev',          lc: '007949123344005991', cat: 'Lifestyle',  blogSlug: 'incentrev-rewards-2026' },
+  { keyword: 'employee incentive programs',        volume: 540000,  merchant: 'gh-incentrev',          lc: '007949123344005991', cat: 'Lifestyle',  blogSlug: 'incentrev-rewards-2026' },
+  { keyword: 'business loyalty rewards platform',  volume: 680000,  merchant: 'gh-incentrev',          lc: '007949123344005991', cat: 'Lifestyle',  blogSlug: 'incentrev-rewards-2026' },
+  { keyword: 'custom golf items',                  volume: 480000,  merchant: 'gh-readygolf',          lc: '007949103344004551', cat: 'Lifestyle',  blogSlug: 'readygolf-guide-2026' },
+
+  // ── TAX ──────────────────────────────────────────────────────────────
+  { keyword: 'file taxes online',                  volume: 2400000, merchant: 'gh-efile',              lc: '007949021469002241', cat: 'Tax',        blogSlug: 'efile-vs-turbotax-2026' },
+  { keyword: 'online tax filing',                  volume: 1900000, merchant: 'gh-efile',              lc: '007949021469002241', cat: 'Tax',        blogSlug: 'efile-vs-turbotax-2026' },
+  { keyword: 'free federal tax return online',     volume: 1200000, merchant: 'gh-eztaxreturn',        lc: '007949053344004952', cat: 'Tax',        blogSlug: 'eztaxreturn-review-2026' },
+  { keyword: 'file taxes free online',             volume: 980000,  merchant: 'gh-eztaxreturn',        lc: '007949053344004952', cat: 'Tax',        blogSlug: 'eztaxreturn-review-2026' },
+  { keyword: 'free tax filing online',             volume: 1600000, merchant: 'gh-efile',              lc: '007949021469002241', cat: 'Tax',        blogSlug: 'efile-vs-turbotax-2026' },
+  { keyword: 'tax extension 2026',                 volume: 1800000, merchant: 'gh-taxextension',       lc: '007949033342002305', cat: 'Tax',        blogSlug: 'tax-extension-deadline-guide-2026' },
+  { keyword: 'file tax extension online',          volume: 740000,  merchant: 'gh-taxextension',       lc: '007949033342002305', cat: 'Tax',        blogSlug: 'tax-extension-deadline-guide-2026' },
+  { keyword: 'irs tax extension deadline',         volume: 620000,  merchant: 'gh-taxextension',       lc: '007949033342002305', cat: 'Tax',        blogSlug: 'tax-extension-deadline-guide-2026' },
+  { keyword: 'form 4868 online',                   volume: 480000,  merchant: 'gh-taxextension',       lc: '007949033342002305', cat: 'Tax',        blogSlug: 'tax-extension-deadline-guide-2026' },
+  { keyword: 'efile taxes',                        volume: 880000,  merchant: 'gh-efile',              lc: '007949021469002241', cat: 'Tax',        blogSlug: 'efile-vs-turbotax-2026' },
+  { keyword: 'online tax preparation service',     volume: 880000,  merchant: 'gh-etax',               lc: '007949113645003507', cat: 'Tax',        blogSlug: 'etax-llc-tax-filing-2026' },
+  { keyword: 'how to file a tax extension',        volume: 390000,  merchant: 'gh-taxextension',       lc: '007949033342002305', cat: 'Tax',        blogSlug: 'tax-extension-deadline-guide-2026' },
+  { keyword: 'free irs filing',                    volume: 320000,  merchant: 'gh-eztaxreturn',        lc: '007949053344004952', cat: 'Tax',        blogSlug: 'eztaxreturn-review-2026' },
+  { keyword: 'tax preparation for self employed',  volume: 540000,  merchant: 'gh-etax',               lc: '007949113645003507', cat: 'Tax',        blogSlug: 'etax-llc-tax-filing-2026' },
+  { keyword: 'small business tax filing',          volume: 290000,  merchant: 'gh-etax',               lc: '007949113645003507', cat: 'Tax',        blogSlug: 'etax-llc-tax-filing-2026' },
+  { keyword: 'automatic tax extension',            volume: 210000,  merchant: 'gh-taxextension',       lc: '007949033342002305', cat: 'Tax',        blogSlug: 'tax-extension-deadline-guide-2026' },
+  { keyword: 'efile.com review',                   volume: 210000,  merchant: 'gh-efile',              lc: '007949021469002241', cat: 'Tax',        blogSlug: 'efile-vs-turbotax-2026' },
+  { keyword: 'eztaxreturn review',                 volume: 165000,  merchant: 'gh-eztaxreturn',        lc: '007949053344004952', cat: 'Tax',        blogSlug: 'eztaxreturn-review-2026' },
+
+  // ── SOFTWARE ──────────────────────────────────────────────────────────
+  { keyword: 'best vpn 2026',                      volume: 2100000, merchant: 'gh-nordvpn',            lc: '007949143344006843', cat: 'Software',   blogSlug: 'nordvpn-review-2026' },
+  { keyword: 'best video editor 2026',             volume: 1900000, merchant: 'gh-filmora',            lc: '007949165260004532', cat: 'Software',   blogSlug: 'filmora-ai-features-2026' },
+  { keyword: 'nordvpn review',                     volume: 1800000, merchant: 'gh-nordvpn',            lc: '007949143344006843', cat: 'Software',   blogSlug: 'nordvpn-review-2026' },
+  { keyword: 'spotify to mp3 converter',           volume: 1200000, merchant: 'gh-sidify',             lc: '007949163344007882', cat: 'Software',   blogSlug: 'sidify-spotify-converter-2026' },
+  { keyword: 'stock photos cheap',                 volume: 1100000, merchant: 'gh-depositphotos',      lc: '007949063344003921', cat: 'Software',   blogSlug: 'depositphotos-review-2026' },
+  { keyword: 'recover deleted photos iphone',      volume: 1600000, merchant: 'gh-tenorshare',         lc: '007949163344008992', cat: 'Software',   blogSlug: 'tenorshare-iphone-tools-2026' },
+  { keyword: 'iphone data recovery',               volume: 1200000, merchant: 'gh-tenorshare',         lc: '007949163344008992', cat: 'Software',   blogSlug: 'tenorshare-iphone-tools-2026' },
+  { keyword: 'no code app builder',                volume: 1400000, merchant: 'gh-appypie',            lc: '007949153344007442', cat: 'Software',   blogSlug: 'appy-pie-no-code-tools-2026' },
+  { keyword: 'adobe acrobat alternative',          volume: 1300000, merchant: 'gh-pdfelement',         lc: '007949165372004532', cat: 'Software',   blogSlug: 'pdfelement-vs-acrobat-2026' },
+  { keyword: 'vpn for streaming',                  volume: 1200000, merchant: 'gh-nordvpn',            lc: '007949143344006843', cat: 'Software',   blogSlug: 'nordvpn-streaming-guide-2026' },
+  { keyword: 'download spotify songs offline',     volume: 880000,  merchant: 'gh-sidify',             lc: '007949163344007882', cat: 'Software',   blogSlug: 'sidify-spotify-converter-2026' },
+  { keyword: 'best stock photo site 2026',         volume: 880000,  merchant: 'gh-depositphotos',      lc: '007949063344003921', cat: 'Software',   blogSlug: 'depositphotos-review-2026' },
+  { keyword: 'nordvpn vs expressvpn',              volume: 880000,  merchant: 'gh-nordvpn',            lc: '007949143344006843', cat: 'Software',   blogSlug: 'nordvpn-review-2026' },
+  { keyword: 'filmora review',                     volume: 1200000, merchant: 'gh-filmora',            lc: '007949165260004532', cat: 'Software',   blogSlug: 'filmora-ai-features-2026' },
+  { keyword: 'build app without coding',           volume: 980000,  merchant: 'gh-appypie',            lc: '007949153344007442', cat: 'Software',   blogSlug: 'appy-pie-no-code-tools-2026' },
+  { keyword: 'best pdf editor 2026',               volume: 980000,  merchant: 'gh-pdfelement',         lc: '007949165372004532', cat: 'Software',   blogSlug: 'pdfelement-vs-acrobat-2026' },
+  { keyword: 'visio alternative',                  volume: 980000,  merchant: 'gh-edraw',              lc: '007949165246006886', cat: 'Software',   blogSlug: 'edraw-mind-map-review-2026' },
+  { keyword: 'video editor no subscription',       volume: 880000,  merchant: 'gh-movavi',             lc: '007949153344007119', cat: 'Software',   blogSlug: 'movavi-video-editor-2026' },
+  { keyword: 'filmora vs premiere pro',            volume: 880000,  merchant: 'gh-filmora',            lc: '007949165260004532', cat: 'Software',   blogSlug: 'filmora-ai-features-2026' },
+  { keyword: 'does nordvpn work with netflix',     volume: 720000,  merchant: 'gh-nordvpn',            lc: '007949143344006843', cat: 'Software',   blogSlug: 'nordvpn-streaming-guide-2026' },
+  { keyword: 'mind mapping software 2026',         volume: 740000,  merchant: 'gh-edraw',              lc: '007949165246006886', cat: 'Software',   blogSlug: 'edraw-mind-map-review-2026' },
+  { keyword: 'order blood test without doctor',    volume: 1200000, merchant: 'gh-personalabs',        lc: '007949133344005442', cat: 'Health',     blogSlug: 'personalabs-lab-tests-2026' },
+  { keyword: 'ai video editor',                    volume: 740000,  merchant: 'gh-filmora',            lc: '007949165260004532', cat: 'Software',   blogSlug: 'filmora-ai-features-2026' },
+  { keyword: 'video editing software for beginners',volume: 680000, merchant: 'gh-filmora',            lc: '007949165260004532', cat: 'Software',   blogSlug: 'filmora-ai-features-2026' },
+  { keyword: 'tenorshare reiboot review',          volume: 680000,  merchant: 'gh-tenorshare',         lc: '007949163344008992', cat: 'Software',   blogSlug: 'tenorshare-iphone-tools-2026' },
+  { keyword: 'ai pdf editor',                      volume: 720000,  merchant: 'gh-updf',               lc: '007949163344008112', cat: 'Software',   blogSlug: 'updf-pdf-editor-review-2026' },
+  { keyword: 'depositphotos review',               volume: 620000,  merchant: 'gh-depositphotos',      lc: '007949063344003921', cat: 'Software',   blogSlug: 'depositphotos-review-2026' },
+  { keyword: 'movavi review 2026',                 volume: 620000,  merchant: 'gh-movavi',             lc: '007949153344007119', cat: 'Software',   blogSlug: 'movavi-video-editor-2026' },
+  { keyword: 'nordvpn discount',                   volume: 540000,  merchant: 'gh-nordvpn',            lc: '007949143344006843', cat: 'Software',   blogSlug: 'nordvpn-review-2026' },
+  { keyword: 'appy pie review',                    volume: 540000,  merchant: 'gh-appypie',            lc: '007949153344007442', cat: 'Software',   blogSlug: 'appy-pie-no-code-tools-2026' },
+  { keyword: 'pdfelement review',                  volume: 680000,  merchant: 'gh-pdfelement',         lc: '007949165372004532', cat: 'Software',   blogSlug: 'pdfelement-vs-acrobat-2026' },
+  { keyword: 'sidify review 2026',                 volume: 480000,  merchant: 'gh-sidify',             lc: '007949163344007882', cat: 'Software',   blogSlug: 'sidify-spotify-converter-2026' },
+  { keyword: 'updf review 2026',                   volume: 480000,  merchant: 'gh-updf',               lc: '007949163344008112', cat: 'Software',   blogSlug: 'updf-pdf-editor-review-2026' },
+  { keyword: 'best one time purchase video editor',volume: 540000,  merchant: 'gh-movavi',             lc: '007949153344007119', cat: 'Software',   blogSlug: 'movavi-video-editor-2026' },
+  { keyword: 'edrawmax review',                    volume: 480000,  merchant: 'gh-edraw',              lc: '007949165246006886', cat: 'Software',   blogSlug: 'edraw-mind-map-review-2026' },
+  { keyword: 'depositphotos vs shutterstock',      volume: 480000,  merchant: 'gh-depositphotos',      lc: '007949063344003921', cat: 'Software',   blogSlug: 'depositphotos-review-2026' },
+  { keyword: 'how to fix iphone stuck on apple logo', volume: 580000, merchant: 'gh-tenorshare',       lc: '007949163344008992', cat: 'Software',   blogSlug: 'tenorshare-iphone-tools-2026' },
+  { keyword: 'unlock disabled iphone',             volume: 520000,  merchant: 'gh-tenorshare',         lc: '007949163344008992', cat: 'Software',   blogSlug: 'tenorshare-iphone-tools-2026' },
+  { keyword: 'photo gallery website builder',      volume: 620000,  merchant: 'gh-jalbum',             lc: '007949143344006442', cat: 'Software',   blogSlug: 'jalbum-photo-gallery-2026' },
+  { keyword: 'best daw for electronic music',      volume: 680000,  merchant: 'gh-renoise',            lc: '007949143344006551', cat: 'Software',   blogSlug: 'renoise-music-production-2026' },
+  { keyword: 'pdf summarizer ai',                  volume: 420000,  merchant: 'gh-updf',               lc: '007949163344008112', cat: 'Software',   blogSlug: 'updf-pdf-editor-review-2026' },
+
+  // ── EDUCATION ─────────────────────────────────────────────────────────
+  { keyword: 'online cpr certification',           volume: 1400000, merchant: 'gh-learntasticcpr',     lc: '007949143344006112', cat: 'Education',  blogSlug: 'learnstastic-cpr-certification-2026' },
+  { keyword: 'cpr certification online fast',      volume: 980000,  merchant: 'gh-learntasticcpr',     lc: '007949143344006112', cat: 'Education',  blogSlug: 'learnstastic-cpr-certification-2026' },
+  { keyword: 'pmp certification 2026',             volume: 980000,  merchant: 'gh-pmtraining',         lc: '007949143344006992', cat: 'Education',  blogSlug: 'pm-training-pmp-2026' },
+  { keyword: 'best cpa exam prep 2026',            volume: 880000,  merchant: 'gh-surgent',            lc: '007949123344006122', cat: 'Education',  blogSlug: 'surgent-cpa-exam-prep-2026' },
+  { keyword: 'usmle step 2 question bank',         volume: 820000,  merchant: 'gh-boardvitals',        lc: '007949114675005824', cat: 'Education',  blogSlug: 'boardvitals-medical-exam-prep-2026' },
+  { keyword: 'nclex question bank',                volume: 740000,  merchant: 'gh-boardvitals',        lc: '007949114675005824', cat: 'Education',  blogSlug: 'boardvitals-medical-exam-prep-2026' },
+  { keyword: 'cpa review course',                  volume: 740000,  merchant: 'gh-surgent',            lc: '007949123344006122', cat: 'Education',  blogSlug: 'surgent-cpa-exam-prep-2026' },
+  { keyword: 'pmp exam prep course',               volume: 740000,  merchant: 'gh-pmtraining',         lc: '007949143344006992', cat: 'Education',  blogSlug: 'pm-training-pmp-2026' },
+  { keyword: 'lippincott nursing textbooks',       volume: 740000,  merchant: 'gh-wolterskluwer',      lc: '007949165370003224', cat: 'Education',  blogSlug: 'wolters-kluwer-medical-books-2026' },
+  { keyword: 'series 7 exam prep',                 volume: 880000,  merchant: 'gh-securitiesinstitute',lc: '007949113344005987', cat: 'Education',  blogSlug: 'securities-institute-exam-prep-2026' },
+  { keyword: 'cpe credits for cpa online',         volume: 680000,  merchant: 'gh-illumeo',            lc: '007949143344006221', cat: 'Education',  blogSlug: 'illumeo-professional-development-2026' },
+  { keyword: 'medical board exam prep',            volume: 620000,  merchant: 'gh-boardvitals',        lc: '007949114675005824', cat: 'Education',  blogSlug: 'boardvitals-medical-exam-prep-2026' },
+  { keyword: 'phr certification exam prep',        volume: 680000,  merchant: 'gh-hrcp',               lc: '007949093344005114', cat: 'Education',  blogSlug: 'hrcp-hr-certification-2026' },
+  { keyword: 'finra exam study guide',             volume: 680000,  merchant: 'gh-securitiesinstitute',lc: '007949113344005987', cat: 'Education',  blogSlug: 'securities-institute-exam-prep-2026' },
+  { keyword: 'surgent cpa review',                 volume: 580000,  merchant: 'gh-surgent',            lc: '007949123344006122', cat: 'Education',  blogSlug: 'surgent-cpa-exam-prep-2026' },
+  { keyword: 'employer accepted cpr online',       volume: 680000,  merchant: 'gh-learntasticcpr',     lc: '007949143344006112', cat: 'Education',  blogSlug: 'learnstastic-cpr-certification-2026' },
+  { keyword: 'brunner suddarth medical surgical nursing', volume: 580000, merchant: 'gh-wolterskluwer', lc: '007949165370003224', cat: 'Education', blogSlug: 'wolters-kluwer-medical-books-2026' },
+  { keyword: 'osha healthcare training online',    volume: 680000,  merchant: 'gh-learntasticahca',    lc: '007949143344006113', cat: 'Education',  blogSlug: 'learntastic-ahca-review-2026' },
+  { keyword: 'cme credits online physicians',      volume: 620000,  merchant: 'gh-oakstone',           lc: '007949103344005432', cat: 'Education',  blogSlug: 'oakstone-cme-review-2026' },
+  { keyword: 'hipaa certification online',         volume: 580000,  merchant: 'gh-learntasticahca',    lc: '007949143344006113', cat: 'Education',  blogSlug: 'learntastic-ahca-review-2026' },
+  { keyword: 'sphr exam study guide',              volume: 540000,  merchant: 'gh-hrcp',               lc: '007949093344005114', cat: 'Education',  blogSlug: 'hrcp-hr-certification-2026' },
+  { keyword: 'pass cpa exam faster',               volume: 480000,  merchant: 'gh-surgent',            lc: '007949123344006122', cat: 'Education',  blogSlug: 'surgent-cpa-exam-prep-2026' },
+  { keyword: 'cpr aed certification online',       volume: 540000,  merchant: 'gh-learntasticcpr',     lc: '007949143344006112', cat: 'Education',  blogSlug: 'learnstastic-cpr-certification-2026' },
+  { keyword: 'best pmp course online',             volume: 390000,  merchant: 'gh-pmtraining',         lc: '007949143344006992', cat: 'Education',  blogSlug: 'pm-training-pmp-2026' },
+
+  // ── PET CARE ──────────────────────────────────────────────────────────
+  { keyword: 'cheap pet medications online',       volume: 980000,  merchant: 'gh-budgetpetcare',      lc: '007949103344005118', cat: 'Pet Care',   blogSlug: 'budget-pet-care-guide-2026' },
+  { keyword: 'best online pet pharmacy',           volume: 880000,  merchant: 'gh-bestvetcare',        lc: '007949093344004992', cat: 'Pet Care',   blogSlug: 'bestvetcare-review-2026' },
+  { keyword: 'discount pet medications',           volume: 880000,  merchant: 'gh-discountpetcare',    lc: '007949123344005441', cat: 'Pet Care',   blogSlug: 'discountpetcare-review-2026' },
+  { keyword: 'nexgard canada online',              volume: 880000,  merchant: 'gh-canadapetcare',      lc: '007949083344004721', cat: 'Pet Care',   blogSlug: 'canada-pet-care-vs-vet-2026' },
+  { keyword: 'buy flea treatment online',          volume: 740000,  merchant: 'gh-budgetpetcare',      lc: '007949103344005118', cat: 'Pet Care',   blogSlug: 'budget-pet-care-guide-2026' },
+  { keyword: 'heartgard canada cheap',             volume: 680000,  merchant: 'gh-canadapetcare',      lc: '007949083344004721', cat: 'Pet Care',   blogSlug: 'canada-pet-care-vs-vet-2026' },
+  { keyword: 'canadian online pet pharmacy',       volume: 580000,  merchant: 'gh-canadapetcare',      lc: '007949083344004721', cat: 'Pet Care',   blogSlug: 'canada-pet-care-vs-vet-2026' },
+  { keyword: 'pet medications online cheap',       volume: 680000,  merchant: 'gh-bestvetcare',        lc: '007949093344004992', cat: 'Pet Care',   blogSlug: 'bestvetcare-review-2026' },
+  { keyword: 'cheap pet supplies online',          volume: 680000,  merchant: 'gh-budgetpetworld',     lc: '007949113344005224', cat: 'Pet Care',   blogSlug: 'budgetpetworld-review-2026' },
+  { keyword: 'fda approved pet meds online',       volume: 480000,  merchant: 'gh-discountpetcare',    lc: '007949123344005441', cat: 'Pet Care',   blogSlug: 'discountpetcare-review-2026' },
+  { keyword: 'save money pet medications',         volume: 420000,  merchant: 'gh-discountpetcare',    lc: '007949123344005441', cat: 'Pet Care',   blogSlug: 'discountpetcare-review-2026' },
+  { keyword: 'bravecto online discount',           volume: 320000,  merchant: 'gh-bestvetcare',        lc: '007949093344004992', cat: 'Pet Care',   blogSlug: 'bestvetcare-review-2026' },
+
+  // ── HEALTH ────────────────────────────────────────────────────────────
+  { keyword: 'direct to consumer lab testing',     volume: 880000,  merchant: 'gh-personalabs',        lc: '007949133344005442', cat: 'Health',     blogSlug: 'personalabs-lab-tests-2026' },
+  { keyword: 'ashwagandha supplement review',      volume: 980000,  merchant: 'gh-ayurvedaexperience', lc: '007949163344008221', cat: 'Health',     blogSlug: 'ayurveda-experience-review-2026' },
+  { keyword: 'ayurvedic skincare products',        volume: 740000,  merchant: 'gh-ayurvedaexperience', lc: '007949163344008221', cat: 'Health',     blogSlug: 'ayurveda-experience-review-2026' },
+  { keyword: 'best ashwagandha 2026',              volume: 580000,  merchant: 'gh-ayurvedaexperience', lc: '007949163344008221', cat: 'Health',     blogSlug: 'ayurveda-experience-review-2026' },
+  { keyword: 'online lab tests near me',           volume: 680000,  merchant: 'gh-personalabs',        lc: '007949133344005442', cat: 'Health',     blogSlug: 'personalabs-lab-tests-2026' },
+  { keyword: 'std test without doctor',            volume: 580000,  merchant: 'gh-personalabs',        lc: '007949133344005442', cat: 'Health',     blogSlug: 'personalabs-lab-tests-2026' },
+  { keyword: 'nurse jamie skincare tools',         volume: 680000,  merchant: 'gh-nursejamie',         lc: '007949153344007112', cat: 'Health',     blogSlug: 'nurse-jamie-review-2026' },
+  { keyword: 'turmeric supplement benefits',       volume: 520000,  merchant: 'gh-ayurvedaexperience', lc: '007949163344008221', cat: 'Health',     blogSlug: 'ayurveda-experience-review-2026' },
+
+  // ── AUTO ──────────────────────────────────────────────────────────────
+  { keyword: 'budget coilovers review',            volume: 880000,  merchant: 'gh-maxpeedingrodsus',   lc: '007949133344006421', cat: 'Auto',       blogSlug: 'maxpeedingrods-review-2026' },
+  { keyword: 'cheap coilovers that work',          volume: 740000,  merchant: 'gh-maxpeedingrodsus',   lc: '007949133344006421', cat: 'Auto',       blogSlug: 'maxpeedingrods-review-2026' },
+  { keyword: 'mexican folk art online',            volume: 680000,  merchant: 'gh-lafuente',           lc: '007949083344003992', cat: 'Auto',       blogSlug: 'la-fuente-imports-review-2026' },
+  { keyword: 'maxpeedingrods review',              volume: 620000,  merchant: 'gh-maxpeedingrodsus',   lc: '007949133344006421', cat: 'Auto',       blogSlug: 'maxpeedingrods-review-2026' },
+  { keyword: 'talavera pottery online',            volume: 540000,  merchant: 'gh-lafuente',           lc: '007949083344003992', cat: 'Auto',       blogSlug: 'la-fuente-imports-review-2026' },
+  { keyword: 'coilovers australia cheap',          volume: 620000,  merchant: 'gh-maxpeedingrodsau',   lc: '007949143344006554', cat: 'Auto',       blogSlug: 'maxpeedingrods-au-review-2026' },
+  { keyword: 'performance parts budget build',     volume: 540000,  merchant: 'gh-maxpeedingrodsus',   lc: '007949133344006421', cat: 'Auto',       blogSlug: 'maxpeedingrods-review-2026' },
+  { keyword: 'authentic mexican imports',          volume: 480000,  merchant: 'gh-lafuente',           lc: '007949083344003992', cat: 'Auto',       blogSlug: 'la-fuente-imports-review-2026' },
+  { keyword: 'coilovers under 500',                volume: 480000,  merchant: 'gh-maxpeedingrodsus',   lc: '007949133344006421', cat: 'Auto',       blogSlug: 'maxpeedingrods-review-2026' },
+  { keyword: 'day of dead decor',                  volume: 420000,  merchant: 'gh-lafuente',           lc: '007949083344003992', cat: 'Auto',       blogSlug: 'la-fuente-imports-review-2026' },
+
+  // ── PRINT & SIGNS ──────────────────────────────────────────────────────
+  { keyword: 'custom banners online',              volume: 1400000, merchant: 'gh-buildasign',         lc: '007949043344001995', cat: 'Print',      blogSlug: 'buildasign-custom-prints-2026' },
+  { keyword: 'photo to canvas print',              volume: 1200000, merchant: 'gh-easycanvasprints',   lc: '007949063344003112', cat: 'Print',      blogSlug: 'easy-canvas-prints-guide-2026' },
+  { keyword: 'custom engraved gifts',              volume: 1100000, merchant: 'gh-etchingexpressions', lc: '007949083344004332', cat: 'Print',      blogSlug: 'etching-expressions-gifts-2026' },
+  { keyword: 'custom yard signs',                  volume: 980000,  merchant: 'gh-buildasign',         lc: '007949043344001995', cat: 'Print',      blogSlug: 'buildasign-custom-prints-2026' },
+  { keyword: 'cheapest vinyl banners online',      volume: 980000,  merchant: 'gh-bannersonthecheap',  lc: '007949073344003661', cat: 'Print',      blogSlug: 'banners-on-the-cheap-guide-2026' },
+  { keyword: 'cheapest canvas prints online',      volume: 980000,  merchant: 'gh-canvasonthecheap',   lc: '007949073344003662', cat: 'Print',      blogSlug: 'canvas-on-the-cheap-guide-2026' },
+  { keyword: 'canvas print gift',                  volume: 880000,  merchant: 'gh-easycanvasprints',   lc: '007949063344003112', cat: 'Print',      blogSlug: 'easy-canvas-prints-guide-2026' },
+  { keyword: 'laser engraving gifts',              volume: 880000,  merchant: 'gh-etchingexpressions', lc: '007949083344004332', cat: 'Print',      blogSlug: 'etching-expressions-gifts-2026' },
+  { keyword: 'screen printing equipment beginners',volume: 880000,  merchant: 'gh-ryonet',             lc: '007949084633004512', cat: 'Print',      blogSlug: 'ryonet-screen-printing-2026' },
+  { keyword: 'buildasign review',                  volume: 680000,  merchant: 'gh-buildasign',         lc: '007949043344001995', cat: 'Print',      blogSlug: 'buildasign-custom-prints-2026' },
+  { keyword: 'personalized gifts online',          volume: 740000,  merchant: 'gh-etchingexpressions', lc: '007949083344004332', cat: 'Print',      blogSlug: 'etching-expressions-gifts-2026' },
+  { keyword: 'canvas on the cheap review',         volume: 680000,  merchant: 'gh-canvasonthecheap',   lc: '007949073344003662', cat: 'Print',      blogSlug: 'canvas-on-the-cheap-guide-2026' },
+  { keyword: 'easy canvas prints review',          volume: 620000,  merchant: 'gh-easycanvasprints',   lc: '007949063344003112', cat: 'Print',      blogSlug: 'easy-canvas-prints-guide-2026' },
+  { keyword: 'screen printing supplies',           volume: 740000,  merchant: 'gh-ryonet',             lc: '007949084633004512', cat: 'Print',      blogSlug: 'ryonet-screen-printing-2026' },
+  { keyword: 'cheap custom banners',               volume: 580000,  merchant: 'gh-buildasign',         lc: '007949043344001995', cat: 'Print',      blogSlug: 'buildasign-custom-prints-2026' },
+  { keyword: 'banners on the cheap review',        volume: 620000,  merchant: 'gh-bannersonthecheap',  lc: '007949073344003661', cat: 'Print',      blogSlug: 'banners-on-the-cheap-guide-2026' },
+  { keyword: 'canvas print mothers day',           volume: 480000,  merchant: 'gh-easycanvasprints',   lc: '007949063344003112', cat: 'Print',      blogSlug: 'easy-canvas-prints-guide-2026' },
+  { keyword: 'corporate engraved gifts bulk',      volume: 380000,  merchant: 'gh-etchingexpressions', lc: '007949083344004332', cat: 'Print',      blogSlug: 'etching-expressions-gifts-2026' },
+  { keyword: 'canvas print sale 70 off',           volume: 540000,  merchant: 'gh-canvasonthecheap',   lc: '007949073344003662', cat: 'Print',      blogSlug: 'canvas-on-the-cheap-guide-2026' },
+
+  // ── HARDWARE ──────────────────────────────────────────────────────────
+  { keyword: 'soundproofing materials cheap',      volume: 880000,  merchant: 'gh-trademarksoundproofing',lc: '007949133344006118', cat: 'Hardware', blogSlug: 'soundproofing-guide-2026' },
+  { keyword: 'acoustic panels home studio',        volume: 740000,  merchant: 'gh-trademarksoundproofing',lc: '007949133344006118', cat: 'Hardware', blogSlug: 'soundproofing-guide-2026' },
+  { keyword: 'hardware store online',              volume: 880000,  merchant: 'gh-trademarkhardware',   lc: '007949123344005912', cat: 'Hardware',  blogSlug: 'trademark-hardware-guide-2026' },
+  { keyword: 'first aid kit custom',               volume: 880000,  merchant: 'gh-fieldtex',            lc: '007949123344005118', cat: 'Hardware',  blogSlug: 'fieldtex-first-aid-2026' },
+  { keyword: 'how to soundproof a room',           volume: 680000,  merchant: 'gh-trademarksoundproofing',lc: '007949133344006118', cat: 'Hardware', blogSlug: 'soundproofing-guide-2026' },
+  { keyword: 'medical bags online',                volume: 620000,  merchant: 'gh-fieldtex',            lc: '007949123344005118', cat: 'Hardware',  blogSlug: 'fieldtex-first-aid-2026' },
+  { keyword: 'emergency preparedness kit',         volume: 540000,  merchant: 'gh-fieldtex',            lc: '007949123344005118', cat: 'Hardware',  blogSlug: 'fieldtex-first-aid-2026' },
+  { keyword: 'noise reduction panels',             volume: 480000,  merchant: 'gh-trademarksoundproofing',lc: '007949133344006118', cat: 'Hardware', blogSlug: 'soundproofing-guide-2026' },
+  { keyword: 'wholesale products online',          volume: 680000,  merchant: 'gh-warehouse115',        lc: '007949163344007442', cat: 'Hardware',  blogSlug: 'warehouse115-review-2026' },
+  { keyword: 'home improvement parts online',      volume: 540000,  merchant: 'gh-trademarkhardware',   lc: '007949123344005912', cat: 'Hardware',  blogSlug: 'trademark-hardware-guide-2026' },
+  { keyword: 'travel products online',             volume: 680000,  merchant: 'gh-productsonthego',     lc: '007949113344004882', cat: 'Hardware',  blogSlug: 'products-on-the-go-2026' },
+];
+
+// Sort by volume descending
+TARGETED_KEYWORDS.sort((a, b) => b.volume - a.volume);
+
+// Build affiliate URL
+function affUrl(kw) {
+  return `https://www.linkconnector.com/ta.php?lc=${kw.lc}&atid=${kw.merchant}&utm_source=gh-targeted-keys&utm_medium=affiliate&utm_campaign=${kw.blogSlug}&utm_content=${kw.keyword.replace(/\s+/g,'-')}`;
+}
+
+// Build blog URL
+function blogUrl(kw) {
+  return `${BASE}/blog.html?p=${kw.blogSlug}__2026-04-30`;
+}
+
+// Export for use by other scripts
+if (typeof module !== 'undefined') {
+  module.exports = { TARGETED_KEYWORDS, affUrl, blogUrl };
+}
+
+console.log(`Loaded ${TARGETED_KEYWORDS.length} targeted keywords`);
+console.log(`Top keyword: "${TARGETED_KEYWORDS[0].keyword}" — ${TARGETED_KEYWORDS[0].volume.toLocaleString()} monthly searches`);
