@@ -45,8 +45,15 @@ jobs:
           else
             echo "⚠ auto-topic-generator.js not found — skipping"
           fi
-      - name: 💉 Blog Injector — 15 Languages
+      - name: 💉 Blog Injector — 20 Languages
         run: node inject.js
+      - name: 🔑 Keyword Injector
+        run: |
+          if [ -f keyword-injector.js ]; then
+            node keyword-injector.js
+          else
+            echo "⚠ keyword-injector.js not found — skipping"
+          fi
       - name: 💾 Commit All Changes
         run: |
           git config user.name  "Global Campaign Hub Engine"
