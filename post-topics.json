@@ -1452,7 +1452,7 @@
     {
       "slug": "museum-replicas-collectibles-2026",
       "merchant": "gh-museumreplicas",
-      "published": false,
+      "published": true,
       "title_en": "MuseumReplicas.com Review 2026 — Historical Replicas Worth Buying?",
       "category_en": "Lifestyle",
       "metaDesc_en": "MuseumReplicas.com review 2026. Historical swords, armor, medieval weapons, and LARP equipment. Quality assessment and who these replicas are for.",
@@ -1488,7 +1488,8 @@
           "q": "Are the replicas historically accurate?",
           "a": "Most replicas are based on documented historical examples. Check individual product descriptions for historical references."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "etching-expressions-gifts-2026",
