@@ -1830,7 +1830,7 @@
     {
       "slug": "etax-llc-tax-filing-2026",
       "merchant": "gh-etax",
-      "published": false,
+      "published": true,
       "title_en": "E Tax LLC Review 2026 — Online Tax Filing for Complex Returns",
       "category_en": "Tax",
       "metaDesc_en": "E Tax LLC review 2026. Online tax filing service for individuals and small businesses with more complex returns. When to use a service vs DIY software.",
@@ -1866,7 +1866,8 @@
           "q": "Can E Tax LLC help with IRS notices?",
           "a": "Check their site for specific services offered, including any IRS correspondence support."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "hrcp-hr-certification-2026",
