@@ -318,7 +318,7 @@
     {
       "slug": "canada-pet-care-vs-vet-2026",
       "merchant": "gh-canadapetcare",
-      "published": false,
+      "published": true,
       "title_en": "Canada Pet Care vs Your Vet — How Much Can You Actually Save?",
       "category_en": "Pet Care",
       "metaDesc_en": "Real price comparison between Canada Pet Care online pharmacy and vet office pricing in 2026. How much you save on NexGard, Heartgard, and Revolution.",
@@ -354,7 +354,8 @@
           "q": "How long does Canada Pet Care take to ship?",
           "a": "Most orders ship within 1-3 business days to Canadian addresses."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "budget-pet-care-guide-2026",
