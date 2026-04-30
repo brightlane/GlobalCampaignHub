@@ -1,0 +1,299 @@
+# robots.txt — GlobalCampaignHub
+# https://brightlane.github.io/GlobalCampaignHub/
+# Updated: 2026-04-30
+# Welcoming all major search engines and AI crawlers worldwide
+
+# ═══════════════════════════════════════
+#  DEFAULT — Allow all
+# ═══════════════════════════════════════
+User-agent: *
+Allow: /
+
+# ═══════════════════════════════════════
+#  GOOGLE
+# ═══════════════════════════════════════
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# ═══════════════════════════════════════
+#  BING / MICROSOFT
+# ═══════════════════════════════════════
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: msnbot
+Allow: /
+
+User-agent: msnbot-media
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: adidxbot
+Allow: /
+
+# ═══════════════════════════════════════
+#  APPLE
+# ═══════════════════════════════════════
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# ═══════════════════════════════════════
+#  YANDEX (Russia)
+# ═══════════════════════════════════════
+User-agent: YandexBot
+Allow: /
+
+User-agent: YandexImages
+Allow: /
+
+User-agent: YandexVideo
+Allow: /
+
+User-agent: YandexNews
+Allow: /
+
+User-agent: YandexAccessibilityBot
+Allow: /
+
+User-agent: YandexMobileBot
+Allow: /
+
+# ═══════════════════════════════════════
+#  BAIDU (China)
+# ═══════════════════════════════════════
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Baiduspider-image
+Allow: /
+
+User-agent: Baiduspider-video
+Allow: /
+
+User-agent: Baiduspider-news
+Allow: /
+
+# ═══════════════════════════════════════
+#  BYTEDANCE / TIKTOK (China)
+# ═══════════════════════════════════════
+User-agent: Bytespider
+Allow: /
+
+# ═══════════════════════════════════════
+#  SOGOU (China)
+# ═══════════════════════════════════════
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: Sogou inst spider
+Allow: /
+
+User-agent: Sogou News Spider
+Allow: /
+
+# ═══════════════════════════════════════
+#  360 SPIDER (China)
+# ═══════════════════════════════════════
+User-agent: 360Spider
+Allow: /
+
+# ═══════════════════════════════════════
+#  NAVER (South Korea)
+# ═══════════════════════════════════════
+User-agent: Yeti
+Allow: /
+
+# ═══════════════════════════════════════
+#  DAUM (South Korea)
+# ═══════════════════════════════════════
+User-agent: Daum
+Allow: /
+
+# ═══════════════════════════════════════
+#  YAHOO / OATH
+# ═══════════════════════════════════════
+User-agent: Slurp
+Allow: /
+
+# ═══════════════════════════════════════
+#  DUCKDUCKGO
+# ═══════════════════════════════════════
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: DuckDuckGo-Favicons-Bot
+Allow: /
+
+# ═══════════════════════════════════════
+#  ECOSIA
+# ═══════════════════════════════════════
+User-agent: Ecosia
+Allow: /
+
+# ═══════════════════════════════════════
+#  BRAVE SEARCH
+# ═══════════════════════════════════════
+User-agent: Brave
+Allow: /
+
+# ═══════════════════════════════════════
+#  OPENAI / CHATGPT
+# ═══════════════════════════════════════
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# ═══════════════════════════════════════
+#  ANTHROPIC / CLAUDE
+# ═══════════════════════════════════════
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# ═══════════════════════════════════════
+#  GOOGLE GEMINI
+# ═══════════════════════════════════════
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
+# ═══════════════════════════════════════
+#  META AI (Facebook / Instagram)
+# ═══════════════════════════════════════
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: meta-externalfetcher
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# ═══════════════════════════════════════
+#  PERPLEXITY AI
+# ═══════════════════════════════════════
+User-agent: PerplexityBot
+Allow: /
+
+# ═══════════════════════════════════════
+#  YOU.COM
+# ═══════════════════════════════════════
+User-agent: YouBot
+Allow: /
+
+# ═══════════════════════════════════════
+#  COHERE AI
+# ═══════════════════════════════════════
+User-agent: cohere-ai
+Allow: /
+
+# ═══════════════════════════════════════
+#  AMAZON ALEXA / KENDRA
+# ═══════════════════════════════════════
+User-agent: Amazonbot
+Allow: /
+
+User-agent: alexa
+Allow: /
+
+# ═══════════════════════════════════════
+#  COMMON CRAWL (AI training data)
+# ═══════════════════════════════════════
+User-agent: CCBot
+Allow: /
+
+# ═══════════════════════════════════════
+#  DIFFBOT
+# ═══════════════════════════════════════
+User-agent: Diffbot
+Allow: /
+
+# ═══════════════════════════════════════
+#  SEO TOOLS
+# ═══════════════════════════════════════
+User-agent: SemrushBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: MJ12bot
+Allow: /
+
+User-agent: DotBot
+Allow: /
+
+# ═══════════════════════════════════════
+#  ARCHIVE / WAYBACK MACHINE
+# ═══════════════════════════════════════
+User-agent: ia_archiver
+Allow: /
+
+User-agent: archive.org_bot
+Allow: /
+
+# ═══════════════════════════════════════
+#  SOCIAL MEDIA PREVIEW BOTS
+# ═══════════════════════════════════════
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: Pinterestbot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+User-agent: Rogerbot
+Allow: /
+
+# ═══════════════════════════════════════
+#  SITEMAP
+# ═══════════════════════════════════════
+Sitemap: https://brightlane.github.io/GlobalCampaignHub/sitemap.xml
