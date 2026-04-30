@@ -2858,7 +2858,7 @@
     {
       "slug": "best-corporate-food-gifts-in-2026-what-to-order-5007",
       "merchant": "gh-tastyribbon",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "Best Corporate Food Gifts in 2026: What to Order",
       "category_en": "Lifestyle",
@@ -2895,7 +2895,8 @@
           "q": "What languages are supported?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "bestvetcare-review-2026-cheap-pet-meds-is-it-safe-5008",
