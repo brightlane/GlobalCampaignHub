@@ -192,7 +192,7 @@
     {
       "slug": "depositphotos-review-2026",
       "merchant": "gh-depositphotos",
-      "published": false,
+      "published": true,
       "title_en": "Depositphotos Review 2026 — Best Stock Photo Site for Budget Buyers?",
       "category_en": "Software",
       "metaDesc_en": "Depositphotos review 2026. Is it the best value stock photo site? Image quality, pricing, and how it compares to Shutterstock and Getty Images.",
@@ -228,7 +228,8 @@
           "q": "Does Depositphotos have a free trial?",
           "a": "Depositphotos offers free trial images. Check their site for current free trial terms."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "filmora-ai-features-2026",
