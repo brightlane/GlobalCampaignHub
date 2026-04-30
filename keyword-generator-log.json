@@ -1,46 +1,28 @@
 {
   "2026-04-30": {
-    "timestamp": "2026-04-30T23:59:00.000Z",
-    "runs": [
-      {
-        "run": 1,
-        "batches": 25,
-        "generated": 1250,
-        "total_after": 1462,
-        "note": "Continued from existing 212 posts"
-      },
-      {
-        "run": 2,
-        "batches": 21,
-        "generated": 1050,
-        "total_after": 1050,
-        "note": "Counter reset — fresh run"
-      }
-    ],
-    "total_batches": 46,
-    "total_generated_today": 2300,
-    "canonical_total": 1462,
+    "date": "2026-04-30",
+    "generated": 50,
+    "total_before": 0,
+    "total_after": 50,
     "lang_breakdown": {
-      "en": 148,
-      "de": 145,
-      "fr": 143,
-      "es": 139,
-      "zh": 136,
-      "hi": 131,
-      "pt": 127,
-      "ar": 126,
-      "ru": 124,
-      "it": 121,
-      "nl": 121,
-      "id": 118,
-      "tr": 118,
-      "pl": 118,
-      "ko": 112,
-      "pt-br": 110,
-      "ja": 101,
-      "zh-tw": 100,
-      "vi": 83,
-      "th": 58
-    }
+      "it": 7,
+      "en": 8,
+      "pt-br": 1,
+      "es": 1,
+      "ru": 2,
+      "ko": 5,
+      "vi": 4,
+      "ar": 3,
+      "zh-tw": 3,
+      "id": 3,
+      "pt": 3,
+      "fr": 2,
+      "tr": 2,
+      "de": 1,
+      "th": 3,
+      "hi": 1,
+      "ja": 1
+    },
+    "timestamp": "2026-04-30T23:39:16.157Z"
   }
 }
