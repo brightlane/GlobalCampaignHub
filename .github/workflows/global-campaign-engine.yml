@@ -51,7 +51,7 @@ jobs:
         run: |
           git config user.name  "Global Campaign Hub Engine"
           git config user.email "engine@globalcampaignhub.bot"
-          git add blog*.html sitemap.xml llms.txt post-topics.json injector-log.json
+          git add -A
           git diff --cached --quiet && echo "Nothing to commit" || git commit -m "🌍 Auto-inject: $(date -u '+%Y-%m-%d %H:%M UTC')"
           git stash
           git pull --rebase origin main
