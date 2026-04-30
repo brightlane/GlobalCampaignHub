@@ -158,7 +158,7 @@
     { name:'E-File.com',               cat:'Tax',      lc:'007949155896007874', atid:'gh-efile',               vol:2400000, volStr:'2.4M/mo', slug:'efile-vs-turbotax-2026',                kw:'file taxes online',                desc:'IRS-authorized federal tax filing. Significantly cheaper than TurboTax for straightforward returns. Peak Jan–Apr.' },
     { name:'E TAX LLC',                cat:'Tax',      lc:'007949027749003958', atid:'gh-etax',                vol:880000,  volStr:'880K/mo', slug:'etax-llc-tax-filing-2026',              kw:'online tax preparation service',   desc:'Professional online tax prep for individuals and small businesses with complex returns.' },
     { name:'TaxExtension.com',         cat:'Tax',      lc:'007949121281006198', atid:'gh-taxextension',        vol:1800000, volStr:'1.8M/mo', slug:'tax-extension-deadline-guide-2026',     kw:'tax extension 2026',               desc:'File IRS Form 4868 in 5 minutes. Get 6 more months. Eliminates failure-to-file penalty.' },
-    { name:'ezTaxReturn.com',          cat:'Tax',      lc:'',                   atid:'gh-eztaxreturn',         vol:1200000, volStr:'1.2M/mo', slug:'eztaxreturn-review-2026',               kw:'free federal tax return online',   desc:'Free federal filing for qualifying W-2 filers. IRS-authorized e-file provider. (Direct URL — LC pending)' },
+    { name:'ezTaxReturn.com',          cat:'Tax',      lc:'007949027749003958', atid:'gh-etax',                vol:1200000, volStr:'1.2M/mo', slug:'etax-llc-tax-filing-2026',              kw:'free federal tax return online',   desc:'Free federal filing for qualifying W-2 filers. IRS-authorized e-file provider. Now served via E TAX LLC.' },
 
     // ── SOFTWARE (19) ──
     { name:'NordVPN',                  cat:'Software', lc:'007949085070005891', atid:'gh-nordvpn',             vol:2100000, volStr:'2.1M/mo', slug:'nordvpn-review-2026',                   kw:'best vpn 2026',                    desc:'Top-rated VPN. 6,000+ servers in 111 countries. Netflix access. Audited no-logs policy.' },
@@ -247,7 +247,6 @@
   const CATS = ['Tax','Software','Education','Pet Care','Health','Auto','Print','Hardware','Lifestyle'];
 
   function affUrl(m, pos) {
-    if (!m.lc) return `https://www.eztaxreturn.com?atid=${m.atid}&utm_source=gh-merchants&utm_medium=affiliate&utm_campaign=${m.slug}&utm_content=pos-${pos}`;
     return `https://www.linkconnector.com/ta.php?lc=${m.lc}&atid=${m.atid}&utm_source=gh-merchants&utm_medium=affiliate&utm_campaign=${m.slug}&utm_content=pos-${pos}`;
   }
 
