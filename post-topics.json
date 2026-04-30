@@ -3202,7 +3202,7 @@
     {
       "slug": "graeters-ice-cream-review-is-it-worth-shipping-5015",
       "merchant": "gh-graeters",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "Graeter's Ice Cream Review: Is It Worth Shipping?",
       "category_en": "Lifestyle",
@@ -3239,7 +3239,8 @@
           "q": "What languages are supported?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "renoise-review-2026-best-tracker-daw-for-electronic-music-5016",
