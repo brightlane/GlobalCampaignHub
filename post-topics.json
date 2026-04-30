@@ -1620,7 +1620,7 @@
     {
       "slug": "jalbum-photo-gallery-2026",
       "merchant": "gh-jalbum",
-      "published": false,
+      "published": true,
       "title_en": "jAlbum Review 2026 — Best Way to Create Photo Galleries Online?",
       "category_en": "Software",
       "metaDesc_en": "jAlbum photo gallery software review 2026. Create beautiful photo galleries for your website without coding. Features, pricing, and comparison with alternatives.",
@@ -1656,7 +1656,8 @@
           "q": "Does jAlbum work on Mac?",
           "a": "Yes. jAlbum is available for Mac, Windows, and Linux."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "renoise-music-production-2026",
