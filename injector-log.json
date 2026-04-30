@@ -2689,5 +2689,34 @@
       "vi",
       "th"
     ]
+  },
+  {
+    "date": "2026-04-30",
+    "slug": "pm-training-review-is-the-98-pass-rate-real-6",
+    "merchant": "gh-pmtraining",
+    "title": "PM Training Review: Is the 98% Pass Rate Real?",
+    "languages_injected": [],
+    "languages_skipped": [
+      "en",
+      "zh",
+      "zh-tw",
+      "es",
+      "fr",
+      "de",
+      "pt",
+      "pt-br",
+      "ja",
+      "ko",
+      "it",
+      "nl",
+      "pl",
+      "hi",
+      "ar",
+      "ru",
+      "tr",
+      "id",
+      "vi",
+      "th"
+    ]
   }
 ]

@@ -1,95 +1,95 @@
 {
   "2026-04-30": {
-    "timestamp": "2026-04-30T23:39:45.059Z",
+    "timestamp": "2026-04-30T23:45:08.310Z",
     "mode": "live",
     "topN": 300,
-    "totalKeywords": 50,
+    "totalKeywords": 100,
     "filesOk": 22,
     "filesSkipped": 0,
     "results": {
       "blog.html": {
-        "status": "inserted",
-        "bytes": 31582
+        "status": "updated",
+        "bytes": 39004
       },
       "blog-zh.html": {
-        "status": "inserted",
-        "bytes": 29119
+        "status": "updated",
+        "bytes": 36541
       },
       "blog-zh-tw.html": {
-        "status": "inserted",
-        "bytes": 29161
+        "status": "updated",
+        "bytes": 36583
       },
       "blog-es.html": {
-        "status": "inserted",
-        "bytes": 29428
+        "status": "updated",
+        "bytes": 36850
       },
       "blog-fr.html": {
-        "status": "inserted",
-        "bytes": 29414
+        "status": "updated",
+        "bytes": 36836
       },
       "blog-de.html": {
-        "status": "inserted",
-        "bytes": 29426
+        "status": "updated",
+        "bytes": 36848
       },
       "blog-pt.html": {
-        "status": "inserted",
-        "bytes": 29411
+        "status": "updated",
+        "bytes": 36833
       },
       "blog-pt-br.html": {
-        "status": "inserted",
-        "bytes": 29458
+        "status": "updated",
+        "bytes": 36880
       },
       "blog-ja.html": {
-        "status": "inserted",
-        "bytes": 29171
+        "status": "updated",
+        "bytes": 36593
       },
       "blog-ko.html": {
-        "status": "inserted",
-        "bytes": 29167
+        "status": "updated",
+        "bytes": 36589
       },
       "blog-it.html": {
-        "status": "inserted",
-        "bytes": 29419
+        "status": "updated",
+        "bytes": 36841
       },
       "blog-nl.html": {
-        "status": "inserted",
-        "bytes": 29381
+        "status": "updated",
+        "bytes": 36803
       },
       "blog-pl.html": {
-        "status": "inserted",
-        "bytes": 29442
+        "status": "updated",
+        "bytes": 36864
       },
       "blog-hi.html": {
-        "status": "inserted",
-        "bytes": 29376
+        "status": "updated",
+        "bytes": 36798
       },
       "blog-ar.html": {
-        "status": "inserted",
-        "bytes": 29331
+        "status": "updated",
+        "bytes": 36753
       },
       "blog-ru.html": {
-        "status": "inserted",
-        "bytes": 29382
+        "status": "updated",
+        "bytes": 36804
       },
       "blog-tr.html": {
-        "status": "inserted",
-        "bytes": 29439
+        "status": "updated",
+        "bytes": 36861
       },
       "blog-id.html": {
-        "status": "inserted",
-        "bytes": 29408
+        "status": "updated",
+        "bytes": 36830
       },
       "blog-vi.html": {
-        "status": "inserted",
-        "bytes": 29395
+        "status": "updated",
+        "bytes": 36817
       },
       "blog-th.html": {
-        "status": "inserted",
-        "bytes": 29355
+        "status": "updated",
+        "bytes": 36777
       },
       "index.html": {
-        "status": "inserted",
-        "bytes": 35802
+        "status": "updated",
+        "bytes": 43224
       },
       "llms.txt": {
         "status": "updated"
