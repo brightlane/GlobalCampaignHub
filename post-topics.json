@@ -1116,7 +1116,7 @@
     {
       "slug": "chess-store-buying-guide-2026",
       "merchant": "gh-thechessstore",
-      "published": false,
+      "published": true,
       "title_en": "Chess Set Buying Guide 2026 — From Beginner to Tournament Quality",
       "category_en": "Lifestyle",
       "metaDesc_en": "How to choose a chess set in 2026. Beginner, club, and tournament quality chess sets explained. What to look for and where to buy quality chess equipment.",
@@ -1152,7 +1152,8 @@
           "q": "What is Staunton design chess?",
           "a": "Staunton is the internationally recognized standard design for chess pieces used in all competitive play worldwide."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "banners-on-the-cheap-guide-2026",
