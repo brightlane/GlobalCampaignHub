@@ -1,0 +1,29 @@
+[
+  {
+    "date": "2026-04-30",
+    "generated": 50,
+    "total_after": 262,
+    "lang_breakdown": {
+      "en": 3,
+      "zh": 2,
+      "it": 3,
+      "de": 3,
+      "ru": 3,
+      "hi": 2,
+      "tr": 2,
+      "pt-br": 2,
+      "ja": 3,
+      "ko": 2,
+      "es": 2,
+      "id": 3,
+      "ar": 3,
+      "th": 2,
+      "pl": 2,
+      "nl": 3,
+      "pt": 3,
+      "vi": 3,
+      "fr": 2,
+      "zh-tw": 2
+    }
+  }
+]
