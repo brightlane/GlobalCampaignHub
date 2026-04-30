@@ -15,6 +15,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    concurrency:
+      group: gh-engine-build
+      cancel-in-progress: false
     steps:
       - name: 🛰️ Checkout
         uses: actions/checkout@v4
@@ -67,12 +70,35 @@ jobs:
         run: |
           git config user.name  "Global Campaign Hub Engine"
           git config user.email "engine@globalcampaignhub.bot"
+          git config pull.rebase true
+
           git add -A
           git diff --cached --quiet && echo "Nothing to commit" || git commit -m "🌍 Auto-inject: $(date -u '+%Y-%m-%d %H:%M UTC')"
-          git stash || true
-          git pull --rebase origin main
-          git stash pop || true
-          git push
+
+          # Retry push up to 5 times — handles concurrent run conflicts
+          for i in 1 2 3 4 5; do
+            echo "── Push attempt $i ──"
+            git fetch origin main
+
+            # Merge remote changes — keep ours for conflicts
+            git merge -X ours origin/main --no-edit \
+              -m "🔀 Merge remote (attempt $i)" 2>/dev/null || true
+
+            # Resolve any remaining conflicts by keeping our version
+            if git diff --name-only --diff-filter=U | grep -q .; then
+              echo "Conflicts found — resolving with ours strategy"
+              git diff --name-only --diff-filter=U | while read f; do
+                git checkout --ours "$f"
+                git add "$f"
+              done
+              git commit --no-edit -m "🔀 Resolve conflicts (ours)" || true
+            fi
+
+            git push origin main && echo "✓ Push succeeded on attempt $i" && break || {
+              echo "Push failed — waiting 10s before retry $((i+1))"
+              sleep 10
+            }
+          done
       - name: 📤 Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
