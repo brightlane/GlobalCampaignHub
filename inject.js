@@ -20,7 +20,7 @@ const TOPICS    = 'post-topics.json';
 const LLMS_FILE = 'llms.txt';
 const MAX_POSTS = 20;
 
-// ── 15 language blog files
+// ── 20 language blog files
 const LANGUAGES = [
   { code: 'en',    file: 'blog.html',       lang: 'en',    label: 'English' },
   { code: 'zh',    file: 'blog-zh.html',    lang: 'zh',    label: 'Chinese' },
@@ -36,6 +36,12 @@ const LANGUAGES = [
   { code: 'nl',    file: 'blog-nl.html',    lang: 'nl',    label: 'Dutch' },
   { code: 'pl',    file: 'blog-pl.html',    lang: 'pl',    label: 'Polish' },
   { code: 'hi',    file: 'blog-hi.html',    lang: 'hi',    label: 'Hindi' },
+  { code: 'ar',    file: 'blog-ar.html',    lang: 'ar',    label: 'Arabic' },
+  { code: 'ru',    file: 'blog-ru.html',    lang: 'ru',    label: 'Russian' },
+  { code: 'tr',    file: 'blog-tr.html',    lang: 'tr',    label: 'Turkish' },
+  { code: 'id',    file: 'blog-id.html',    lang: 'id',    label: 'Indonesian' },
+  { code: 'vi',    file: 'blog-vi.html',    lang: 'vi',    label: 'Vietnamese' },
+  { code: 'th',    file: 'blog-th.html',    lang: 'th',    label: 'Thai' },
 ];
 
 // ── ALL 68 MERCHANTS — Account 2 (lc=007949...) — gh- prefix on all atids
@@ -147,11 +153,13 @@ function arrayField(topic, name, langCode) {
 }
 
 const READ_TIMES = {
-  en: '4 min read', zh: '4分钟阅读', 'zh-tw': '4分鐘閱讀',
-  es: '4 min de lectura', fr: '4 min de lecture', de: '4 Min. Lesezeit',
+  en: '4 min read',       zh: '4分钟阅读',         'zh-tw': '4分鐘閱讀',
+  es: '4 min de lectura', fr: '4 min de lecture',  de: '4 Min. Lesezeit',
   pt: '4 min de leitura', 'pt-br': '4 min de leitura', ja: '4分で読めます',
-  ko: '4분 읽기', it: '4 min di lettura', nl: '4 min lezen',
-  pl: '4 min czytania', hi: '4 मिनट पढ़ें'
+  ko: '4분 읽기',          it: '4 min di lettura',  nl: '4 min lezen',
+  pl: '4 min czytania',   hi: '4 मिनट पढ़ें',       ar: '4 دقائق قراءة',
+  ru: '4 мин чтения',     tr: '4 dk okuma',        id: '4 menit baca',
+  vi: '4 phút đọc',       th: '4 นาทีอ่าน'
 };
 
 function buildBodyHtml(topic, slug, langCode) {
