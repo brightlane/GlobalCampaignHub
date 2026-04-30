@@ -1,121 +1,65 @@
 // ═══════════════════════════════════════════════════════════════════════
-//  GLOBALCAMPAIGNHUB LANGUAGE REDIRECT v1.0
-//  Detects browser language and redirects to the correct blog file
-//  Covers all 20 supported languages
-//  Add <script src="language-redirect.js"></script> to index.html
+//   GLOBALCAMPAIGNHUB LANGUAGE REDIRECT v1.0
+//   Detects browser language and redirects to the correct blog file
+//   Covers all 20 supported languages
+//   Add <script src="language-redirect.js"></script> to index.html
 // ═══════════════════════════════════════════════════════════════════════
 
 // ── KEYWORD_INJECTOR_DATA ──
-  const GH_TOP_KEYWORDS = [
-    { keyword: "halloween costumes 2026", volume: 8800000, merchant: "gh-halloweencostumes", affUrl: "https://www.linkconnector.com/ta.php?lc=007949053344002874&atid=gh-halloweencostumes&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=halloween-costumes-guide-2026&utm_content=kw-pos-1", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=halloween-costumes-guide-2026__2026-04-30", cat: "Lifestyle" },
-    { keyword: "adult halloween costumes", volume: 3200000, merchant: "gh-halloweencostumes", affUrl: "https://www.linkconnector.com/ta.php?lc=007949053344002874&atid=gh-halloweencostumes&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=halloween-costumes-guide-2026&utm_content=kw-pos-2", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=halloween-costumes-guide-2026__2026-04-30", cat: "Lifestyle" },
-    { keyword: "make money online surveys", volume: 2400000, merchant: "gh-surveyjunkie", affUrl: "https://www.linkconnector.com/ta.php?lc=007949033344001882&atid=gh-surveyjunkie&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=surveyjunkie-earn-online-2026&utm_content=kw-pos-3", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=surveyjunkie-earn-online-2026__2026-04-30", cat: "Lifestyle" },
-    { keyword: "file taxes online", volume: 2400000, merchant: "gh-efile", affUrl: "https://www.linkconnector.com/ta.php?lc=007949021469002241&atid=gh-efile&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=efile-vs-turbotax-2026&utm_content=kw-pos-4", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=efile-vs-turbotax-2026__2026-04-30", cat: "Tax" },
-    { keyword: "best vpn 2026", volume: 2100000, merchant: "gh-nordvpn", affUrl: "https://www.linkconnector.com/ta.php?lc=007949143344006843&atid=gh-nordvpn&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=nordvpn-review-2026&utm_content=kw-pos-5", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=nordvpn-review-2026__2026-04-30", cat: "Software" },
-    { keyword: "kids halloween costumes", volume: 2100000, merchant: "gh-halloweencostumes", affUrl: "https://www.linkconnector.com/ta.php?lc=007949053344002874&atid=gh-halloweencostumes&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=halloween-kids-costume-guide-2026&utm_content=kw-pos-6", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=halloween-kids-costume-guide-2026__2026-04-30", cat: "Lifestyle" },
-    { keyword: "online tax filing", volume: 1900000, merchant: "gh-efile", affUrl: "https://www.linkconnector.com/ta.php?lc=007949021469002241&atid=gh-efile&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=efile-vs-turbotax-2026&utm_content=kw-pos-7", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=efile-vs-turbotax-2026__2026-04-30", cat: "Tax" },
-    { keyword: "best video editor 2026", volume: 1900000, merchant: "gh-filmora", affUrl: "https://www.linkconnector.com/ta.php?lc=007949165260004532&atid=gh-filmora&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=filmora-ai-features-2026&utm_content=kw-pos-8", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=filmora-ai-features-2026__2026-04-30", cat: "Software" },
-    { keyword: "tax extension 2026", volume: 1800000, merchant: "gh-taxextension", affUrl: "https://www.linkconnector.com/ta.php?lc=007949033342002305&atid=gh-taxextension&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=tax-extension-deadline-guide-2026&utm_content=kw-pos-9", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=tax-extension-deadline-guide-2026__2026-04-30", cat: "Tax" },
-    { keyword: "nordvpn review", volume: 1800000, merchant: "gh-nordvpn", affUrl: "https://www.linkconnector.com/ta.php?lc=007949143344006843&atid=gh-nordvpn&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=nordvpn-review-2026&utm_content=kw-pos-10", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=nordvpn-review-2026__2026-04-30", cat: "Software" }
-  ];
-  const GH_KW_UPDATED = '2026-04-30';
+const GH_TOP_KEYWORDS = [
+  { keyword: "halloween costumes 2026", volume: 8800000, merchant: "gh-halloweencostumes", affUrl: "https://www.linkconnector.com/ta.php?lc=007949053344002874&atid=gh-halloweencostumes&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=halloween-costumes-guide-2026&utm_content=kw-pos-1", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=halloween-costumes-guide-2026__2026-04-30", cat: "Lifestyle" },
+  { keyword: "adult halloween costumes", volume: 3200000, merchant: "gh-halloweencostumes", affUrl: "https://www.linkconnector.com/ta.php?lc=007949053344002874&atid=gh-halloweencostumes&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=halloween-costumes-guide-2026&utm_content=kw-pos-2", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=halloween-costumes-guide-2026__2026-04-30", cat: "Lifestyle" },
+  { keyword: "make money online surveys", volume: 2400000, merchant: "gh-surveyjunkie", affUrl: "https://www.linkconnector.com/ta.php?lc=007949033344001882&atid=gh-surveyjunkie&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=surveyjunkie-earn-online-2026&utm_content=kw-pos-3", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=surveyjunkie-earn-online-2026__2026-04-30", cat: "Lifestyle" },
+  { keyword: "file taxes online", volume: 2400000, merchant: "gh-efile", affUrl: "https://www.linkconnector.com/ta.php?lc=007949021469002241&atid=gh-efile&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=efile-vs-turbotax-2026&utm_content=kw-pos-4", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=efile-vs-turbotax-2026__2026-04-30", cat: "Tax" },
+  { keyword: "best vpn 2026", volume: 2100000, merchant: "gh-nordvpn", affUrl: "https://www.linkconnector.com/ta.php?lc=007949143344006843&atid=gh-nordvpn&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=nordvpn-review-2026&utm_content=kw-pos-5", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=nordvpn-review-2026__2026-04-30", cat: "Software" },
+  { keyword: "kids halloween costumes", volume: 2100000, merchant: "gh-halloweencostumes", affUrl: "https://www.linkconnector.com/ta.php?lc=007949053344002874&atid=gh-halloweencostumes&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=halloween-kids-costume-guide-2026&utm_content=kw-pos-6", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=halloween-kids-costume-guide-2026__2026-04-30", cat: "Lifestyle" },
+  { keyword: "online tax filing", volume: 1900000, merchant: "gh-efile", affUrl: "https://www.linkconnector.com/ta.php?lc=007949021469002241&atid=gh-efile&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=efile-vs-turbotax-2026&utm_content=kw-pos-7", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=efile-vs-turbotax-2026__2026-04-30", cat: "Tax" },
+  { keyword: "best video editor 2026", volume: 1900000, merchant: "gh-filmora", affUrl: "https://www.linkconnector.com/ta.php?lc=007949165260004532&atid=gh-filmora&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=filmora-ai-features-2026&utm_content=kw-pos-8", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=filmora-ai-features-2026__2026-04-30", cat: "Software" },
+  { keyword: "tax extension 2026", volume: 1800000, merchant: "gh-taxextension", affUrl: "https://www.linkconnector.com/ta.php?lc=007949033342002305&atid=gh-taxextension&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=tax-extension-deadline-guide-2026&utm_content=kw-pos-9", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=tax-extension-deadline-guide-2026__2026-04-30", cat: "Tax" },
+  { keyword: "nordvpn review", volume: 1800000, merchant: "gh-nordvpn", affUrl: "https://www.linkconnector.com/ta.php?lc=007949143344006843&atid=gh-nordvpn&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=nordvpn-review-2026&utm_content=kw-pos-10", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=nordvpn-review-2026__2026-04-30", cat: "Software" }
+];
+const GH_KW_UPDATED = '2026-04-30';
 
 (function() {
   const BASE = 'https://brightlane.github.io/GlobalCampaignHub';
 
-  // ── Language → blog file map (all 20 languages)
+  // ── Language → blog file map
   const LANG_MAP = {
-    // Chinese
-    'zh':    'blog-zh.html',
-    'zh-cn': 'blog-zh.html',
-    'zh-sg': 'blog-zh.html',
-    'zh-tw': 'blog-zh-tw.html',
-    'zh-hk': 'blog-zh-tw.html',
-    'zh-mo': 'blog-zh-tw.html',
-    // Spanish
-    'es':    'blog-es.html',
-    'es-mx': 'blog-es.html',
-    'es-ar': 'blog-es.html',
-    'es-co': 'blog-es.html',
-    'es-cl': 'blog-es.html',
-    'es-pe': 'blog-es.html',
-    'es-ve': 'blog-es.html',
-    'es-ec': 'blog-es.html',
-    // French
-    'fr':    'blog-fr.html',
-    'fr-be': 'blog-fr.html',
-    'fr-ca': 'blog-fr.html',
-    'fr-ch': 'blog-fr.html',
-    // German
-    'de':    'blog-de.html',
-    'de-at': 'blog-de.html',
-    'de-ch': 'blog-de.html',
-    // Portuguese
-    'pt-br': 'blog-pt-br.html',
-    'pt':    'blog-pt.html',
-    'pt-pt': 'blog-pt.html',
-    // Japanese
-    'ja':    'blog-ja.html',
-    // Korean
-    'ko':    'blog-ko.html',
-    'ko-kr': 'blog-ko.html',
-    // Italian
-    'it':    'blog-it.html',
-    'it-ch': 'blog-it.html',
-    // Dutch
-    'nl':    'blog-nl.html',
-    'nl-be': 'blog-nl.html',
-    // Polish
-    'pl':    'blog-pl.html',
-    // Hindi
-    'hi':    'blog-hi.html',
-    // Arabic
-    'ar':    'blog-ar.html',
-    'ar-sa': 'blog-ar.html',
-    'ar-ae': 'blog-ar.html',
-    'ar-eg': 'blog-ar.html',
-    'ar-dz': 'blog-ar.html',
-    'ar-ma': 'blog-ar.html',
-    'ar-iq': 'blog-ar.html',
-    'ar-sy': 'blog-ar.html',
-    // Russian
-    'ru':    'blog-ru.html',
-    'ru-ru': 'blog-ru.html',
-    // Turkish
-    'tr':    'blog-tr.html',
-    'tr-tr': 'blog-tr.html',
-    // Indonesian
-    'id':    'blog-id.html',
-    'id-id': 'blog-id.html',
-    // Vietnamese
-    'vi':    'blog-vi.html',
-    'vi-vn': 'blog-vi.html',
-    // Thai
-    'th':    'blog-th.html',
-    'th-th': 'blog-th.html',
-    // English (default — no redirect needed)
-    'en':    null,
-    'en-us': null,
-    'en-gb': null,
-    'en-au': null,
-    'en-ca': null,
-    'en-nz': null,
-    'en-in': null,
+    'zh': 'blog-zh.html', 'zh-cn': 'blog-zh.html', 'zh-sg': 'blog-zh.html',
+    'zh-tw': 'blog-zh-tw.html', 'zh-hk': 'blog-zh-tw.html', 'zh-mo': 'blog-zh-tw.html',
+    'es': 'blog-es.html', 'es-mx': 'blog-es.html', 'es-ar': 'blog-es.html',
+    'es-co': 'blog-es.html', 'es-cl': 'blog-es.html', 'es-pe': 'blog-es.html',
+    'es-ve': 'blog-es.html', 'es-ec': 'blog-es.html',
+    'fr': 'blog-fr.html', 'fr-be': 'blog-fr.html', 'fr-ca': 'blog-fr.html', 'fr-ch': 'blog-fr.html',
+    'de': 'blog-de.html', 'de-at': 'blog-de.html', 'de-ch': 'blog-de.html',
+    'pt-br': 'blog-pt-br.html', 'pt': 'blog-pt.html', 'pt-pt': 'blog-pt.html',
+    'ja': 'blog-ja.html', 'ko': 'blog-ko.html', 'ko-kr': 'blog-ko.html',
+    'it': 'blog-it.html', 'it-ch': 'blog-it.html',
+    'nl': 'blog-nl.html', 'nl-be': 'blog-nl.html',
+    'pl': 'blog-pl.html', 'hi': 'blog-hi.html',
+    'ar': 'blog-ar.html', 'ar-sa': 'blog-ar.html', 'ar-ae': 'blog-ar.html',
+    'ar-eg': 'blog-ar.html', 'ar-dz': 'blog-ar.html', 'ar-ma': 'blog-ar.html',
+    'ar-iq': 'blog-ar.html', 'ar-sy': 'blog-ar.html',
+    'ru': 'blog-ru.html', 'ru-ru': 'blog-ru.html',
+    'tr': 'blog-tr.html', 'tr-tr': 'blog-tr.html',
+    'id': 'blog-id.html', 'id-id': 'blog-id.html',
+    'vi': 'blog-vi.html', 'vi-vn': 'blog-vi.html',
+    'th': 'blog-th.html', 'th-th': 'blog-th.html',
+    'en': null, 'en-us': null, 'en-gb': null, 'en-au': null, 'en-ca': null, 'en-nz': null, 'en-in': null
   };
 
-  // ── Only redirect on the homepage and blog.html
   const currentPath = window.location.pathname;
-  const isHomepage  = currentPath.endsWith('/') ||
-                      currentPath.endsWith('/index.html') ||
-                      currentPath.endsWith('/GlobalCampaignHub/');
+  const isHomepage = currentPath.endsWith('/') || 
+                     currentPath.endsWith('/index.html') || 
+                     currentPath.endsWith('/GlobalCampaignHub/');
   const isEnglishBlog = currentPath.endsWith('/blog.html');
 
   if (!isHomepage && !isEnglishBlog) return;
 
-  // ── Check if user already chose a language (respect their choice)
   const PREF_KEY = 'gh_lang_pref';
   const savedPref = localStorage.getItem(PREF_KEY);
   if (savedPref === 'dismissed') return;
+
   if (savedPref && LANG_MAP[savedPref] !== undefined) {
     const target = LANG_MAP[savedPref];
     if (target && !currentPath.endsWith(target)) {
@@ -124,23 +68,17 @@
     return;
   }
 
-  // ── Detect browser language
   const langs = navigator.languages || [navigator.language || navigator.userLanguage || 'en'];
-
   let targetFile = null;
   let detectedLang = 'en';
 
   for (const lang of langs) {
     const lower = lang.toLowerCase();
-
-    // Try exact match first
     if (LANG_MAP.hasOwnProperty(lower)) {
       detectedLang = lower;
       targetFile = LANG_MAP[lower];
       break;
     }
-
-    // Try prefix match (e.g. 'zh-hans' → 'zh')
     const prefix = lower.split('-')[0];
     if (LANG_MAP.hasOwnProperty(prefix)) {
       detectedLang = prefix;
@@ -149,134 +87,70 @@
     }
   }
 
-  // ── No redirect needed for English or unrecognized languages
-  if (!targetFile) return;
+  if (!targetFile || currentPath.endsWith(targetFile)) return;
 
-  // ── Already on the correct page
-  if (currentPath.endsWith(targetFile)) return;
-
-  // ── Show a non-intrusive language suggestion banner
-  // rather than hard redirecting (better UX, Google-friendly)
   showLanguageBanner(targetFile, detectedLang);
 
   function showLanguageBanner(file, lang) {
-    // Language names in native script
     const NATIVE_NAMES = {
-      'zh':    '中文',
-      'zh-tw': '繁體中文',
-      'es':    'Español',
-      'fr':    'Français',
-      'de':    'Deutsch',
-      'pt':    'Português',
-      'pt-br': 'Português (BR)',
-      'ja':    '日本語',
-      'ko':    '한국어',
-      'it':    'Italiano',
-      'nl':    'Nederlands',
-      'pl':    'Polski',
-      'hi':    'हिन्दी',
-      'ar':    'العربية',
-      'ru':    'Русский',
-      'tr':    'Türkçe',
-      'id':    'Bahasa Indonesia',
-      'vi':    'Tiếng Việt',
-      'th':    'ภาษาไทย',
+      'zh': '中文', 'zh-tw': '繁體中文', 'es': 'Español', 'fr': 'Français',
+      'de': 'Deutsch', 'pt': 'Português', 'pt-br': 'Português (BR)', 'ja': '日本語',
+      'ko': '한국어', 'it': 'Italiano', 'nl': 'Nederlands', 'pl': 'Polski',
+      'hi': 'हिन्दी', 'ar': 'العربية', 'ru': 'Русский', 'tr': 'Türkçe',
+      'id': 'Bahasa Indonesia', 'vi': 'Tiếng Việt', 'th': 'ภาษาไทย'
     };
 
     const nativeName = NATIVE_NAMES[lang] || lang.toUpperCase();
-    const targetUrl  = BASE + '/' + file;
-    const isRtl      = lang === 'ar';
+    const targetUrl = BASE + '/' + file;
+    const isRtl = lang === 'ar';
 
-    // Create banner
     const banner = document.createElement('div');
     banner.id = 'gh-lang-banner';
     banner.setAttribute('role', 'alert');
     banner.setAttribute('aria-live', 'polite');
     banner.style.cssText = `
-      position: fixed;
-      bottom: 20px;
-      ${isRtl ? 'left' : 'right'}: 20px;
-      z-index: 9999;
-      background: #111318;
-      border: 1px solid rgba(232,255,71,0.4);
-      border-radius: 12px;
-      padding: 14px 18px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-family: system-ui, -apple-system, sans-serif;
-      font-size: 13px;
-      color: #e8e9ed;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-      max-width: 320px;
-      direction: ${isRtl ? 'rtl' : 'ltr'};
-      animation: gh-slide-in 0.3s ease;
+      position: fixed; bottom: 20px; ${isRtl ? 'left' : 'right'}: 20px;
+      z-index: 9999; background: #111318; border: 1px solid rgba(232,255,71,0.4);
+      border-radius: 12px; padding: 14px 18px; display: flex; align-items: center;
+      gap: 12px; font-family: system-ui, -apple-system, sans-serif; font-size: 13px;
+      color: #e8e9ed; box-shadow: 0 8px 32px rgba(0,0,0,0.4); max-width: 320px;
+      direction: ${isRtl ? 'rtl' : 'ltr'}; animation: gh-slide-in 0.3s ease;
     `;
 
     banner.innerHTML = `
       <style>
-        @keyframes gh-slide-in {
-          from { transform: translateY(20px); opacity: 0; }
-          to   { transform: translateY(0);    opacity: 1; }
-        }
-        #gh-lang-banner .gh-switch-btn {
-          background: #e8ff47;
-          color: #0a0b0d;
-          border: none;
-          border-radius: 6px;
-          padding: 6px 12px;
-          font-size: 12px;
-          font-weight: 700;
-          cursor: pointer;
-          white-space: nowrap;
-        }
-        #gh-lang-banner .gh-dismiss-btn {
-          background: transparent;
-          border: none;
-          color: #555866;
-          cursor: pointer;
-          font-size: 16px;
-          padding: 0 4px;
-          line-height: 1;
-        }
+        @keyframes gh-slide-in { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        #gh-lang-banner .gh-switch-btn { background: #e8ff47; color: #0a0b0d; border: none; border-radius: 6px; padding: 6px 12px; font-size: 12px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+        #gh-lang-banner .gh-dismiss-btn { background: transparent; border: none; color: #555866; cursor: pointer; font-size: 16px; padding: 0 4px; line-height: 1; }
         #gh-lang-banner .gh-dismiss-btn:hover { color: #e8e9ed; }
       </style>
       <span style="font-size:18px">🌐</span>
-      <span style="flex:1;color:#8a8d99">
-        Read in <strong style="color:#e8e9ed">${nativeName}</strong>?
-      </span>
+      <span style="flex:1;color:#8a8d99">Read in <strong style="color:#e8e9ed">${nativeName}</strong>?</span>
       <button class="gh-switch-btn" id="gh-switch">Switch</button>
       <button class="gh-dismiss-btn" id="gh-dismiss" aria-label="Dismiss">✕</button>
     `;
 
     document.body.appendChild(banner);
 
-    // Switch button — redirect and save preference
     document.getElementById('gh-switch').addEventListener('click', function() {
       localStorage.setItem(PREF_KEY, lang);
       window.location.href = targetUrl;
     });
 
-    // Dismiss button — save preference not to redirect
     document.getElementById('gh-dismiss').addEventListener('click', function() {
       localStorage.setItem(PREF_KEY, 'dismissed');
-      banner.style.animation = 'none';
       banner.style.opacity = '0';
       banner.style.transform = 'translateY(10px)';
       banner.style.transition = 'opacity 0.2s, transform 0.2s';
       setTimeout(() => banner.remove(), 200);
     });
 
-    // Auto-dismiss after 8 seconds
     setTimeout(function() {
       const liveBanner = document.getElementById('gh-lang-banner');
-      if (liveBanner) {
-        document.getElementById('gh-dismiss').click();
-      }
+      if (liveBanner) document.getElementById('gh-dismiss').click();
     }, 8000);
   }
 
-  // ── Expose method to manually set language preference
   window.GH_setLanguage = function(langCode) {
     const file = LANG_MAP[langCode.toLowerCase()];
     if (file !== undefined) {
@@ -285,10 +159,8 @@
     }
   };
 
-  // ── Expose method to reset language preference
   window.GH_resetLanguage = function() {
     localStorage.removeItem(PREF_KEY);
     window.location.reload();
   };
-
 })();
