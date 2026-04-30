@@ -444,7 +444,7 @@
     {
       "slug": "tenorshare-iphone-tools-2026",
       "merchant": "gh-tenorshare",
-      "published": false,
+      "published": true,
       "title_en": "Tenorshare iPhone Tools 2026 — Fix, Unlock, Recover, Manage",
       "category_en": "Software",
       "metaDesc_en": "Complete guide to Tenorshare's iPhone tools in 2026. ReiBoot for iOS repair, 4uKey for unlocking, UltData for recovery, iCareFone for file management.",
@@ -480,7 +480,8 @@
           "q": "Can I try Tenorshare tools before buying?",
           "a": "Yes. Free trials are available for all major Tenorshare tools."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "appy-pie-no-code-tools-2026",
