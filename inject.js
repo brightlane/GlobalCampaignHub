@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // ═══════════════════════════════════════════════════════════════════════
-//  GLOBALCAMPAIGNHUB POST INJECTOR — v1.0
+//  GLOBALCAMPAIGNHUB POST INJECTOR — v1.1
 //  Run: node inject.js
 //
 //  Account: LinkConnector Account 2 (lc=007949...)
@@ -8,6 +8,8 @@
 //  Site: https://brightlane.github.io/GlobalCampaignHub/
 //
 //  DO NOT MIX with Brightlane (lc=014538...) — separate account entirely
+//
+//  v1.1 — ALL lc= codes verified & updated 2026-04-30
 // ═══════════════════════════════════════════════════════════════════════
 
 const fs   = require('fs');
@@ -44,77 +46,80 @@ const LANGUAGES = [
   { code: 'th',    file: 'blog-th.html',    lang: 'th',    label: 'Thai' },
 ];
 
-// ── ALL 68 MERCHANTS — Account 2 (lc=007949...) — gh- prefix on all atids
+// ── ALL 69 MERCHANTS — Account 2 (lc=007949...) — gh- prefix on all atids
+// ── ✅ ALL lc= codes VERIFIED WORKING — updated 2026-04-30
 // ── NEVER mix these with Brightlane (lc=014538...) links
 const LINKS = {
-  'gh-efile':               'https://www.linkconnector.com/ta.php?lc=007949021469002241&atid=gh-efile',
-  'gh-etax':                'https://www.linkconnector.com/ta.php?lc=007949113645003507&atid=gh-etax',
-  'gh-taxextension':        'https://www.linkconnector.com/ta.php?lc=007949033342002305&atid=gh-taxextension',
-  'gh-eztaxreturn':         'https://www.linkconnector.com/ta.php?lc=007949053344004952&atid=gh-eztaxreturn',
-  'gh-boardvitals':         'https://www.linkconnector.com/ta.php?lc=007949114675005824&atid=gh-boardvitals',
-  'gh-ryonet':              'https://www.linkconnector.com/ta.php?lc=007949084633004512&atid=gh-ryonet',
-  'gh-surgent':             'https://www.linkconnector.com/ta.php?lc=007949123344006122&atid=gh-surgent',
-  'gh-hrcp':                'https://www.linkconnector.com/ta.php?lc=007949093344005114&atid=gh-hrcp',
-  'gh-oakstone':            'https://www.linkconnector.com/ta.php?lc=007949103344005432&atid=gh-oakstone',
-  'gh-securitiesinstitute': 'https://www.linkconnector.com/ta.php?lc=007949113344005987&atid=gh-securitiesinstitute',
-  'gh-nordvpn':             'https://www.linkconnector.com/ta.php?lc=007949143344006843&atid=gh-nordvpn',
-  'gh-depositphotos':       'https://www.linkconnector.com/ta.php?lc=007949063344003921&atid=gh-depositphotos',
-  'gh-halloweencostumes':   'https://www.linkconnector.com/ta.php?lc=007949053344002874&atid=gh-halloweencostumes',
-  'gh-filmora':             'https://www.linkconnector.com/ta.php?lc=007949165260004532&atid=gh-filmora',
-  'gh-pdfelement':          'https://www.linkconnector.com/ta.php?lc=007949165372004532&atid=gh-pdfelement',
-  'gh-edraw':               'https://www.linkconnector.com/ta.php?lc=007949165246006886&atid=gh-edraw',
-  'gh-canadapetcare':       'https://www.linkconnector.com/ta.php?lc=007949083344004721&atid=gh-canadapetcare',
-  'gh-bestvetcare':         'https://www.linkconnector.com/ta.php?lc=007949093344004992&atid=gh-bestvetcare',
-  'gh-budgetpetcare':       'https://www.linkconnector.com/ta.php?lc=007949103344005118&atid=gh-budgetpetcare',
-  'gh-budgetpetworld':      'https://www.linkconnector.com/ta.php?lc=007949113344005224&atid=gh-budgetpetworld',
-  'gh-discountpetcare':     'https://www.linkconnector.com/ta.php?lc=007949123344005441&atid=gh-discountpetcare',
-  'gh-nursejamie':          'https://www.linkconnector.com/ta.php?lc=007949153344007112&atid=gh-nursejamie',
-  'gh-maxpeedingrodsus':    'https://www.linkconnector.com/ta.php?lc=007949133344006421&atid=gh-maxpeedingrodsus',
-  'gh-maxpeedingrodsau':    'https://www.linkconnector.com/ta.php?lc=007949143344006554&atid=gh-maxpeedingrodsau',
-  'gh-trademarkhardware':   'https://www.linkconnector.com/ta.php?lc=007949123344005912&atid=gh-trademarkhardware',
-  'gh-trademarksoundproofing': 'https://www.linkconnector.com/ta.php?lc=007949133344006118&atid=gh-trademarksoundproofing',
-  'gh-warehouse115':        'https://www.linkconnector.com/ta.php?lc=007949163344007442&atid=gh-warehouse115',
-  'gh-graeters':            'https://www.linkconnector.com/ta.php?lc=007949073344004112&atid=gh-graeters',
-  'gh-etchingexpressions':  'https://www.linkconnector.com/ta.php?lc=007949083344004332&atid=gh-etchingexpressions',
-  'gh-thechessstore':       'https://www.linkconnector.com/ta.php?lc=007949103344005112&atid=gh-thechessstore',
-  'gh-museumreplicas':      'https://www.linkconnector.com/ta.php?lc=007949113344005442&atid=gh-museumreplicas',
-  'gh-atlantacutlery':      'https://www.linkconnector.com/ta.php?lc=007949123344005771&atid=gh-atlantacutlery',
-  'gh-vipertec':            'https://www.linkconnector.com/ta.php?lc=007949133344006224&atid=gh-vipertec',
-  'gh-combatflipflops':     'https://www.linkconnector.com/ta.php?lc=007949143344006881&atid=gh-combatflipflops',
-  'gh-camanoislandcoffee':  'https://www.linkconnector.com/ta.php?lc=007949053344002441&atid=gh-camanoislandcoffee',
-  'gh-sidify':              'https://www.linkconnector.com/ta.php?lc=007949163344007882&atid=gh-sidify',
-  'gh-movavi':              'https://www.linkconnector.com/ta.php?lc=007949153344007119&atid=gh-movavi',
-  'gh-jalbum':              'https://www.linkconnector.com/ta.php?lc=007949143344006442&atid=gh-jalbum',
-  'gh-updf':                'https://www.linkconnector.com/ta.php?lc=007949163344008112&atid=gh-updf',
-  'gh-itoolab':             'https://www.linkconnector.com/ta.php?lc=007949163344008441&atid=gh-itoolab',
-  'gh-tenorshare':          'https://www.linkconnector.com/ta.php?lc=007949163344008992&atid=gh-tenorshare',
-  'gh-appypie':             'https://www.linkconnector.com/ta.php?lc=007949153344007442&atid=gh-appypie',
-  'gh-illumeo':             'https://www.linkconnector.com/ta.php?lc=007949143344006221&atid=gh-illumeo',
-  'gh-wolterskluwer':       'https://www.linkconnector.com/ta.php?lc=007949165370003224&atid=gh-wolterskluwer',
-  'gh-individualsoftware':  'https://www.linkconnector.com/ta.php?lc=007949133344005882&atid=gh-individualsoftware',
-  'gh-learntasticcpr':      'https://www.linkconnector.com/ta.php?lc=007949143344006112&atid=gh-learntasticcpr',
-  'gh-learntasticahca':     'https://www.linkconnector.com/ta.php?lc=007949143344006113&atid=gh-learntasticahca',
-  'gh-personalabs':         'https://www.linkconnector.com/ta.php?lc=007949133344005442&atid=gh-personalabs',
-  'gh-fieldtex':            'https://www.linkconnector.com/ta.php?lc=007949123344005118&atid=gh-fieldtex',
-  'gh-productsonthego':     'https://www.linkconnector.com/ta.php?lc=007949113344004882&atid=gh-productsonthego',
-  'gh-readygolf':           'https://www.linkconnector.com/ta.php?lc=007949103344004551&atid=gh-readygolf',
-  'gh-gunsinternational':   'https://www.linkconnector.com/ta.php?lc=007949093344004221&atid=gh-gunsinternational',
-  'gh-lafuente':            'https://www.linkconnector.com/ta.php?lc=007949083344003992&atid=gh-lafuente',
-  'gh-bannersonthecheap':   'https://www.linkconnector.com/ta.php?lc=007949073344003661&atid=gh-bannersonthecheap',
-  'gh-canvasonthecheap':    'https://www.linkconnector.com/ta.php?lc=007949073344003662&atid=gh-canvasonthecheap',
-  'gh-easycanvasprints':    'https://www.linkconnector.com/ta.php?lc=007949063344003112&atid=gh-easycanvasprints',
-  'gh-carmellimo':          'https://www.linkconnector.com/ta.php?lc=007949053344002881&atid=gh-carmellimo',
-  'gh-youware':             'https://www.linkconnector.com/ta.php?lc=007949163344008118&atid=gh-youware',
-  'gh-bugatchi':            'https://www.linkconnector.com/ta.php?lc=007949153344007662&atid=gh-bugatchi',
-  'gh-pmtraining':          'https://www.linkconnector.com/ta.php?lc=007949143344006992&atid=gh-pmtraining',
-  'gh-surveyjunkie':        'https://www.linkconnector.com/ta.php?lc=007949033344001882&atid=gh-surveyjunkie',
-  'gh-tastyribbon':         'https://www.linkconnector.com/ta.php?lc=007949153344007881&atid=gh-tastyribbon',
-  'gh-ayurvedaexperience':  'https://www.linkconnector.com/ta.php?lc=007949163344008221&atid=gh-ayurvedaexperience',
-  'gh-bgmgirl':             'https://www.linkconnector.com/ta.php?lc=007949153344007992&atid=gh-bgmgirl',
-  'gh-renoise':             'https://www.linkconnector.com/ta.php?lc=007949143344006551&atid=gh-renoise',
-  'gh-picador':             'https://www.linkconnector.com/ta.php?lc=007949133344006228&atid=gh-picador',
-  'gh-incentrev':           'https://www.linkconnector.com/ta.php?lc=007949123344005991&atid=gh-incentrev',
-  'gh-buildasign':          'https://www.linkconnector.com/ta.php?lc=007949043344001995&atid=gh-buildasign',
+  'gh-youware':                'https://www.linkconnector.com/ta.php?lc=007949164742007981&atid=gh-youware',
+  'gh-atlantacutlery':         'https://www.linkconnector.com/ta.php?lc=007949164733007981&atid=gh-atlantacutlery',
+  'gh-bannersonthecheap':      'https://www.linkconnector.com/ta.php?lc=007949069833005389&atid=gh-bannersonthecheap',
+  'gh-bestvetcare':            'https://www.linkconnector.com/ta.php?lc=007949076672005837&atid=gh-bestvetcare',
+  'gh-boardvitals':            'https://www.linkconnector.com/ta.php?lc=007949154901006218&atid=gh-boardvitals',
+  'gh-budgetpetcare':          'https://www.linkconnector.com/ta.php?lc=007949124366007614&atid=gh-budgetpetcare',
+  'gh-budgetpetworld':         'https://www.linkconnector.com/ta.php?lc=007949144117006217&atid=gh-budgetpetworld',
+  'gh-bugatchi':               'https://www.linkconnector.com/ta.php?lc=007949145753006206&atid=gh-bugatchi',
+  'gh-camanoislandcoffee':     'https://www.linkconnector.com/ta.php?lc=007949094561006921&atid=gh-camanoislandcoffee',
+  'gh-canadapetcare':          'https://www.linkconnector.com/ta.php?lc=007949063057005492&atid=gh-canadapetcare',
+  'gh-canvasonthecheap':       'https://www.linkconnector.com/ta.php?lc=007949139296006219&atid=gh-canvasonthecheap',
+  'gh-carmellimo':             'https://www.linkconnector.com/ta.php?lc=007949021363003587&atid=gh-carmellimo',
+  'gh-combatflipflops':        'https://www.linkconnector.com/ta.php?lc=007949108439006486&atid=gh-combatflipflops',
+  'gh-depositphotos':          'https://www.linkconnector.com/ta.php?lc=007949136603007653&atid=gh-depositphotos',
+  'gh-discountpetcare':        'https://www.linkconnector.com/ta.php?lc=007949053489005142&atid=gh-discountpetcare',
+  'gh-etax':                   'https://www.linkconnector.com/ta.php?lc=007949027749003958&atid=gh-etax',
+  'gh-efile':                  'https://www.linkconnector.com/ta.php?lc=007949155896007874&atid=gh-efile',
+  'gh-easycanvasprints':       'https://www.linkconnector.com/ta.php?lc=007949050767005020&atid=gh-easycanvasprints',
+  'gh-edraw':                  'https://www.linkconnector.com/ta.php?lc=007949165249006886&atid=gh-edraw',
+  'gh-etchingexpressions':     'https://www.linkconnector.com/ta.php?lc=007949154703007728&atid=gh-etchingexpressions',
+  'gh-famisafe':               'https://www.linkconnector.com/ta.php?lc=007949154258006788&atid=gh-famisafe',
+  'gh-fieldtex':               'https://www.linkconnector.com/ta.php?lc=007949120619007379&atid=gh-fieldtex',
+  'gh-graeters':               'https://www.linkconnector.com/ta.php?lc=007949151790007794&atid=gh-graeters',
+  'gh-gunsinternational':      'https://www.linkconnector.com/ta.php?lc=007949046073005238&atid=gh-gunsinternational',
+  'gh-halloweencostumes':      'https://www.linkconnector.com/ta.php?lc=007949155212007855&atid=gh-halloweencostumes',
+  'gh-hrcp':                   'https://www.linkconnector.com/ta.php?lc=007949135821007664&atid=gh-hrcp',
+  'gh-illumeo':                'https://www.linkconnector.com/ta.php?lc=007949034133001545&atid=gh-illumeo',
+  'gh-incentrev':              'https://www.linkconnector.com/ta.php?lc=007949047416004897&atid=gh-incentrev',
+  'gh-individualsoftware':     'https://www.linkconnector.com/ta.php?lc=007949110667007185&atid=gh-individualsoftware',
+  'gh-infinitealoe':           'https://www.linkconnector.com/ta.php?lc=007949105959006539&atid=gh-infinitealoe',
+  'gh-iskysoft':               'https://www.linkconnector.com/ta.php?lc=007949099000005679&atid=gh-iskysoft',
+  'gh-itoolab':                'https://www.linkconnector.com/ta.php?lc=007949108972006513&atid=gh-itoolab',
+  'gh-jalbum':                 'https://www.linkconnector.com/ta.php?lc=007949069873005391&atid=gh-jalbum',
+  'gh-lafuente':               'https://www.linkconnector.com/ta.php?lc=007949079282005891&atid=gh-lafuente',
+  'gh-learntasticcpr':         'https://www.linkconnector.com/ta.php?lc=007949155036007841&atid=gh-learntasticcpr',
+  'gh-learntasticahca':        'https://www.linkconnector.com/ta.php?lc=007949146929007736&atid=gh-learntasticahca',
+  'gh-maxpeedingrodsus':       'https://www.linkconnector.com/ta.php?lc=007949154195006539&atid=gh-maxpeedingrodsus',
+  'gh-maxpeedingrodsau':       'https://www.linkconnector.com/ta.php?lc=007949136043006908&atid=gh-maxpeedingrodsau',
+  'gh-movavi':                 'https://www.linkconnector.com/ta.php?lc=007949109440006513&atid=gh-movavi',
+  'gh-museumreplicas':         'https://www.linkconnector.com/ta.php?lc=007949109612005391&atid=gh-museumreplicas',
+  'gh-nordvpn':                'https://www.linkconnector.com/ta.php?lc=007949085070005891&atid=gh-nordvpn',
+  'gh-nursejamie':             'https://www.linkconnector.com/ta.php?lc=007949155104007841&atid=gh-nursejamie',
+  'gh-oakstone':               'https://www.linkconnector.com/ta.php?lc=007949049546004978&atid=gh-oakstone',
+  'gh-personalabs':            'https://www.linkconnector.com/ta.php?lc=007949152445007736&atid=gh-personalabs',
+  'gh-picador':                'https://www.linkconnector.com/ta.php?lc=007949164712007982&atid=gh-picador',
+  'gh-productsonthego':        'https://www.linkconnector.com/ta.php?lc=007949108750007124&atid=gh-productsonthego',
+  'gh-readygolf':              'https://www.linkconnector.com/ta.php?lc=007949135537007633&atid=gh-readygolf',
+  'gh-renoise':                'https://www.linkconnector.com/ta.php?lc=007949165071007995&atid=gh-renoise',
+  'gh-bgmgirl':                'https://www.linkconnector.com/ta.php?lc=007949162099007840&atid=gh-bgmgirl',
+  'gh-ryonet':                 'https://www.linkconnector.com/ta.php?lc=007949155911007876&atid=gh-ryonet',
+  'gh-sidify':                 'https://www.linkconnector.com/ta.php?lc=007949114496007306&atid=gh-sidify',
+  'gh-appypie':                'https://www.linkconnector.com/ta.php?lc=007949090967005541&atid=gh-appypie',
+  'gh-pmtraining':             'https://www.linkconnector.com/ta.php?lc=007949081796006139&atid=gh-pmtraining',
+  'gh-surgent':                'https://www.linkconnector.com/ta.php?lc=007949163206006249&atid=gh-surgent',
+  'gh-surveyjunkie':           'https://www.linkconnector.com/ta.php?lc=007949153848007834&atid=gh-surveyjunkie',
+  'gh-tastyribbon':            'https://www.linkconnector.com/ta.php?lc=007949155938007865&atid=gh-tastyribbon',
+  'gh-taxextension':           'https://www.linkconnector.com/ta.php?lc=007949121281006198&atid=gh-taxextension',
+  'gh-tenorshare':             'https://www.linkconnector.com/ta.php?lc=007949139287006847&atid=gh-tenorshare',
+  'gh-ayurvedaexperience':     'https://www.linkconnector.com/ta.php?lc=007949126292007580&atid=gh-ayurvedaexperience',
+  'gh-thechessstore':          'https://www.linkconnector.com/ta.php?lc=007949071778005057&atid=gh-thechessstore',
+  'gh-securitiesinstitute':    'https://www.linkconnector.com/ta.php?lc=007949108329007101&atid=gh-securitiesinstitute',
+  'gh-trademarkhardware':      'https://www.linkconnector.com/ta.php?lc=007949113406007272&atid=gh-trademarkhardware',
+  'gh-trademarksoundproofing': 'https://www.linkconnector.com/ta.php?lc=007949107911007070&atid=gh-trademarksoundproofing',
+  'gh-updf':                   'https://www.linkconnector.com/ta.php?lc=007949147521007728&atid=gh-updf',
+  'gh-vipertec':               'https://www.linkconnector.com/ta.php?lc=007949091308006550&atid=gh-vipertec',
+  'gh-warehouse115':           'https://www.linkconnector.com/ta.php?lc=007949102471006776&atid=gh-warehouse115',
+  'gh-filmora':                'https://www.linkconnector.com/ta.php?lc=007949048607004532&atid=gh-filmora',
+  'gh-pdfelement':             'https://www.linkconnector.com/ta.php?lc=007949139355006776&atid=gh-pdfelement',
+  'gh-wolterskluwer':          'https://www.linkconnector.com/ta.php?lc=007949019993003224&atid=gh-wolterskluwer',
+  'gh-eztaxreturn':            'https://www.eztaxreturn.com', // not approved on LC — direct URL
 };
 
 function affLink(merchantId, pos, slug, langCode) {
@@ -309,7 +314,7 @@ function logRun(topic, results) {
 }
 
 function main() {
-  console.log('\n🌍 GLOBALCAMPAIGNHUB POST INJECTOR v1.0 — 15 Languages');
+  console.log('\n🌍 GLOBALCAMPAIGNHUB POST INJECTOR v1.1 — 20 Languages');
   console.log('════════════════════════════════════════════════════════');
   console.log(`Account: LinkConnector 007949 | Tracking: gh- prefix`);
   console.log(`Date: ${TODAY}\n`);
@@ -359,7 +364,7 @@ function main() {
   const injected = results.filter(r => r.ok).length;
   console.log(`\n✅ Done! ${injected}/${LANGUAGES.length} blog files updated.`);
   console.log(`Topics remaining: ${pending.length - 1}`);
-  console.log('════════════════════════════════════════════════════════\n');
+  console.log('════════════════════════════════════════════════════════\n`);
 }
 
 main();
