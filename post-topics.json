@@ -570,7 +570,7 @@
     {
       "slug": "surgent-cpa-exam-prep-2026",
       "merchant": "gh-surgent",
-      "published": false,
+      "published": true,
       "title_en": "Surgent CPA Exam Prep Review 2026 — Pass Faster with AI Study",
       "category_en": "Education",
       "metaDesc_en": "Surgent CPA exam prep review 2026. How their AI-powered ReadySCORE predicts your exam readiness. Comparison with Becker and Roger CPA review.",
@@ -606,7 +606,8 @@
           "q": "Is Surgent better than Becker?",
           "a": "Surgent is more efficient. Becker has more comprehensive content. Both have high pass rates. The right choice depends on your learning style."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "combat-flip-flops-mission-2026",
