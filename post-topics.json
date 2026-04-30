@@ -486,7 +486,7 @@
     {
       "slug": "appy-pie-no-code-tools-2026",
       "merchant": "gh-appypie",
-      "published": false,
+      "published": true,
       "title_en": "Appy Pie No-Code Platform 2026 — Build Apps, Sites, and Chatbots",
       "category_en": "Software",
       "metaDesc_en": "Appy Pie no-code platform review 2026. Build mobile apps, websites, chatbots, and automations without coding. Who it's best for and how it compares.",
@@ -522,7 +522,8 @@
           "q": "How much does Appy Pie cost?",
           "a": "Check Appy Pie's site for current pricing. Plans vary by features and scale."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "boardvitals-medical-exam-prep-2026",
