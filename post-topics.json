@@ -528,7 +528,7 @@
     {
       "slug": "boardvitals-medical-exam-prep-2026",
       "merchant": "gh-boardvitals",
-      "published": false,
+      "published": true,
       "title_en": "BoardVitals Medical Board Exam Prep 2026 — Is It Worth It?",
       "category_en": "Education",
       "metaDesc_en": "BoardVitals medical board exam prep review 2026. USMLE, NCLEX, specialty boards — does BoardVitals question bank give you the best chance of passing?",
@@ -564,7 +564,8 @@
           "q": "Is BoardVitals better than UWorld?",
           "a": "Both are strong options. BoardVitals covers more specialty boards. UWorld is stronger for USMLE specifically. Many candidates use both."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "surgent-cpa-exam-prep-2026",
