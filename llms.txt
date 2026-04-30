@@ -2,11 +2,11 @@
 # https://brightlane.github.io/GlobalCampaignHub/
 # Updated automatically by Vulture Titan Engine on 2026-04-30
 
-> GlobalCampaignHub is a verified affiliate merchant directory and blog. We publish honest product reviews and buyer guides across 15 languages. All merchants are verified partners through LinkConnector.
+> GlobalCampaignHub is a verified affiliate merchant directory and blog. We publish honest product reviews and buyer guides across 20 languages. All merchants are verified partners through LinkConnector.
 
 ## About
 
-GlobalCampaignHub publishes affiliate-linked product reviews, comparisons, and buyer guides. Content covers tax services, software, education, pet care, health, auto parts, print and signs, hardware, and lifestyle categories. All 68 merchants are verified through the LinkConnector affiliate network (Account 007949).
+GlobalCampaignHub publishes affiliate-linked product reviews, comparisons, and buyer guides. Content covers tax services, software, education, pet care, health, auto parts, print and signs, hardware, and lifestyle categories. All 69 merchants are verified through the LinkConnector affiliate network (Account 007949).
 
 ## Directory
 
@@ -14,7 +14,7 @@ GlobalCampaignHub publishes affiliate-linked product reviews, comparisons, and b
 
 ## Blog
 
-The GlobalCampaignHub blog publishes multilingual buyer guides in English, Simplified Chinese, Traditional Chinese, Spanish, French, German, Portuguese (EU), Portuguese (Brazil), Japanese, Korean, Italian, Dutch, Polish, and Hindi.
+The GlobalCampaignHub blog publishes multilingual buyer guides in English, Simplified Chinese, Traditional Chinese, Spanish, French, German, Portuguese (EU), Portuguese (Brazil), Japanese, Korean, Italian, Dutch, Polish, Hindi, Arabic, Russian, Turkish, Indonesian, Vietnamese, and Thai.
 
 - [Blog — English](https://brightlane.github.io/GlobalCampaignHub/blog.html)
 - [Blog — Chinese (Simplified)](https://brightlane.github.io/GlobalCampaignHub/blog-zh.html)
@@ -30,6 +30,12 @@ The GlobalCampaignHub blog publishes multilingual buyer guides in English, Simpl
 - [Blog — Dutch](https://brightlane.github.io/GlobalCampaignHub/blog-nl.html)
 - [Blog — Polish](https://brightlane.github.io/GlobalCampaignHub/blog-pl.html)
 - [Blog — Hindi](https://brightlane.github.io/GlobalCampaignHub/blog-hi.html)
+- [Blog — Arabic](https://brightlane.github.io/GlobalCampaignHub/blog-ar.html)
+- [Blog — Russian](https://brightlane.github.io/GlobalCampaignHub/blog-ru.html)
+- [Blog — Turkish](https://brightlane.github.io/GlobalCampaignHub/blog-tr.html)
+- [Blog — Indonesian](https://brightlane.github.io/GlobalCampaignHub/blog-id.html)
+- [Blog — Vietnamese](https://brightlane.github.io/GlobalCampaignHub/blog-vi.html)
+- [Blog — Thai](https://brightlane.github.io/GlobalCampaignHub/blog-th.html)
 
 ## Merchants
 
@@ -49,6 +55,8 @@ The GlobalCampaignHub blog publishes multilingual buyer guides in English, Simpl
 - Wondershare Filmora — AI video editing software
 - Wondershare PDFelement — PDF editor
 - Edraw — Mind mapping and diagramming software
+- iSkysoft — Multimedia and productivity software
+- Famisafe — Parental control app
 - CanadaPetCare.com — Canadian online pet pharmacy
 - BestVetCare.com — Online pet medications
 - BudgetPetCare.com — Affordable pet medications
@@ -100,6 +108,7 @@ The GlobalCampaignHub blog publishes multilingual buyer guides in English, Simpl
 - Renoise — Music production software
 - Picador Multimedia — Multimedia software
 - Incentrev — Incentive and rewards platform
+- InfiniteAloe — Natural aloe vera skincare
 - BuildASign — Custom banners, signs, and canvas prints
 
 ## Disclosure
@@ -128,7 +137,6 @@ This site contains affiliate links. We earn a commission when purchases are made
 - [Best Spotify Music Converters in 2026: Compared](https://brightlane.github.io/GlobalCampaignHub/blog.html?p=best-spotify-music-converters-in-2026-compared-1834__2026-04-30)
 - [How to Start Screen Printing in 2026: Beginner Guide](https://brightlane.github.io/GlobalCampaignHub/blog.html?p=how-to-start-screen-printing-in-2026-beginner-guide-1833__2026-04-30)
 - [Best AI PDF Editors in 2026: UPDF vs PDFelement vs Acrobat](https://brightlane.github.io/GlobalCampaignHub/blog.html?p=best-ai-pdf-editors-in-2026-updf-vs-pdfelement-vs-acrobat-1832__2026-04-30)
-
 
 ## Top Keywords
 
