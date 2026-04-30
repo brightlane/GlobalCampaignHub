@@ -1117,5 +1117,32 @@
       "ko": 1,
       "pt-br": 1
     }
+  },
+  {
+    "date": "2026-04-30",
+    "generated": 50,
+    "total_after": 900,
+    "lang_breakdown": {
+      "en": 3,
+      "es": 2,
+      "pt-br": 2,
+      "ar": 3,
+      "ja": 2,
+      "fr": 3,
+      "tr": 3,
+      "zh": 3,
+      "hi": 3,
+      "ru": 2,
+      "id": 3,
+      "ko": 1,
+      "pt": 2,
+      "zh-tw": 3,
+      "nl": 2,
+      "th": 2,
+      "vi": 2,
+      "pl": 3,
+      "de": 3,
+      "it": 3
+    }
   }
 ]
