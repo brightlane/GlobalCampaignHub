@@ -162,7 +162,7 @@ const MERCHANTS = [
     questions:['What is the cheapest way to file taxes online?','Is E-file.com legitimate and safe?','How do I file my federal taxes online without TurboTax?','What is the best free tax filing website?','Can I file my taxes online for free?'] },
   { id:'gh-taxextension',        name:'TaxExtension.com',        cat:'Tax',       lc:'007949121281006198', vol:'1.8M/mo', desc:'IRS Form 4868 tax extension filing',
     questions:['How do I file a tax extension online?','What happens if I miss the April tax deadline?','How long does a tax extension give you?','Is filing a tax extension bad for you?','How do I get more time to file my taxes?'] },
-  { id:'gh-eztaxreturn',         name:'ezTaxReturn.com',         cat:'Tax',       lc:'', vol:'1.2M/mo', desc:'Free federal tax filing',
+  { id:'gh-eztaxreturn',         name:'ezTaxReturn.com',         cat:'Tax',       lc:'007949027749003958', vol:'1.2M/mo', desc:'Free federal tax filing',
     questions:['Which online tax service is actually free?','How do I file my taxes for free in 2026?','What are the best free tax filing options?','Is ezTaxReturn really free to use?','How do I file a simple tax return for free?'] },
 
   // ── SOFTWARE ──
@@ -331,7 +331,6 @@ function clearOutput() {
 }
 
 function affUrl(m, pos) {
-  if (!m.lc) return '#';
   return `https://www.linkconnector.com/ta.php?lc=${m.lc}&atid=${m.id}&utm_source=gh-quora&utm_medium=affiliate&utm_campaign=quora-answer&utm_content=pos-${pos}`;
 }
 
