@@ -364,7 +364,7 @@ function main() {
   const injected = results.filter(r => r.ok).length;
   console.log(`\n✅ Done! ${injected}/${LANGUAGES.length} blog files updated.`);
   console.log(`Topics remaining: ${pending.length - 1}`);
-  console.log('════════════════════════════════════════════════════════\n`);
+  console.log('════════════════════════════════════════════════════════\n');
 }
 
 main();
