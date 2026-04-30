@@ -18,7 +18,9 @@
     { "merchant": "E TAX, LLC",                "url": "https://www.linkconnector.com/ta.php?lc=007949027749003958", "category": "tax" },
     { "merchant": "E-File.com",                "url": "https://www.linkconnector.com/ta.php?lc=007949155896007874", "category": "tax" },
     { "merchant": "Easy Canvas Prints",        "url": "https://www.linkconnector.com/ta.php?lc=007949050767005020", "category": "ecommerce" },
+    { "merchant": "Edraw (Mind/Max)",          "url": "https://www.linkconnector.com/ta.php?lc=007949165249006886", "category": "software" },
     { "merchant": "Etching Expressions",       "url": "https://www.linkconnector.com/ta.php?lc=007949154703007728", "category": "ecommerce" },
+    { "merchant": "Famisafe",                  "url": "https://www.linkconnector.com/ta.php?lc=007949154258006788", "category": "software" },
     { "merchant": "Fieldtex Products",         "url": "https://www.linkconnector.com/ta.php?lc=007949120619007379", "category": "health" },
     { "merchant": "Graeter's Ice Cream",       "url": "https://www.linkconnector.com/ta.php?lc=007949151790007794", "category": "ecommerce" },
     { "merchant": "GunsInternational",         "url": "https://www.linkconnector.com/ta.php?lc=007949046073005238", "category": "ecommerce" },
@@ -28,6 +30,7 @@
     { "merchant": "Incentrev",                 "url": "https://www.linkconnector.com/ta.php?lc=007949047416004897", "category": "finance" },
     { "merchant": "Individual Software",       "url": "https://www.linkconnector.com/ta.php?lc=007949110667007185", "category": "software" },
     { "merchant": "InfiniteAloe",              "url": "https://www.linkconnector.com/ta.php?lc=007949105959006539", "category": "health" },
+    { "merchant": "iSkysoft",                  "url": "https://www.linkconnector.com/ta.php?lc=007949099000005679", "category": "software" },
     { "merchant": "iToolab (LuckyDog)",        "url": "https://www.linkconnector.com/ta.php?lc=007949108972006513", "category": "software" },
     { "merchant": "jAlbum AB",                 "url": "https://www.linkconnector.com/ta.php?lc=007949069873005391", "category": "software" },
     { "merchant": "La Fuente Imports",         "url": "https://www.linkconnector.com/ta.php?lc=007949079282005891", "category": "ecommerce" },
@@ -66,6 +69,7 @@
     { "merchant": "Wondershare (Filmora)",     "url": "https://www.linkconnector.com/ta.php?lc=007949048607004532", "category": "software" },
     { "merchant": "Wondershare (PDFelement)",  "url": "https://www.linkconnector.com/ta.php?lc=007949139355006776", "category": "software" },
     { "merchant": "Wolters Kluwer (LWW)",      "url": "https://www.linkconnector.com/ta.php?lc=007949019993003224", "category": "education" },
-    { "merchant": "ezTaxReturn.com",           "url": "https://www.eztaxreturn.com",                                "category": "tax" }
+    { "merchant": "ezTaxReturn.com",           "url": "https://www.eztaxreturn.com",                                "category": "tax" },
+    { "merchant": "iSkysoft",                  "url": "https://www.linkconnector.com/ta.php?lc=007949099000005679", "category": "software" }
   ]
 }
