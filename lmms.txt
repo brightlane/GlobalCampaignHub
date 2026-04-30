@@ -1,0 +1,993 @@
+================================================================================
+  GLOBALCAMPAIGNHUB
+  LINK MANAGEMENT STATUS SHEET (LMSS)
+================================================================================
+  ENGINE STATUS  : OPERATIONAL
+  VERIFIED COUNT : 68
+  NETWORK        : LinkConnector
+  ACCOUNT        : 007949
+  TRACKING PREFIX: gh- (all atids prefixed with gh-)
+  BASE URL       : https://brightlane.github.io/GlobalCampaignHub/
+  TIMESTAMP      : 2026-04-30
+  NEXT REVIEW    : 2026-05-30
+================================================================================
+
+--------------------------------------------------------------------------------
+  CATEGORY 1 — TAX SERVICES  [4 campaigns]
+--------------------------------------------------------------------------------
+
+[01] E-FILE.COM
+  ID          : gh-efile
+  STATUS      : ACTIVE
+  CATEGORY    : tax
+  TAG         : Federal Tax Filing
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949021469002241&atid=gh-efile
+  MERCHANT PG : https://www.efile.com/
+  LC CODE     : 007949021469002241
+  ATID        : gh-efile
+  VOLUME      : 2.4M/mo (file taxes online)
+  NOTES       : IRS-authorized e-file provider. Peak Jan-Apr. Cheapest legitimate federal filing option vs TurboTax.
+
+[02] E TAX LLC
+  ID          : gh-etax
+  STATUS      : ACTIVE
+  CATEGORY    : tax
+  TAG         : Professional Tax Prep
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949113645003507&atid=gh-etax
+  MERCHANT PG : https://www.etax.com/
+  LC CODE     : 007949113645003507
+  ATID        : gh-etax
+  VOLUME      : 880K/mo (online tax preparation service)
+  NOTES       : Professional tax prep for complex returns. Self-employed, rental income, small business angle.
+
+[03] TAXEXTENSION.COM
+  ID          : gh-taxextension
+  STATUS      : ACTIVE
+  CATEGORY    : tax
+  TAG         : IRS Tax Extension
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949033342002305&atid=gh-taxextension
+  MERCHANT PG : https://www.taxextension.com/
+  LC CODE     : 007949033342002305
+  ATID        : gh-taxextension
+  VOLUME      : 1.8M/mo (tax extension 2026)
+  NOTES       : Peak Jan-Apr. Form 4868 filed in 5 minutes. Eliminates failure-to-file penalty. Massive seasonal volume.
+
+[04] EZTAXRETURN.COM
+  ID          : gh-eztaxreturn
+  STATUS      : ACTIVE
+  CATEGORY    : tax
+  TAG         : Free Federal Filing
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949053344004952&atid=gh-eztaxreturn
+  MERCHANT PG : https://www.eztaxreturn.com/
+  LC CODE     : 007949053344004952
+  ATID        : gh-eztaxreturn
+  VOLUME      : 1.2M/mo (free federal tax return online)
+  NOTES       : Free federal filing for qualifying filers. IRS-authorized. Seasonal peak Jan-Apr.
+
+--------------------------------------------------------------------------------
+  CATEGORY 2 — EDUCATION & TRAINING  [10 campaigns]
+--------------------------------------------------------------------------------
+
+[05] BOARDVITALS
+  ID          : gh-boardvitals
+  STATUS      : ACTIVE
+  CATEGORY    : education
+  TAG         : Medical Board Exam Prep
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949114675005824&atid=gh-boardvitals
+  MERCHANT PG : https://www.boardvitals.com/
+  LC CODE     : 007949114675005824
+  ATID        : gh-boardvitals
+  VOLUME      : 820K/mo (usmle step 2 question bank)
+  NOTES       : USMLE, NCLEX, COMLEX, specialty boards. High-value niche — medical professionals. Strong CPC.
+
+[06] SURGENT.COM
+  ID          : gh-surgent
+  STATUS      : ACTIVE
+  CATEGORY    : education
+  TAG         : CPA Exam Prep
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949123344006122&atid=gh-surgent
+  MERCHANT PG : https://www.surgent.com/
+  LC CODE     : 007949123344006122
+  ATID        : gh-surgent
+  VOLUME      : 880K/mo (best cpa exam prep 2026)
+  NOTES       : AI-powered CPA review. ReadySCORE predicts real exam result. High-commission professional niche.
+
+[07] HRCP
+  ID          : gh-hrcp
+  STATUS      : ACTIVE
+  CATEGORY    : education
+  TAG         : HR Certification
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949093344005114&atid=gh-hrcp
+  MERCHANT PG : https://www.hrcp-web.com/
+  LC CODE     : 007949093344005114
+  ATID        : gh-hrcp
+  VOLUME      : 680K/mo (phr certification exam prep)
+  NOTES       : PHR and SPHR prep by working HR professionals. HRCI-mapped curriculum.
+
+[08] OAKSTONE MEDICAL
+  ID          : gh-oakstone
+  STATUS      : ACTIVE
+  CATEGORY    : education
+  TAG         : Physician CME
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949103344005432&atid=gh-oakstone
+  MERCHANT PG : https://www.oakstone.com/
+  LC CODE     : 007949103344005432
+  ATID        : gh-oakstone
+  VOLUME      : 620K/mo (cme credits online physicians)
+  NOTES       : ACCME-accredited audio CME. Commute-friendly format. Physician market = high CPC.
+
+[09] THE SECURITIES INSTITUTE
+  ID          : gh-securitiesinstitute
+  STATUS      : ACTIVE
+  CATEGORY    : education
+  TAG         : FINRA Exam Prep
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949113344005987&atid=gh-securitiesinstitute
+  MERCHANT PG : https://www.securitiesce.com/
+  LC CODE     : 007949113344005987
+  ATID        : gh-securitiesinstitute
+  VOLUME      : 880K/mo (series 7 exam prep)
+  NOTES       : Series 7, 63, 65, 66 and other FINRA licensing exams. Financial industry = strong commissions.
+
+[10] ILLUMEO INC
+  ID          : gh-illumeo
+  STATUS      : ACTIVE
+  CATEGORY    : education
+  TAG         : CPA CPE Credits
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949143344006221&atid=gh-illumeo
+  MERCHANT PG : https://www.illumeo.com/
+  LC CODE     : 007949143344006221
+  ATID        : gh-illumeo
+  VOLUME      : 680K/mo (cpe credits for cpa online)
+  NOTES       : NASBA-approved CPE. All US state boards accept. Accounting/finance professional market.
+
+[11] WOLTERS KLUWER (LWW)
+  ID          : gh-wolterskluwer
+  STATUS      : ACTIVE
+  CATEGORY    : education
+  TAG         : Medical Textbooks
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949165370003224&atid=gh-wolterskluwer
+  MERCHANT PG : https://shop.lww.com/
+  LC CODE     : 007949165370003224
+  ATID        : gh-wolterskluwer
+  VOLUME      : 740K/mo (lippincott nursing textbooks)
+  NOTES       : Official Lippincott publisher store. Back-to-school seasonal spike. High AOV per transaction.
+
+[12] LEARNTASTIC (CPR)
+  ID          : gh-learntasticcpr
+  STATUS      : ACTIVE
+  CATEGORY    : education
+  TAG         : CPR Certification
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949143344006112&atid=gh-learntasticcpr
+  MERCHANT PG : https://www.learntastic.com/cpr
+  LC CODE     : 007949143344006112
+  ATID        : gh-learntasticcpr
+  VOLUME      : 1.4M/mo (online cpr certification)
+  NOTES       : Evergreen demand. Workplace, parenting, coaching angles. Instant certificate on completion.
+
+[13] LEARNTASTIC (AHCA)
+  ID          : gh-learntasticahca
+  STATUS      : ACTIVE
+  CATEGORY    : education
+  TAG         : Healthcare Compliance
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949143344006113&atid=gh-learntasticahca
+  MERCHANT PG : https://www.learntastic.com/ahca
+  LC CODE     : 007949143344006113
+  ATID        : gh-learntasticahca
+  VOLUME      : 680K/mo (osha healthcare training online)
+  NOTES       : OSHA, HIPAA, AHCA compliance. B2B angle strong — employers buying for entire staff.
+
+[14] SSI LOGIC (PMTRAINING)
+  ID          : gh-pmtraining
+  STATUS      : ACTIVE
+  CATEGORY    : education
+  TAG         : PMP Certification
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949143344006992&atid=gh-pmtraining
+  MERCHANT PG : https://www.pmtraining.com/
+  LC CODE     : 007949143344006992
+  ATID        : gh-pmtraining
+  VOLUME      : 980K/mo (pmp certification 2026)
+  NOTES       : 98% documented first-time pass rate. Live instructor-led. 40 PDUs included. High-value B2B niche.
+
+--------------------------------------------------------------------------------
+  CATEGORY 3 — SOFTWARE & PRODUCTIVITY  [16 campaigns]
+--------------------------------------------------------------------------------
+
+[15] NORDVPN
+  ID          : gh-nordvpn
+  STATUS      : ACTIVE
+  CATEGORY    : software
+  TAG         : VPN
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949143344006843&atid=gh-nordvpn
+  MERCHANT PG : https://www.nordvpn.com/
+  LC CODE     : 007949143344006843
+  ATID        : gh-nordvpn
+  VOLUME      : 2.1M/mo (best vpn 2026)
+  NOTES       : Highest volume software keyword. Strong commissions. Multi-year plan upsell.
+
+[16] DEPOSITPHOTOS
+  ID          : gh-depositphotos
+  STATUS      : ACTIVE
+  CATEGORY    : software
+  TAG         : Stock Photos
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949063344003921&atid=gh-depositphotos
+  MERCHANT PG : https://www.depositphotos.com/
+  LC CODE     : 007949063344003921
+  ATID        : gh-depositphotos
+  VOLUME      : 1.1M/mo (stock photos cheap)
+  NOTES       : 250M+ assets. Best value vs Shutterstock angle. Subscription and credit pack options.
+
+[17] WONDERSHARE FILMORA
+  ID          : gh-filmora
+  STATUS      : ACTIVE
+  CATEGORY    : software
+  TAG         : AI Video Editor
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949165260004532&atid=gh-filmora
+  MERCHANT PG : https://filmora.wondershare.com/
+  LC CODE     : 007949165260004532
+  ATID        : gh-filmora
+  VOLUME      : 1.9M/mo (best video editor 2026)
+  NOTES       : AI auto-subtitles, background removal, noise cancellation. Creator economy target.
+
+[18] WONDERSHARE PDFELEMENT
+  ID          : gh-pdfelement
+  STATUS      : ACTIVE
+  CATEGORY    : software
+  TAG         : PDF Editor
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949165372004532&atid=gh-pdfelement
+  MERCHANT PG : https://pdf.wondershare.com/
+  LC CODE     : 007949165372004532
+  ATID        : gh-pdfelement
+  VOLUME      : 1.3M/mo (adobe acrobat alternative)
+  NOTES       : Acrobat alternative angle is the strongest keyword. One-time purchase vs subscription.
+
+[19] EDRAW (MIND/MAX)
+  ID          : gh-edraw
+  STATUS      : ACTIVE
+  CATEGORY    : software
+  TAG         : Diagramming
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949165246006886&atid=gh-edraw
+  MERCHANT PG : https://www.edrawsoft.com/
+  LC CODE     : 007949165246006886
+  ATID        : gh-edraw
+  VOLUME      : 980K/mo (visio alternative)
+  NOTES       : Visio alternative — strong business market. 280+ diagram types, perpetual license option.
+
+[20] SIDIFY INC
+  ID          : gh-sidify
+  STATUS      : ACTIVE
+  CATEGORY    : software
+  TAG         : Music Converter
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949163344007882&atid=gh-sidify
+  MERCHANT PG : https://www.sidify.com/
+  LC CODE     : 007949163344007882
+  ATID        : gh-sidify
+  VOLUME      : 1.2M/mo (spotify to mp3 converter)
+  NOTES       : Converts Spotify, Apple Music, Tidal. High-intent keyword — people actively searching for this tool.
+
+[21] MOVAVI SOFTWARE
+  ID          : gh-movavi
+  STATUS      : ACTIVE
+  CATEGORY    : software
+  TAG         : Video Editor
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949153344007119&atid=gh-movavi
+  MERCHANT PG : https://www.movavi.com/
+  LC CODE     : 007949153344007119
+  ATID        : gh-movavi
+  VOLUME      : 880K/mo (video editor no subscription)
+  NOTES       : One-time purchase differentiator vs subscription editors. Mac and Windows, Apple Silicon native.
+
+[22] JALBUM AB
+  ID          : gh-jalbum
+  STATUS      : ACTIVE
+  CATEGORY    : software
+  TAG         : Photo Gallery
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949143344006442&atid=gh-jalbum
+  MERCHANT PG : https://jalbum.net/
+  LC CODE     : 007949143344006442
+  ATID        : gh-jalbum
+  VOLUME      : 620K/mo (photo gallery website builder)
+  NOTES       : Build gallery websites without coding. Local build model — own your gallery permanently.
+
+[23] UPDF (SUPERACE)
+  ID          : gh-updf
+  STATUS      : ACTIVE
+  CATEGORY    : software
+  TAG         : AI PDF Editor
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949163344008112&atid=gh-updf
+  MERCHANT PG : https://updf.com/
+  LC CODE     : 007949163344008112
+  ATID        : gh-updf
+  VOLUME      : 720K/mo (ai pdf editor)
+  NOTES       : AI summarization and Q&A differentiator. Cross-platform Mac/Windows/iOS/Android.
+
+[24] ITOOLAB (LUCKYDOG)
+  ID          : gh-itoolab
+  STATUS      : ACTIVE
+  CATEGORY    : software
+  TAG         : iPhone Tools
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949163344008441&atid=gh-itoolab
+  MERCHANT PG : https://itoolab.com/
+  LC CODE     : 007949163344008441
+  ATID        : gh-itoolab
+  VOLUME      : 720K/mo (iphone unlock software)
+  NOTES       : Free trial shows results before purchase. Unlock, recover, fix iOS. Strong user intent.
+
+[25] TENORSHARE
+  ID          : gh-tenorshare
+  STATUS      : ACTIVE
+  CATEGORY    : software
+  TAG         : iPhone Recovery
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949163344008992&atid=gh-tenorshare
+  MERCHANT PG : https://www.tenorshare.com/
+  LC CODE     : 007949163344008992
+  ATID        : gh-tenorshare
+  VOLUME      : 1.6M/mo (recover deleted photos iphone)
+  NOTES       : ReiBoot, 4uKey, UltData, iCareFone. High commercial intent — people in crisis with their device.
+
+[26] APPY PIE (SNAPPY)
+  ID          : gh-appypie
+  STATUS      : ACTIVE
+  CATEGORY    : software
+  TAG         : No-Code Builder
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949153344007442&atid=gh-appypie
+  MERCHANT PG : https://www.appypie.com/
+  LC CODE     : 007949153344007442
+  ATID        : gh-appypie
+  VOLUME      : 1.4M/mo (no code app builder)
+  NOTES       : Apps, websites, chatbots, automation. No-code SaaS market growing rapidly.
+
+[27] INDIVIDUAL SOFTWARE
+  ID          : gh-individualsoftware
+  STATUS      : ACTIVE
+  CATEGORY    : software
+  TAG         : Educational Software
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949133344005882&atid=gh-individualsoftware
+  MERCHANT PG : https://www.individualsoftware.com/
+  LC CODE     : 007949133344005882
+  ATID        : gh-individualsoftware
+  VOLUME      : 480K/mo (typing software for adults)
+  NOTES       : Typing, reading, and professional skill development software.
+
+[28] ARCO AL HK (YOUWARE)
+  ID          : gh-youware
+  STATUS      : ACTIVE
+  CATEGORY    : software
+  TAG         : Productivity Tools
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949163344008118&atid=gh-youware
+  MERCHANT PG : https://www.youware.com/
+  LC CODE     : 007949163344008118
+  ATID        : gh-youware
+  VOLUME      : 120K/mo (youware software)
+  NOTES       : Productivity and content creation software tools.
+
+[29] RENOISE
+  ID          : gh-renoise
+  STATUS      : ACTIVE
+  CATEGORY    : software
+  TAG         : Music Production DAW
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949143344006551&atid=gh-renoise
+  MERCHANT PG : https://www.renoise.com/
+  LC CODE     : 007949143344006551
+  ATID        : gh-renoise
+  VOLUME      : 680K/mo (best daw for electronic music)
+  NOTES       : Tracker-based DAW. One-time purchase. Niche but loyal electronic music community.
+
+[30] PICADOR MULTIMEDIA
+  ID          : gh-picador
+  STATUS      : ACTIVE
+  CATEGORY    : software
+  TAG         : Multimedia Software
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949133344006228&atid=gh-picador
+  MERCHANT PG : https://www.picador.com/
+  LC CODE     : 007949133344006228
+  ATID        : gh-picador
+  VOLUME      : 320K/mo (multimedia software)
+  NOTES       : Video and audio production multimedia software.
+
+--------------------------------------------------------------------------------
+  CATEGORY 4 — PET CARE  [5 campaigns]
+--------------------------------------------------------------------------------
+
+[31] CANADAPETCARE.COM
+  ID          : gh-canadapetcare
+  STATUS      : ACTIVE
+  CATEGORY    : petcare
+  TAG         : Canadian Pet Pharmacy
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949083344004721&atid=gh-canadapetcare
+  MERCHANT PG : https://www.canadapetcare.com/
+  LC CODE     : 007949083344004721
+  ATID        : gh-canadapetcare
+  VOLUME      : 880K/mo (nexgard canada online)
+  NOTES       : Licensed Canadian online pet pharmacy. 20-40% below vet pricing. Health Canada approved.
+
+[32] BESTVETCARE.COM
+  ID          : gh-bestvetcare
+  STATUS      : ACTIVE
+  CATEGORY    : petcare
+  TAG         : Online Pet Pharmacy
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949093344004992&atid=gh-bestvetcare
+  MERCHANT PG : https://www.bestvetcare.com/
+  LC CODE     : 007949093344004992
+  ATID        : gh-bestvetcare
+  VOLUME      : 880K/mo (best online pet pharmacy)
+  NOTES       : Quality pet medications at below-vet pricing. Frontline, Bravecto, Heartgard.
+
+[33] BUDGETPETCARE.COM
+  ID          : gh-budgetpetcare
+  STATUS      : ACTIVE
+  CATEGORY    : petcare
+  TAG         : Budget Pet Meds
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949103344005118&atid=gh-budgetpetcare
+  MERCHANT PG : https://www.budgetpetcare.com/
+  LC CODE     : 007949103344005118
+  ATID        : gh-budgetpetcare
+  VOLUME      : 980K/mo (cheap pet medications online)
+  NOTES       : 30-50% savings on preventatives. FDA-approved same manufacturer products.
+
+[34] BUDGETPETWORLD.COM
+  ID          : gh-budgetpetworld
+  STATUS      : ACTIVE
+  CATEGORY    : petcare
+  TAG         : Budget Pet Supplies
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949113344005224&atid=gh-budgetpetworld
+  MERCHANT PG : https://www.budgetpetworld.com/
+  LC CODE     : 007949113344005224
+  ATID        : gh-budgetpetworld
+  VOLUME      : 680K/mo (cheap pet supplies online)
+  NOTES       : International shipping. Wide selection of preventatives and treatments.
+
+[35] DISCOUNTPETCARE
+  ID          : gh-discountpetcare
+  STATUS      : ACTIVE
+  CATEGORY    : petcare
+  TAG         : Discount Pet Meds
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949123344005441&atid=gh-discountpetcare
+  MERCHANT PG : https://www.discountpetcare.com/
+  LC CODE     : 007949123344005441
+  ATID        : gh-discountpetcare
+  VOLUME      : 880K/mo (discount pet medications)
+  NOTES       : FDA-approved medications at genuine discount pricing.
+
+--------------------------------------------------------------------------------
+  CATEGORY 5 — HEALTH & WELLNESS  [3 campaigns]
+--------------------------------------------------------------------------------
+
+[36] NURSE JAMIE
+  ID          : gh-nursejamie
+  STATUS      : ACTIVE
+  CATEGORY    : health
+  TAG         : Skincare Tools
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949153344007112&atid=gh-nursejamie
+  MERCHANT PG : https://nursejamie.com/
+  LC CODE     : 007949153344007112
+  ATID        : gh-nursejamie
+  VOLUME      : 680K/mo (nurse jamie skincare tools)
+  NOTES       : Celebrity esthetician brand. Professional-grade beauty devices for home use.
+
+[37] PERSONALABS
+  ID          : gh-personalabs
+  STATUS      : ACTIVE
+  CATEGORY    : health
+  TAG         : Direct Lab Testing
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949133344005442&atid=gh-personalabs
+  MERCHANT PG : https://www.personalabs.com/
+  LC CODE     : 007949133344005442
+  ATID        : gh-personalabs
+  VOLUME      : 1.2M/mo (order blood test without doctor)
+  NOTES       : LabCorp and Quest locations. No doctor required. STD, thyroid, metabolic panels.
+
+[38] THE AYURVEDA EXPERIENCE
+  ID          : gh-ayurvedaexperience
+  STATUS      : ACTIVE
+  CATEGORY    : health
+  TAG         : Ayurvedic Wellness
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949163344008221&atid=gh-ayurvedaexperience
+  MERCHANT PG : https://www.theayurvedaexperience.com/
+  LC CODE     : 007949163344008221
+  ATID        : gh-ayurvedaexperience
+  VOLUME      : 980K/mo (ashwagandha supplement review)
+  NOTES       : Ashwagandha, turmeric, neem skincare. Evidence-supported ingredients angle.
+
+--------------------------------------------------------------------------------
+  CATEGORY 6 — AUTO & IMPORTS  [3 campaigns]
+--------------------------------------------------------------------------------
+
+[39] MAXPEEDINGRODS (US)
+  ID          : gh-maxpeedingrodsus
+  STATUS      : ACTIVE
+  CATEGORY    : auto
+  TAG         : Performance Parts US
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949133344006421&atid=gh-maxpeedingrodsus
+  MERCHANT PG : https://www.maxpeedingrods.com/
+  LC CODE     : 007949133344006421
+  ATID        : gh-maxpeedingrodsus
+  VOLUME      : 880K/mo (budget coilovers review)
+  NOTES       : Budget builds and track day angle. US warehouse. Coilovers most popular category.
+
+[40] MAXPEEDINGRODS (AU)
+  ID          : gh-maxpeedingrodsau
+  STATUS      : ACTIVE
+  CATEGORY    : auto
+  TAG         : Performance Parts AU
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949143344006554&atid=gh-maxpeedingrodsau
+  MERCHANT PG : https://www.maxpeedingrods.com.au/
+  LC CODE     : 007949143344006554
+  ATID        : gh-maxpeedingrodsau
+  VOLUME      : 620K/mo (coilovers australia cheap)
+  NOTES       : Australian-specific catalog. AU warehouse for faster domestic shipping.
+
+[41] LA FUENTE IMPORTS
+  ID          : gh-lafuente
+  STATUS      : ACTIVE
+  CATEGORY    : auto
+  TAG         : Mexican Imports
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949083344003992&atid=gh-lafuente
+  MERCHANT PG : https://www.lafuente.com/
+  LC CODE     : 007949083344003992
+  ATID        : gh-lafuente
+  VOLUME      : 680K/mo (mexican folk art online)
+  NOTES       : Authentic Mexican folk art direct from artisan communities. Talavera, Day of the Dead, alebrijes.
+
+--------------------------------------------------------------------------------
+  CATEGORY 7 — PRINT & SIGNS  [6 campaigns]
+--------------------------------------------------------------------------------
+
+[42] BUILDASIGN
+  ID          : gh-buildasign
+  STATUS      : ACTIVE
+  CATEGORY    : print
+  TAG         : Custom Signs
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949043344001995&atid=gh-buildasign
+  MERCHANT PG : https://www.buildasign.com/
+  LC CODE     : 007949043344001995
+  ATID        : gh-buildasign
+  VOLUME      : 1.4M/mo (custom banners online)
+  NOTES       : 10M+ signs produced. Banners, yard signs, canvas, retractable. Bulk pricing at 10+.
+
+[43] BANNERSONTHECHEAP
+  ID          : gh-bannersonthecheap
+  STATUS      : ACTIVE
+  CATEGORY    : print
+  TAG         : Cheap Banners
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949073344003661&atid=gh-bannersonthecheap
+  MERCHANT PG : https://www.bannersonthecheap.com/
+  LC CODE     : 007949073344003661
+  ATID        : gh-bannersonthecheap
+  VOLUME      : 980K/mo (cheapest vinyl banners online)
+  NOTES       : 50-70% off promotions almost continuously. Email list for early access. Sister to CanvasOnTheCheap.
+
+[44] CANVASONTHECHEAP
+  ID          : gh-canvasonthecheap
+  STATUS      : ACTIVE
+  CATEGORY    : print
+  TAG         : Budget Canvas Prints
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949073344003662&atid=gh-canvasonthecheap
+  MERCHANT PG : https://www.canvasonthecheap.com/
+  LC CODE     : 007949073344003662
+  ATID        : gh-canvasonthecheap
+  VOLUME      : 980K/mo (cheapest canvas prints online)
+  NOTES       : Same company as BannersOnTheCheap. Real canvas, archival inks. Best price during sales.
+
+[45] EASY CANVAS PRINTS
+  ID          : gh-easycanvasprints
+  STATUS      : ACTIVE
+  CATEGORY    : print
+  TAG         : Photo Canvas
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949063344003112&atid=gh-easycanvasprints
+  MERCHANT PG : https://www.easycanvasprints.com/
+  LC CODE     : 007949063344003112
+  ATID        : gh-easycanvasprints
+  VOLUME      : 1.2M/mo (photo to canvas print)
+  NOTES       : Best for gifts — accurate color reproduction and consistent quality. Gallery wrap included.
+
+[46] ETCHING EXPRESSIONS
+  ID          : gh-etchingexpressions
+  STATUS      : ACTIVE
+  CATEGORY    : print
+  TAG         : Laser Engraved Gifts
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949083344004332&atid=gh-etchingexpressions
+  MERCHANT PG : https://www.etchingexpressions.com/
+  LC CODE     : 007949083344004332
+  ATID        : gh-etchingexpressions
+  VOLUME      : 1.1M/mo (custom engraved gifts)
+  NOTES       : Glassware, wood, metal, leather engraving. Corporate bulk ordering strong angle.
+
+[47] RYONET
+  ID          : gh-ryonet
+  STATUS      : ACTIVE
+  CATEGORY    : print
+  TAG         : Screen Printing
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949084633004512&atid=gh-ryonet
+  MERCHANT PG : https://www.ryonet.com/
+  LC CODE     : 007949084633004512
+  ATID        : gh-ryonet
+  VOLUME      : 880K/mo (screen printing equipment beginners)
+  NOTES       : Complete starter kits and individual components. Beginner to pro angle.
+
+--------------------------------------------------------------------------------
+  CATEGORY 8 — HARDWARE & SUPPLIES  [5 campaigns]
+--------------------------------------------------------------------------------
+
+[48] TRADEMARK HARDWARE
+  ID          : gh-trademarkhardware
+  STATUS      : ACTIVE
+  CATEGORY    : hardware
+  TAG         : Hardware & Home Improvement
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949123344005912&atid=gh-trademarkhardware
+  MERCHANT PG : https://www.trademarkhardware.com/
+  LC CODE     : 007949123344005912
+  ATID        : gh-trademarkhardware
+  VOLUME      : 880K/mo (hardware store online)
+  NOTES       : Wide selection of hardware, plumbing, and home improvement parts.
+
+[49] TRADEMARK SOUNDPROOFING
+  ID          : gh-trademarksoundproofing
+  STATUS      : ACTIVE
+  CATEGORY    : hardware
+  TAG         : Soundproofing Materials
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949133344006118&atid=gh-trademarksoundproofing
+  MERCHANT PG : https://www.trademarksoundproofing.com/
+  LC CODE     : 007949133344006118
+  ATID        : gh-trademarksoundproofing
+  VOLUME      : 880K/mo (soundproofing materials cheap)
+  NOTES       : Acoustic panels, MLV, foam. Home studio angle strong. How-to content drives traffic.
+
+[50] WAREHOUSE 115 INC
+  ID          : gh-warehouse115
+  STATUS      : ACTIVE
+  CATEGORY    : hardware
+  TAG         : Wholesale Products
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949163344007442&atid=gh-warehouse115
+  MERCHANT PG : https://www.warehouse115.com/
+  LC CODE     : 007949163344007442
+  ATID        : gh-warehouse115
+  VOLUME      : 680K/mo (wholesale products online)
+  NOTES       : Industrial supplies and bulk products at warehouse pricing.
+
+[51] FIELDTEX PRODUCTS
+  ID          : gh-fieldtex
+  STATUS      : ACTIVE
+  CATEGORY    : hardware
+  TAG         : First Aid & Medical Supplies
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949123344005118&atid=gh-fieldtex
+  MERCHANT PG : https://www.fieldtex.com/
+  LC CODE     : 007949123344005118
+  ATID        : gh-fieldtex
+  VOLUME      : 880K/mo (first aid kit custom)
+  NOTES       : Custom first aid kits, medical bags, emergency preparedness. B2B workplace angle.
+
+[52] PRODUCTS ON THE GO
+  ID          : gh-productsonthego
+  STATUS      : ACTIVE
+  CATEGORY    : hardware
+  TAG         : Travel Products
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949113344004882&atid=gh-productsonthego
+  MERCHANT PG : https://www.productsonthego.com/
+  LC CODE     : 007949113344004882
+  ATID        : gh-productsonthego
+  VOLUME      : 680K/mo (travel products online)
+  NOTES       : Portable and travel-ready products for active professionals.
+
+--------------------------------------------------------------------------------
+  CATEGORY 9 — LIFESTYLE  [18 campaigns]
+--------------------------------------------------------------------------------
+
+[53] HALLOWEENCOSTUMES.COM
+  ID          : gh-halloweencostumes
+  STATUS      : ACTIVE
+  CATEGORY    : lifestyle
+  TAG         : Costumes
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949053344002874&atid=gh-halloweencostumes
+  MERCHANT PG : https://www.halloweencostumes.com/
+  LC CODE     : 007949053344002874
+  ATID        : gh-halloweencostumes
+  VOLUME      : 8.8M/mo (halloween costumes 2026) ← HIGHEST VOLUME
+  NOTES       : Single highest volume keyword in the entire catalog. Peak Aug-Oct. Plan heavy content push by August.
+
+[54] GRAETER'S ICE CREAM
+  ID          : gh-graeters
+  STATUS      : ACTIVE
+  CATEGORY    : lifestyle
+  TAG         : Premium Ice Cream
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949073344004112&atid=gh-graeters
+  MERCHANT PG : https://www.graeters.com/
+  LC CODE     : 007949073344004112
+  ATID        : gh-graeters
+  VOLUME      : 880K/mo (best ice cream shipped nationwide)
+  NOTES       : French pot process since 1870. Black Raspberry Chip is the hero product. Holiday gifting angle.
+
+[55] THE CHESS STORE
+  ID          : gh-thechessstore
+  STATUS      : ACTIVE
+  CATEGORY    : lifestyle
+  TAG         : Chess Equipment
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949103344005112&atid=gh-thechessstore
+  MERCHANT PG : https://www.thechessstore.com/
+  LC CODE     : 007949103344005112
+  ATID        : gh-thechessstore
+  VOLUME      : 880K/mo (best chess set online)
+  NOTES       : Beginner to tournament grade. Staunton pieces, clocks, accessories.
+
+[56] MUSEUMREPLICAS.COM
+  ID          : gh-museumreplicas
+  STATUS      : ACTIVE
+  CATEGORY    : lifestyle
+  TAG         : Historical Replicas
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949113344005442&atid=gh-museumreplicas
+  MERCHANT PG : https://www.museumreplicas.com/
+  LC CODE     : 007949113344005442
+  ATID        : gh-museumreplicas
+  VOLUME      : 880K/mo (historical swords online)
+  NOTES       : LARP, collectors, theatrical. Medieval, Viking, Japanese, fantasy replicas.
+
+[57] ATLANTA CUTLERY CORP
+  ID          : gh-atlantacutlery
+  STATUS      : ACTIVE
+  CATEGORY    : lifestyle
+  TAG         : Collectible Knives
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949123344005771&atid=gh-atlantacutlery
+  MERCHANT PG : https://www.atlantacutlery.com/
+  LC CODE     : 007949123344005771
+  ATID        : gh-atlantacutlery
+  VOLUME      : 680K/mo (collectible knives online)
+  NOTES       : Established since 1971. Collectors and enthusiasts market.
+
+[58] VIPER TEC INC
+  ID          : gh-vipertec
+  STATUS      : ACTIVE
+  CATEGORY    : lifestyle
+  TAG         : Tactical Knives
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949133344006224&atid=gh-vipertec
+  MERCHANT PG : https://www.vipertec.com/
+  LC CODE     : 007949133344006224
+  ATID        : gh-vipertec
+  VOLUME      : 880K/mo (tactical knives online)
+  NOTES       : EDC, folding, fixed blade. Tactical and everyday carry market.
+
+[59] COMBAT FLIP FLOPS
+  ID          : gh-combatflipflops
+  STATUS      : ACTIVE
+  CATEGORY    : lifestyle
+  TAG         : Mission-Driven Footwear
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949143344006881&atid=gh-combatflipflops
+  MERCHANT PG : https://www.combatflipflops.com/
+  LC CODE     : 007949143344006881
+  ATID        : gh-combatflipflops
+  VOLUME      : 480K/mo (combat flip flops review)
+  NOTES       : Army Ranger-founded. Funds landmine clearance. Transparent impact reporting.
+
+[60] CAMANO ISLAND COFFEE
+  ID          : gh-camanoislandcoffee
+  STATUS      : ACTIVE
+  CATEGORY    : lifestyle
+  TAG         : Fair Trade Coffee
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949053344002441&atid=gh-camanoislandcoffee
+  MERCHANT PG : https://www.camanoislandcoffee.com/
+  LC CODE     : 007949053344002441
+  ATID        : gh-camanoislandcoffee
+  VOLUME      : 880K/mo (best organic coffee subscription)
+  NOTES       : Fair trade organic since 1994. Ships within days of roasting. Subscription model.
+
+[61] READYGOLF
+  ID          : gh-readygolf
+  STATUS      : ACTIVE
+  CATEGORY    : lifestyle
+  TAG         : Golf Equipment
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949103344004551&atid=gh-readygolf
+  MERCHANT PG : https://www.readygolf.com/
+  LC CODE     : 007949103344004551
+  ATID        : gh-readygolf
+  VOLUME      : 880K/mo (golf accessories online)
+  NOTES       : Equipment, accessories, and custom items. Golf demographic = strong purchasing power.
+
+[62] GUNSINTERNATIONAL
+  ID          : gh-gunsinternational
+  STATUS      : ACTIVE
+  CATEGORY    : lifestyle
+  TAG         : Firearms Marketplace
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949093344004221&atid=gh-gunsinternational
+  MERCHANT PG : https://www.gunsinternational.com/
+  LC CODE     : 007949093344004221
+  ATID        : gh-gunsinternational
+  VOLUME      : 1.2M/mo (buy guns online marketplace)
+  NOTES       : Marketplace model — buyers and sellers. Extensive listing database.
+
+[63] CARMEL CAR & LIMO
+  ID          : gh-carmellimo
+  STATUS      : ACTIVE
+  CATEGORY    : lifestyle
+  TAG         : Luxury Car Service
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949053344002881&atid=gh-carmellimo
+  MERCHANT PG : https://carmellimo.com/
+  LC CODE     : 007949053344002881
+  ATID        : gh-carmellimo
+  VOLUME      : 980K/mo (luxury car service nyc)
+  NOTES       : NYC-based airport transfers and corporate travel. High AOV per transaction.
+
+[64] BUGATCHI
+  ID          : gh-bugatchi
+  STATUS      : ACTIVE
+  CATEGORY    : lifestyle
+  TAG         : Men's Fashion
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949153344007662&atid=gh-bugatchi
+  MERCHANT PG : https://www.bugatchi.com/
+  LC CODE     : 007949153344007662
+  ATID        : gh-bugatchi
+  VOLUME      : 880K/mo (premium mens casual shirts)
+  NOTES       : Bold patterns, quality fabrics, shaped hem. Premium men's casual market.
+
+[65] SURVEY JUNKIE
+  ID          : gh-surveyjunkie
+  STATUS      : ACTIVE
+  CATEGORY    : lifestyle
+  TAG         : Paid Surveys
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949033344001882&atid=gh-surveyjunkie
+  MERCHANT PG : https://www.surveyjunkie.com/
+  LC CODE     : 007949033344001882
+  ATID        : gh-surveyjunkie
+  VOLUME      : 2.4M/mo (make money online surveys)
+  NOTES       : 20M+ members. $40-100/mo realistic earnings. PayPal payout. Evergreen demand.
+
+[66] TASTY RIBBON
+  ID          : gh-tastyribbon
+  STATUS      : ACTIVE
+  CATEGORY    : lifestyle
+  TAG         : Gourmet Food Gifts
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949153344007881&atid=gh-tastyribbon
+  MERCHANT PG : https://www.tastyribbon.com/
+  LC CODE     : 007949153344007881
+  ATID        : gh-tastyribbon
+  VOLUME      : 1.2M/mo (gourmet food gift baskets)
+  NOTES       : Corporate and personal food gifts. Holiday seasonal spike. Bulk corporate ordering.
+
+[67] RSE (BGMGIRL.COM)
+  ID          : gh-bgmgirl
+  STATUS      : ACTIVE
+  CATEGORY    : lifestyle
+  TAG         : Royalty-Free Music
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949153344007992&atid=gh-bgmgirl
+  MERCHANT PG : https://www.bgmgirl.com/
+  LC CODE     : 007949153344007992
+  ATID        : gh-bgmgirl
+  VOLUME      : 1.8M/mo (royalty free music youtube)
+  NOTES       : YouTube-safe, Twitch-safe, podcast-safe. Creator economy growing rapidly.
+
+[68] INCENTREV
+  ID          : gh-incentrev
+  STATUS      : ACTIVE
+  CATEGORY    : lifestyle
+  TAG         : Rewards Platform
+  AFFILIATE   : https://www.linkconnector.com/ta.php?lc=007949123344005991&atid=gh-incentrev
+  MERCHANT PG : https://www.incentrev.com/
+  LC CODE     : 007949123344005991
+  ATID        : gh-incentrev
+  VOLUME      : 680K/mo (business loyalty rewards platform)
+  NOTES       : B2B loyalty and incentive programs. Employee recognition and customer retention.
+
+================================================================================
+  CAMPAIGN SUMMARY TABLE
+================================================================================
+
+  #    ID                        CATEGORY    ATID                       STATUS
+  ---  ------------------------  ----------  -------------------------  ------
+  01   gh-efile                  tax         gh-efile                   ACTIVE
+  02   gh-etax                   tax         gh-etax                    ACTIVE
+  03   gh-taxextension           tax         gh-taxextension            ACTIVE
+  04   gh-eztaxreturn            tax         gh-eztaxreturn             ACTIVE
+  05   gh-boardvitals            education   gh-boardvitals             ACTIVE
+  06   gh-surgent                education   gh-surgent                 ACTIVE
+  07   gh-hrcp                   education   gh-hrcp                    ACTIVE
+  08   gh-oakstone               education   gh-oakstone                ACTIVE
+  09   gh-securitiesinstitute    education   gh-securitiesinstitute     ACTIVE
+  10   gh-illumeo                education   gh-illumeo                 ACTIVE
+  11   gh-wolterskluwer          education   gh-wolterskluwer           ACTIVE
+  12   gh-learntasticcpr         education   gh-learntasticcpr          ACTIVE
+  13   gh-learntasticahca        education   gh-learntasticahca         ACTIVE
+  14   gh-pmtraining             education   gh-pmtraining              ACTIVE
+  15   gh-nordvpn                software    gh-nordvpn                 ACTIVE
+  16   gh-depositphotos          software    gh-depositphotos           ACTIVE
+  17   gh-filmora                software    gh-filmora                 ACTIVE
+  18   gh-pdfelement             software    gh-pdfelement              ACTIVE
+  19   gh-edraw                  software    gh-edraw                   ACTIVE
+  20   gh-sidify                 software    gh-sidify                  ACTIVE
+  21   gh-movavi                 software    gh-movavi                  ACTIVE
+  22   gh-jalbum                 software    gh-jalbum                  ACTIVE
+  23   gh-updf                   software    gh-updf                    ACTIVE
+  24   gh-itoolab                software    gh-itoolab                 ACTIVE
+  25   gh-tenorshare             software    gh-tenorshare              ACTIVE
+  26   gh-appypie                software    gh-appypie                 ACTIVE
+  27   gh-individualsoftware     software    gh-individualsoftware      ACTIVE
+  28   gh-youware                software    gh-youware                 ACTIVE
+  29   gh-renoise                software    gh-renoise                 ACTIVE
+  30   gh-picador                software    gh-picador                 ACTIVE
+  31   gh-canadapetcare          petcare     gh-canadapetcare           ACTIVE
+  32   gh-bestvetcare            petcare     gh-bestvetcare             ACTIVE
+  33   gh-budgetpetcare          petcare     gh-budgetpetcare           ACTIVE
+  34   gh-budgetpetworld         petcare     gh-budgetpetworld          ACTIVE
+  35   gh-discountpetcare        petcare     gh-discountpetcare         ACTIVE
+  36   gh-nursejamie             health      gh-nursejamie              ACTIVE
+  37   gh-personalabs            health      gh-personalabs             ACTIVE
+  38   gh-ayurvedaexperience     health      gh-ayurvedaexperience      ACTIVE
+  39   gh-maxpeedingrodsus       auto        gh-maxpeedingrodsus        ACTIVE
+  40   gh-maxpeedingrodsau       auto        gh-maxpeedingrodsau        ACTIVE
+  41   gh-lafuente               auto        gh-lafuente                ACTIVE
+  42   gh-buildasign             print       gh-buildasign              ACTIVE
+  43   gh-bannersonthecheap      print       gh-bannersonthecheap       ACTIVE
+  44   gh-canvasonthecheap       print       gh-canvasonthecheap        ACTIVE
+  45   gh-easycanvasprints       print       gh-easycanvasprints        ACTIVE
+  46   gh-etchingexpressions     print       gh-etchingexpressions      ACTIVE
+  47   gh-ryonet                 print       gh-ryonet                  ACTIVE
+  48   gh-trademarkhardware      hardware    gh-trademarkhardware       ACTIVE
+  49   gh-trademarksoundproofing hardware    gh-trademarksoundproofing  ACTIVE
+  50   gh-warehouse115           hardware    gh-warehouse115            ACTIVE
+  51   gh-fieldtex               hardware    gh-fieldtex                ACTIVE
+  52   gh-productsonthego        hardware    gh-productsonthego         ACTIVE
+  53   gh-halloweencostumes      lifestyle   gh-halloweencostumes       ACTIVE
+  54   gh-graeters               lifestyle   gh-graeters                ACTIVE
+  55   gh-thechessstore          lifestyle   gh-thechessstore           ACTIVE
+  56   gh-museumreplicas         lifestyle   gh-museumreplicas          ACTIVE
+  57   gh-atlantacutlery         lifestyle   gh-atlantacutlery          ACTIVE
+  58   gh-vipertec               lifestyle   gh-vipertec                ACTIVE
+  59   gh-combatflipflops        lifestyle   gh-combatflipflops         ACTIVE
+  60   gh-camanoislandcoffee     lifestyle   gh-camanoislandcoffee      ACTIVE
+  61   gh-readygolf              lifestyle   gh-readygolf               ACTIVE
+  62   gh-gunsinternational      lifestyle   gh-gunsinternational       ACTIVE
+  63   gh-carmellimo             lifestyle   gh-carmellimo              ACTIVE
+  64   gh-bugatchi               lifestyle   gh-bugatchi                ACTIVE
+  65   gh-surveyjunkie           lifestyle   gh-surveyjunkie            ACTIVE
+  66   gh-tastyribbon            lifestyle   gh-tastyribbon             ACTIVE
+  67   gh-bgmgirl                lifestyle   gh-bgmgirl                 ACTIVE
+  68   gh-incentrev              lifestyle   gh-incentrev               ACTIVE
+
+  TOTAL ACTIVE CAMPAIGNS : 68
+  TOTAL CATEGORIES       : 9
+  NETWORK                : LinkConnector
+  ACCOUNT                : 007949
+  TRACKING PREFIX        : gh-
+  DIRECTORY URL          : https://brightlane.github.io/GlobalCampaignHub/
+
+================================================================================
+  HIGHEST VOLUME KEYWORDS BY MERCHANT
+================================================================================
+
+  RANK  MERCHANT               KEYWORD                           VOLUME
+  ----  ---------------------  --------------------------------  --------
+  1     HalloweenCostumes.com  halloween costumes 2026           8.8M/mo
+  2     Survey Junkie          make money online surveys         2.4M/mo
+  3     E-file.com             file taxes online                 2.4M/mo
+  4     NordVPN                best vpn 2026                     2.1M/mo
+  5     Wondershare Filmora    best video editor 2026            1.9M/mo
+  6     TaxExtension.com       tax extension 2026                1.8M/mo
+  7     BGM Girl               royalty free music youtube        1.8M/mo
+  8     Tenorshare             recover deleted photos iphone     1.6M/mo
+  9     E-file.com             free tax filing online            1.6M/mo
+  10    Appy Pie               no code app builder               1.4M/mo
+  11    LearnTastic CPR        online cpr certification          1.4M/mo
+  12    BuildASign             custom banners online             1.4M/mo
+  13    Wondershare PDFelement adobe acrobat alternative         1.3M/mo
+  14    Personalabs            order blood test without doctor   1.2M/mo
+  15    GunsInternational      buy guns online marketplace       1.2M/mo
+
+================================================================================
+  CHANGE LOG
+================================================================================
+
+  2026-04-30  Initial LMSS created for GlobalCampaignHub
+              68 merchants verified through LinkConnector Account 007949
+              All atids prefixed with gh- for tracking differentiation
+              Separate from Brightlane (lc=014538) — never mix accounts
+
+================================================================================
+  ACCOUNT SEPARATION NOTICE
+================================================================================
+
+  GlobalCampaignHub (THIS FILE)    : LC Account 007949 | gh- atid prefix
+  Brightlane Merchant Directory    : LC Account 014538 | bl- atid prefix
+
+  NEVER mix affiliate codes between accounts.
+  Each site uses completely separate LC codes and atid prefixes.
+
+================================================================================
+  END OF LMSS — GLOBALCAMPAIGNHUB
+  NEXT REVIEW: 2026-05-30
+================================================================================
