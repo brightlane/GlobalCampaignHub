@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GlobalCampaignHub — Social Media Generator</title>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet"/>
+  <style>
+    :root{--bg:#0a0b0d;--bg2:#111318;--bg3:#1a1d24;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);--text:#e8e9ed;--muted:#8a8d99;--dim:#555866;--accent:#e8ff47;--accent2:#47ffb8;--font-head:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;--font-mono:'JetBrains Mono',monospace;--radius:10px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font-body);background:var(--bg);color:var(--text);min-height:100vh;font-size:14px}
+    .header{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--bg2)}
+    .header-logo{font-family:var(--font-head);font-weight:800;font-size:1rem}
+    .header-badge{background:var(--accent);color:#0a0b0d;font-size:0.6rem;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:0.08em}
+    .layout{display:grid;grid-template-columns:280px 1fr;height:calc(100vh - 61px)}
+    .sidebar{background:var(--bg2);border-right:1px solid var(--border);overflow-y:auto;padding:16px}
+    .sidebar-label{font-family:var(--font-head);font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;margin-top:16px}
+    .sidebar-label:first-child{margin-top:0}
+    .merchant-list{display:flex;flex-direction:column;gap:4px}
+    .merchant-item{padding:8px 10px;border-radius:7px;cursor:pointer;border:1px solid transparent;transition:all .15s;font-size:0.82rem}
+    .merchant-item:hover{background:var(--bg3);border-color:var(--border)}
+    .merchant-item.active{background:rgba(232,255,71,0.08);border-color:rgba(232,255,71,0.3);color:var(--accent)}
+    .merchant-cat{font-size:0.6rem;color:var(--dim);font-family:var(--font-head);font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+    .search-box{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:7px;padding:8px 12px;color:var(--text);font-family:var(--font-body);font-size:0.82rem;outline:none;margin-bottom:12px}
+    .search-box:focus{border-color:var(--accent)}
+    .main{padding:24px;overflow-y:auto}
+    .controls{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:20px}
+    .control-group{display:flex;flex-direction:column;gap:6px}
+    .control-label{font-family:var(--font-head);font-size:0.62rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--dim)}
+    select,input[type=text]{background:var(--bg2);border:1px solid var(--border2);border-radius:7px;padding:8px 12px;color:var(--text);font-family:var(--font-body);font-size:0.82rem;outline:none;width:100%;cursor:pointer}
+    select:focus,input[type=text]:focus{border-color:var(--accent)}
+    .btn{font-family:var(--font-head);font-weight:700;font-size:0.78rem;padding:9px 18px;border-radius:7px;border:none;cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:6px}
+    .btn-primary{background:var(--accent);color:#0a0b0d}.btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,255,71,0.2)}
+    .btn-secondary{background:var(--bg3);color:var(--text);border:1px solid var(--border2)}.btn-secondary:hover{border-color:var(--accent)}
+    .btn-copy{background:transparent;color:var(--dim);border:1px solid var(--border);font-size:0.72rem;padding:5px 10px}.btn-copy:hover{border-color:var(--accent2);color:var(--accent2)}
+    .btn-copy.copied{border-color:var(--accent2);color:var(--accent2)}
+    .generate-row{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap}
+    .platforms{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+    .platform-btn{font-family:var(--font-head);font-size:0.7rem;font-weight:700;padding:6px 14px;border-radius:6px;border:1px solid var(--border2);color:var(--muted);background:transparent;cursor:pointer;transition:all .15s}
+    .platform-btn.active{background:var(--accent);color:#0a0b0d;border-color:var(--accent)}
+    .output-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+    .output-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+    .output-header{padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+    .output-platform{font-family:var(--font-head);font-size:0.72rem;font-weight:700;display:flex;align-items:center;gap:6px}
+    .output-body{padding:14px 16px}
+    .output-text{font-family:var(--font-mono);font-size:0.78rem;color:var(--text);line-height:1.65;white-space:pre-wrap;word-break:break-word;background:var(--bg3);border-radius:6px;padding:12px;margin-bottom:10px;min-height:80px;max-height:280px;overflow-y:auto}
+    .output-meta{display:flex;align-items:center;justify-content:space-between;font-size:0.7rem;color:var(--dim)}
+    .char-count{font-family:var(--font-mono)}
+    .char-count.over{color:var(--accent3,#ff6b47)}
+    .hashtags{padding:10px 16px;border-top:1px solid var(--border);background:var(--bg3)}
+    .hashtag-list{font-family:var(--font-mono);font-size:0.72rem;color:var(--accent2);line-height:1.7}
+    .status{padding:40px;text-align:center;color:var(--muted);font-size:0.9rem}
+    .merchant-selected{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);padding:14px 18px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between}
+    .m-sel-name{font-family:var(--font-head);font-size:1rem;font-weight:800}
+    .m-sel-cat{font-size:0.72rem;color:var(--dim)}
+    .m-sel-vol{font-size:0.75rem;color:var(--accent);font-family:var(--font-head);font-weight:700}
+    .loading{display:flex;align-items:center;gap:10px;color:var(--muted);padding:20px 0}
+    .spinner{width:16px;height:16px;border:2px solid var(--border2);border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @media(max-width:768px){.layout{grid-template-columns:1fr;height:auto}.sidebar{height:200px}}
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-logo">GlobalCampaignHub <span class="header-badge">Social Generator</span></div>
+  <a href="index.html" style="font-size:0.8rem;color:var(--muted)">← Back to Directory</a>
+</div>
+
+<div class="layout">
+  <!-- Sidebar — merchant picker -->
+  <aside class="sidebar">
+    <input type="text" class="search-box" id="merchant-search" placeholder="Search merchants..." aria-label="Search merchants"/>
+    <div class="sidebar-label">Select Merchant</div>
+    <div class="merchant-list" id="merchant-list"></div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main">
+    <div id="merchant-display" class="status">← Select a merchant to generate social content</div>
+
+    <div id="generator-ui" style="display:none">
+      <div id="selected-merchant-info" class="merchant-selected"></div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <div class="control-group">
+          <div class="control-label">Tone</div>
+          <select id="tone">
+            <option value="professional">Professional</option>
+            <option value="casual" selected>Casual & Friendly</option>
+            <option value="urgent">Urgent / FOMO</option>
+            <option value="educational">Educational</option>
+            <option value="humorous">Humorous</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <div class="control-label">Focus</div>
+          <select id="focus">
+            <option value="deal">Best Deal / Price</option>
+            <option value="features">Key Features</option>
+            <option value="problem">Problem → Solution</option>
+            <option value="comparison">vs Competitor</option>
+            <option value="review">Honest Review</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <div class="control-label">Audience</div>
+          <select id="audience">
+            <option value="general">General</option>
+            <option value="professionals">Professionals</option>
+            <option value="students">Students</option>
+            <option value="small-business">Small Business</option>
+            <option value="creators">Content Creators</option>
+          </select>
+        </div>
+        <div class="control-group">
+          <div class="control-label">Custom Angle</div>
+          <input type="text" id="custom-angle" placeholder="e.g. back to school, holiday gift..."/>
+        </div>
+      </div>
+
+      <!-- Platform selector -->
+      <div class="sidebar-label">Platforms</div>
+      <div class="platforms" id="platforms">
+        <button class="platform-btn active" data-platform="twitter">𝕏 Twitter/X</button>
+        <button class="platform-btn active" data-platform="linkedin">in LinkedIn</button>
+        <button class="platform-btn active" data-platform="facebook">f Facebook</button>
+        <button class="platform-btn active" data-platform="instagram">📷 Instagram</button>
+        <button class="platform-btn" data-platform="tiktok">🎵 TikTok</button>
+        <button class="platform-btn" data-platform="reddit">🔴 Reddit</button>
+        <button class="platform-btn" data-platform="pinterest">📌 Pinterest</button>
+        <button class="platform-btn" data-platform="threads">🧵 Threads</button>
+      </div>
+
+      <!-- Generate button -->
+      <div class="generate-row">
+        <button class="btn btn-primary" id="generate-btn" onclick="generateContent()">⚡ Generate Social Content</button>
+        <button class="btn btn-secondary" onclick="clearOutput()">Clear</button>
+      </div>
+
+      <!-- Output -->
+      <div id="output-area"></div>
+    </div>
+  </main>
+</div>
+
+<script>
+const BASE = 'https://brightlane.github.io/GlobalCampaignHub';
+const TODAY = new Date().toISOString().slice(0,10);
+
+const MERCHANTS = [
+  { id:'gh-efile',               name:'E-file.com',              cat:'Tax',       lc:'007949021469002241', vol:'2.4M/mo', kw:'file taxes online',                desc:'IRS-authorized federal tax filing. Significantly cheaper than TurboTax.' },
+  { id:'gh-etax',                name:'E TAX LLC',               cat:'Tax',       lc:'007949113645003507', vol:'880K/mo', kw:'online tax preparation service',   desc:'Professional online tax prep for complex returns.' },
+  { id:'gh-taxextension',        name:'TaxExtension.com',        cat:'Tax',       lc:'007949033342002305', vol:'1.8M/mo', kw:'tax extension 2026',               desc:'File IRS Form 4868 in 5 minutes. Get 6 more months.' },
+  { id:'gh-eztaxreturn',         name:'ezTaxReturn.com',         cat:'Tax',       lc:'007949053344004952', vol:'1.2M/mo', kw:'free federal tax return online',   desc:'Free federal filing for qualifying W-2 filers.' },
+  { id:'gh-nordvpn',             name:'NordVPN',                 cat:'Software',  lc:'007949143344006843', vol:'2.1M/mo', kw:'best vpn 2026',                    desc:'Top-rated VPN. 6,000+ servers. Netflix access. No-logs.' },
+  { id:'gh-depositphotos',       name:'Depositphotos',           cat:'Software',  lc:'007949063344003921', vol:'1.1M/mo', kw:'stock photos cheap',               desc:'250M+ stock photos at a fraction of Shutterstock.' },
+  { id:'gh-filmora',             name:'Wondershare Filmora',     cat:'Software',  lc:'007949165260004532', vol:'1.9M/mo', kw:'best video editor 2026',           desc:'AI video editing — auto-subtitles, background removal.' },
+  { id:'gh-pdfelement',          name:'Wondershare PDFelement',  cat:'Software',  lc:'007949165372004532', vol:'1.3M/mo', kw:'adobe acrobat alternative',        desc:'Acrobat alternative. One-time purchase. Saves $200/yr.' },
+  { id:'gh-edraw',               name:'Edraw Mind/Max',          cat:'Software',  lc:'007949165246006886', vol:'980K/mo', kw:'visio alternative',                desc:'280+ diagram types. Visio-compatible. Perpetual license.' },
+  { id:'gh-sidify',              name:'Sidify',                  cat:'Software',  lc:'007949163344007882', vol:'1.2M/mo', kw:'spotify to mp3 converter',         desc:'Convert Spotify and Apple Music to MP3. DRM-free.' },
+  { id:'gh-movavi',              name:'Movavi Software',         cat:'Software',  lc:'007949153344007119', vol:'880K/mo', kw:'video editor no subscription',     desc:'Full video editor. One-time purchase. Mac and Windows.' },
+  { id:'gh-updf',                name:'UPDF',                    cat:'Software',  lc:'007949163344008112', vol:'720K/mo', kw:'ai pdf editor',                    desc:'AI PDF editor — summarize, translate, Q&A on docs.' },
+  { id:'gh-tenorshare',          name:'Tenorshare',              cat:'Software',  lc:'007949163344008992', vol:'1.6M/mo', kw:'recover deleted photos iphone',    desc:'iPhone repair, unlock, data recovery suite.' },
+  { id:'gh-appypie',             name:'Appy Pie',                cat:'Software',  lc:'007949153344007442', vol:'1.4M/mo', kw:'no code app builder',              desc:'No-code apps, websites, chatbots. 10M+ tools created.' },
+  { id:'gh-renoise',             name:'Renoise',                 cat:'Software',  lc:'007949143344006551', vol:'680K/mo', kw:'best daw electronic music',        desc:'Tracker-based DAW. One-time purchase. Electronic music.' },
+  { id:'gh-boardvitals',         name:'BoardVitals',             cat:'Education', lc:'007949114675005824', vol:'820K/mo', kw:'usmle step 2 question bank',       desc:'Medical board exam prep by board-certified clinicians.' },
+  { id:'gh-surgent',             name:'Surgent CPA',             cat:'Education', lc:'007949123344006122', vol:'880K/mo', kw:'best cpa exam prep 2026',          desc:'AI-powered CPA exam prep. Pass in 40% less time.' },
+  { id:'gh-hrcp',                name:'HRCP',                    cat:'Education', lc:'007949093344005114', vol:'680K/mo', kw:'phr certification exam prep',      desc:'PHR and SPHR prep by working HR professionals.' },
+  { id:'gh-oakstone',            name:'Oakstone Medical',        cat:'Education', lc:'007949103344005432', vol:'620K/mo', kw:'cme credits online physicians',    desc:'ACCME-accredited audio CME. Complete during your commute.' },
+  { id:'gh-securitiesinstitute', name:'Securities Institute',    cat:'Education', lc:'007949113344005987', vol:'880K/mo', kw:'series 7 exam prep',               desc:'FINRA licensing exam prep — Series 7, 63, 65, 66.' },
+  { id:'gh-illumeo',             name:'Illumeo',                 cat:'Education', lc:'007949143344006221', vol:'680K/mo', kw:'cpe credits for cpa online',       desc:'NASBA-approved CPE for CPAs. Self-paced online.' },
+  { id:'gh-wolterskluwer',       name:'Wolters Kluwer LWW',      cat:'Education', lc:'007949165370003224', vol:'740K/mo', kw:'lippincott nursing textbooks',     desc:'Official Lippincott publisher. Current editions direct.' },
+  { id:'gh-learntasticcpr',      name:'LearnTastic CPR',         cat:'Education', lc:'007949143344006112', vol:'1.4M/mo', kw:'online cpr certification',         desc:'Online CPR certification in 90 minutes. Instant cert.' },
+  { id:'gh-learntasticahca',     name:'LearnTastic AHCA',        cat:'Education', lc:'007949143344006113', vol:'680K/mo', kw:'osha healthcare training online',  desc:'OSHA, HIPAA, AHCA compliance training online.' },
+  { id:'gh-pmtraining',          name:'PM Training',             cat:'Education', lc:'007949143344006992', vol:'980K/mo', kw:'pmp certification 2026',           desc:'PMP prep with 98% first-time pass rate. Live instruction.' },
+  { id:'gh-canadapetcare',       name:'CanadaPetCare',           cat:'Pet Care',  lc:'007949083344004721', vol:'880K/mo', kw:'nexgard canada online',            desc:'Licensed Canadian pet pharmacy. 20-40% below vet prices.' },
+  { id:'gh-bestvetcare',         name:'BestVetCare',             cat:'Pet Care',  lc:'007949093344004992', vol:'880K/mo', kw:'best online pet pharmacy',         desc:'Quality pet medications at below-vet pricing.' },
+  { id:'gh-budgetpetcare',       name:'BudgetPetCare',           cat:'Pet Care',  lc:'007949103344005118', vol:'980K/mo', kw:'cheap pet medications online',     desc:'30-50% savings on preventatives. FDA-approved products.' },
+  { id:'gh-budgetpetworld',      name:'BudgetPetWorld',          cat:'Pet Care',  lc:'007949113344005224', vol:'680K/mo', kw:'cheap pet supplies online',        desc:'Budget pet supplies and medications. Ships internationally.' },
+  { id:'gh-discountpetcare',     name:'DiscountPetCare',         cat:'Pet Care',  lc:'007949123344005441', vol:'880K/mo', kw:'discount pet medications',         desc:'Discount pricing on FDA-approved pet medications.' },
+  { id:'gh-nursejamie',          name:'Nurse Jamie',             cat:'Health',    lc:'007949153344007112', vol:'680K/mo', kw:'nurse jamie skincare tools',       desc:'Celebrity esthetician professional skincare tools.' },
+  { id:'gh-personalabs',         name:'Personalabs',             cat:'Health',    lc:'007949133344005442', vol:'1.2M/mo', kw:'order blood test without doctor',  desc:'Order lab tests without a doctor. LabCorp and Quest.' },
+  { id:'gh-ayurvedaexperience',  name:'Ayurveda Experience',     cat:'Health',    lc:'007949163344008221', vol:'980K/mo', kw:'ashwagandha supplement review',    desc:'Ayurvedic wellness — ashwagandha, turmeric, neem.' },
+  { id:'gh-maxpeedingrodsus',    name:'Maxpeedingrods US',       cat:'Auto',      lc:'007949133344006421', vol:'880K/mo', kw:'budget coilovers review',          desc:'Affordable performance coilovers. US warehouse.' },
+  { id:'gh-maxpeedingrodsau',    name:'Maxpeedingrods AU',       cat:'Auto',      lc:'007949143344006554', vol:'620K/mo', kw:'coilovers australia cheap',        desc:'Performance auto parts for Australian vehicles.' },
+  { id:'gh-lafuente',            name:'La Fuente Imports',       cat:'Auto',      lc:'007949083344003992', vol:'680K/mo', kw:'mexican folk art online',          desc:'Authentic Mexican folk art from artisan communities.' },
+  { id:'gh-buildasign',          name:'BuildASign',              cat:'Print',     lc:'007949043344001995', vol:'1.4M/mo', kw:'custom banners online',            desc:'Custom banners, yard signs, canvas. 10M+ produced.' },
+  { id:'gh-bannersonthecheap',   name:'BannersOnTheCheap',       cat:'Print',     lc:'007949073344003661', vol:'980K/mo', kw:'cheapest vinyl banners online',    desc:'Cheapest banners online. 50-70% off promotions.' },
+  { id:'gh-canvasonthecheap',    name:'CanvasOnTheCheap',        cat:'Print',     lc:'007949073344003662', vol:'980K/mo', kw:'cheapest canvas prints online',    desc:'Cheapest canvas prints during sales. Real canvas.' },
+  { id:'gh-easycanvasprints',    name:'Easy Canvas Prints',      cat:'Print',     lc:'007949063344003112', vol:'1.2M/mo', kw:'photo to canvas print',            desc:'Photo-to-canvas with accurate color. Best for gifts.' },
+  { id:'gh-etchingexpressions',  name:'Etching Expressions',     cat:'Print',     lc:'007949083344004332', vol:'1.1M/mo', kw:'custom engraved gifts',            desc:'Custom laser engraved gifts. Corporate bulk ordering.' },
+  { id:'gh-ryonet',              name:'Ryonet',                  cat:'Print',     lc:'007949084633004512', vol:'880K/mo', kw:'screen printing equipment',        desc:'Screen printing equipment and supplies. Starter kits.' },
+  { id:'gh-trademarkhardware',   name:'Trademark Hardware',      cat:'Hardware',  lc:'007949123344005912', vol:'880K/mo', kw:'hardware store online',            desc:'Hardware and home improvement parts online.' },
+  { id:'gh-trademarksoundproofing',name:'Trademark Soundproofing',cat:'Hardware', lc:'007949133344006118', vol:'880K/mo', kw:'soundproofing materials cheap',    desc:'Acoustic panels and soundproofing materials.' },
+  { id:'gh-warehouse115',        name:'Warehouse 115',           cat:'Hardware',  lc:'007949163344007442', vol:'680K/mo', kw:'wholesale products online',        desc:'Wholesale products at warehouse pricing.' },
+  { id:'gh-fieldtex',            name:'Fieldtex Products',       cat:'Hardware',  lc:'007949123344005118', vol:'880K/mo', kw:'first aid kit custom',             desc:'Custom first aid kits and medical bags.' },
+  { id:'gh-productsonthego',     name:'Products On The Go',      cat:'Hardware',  lc:'007949113344004882', vol:'680K/mo', kw:'travel products online',           desc:'Portable products for active professionals.' },
+  { id:'gh-halloweencostumes',   name:'HalloweenCostumes.com',   cat:'Lifestyle', lc:'007949053344002874', vol:'8.8M/mo', kw:'halloween costumes 2026',          desc:'Largest Halloween costume selection. 8.8M searches/mo.' },
+  { id:'gh-graeters',            name:"Graeter's Ice Cream",     cat:'Lifestyle', lc:'007949073344004112', vol:'880K/mo', kw:'best ice cream shipped nationwide',desc:'Cincinnati legend since 1870. Ships nationwide.' },
+  { id:'gh-thechessstore',       name:'The Chess Store',         cat:'Lifestyle', lc:'007949103344005112', vol:'880K/mo', kw:'best chess set online',            desc:'Beginner to tournament chess sets and accessories.' },
+  { id:'gh-museumreplicas',      name:'MuseumReplicas.com',      cat:'Lifestyle', lc:'007949113344005442', vol:'880K/mo', kw:'historical swords online',         desc:'Historical replicas, LARP equipment, theatrical props.' },
+  { id:'gh-atlantacutlery',      name:'Atlanta Cutlery',         cat:'Lifestyle', lc:'007949123344005771', vol:'680K/mo', kw:'collectible knives online',        desc:'Knives and edged weapons for collectors since 1971.' },
+  { id:'gh-vipertec',            name:'Viper Tec',               cat:'Lifestyle', lc:'007949133344006224', vol:'880K/mo', kw:'tactical knives online',           desc:'Tactical knives and everyday carry tools.' },
+  { id:'gh-combatflipflops',     name:'Combat Flip Flops',       cat:'Lifestyle', lc:'007949143344006881', vol:'480K/mo', kw:'combat flip flops review',         desc:'Army Ranger-founded brand. Funds landmine clearance.' },
+  { id:'gh-camanoislandcoffee',  name:'Camano Island Coffee',    cat:'Lifestyle', lc:'007949053344002441', vol:'880K/mo', kw:'best organic coffee subscription', desc:'Fair trade organic coffee since 1994. Ships fresh.' },
+  { id:'gh-readygolf',           name:'ReadyGolf',               cat:'Lifestyle', lc:'007949103344004551', vol:'880K/mo', kw:'golf accessories online',          desc:'Golf equipment, accessories, and custom items.' },
+  { id:'gh-gunsinternational',   name:'GunsInternational',       cat:'Lifestyle', lc:'007949093344004221', vol:'1.2M/mo', kw:'buy guns online marketplace',      desc:'Online firearms marketplace. Extensive listings.' },
+  { id:'gh-carmellimo',          name:'Carmel Car & Limo',       cat:'Lifestyle', lc:'007949053344002881', vol:'980K/mo', kw:'luxury car service nyc',           desc:'Luxury car service. Airport transfers. NYC.' },
+  { id:'gh-bugatchi',            name:'Bugatchi',                cat:'Lifestyle', lc:'007949153344007662', vol:'880K/mo', kw:'premium mens casual shirts',       desc:'Premium men\'s casual shirts. Bold patterns.' },
+  { id:'gh-surveyjunkie',        name:'Survey Junkie',           cat:'Lifestyle', lc:'007949033344001882', vol:'2.4M/mo', kw:'make money online surveys',        desc:'Earn $40-100/month with paid surveys. 20M+ members.' },
+  { id:'gh-tastyribbon',         name:'Tasty Ribbon',            cat:'Lifestyle', lc:'007949153344007881', vol:'1.2M/mo', kw:'gourmet food gift baskets',        desc:'Gourmet food gifts for personal and corporate occasions.' },
+  { id:'gh-bgmgirl',             name:'BGM Girl',                cat:'Lifestyle', lc:'007949153344007992', vol:'1.8M/mo', kw:'royalty free music youtube',       desc:'Royalty-free music for YouTube, Twitch, podcasts.' },
+  { id:'gh-incentrev',           name:'Incentrev',               cat:'Lifestyle', lc:'007949123344005991', vol:'680K/mo', kw:'business loyalty rewards platform',desc:'Business loyalty and employee incentive programs.' },
+];
+
+const PLATFORMS = {
+  twitter:   { name: '𝕏 Twitter/X',  limit: 280,  emoji: '𝕏' },
+  linkedin:  { name: 'LinkedIn',      limit: 3000, emoji: '💼' },
+  facebook:  { name: 'Facebook',      limit: 2000, emoji: '📘' },
+  instagram: { name: 'Instagram',     limit: 2200, emoji: '📷' },
+  tiktok:    { name: 'TikTok',        limit: 2200, emoji: '🎵' },
+  reddit:    { name: 'Reddit',        limit: 10000,emoji: '🔴' },
+  pinterest: { name: 'Pinterest',     limit: 500,  emoji: '📌' },
+  threads:   { name: 'Threads',       limit: 500,  emoji: '🧵' },
+};
+
+const HASHTAGS = {
+  Tax:       '#TaxTips #TaxSeason #FileTaxes #IRS #TaxExtension #TaxRefund #OnlineTaxes',
+  Software:  '#SoftwareDeal #TechDeals #Productivity #Software #AppDeal #TechSavings',
+  Education: '#OnlineLearning #Certification #CareerGrowth #StudyTips #ProfessionalDev',
+  'Pet Care':'#PetCare #PetHealth #DogMom #CatMom #PetMeds #FurBaby #PetSavings',
+  Health:    '#Health #Wellness #HealthTips #LabTests #NaturalHealth #WellnessJourney',
+  Auto:      '#CarMods #PerformanceParts #CarBuild #AutoDeal #CarEnthusiast #Tuning',
+  Print:     '#CustomPrinting #PrintDesign #BusinessSigns #CustomBanners #CanvasPrint',
+  Hardware:  '#HomeImprovement #DIY #Soundproofing #Hardware #HomeStudio #Renovation',
+  Lifestyle: '#LifestyleDeals #GiftIdeas #ShopSmart #OnlineShopping #DealOfTheDay',
+};
+
+let selectedMerchant = null;
+let activePlatforms = new Set(['twitter','linkedin','facebook','instagram']);
+
+// ── Render merchant list
+function renderMerchantList(query = '') {
+  const list = document.getElementById('merchant-list');
+  const cats = {};
+  MERCHANTS.forEach(m => {
+    if (query && !m.name.toLowerCase().includes(query) && !m.cat.toLowerCase().includes(query)) return;
+    if (!cats[m.cat]) cats[m.cat] = [];
+    cats[m.cat].push(m);
+  });
+
+  list.innerHTML = Object.entries(cats).map(([cat, merchants]) => `
+    <div style="margin-bottom:4px">
+      <div style="font-family:var(--font-head);font-size:0.58rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);padding:6px 4px 4px">${cat}</div>
+      ${merchants.map(m => `
+        <div class="merchant-item ${selectedMerchant?.id === m.id ? 'active' : ''}" onclick="selectMerchant('${m.id}')">
+          <div>${m.name}</div>
+          <div style="font-size:0.65rem;color:var(--dim)">${m.vol}</div>
+        </div>
+      `).join('')}
+    </div>
+  `).join('');
+}
+
+function selectMerchant(id) {
+  selectedMerchant = MERCHANTS.find(m => m.id === id);
+  if (!selectedMerchant) return;
+
+  document.getElementById('merchant-display').style.display = 'none';
+  document.getElementById('generator-ui').style.display = 'block';
+
+  document.getElementById('selected-merchant-info').innerHTML = `
+    <div>
+      <div class="m-sel-name">${selectedMerchant.name}</div>
+      <div class="m-sel-cat">${selectedMerchant.cat} · ${selectedMerchant.kw}</div>
+    </div>
+    <div class="m-sel-vol">${selectedMerchant.vol}</div>
+  `;
+
+  document.getElementById('output-area').innerHTML = '';
+  renderMerchantList(document.getElementById('merchant-search').value);
+}
+
+// ── Platform toggle
+document.querySelectorAll('.platform-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const p = btn.dataset.platform;
+    if (activePlatforms.has(p)) {
+      if (activePlatforms.size === 1) return; // keep at least one
+      activePlatforms.delete(p);
+      btn.classList.remove('active');
+    } else {
+      activePlatforms.add(p);
+      btn.classList.add('active');
+    }
+  });
+});
+
+// ── Generate content using Claude API
+async function generateContent() {
+  if (!selectedMerchant) return;
+
+  const tone = document.getElementById('tone').value;
+  const focus = document.getElementById('focus').value;
+  const audience = document.getElementById('audience').value;
+  const customAngle = document.getElementById('custom-angle').value;
+  const m = selectedMerchant;
+
+  const affUrl = `https://www.linkconnector.com/ta.php?lc=${m.lc}&atid=${m.id}&utm_source=gh-social&utm_medium=affiliate&utm_campaign=social-post&utm_content=${Date.now()}`;
+  const blogUrl = `${BASE}/blog.html`;
+
+  const btn = document.getElementById('generate-btn');
+  btn.disabled = true;
+  btn.textContent = '⏳ Generating...';
+
+  const outputArea = document.getElementById('output-area');
+  outputArea.innerHTML = '<div class="loading"><div class="spinner"></div> Calling Claude API to generate content...</div>';
+
+  const platforms = [...activePlatforms];
+
+  const prompt = `Generate social media posts for ${m.name} (${m.cat} category) for the GlobalCampaignHub affiliate site.
+
+Product: ${m.name}
+Description: ${m.desc}
+Top keyword: ${m.kw}
+Search volume: ${m.vol}
+Affiliate link: ${affUrl}
+Blog guide: ${blogUrl}
+Tone: ${tone}
+Focus: ${focus}
+Target audience: ${audience}
+${customAngle ? `Custom angle: ${customAngle}` : ''}
+
+Generate a post for EACH of these platforms: ${platforms.join(', ')}
+
+Each post must:
+- Match the platform's character limit and style exactly
+- Twitter/X: max 280 chars, punchy, include link
+- LinkedIn: professional, 150-300 words, value-driven
+- Facebook: conversational, 100-250 words, include link
+- Instagram: visual hooks, emojis ok, no clickable links (mention "link in bio")
+- TikTok: hook in first line, trendy, conversational
+- Reddit: no promotional feel, helpful and informative, subtle mention
+- Pinterest: descriptive, SEO-friendly, action-oriented
+- Threads: short and punchy like Twitter
+
+Return ONLY a valid JSON object. No markdown.
+
+{
+  "twitter": "post text here",
+  "linkedin": "post text here",
+  "facebook": "post text here",
+  "instagram": "post text here",
+  "tiktok": "post text here",
+  "reddit": "post text here",
+  "pinterest": "post text here",
+  "threads": "post text here"
+}
+
+Only include keys for these platforms: ${platforms.join(', ')}`;
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 3000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    const data = await response.json();
+    const text = data.content?.[0]?.text || '';
+    const posts = JSON.parse(text.replace(/```json\n?/g,'').replace(/```\n?/g,'').trim());
+
+    outputArea.innerHTML = platforms.map(p => {
+      if (!posts[p]) return '';
+      const pInfo = PLATFORMS[p];
+      const postText = posts[p];
+      const charCount = postText.length;
+      const isOver = charCount > pInfo.limit;
+      const tags = HASHTAGS[m.cat] || '';
+
+      return `
+        <div class="output-card">
+          <div class="output-header">
+            <div class="output-platform">${pInfo.emoji} ${pInfo.name}</div>
+            <button class="btn btn-copy" onclick="copyText(this, \`${postText.replace(/`/g,'\\`')}\`)">Copy</button>
+          </div>
+          <div class="output-body">
+            <div class="output-text" id="text-${p}">${postText}</div>
+            <div class="output-meta">
+              <span class="char-count ${isOver?'over':''}">${charCount} / ${pInfo.limit} chars ${isOver?'⚠ Over limit':''}</span>
+              <div style="display:flex;gap:6px">
+                <button class="btn btn-copy" onclick="copyText(this, \`${postText.replace(/`/g,'\\`')}\`)">📋 Copy Post</button>
+                <button class="btn btn-copy" onclick="copyText(this, \`${(postText+' '+tags).replace(/`/g,'\\`')}\`)">📋 + Hashtags</button>
+              </div>
+            </div>
+          </div>
+          ${p !== 'reddit' ? `<div class="hashtags"><div class="hashtag-list">${tags}</div></div>` : ''}
+        </div>`;
+    }).join('');
+
+  } catch(err) {
+    outputArea.innerHTML = `<div class="status" style="color:var(--accent3,#ff6b47)">✗ Error: ${err.message}<br><br><small>Make sure you are running this from a context where the Anthropic API is accessible.</small></div>`;
+  }
+
+  btn.disabled = false;
+  btn.textContent = '⚡ Generate Social Content';
+}
+
+function copyText(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+function clearOutput() {
+  document.getElementById('output-area').innerHTML = '';
+}
+
+// Search
+document.getElementById('merchant-search').addEventListener('input', function() {
+  renderMerchantList(this.value.toLowerCase());
+});
+
+// Init
+renderMerchantList();
+</script>
+</body>
+</html>
