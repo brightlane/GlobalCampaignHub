@@ -2729,7 +2729,7 @@
     {
       "slug": "atlanta-cutlery-review-2026-best-collectible-knife-site-1848",
       "merchant": "gh-atlantacutlery",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "Atlanta Cutlery Review 2026: Best Collectible Knife Site?",
       "category_en": "Lifestyle",
@@ -2766,7 +2766,8 @@
           "q": "What languages are supported?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "phr-vs-sphr-which-hr-certification-should-you-get-1849",
