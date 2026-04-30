@@ -108,7 +108,7 @@
     {
       "slug": "eztaxreturn-review-2026",
       "merchant": "gh-eztaxreturn",
-      "published": false,
+      "published": true,
       "title_en": "ezTaxReturn Review 2026 — File Federal Taxes Free?",
       "category_en": "Tax",
       "metaDesc_en": "ezTaxReturn review 2026. Can you really file your federal taxes free? Who qualifies, what's included, and how it compares to other free filing options.",
@@ -144,7 +144,8 @@
           "q": "How long does it take to file with ezTaxReturn?",
           "a": "Most simple returns take 30-60 minutes to complete. Import your W-2 to cut that in half."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "nordvpn-review-2026",
