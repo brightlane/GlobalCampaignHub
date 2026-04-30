@@ -1788,7 +1788,7 @@
     {
       "slug": "itoolab-iphone-manager-2026",
       "merchant": "gh-itoolab",
-      "published": false,
+      "published": true,
       "title_en": "iToolab Review 2026 — iPhone and Android Management Tools",
       "category_en": "Software",
       "metaDesc_en": "iToolab review 2026. iPhone and Android tools for data recovery, unlocking, and device management. How do they compare to Tenorshare alternatives?",
@@ -1824,7 +1824,8 @@
           "q": "Can iToolab recover deleted WhatsApp messages?",
           "a": "Yes. WatsGo is specifically designed for WhatsApp data transfer, backup, and recovery."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "etax-llc-tax-filing-2026",
