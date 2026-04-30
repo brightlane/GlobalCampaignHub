@@ -738,7 +738,7 @@
     {
       "slug": "easy-canvas-prints-guide-2026",
       "merchant": "gh-easycanvasprints",
-      "published": false,
+      "published": true,
       "title_en": "Easy Canvas Prints Review 2026 — Best for Photo Gifts?",
       "category_en": "Print & Signs",
       "metaDesc_en": "Easy Canvas Prints review 2026. Best for turning photos into gallery-quality canvas prints for gifts and home decor. Quality, pricing, and ordering guide.",
@@ -774,7 +774,8 @@
           "q": "Does Easy Canvas Prints offer rush production?",
           "a": "Check their site for current rush options and availability."
         }
-      ]
+      ],
+      "published_date": "2026-04-30"
     },
     {
       "slug": "nordvpn-streaming-guide-2026",
