@@ -1,95 +1,95 @@
 {
   "2026-04-30": {
-    "timestamp": "2026-04-30T23:48:17.923Z",
+    "timestamp": "2026-04-30T23:56:11.310Z",
     "mode": "live",
     "topN": 300,
-    "totalKeywords": 150,
+    "totalKeywords": 200,
     "filesOk": 22,
     "filesSkipped": 0,
     "results": {
       "blog.html": {
         "status": "updated",
-        "bytes": 46599
+        "bytes": 54279
       },
       "blog-zh.html": {
         "status": "updated",
-        "bytes": 44136
+        "bytes": 51816
       },
       "blog-zh-tw.html": {
         "status": "updated",
-        "bytes": 44178
+        "bytes": 51858
       },
       "blog-es.html": {
         "status": "updated",
-        "bytes": 44445
+        "bytes": 52125
       },
       "blog-fr.html": {
         "status": "updated",
-        "bytes": 44431
+        "bytes": 52111
       },
       "blog-de.html": {
         "status": "updated",
-        "bytes": 44443
+        "bytes": 52123
       },
       "blog-pt.html": {
         "status": "updated",
-        "bytes": 44428
+        "bytes": 52108
       },
       "blog-pt-br.html": {
         "status": "updated",
-        "bytes": 44475
+        "bytes": 52155
       },
       "blog-ja.html": {
         "status": "updated",
-        "bytes": 44188
+        "bytes": 51868
       },
       "blog-ko.html": {
         "status": "updated",
-        "bytes": 44184
+        "bytes": 51864
       },
       "blog-it.html": {
         "status": "updated",
-        "bytes": 44436
+        "bytes": 52116
       },
       "blog-nl.html": {
         "status": "updated",
-        "bytes": 44398
+        "bytes": 52078
       },
       "blog-pl.html": {
         "status": "updated",
-        "bytes": 44459
+        "bytes": 52139
       },
       "blog-hi.html": {
         "status": "updated",
-        "bytes": 44393
+        "bytes": 52073
       },
       "blog-ar.html": {
         "status": "updated",
-        "bytes": 44348
+        "bytes": 52028
       },
       "blog-ru.html": {
         "status": "updated",
-        "bytes": 44399
+        "bytes": 52079
       },
       "blog-tr.html": {
         "status": "updated",
-        "bytes": 44456
+        "bytes": 52136
       },
       "blog-id.html": {
         "status": "updated",
-        "bytes": 44425
+        "bytes": 52105
       },
       "blog-vi.html": {
         "status": "updated",
-        "bytes": 44412
+        "bytes": 52092
       },
       "blog-th.html": {
         "status": "updated",
-        "bytes": 44372
+        "bytes": 52052
       },
       "index.html": {
         "status": "updated",
-        "bytes": 50819
+        "bytes": 58499
       },
       "llms.txt": {
         "status": "updated"
