@@ -4234,7 +4234,7 @@
     {
       "slug": "usmle-step-2-study-guide-2026-pass-on-the-first-try-12",
       "merchant": "gh-boardvitals",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "USMLE Step 2 Study Guide 2026: Pass on the First Try",
       "category_en": "Education",
@@ -4271,7 +4271,8 @@
           "q": "What languages are supported?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-05-01"
     },
     {
       "slug": "products-on-the-go-review-2026-13",
