@@ -1,132 +1,14 @@
-[
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 37
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 36
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 35
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 34
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 33
-  },
-  {
+{
+  "2026-04-30": {
     "date": "2026-04-30",
     "generated": 0,
     "pending_after": 32
   },
-  {
-    "date": "2026-04-30",
+  "2026-05-01": {
+    "date": "2026-05-01",
     "generated": 0,
-    "pending_after": 31
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 30
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 29
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 28
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 27
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 26
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 25
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 24
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 23
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 22
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 21
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 20
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 20,
-    "pending_after": 39
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 38
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 37
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 36
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 35
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 34
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 33
-  },
-  {
-    "date": "2026-04-30",
-    "generated": 0,
-    "pending_after": 32
+    "pending_after": 31,
+    "timestamp": "2026-05-01T00:02:07.330Z",
+    "merchants": 70
   }
-]
+}

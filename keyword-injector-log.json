@@ -95,5 +95,102 @@
         "status": "updated"
       }
     }
+  },
+  "2026-05-01": {
+    "timestamp": "2026-05-01T00:02:07.479Z",
+    "mode": "live",
+    "topN": 300,
+    "totalKeywords": 277,
+    "filesOk": 22,
+    "filesSkipped": 0,
+    "results": {
+      "blog.html": {
+        "status": "updated",
+        "bytes": 65805
+      },
+      "blog-zh.html": {
+        "status": "updated",
+        "bytes": 63342
+      },
+      "blog-zh-tw.html": {
+        "status": "updated",
+        "bytes": 63384
+      },
+      "blog-es.html": {
+        "status": "updated",
+        "bytes": 63651
+      },
+      "blog-fr.html": {
+        "status": "updated",
+        "bytes": 63637
+      },
+      "blog-de.html": {
+        "status": "updated",
+        "bytes": 63649
+      },
+      "blog-pt.html": {
+        "status": "updated",
+        "bytes": 63634
+      },
+      "blog-pt-br.html": {
+        "status": "updated",
+        "bytes": 63681
+      },
+      "blog-ja.html": {
+        "status": "updated",
+        "bytes": 63394
+      },
+      "blog-ko.html": {
+        "status": "updated",
+        "bytes": 63390
+      },
+      "blog-it.html": {
+        "status": "updated",
+        "bytes": 63642
+      },
+      "blog-nl.html": {
+        "status": "updated",
+        "bytes": 63604
+      },
+      "blog-pl.html": {
+        "status": "updated",
+        "bytes": 63665
+      },
+      "blog-hi.html": {
+        "status": "updated",
+        "bytes": 63599
+      },
+      "blog-ar.html": {
+        "status": "updated",
+        "bytes": 63554
+      },
+      "blog-ru.html": {
+        "status": "updated",
+        "bytes": 63605
+      },
+      "blog-tr.html": {
+        "status": "updated",
+        "bytes": 63662
+      },
+      "blog-id.html": {
+        "status": "updated",
+        "bytes": 63631
+      },
+      "blog-vi.html": {
+        "status": "updated",
+        "bytes": 63618
+      },
+      "blog-th.html": {
+        "status": "updated",
+        "bytes": 63578
+      },
+      "index.html": {
+        "status": "updated",
+        "bytes": 70025
+      },
+      "llms.txt": {
+        "status": "updated"
+      }
+    }
   }
 }
