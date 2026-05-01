@@ -5008,7 +5008,7 @@
     {
       "slug": "budgetpetcare-review-2026-legit-or-not-2459",
       "merchant": "gh-budgetpetcare",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "BudgetPetCare Review 2026: Legit or Not?",
       "category_en": "Pet Care",
@@ -5045,7 +5045,8 @@
           "q": "What languages are supported?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-05-01"
     },
     {
       "slug": "bugatchi-shirts-review-2026-worth-the-premium-price-2460",
