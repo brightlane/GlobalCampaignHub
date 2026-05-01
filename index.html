@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Directory | Premium Merchant Links</title>
+    <meta name="description" content="Browse our curated list of affiliate partners across software, ecommerce, health, and more.">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --text: #1f2937;
+            --bg: #f3f4f6;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        h1 { margin-bottom: 10px; }
+        .category-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-transform: capitalize;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 5px;
+            color: var(--primary);
+        }
+        .merchant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .merchant-card {
+            padding: 10px;
+            border: 1px solid #e5e7eb;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+        .merchant-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+        .merchant-card a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            display: block;
+        }
+        .merchant-card a:hover {
+            color: var(--primary);
+        }
+        .tag {
+            font-size: 0.75rem;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-top: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Our Trusted Partners</h1>
+        <p>Explore top deals and services from our verified affiliate network.</p>
+    </header>
+
+    <main id="inventory">
+        <!-- Content will be grouped by category here -->
+    </main>
+</div>
+
+<script>
+    const data = { "affiliates": [ /* Your JSON data here */ ] };
+    // (Note: In a real scenario, you'd paste your full JSON array here)
+    const affiliates = [
+        { "merchant": "Arco Al HK (YouWare)", "url": "https://www.linkconnector.com/ta.php?lc=007949164742007981", "category": "software" },
+        { "merchant": "Atlanta Cutlery Corp.", "url": "https://www.linkconnector.com/ta.php?lc=007949164733007981", "category": "ecommerce" },
+        { "merchant": "BannersOnTheCheap", "url": "https://www.linkconnector.com/ta.php?lc=007949069833005389", "category": "ecommerce" },
+        { "merchant": "BestVetCare.com", "url": "https://www.linkconnector.com/ta.php?lc=007949076672005837", "category": "pets" },
+        { "merchant": "BoardVitals", "url": "https://www.linkconnector.com/ta.php?lc=007949154901006218", "category": "education" },
+        { "merchant": "BudgetPetCare.com", "url": "https://www.linkconnector.com/ta.php?lc=007949124366007614", "category": "pets" },
+        { "merchant": "BudgetPetWorld.com", "url": "https://www.linkconnector.com/ta.php?lc=007949144117006217", "category": "pets" },
+        { "merchant": "Bugatchi", "url": "https://www.linkconnector.com/ta.php?lc=007949145753006206", "category": "ecommerce" },
+        { "merchant": "Camano Island Coffee", "url": "https://www.linkconnector.com/ta.php?lc=007949094561006921", "category": "ecommerce" },
+        { "merchant": "CanadaPetCare.com", "url": "https://www.linkconnector.com/ta.php?lc=007949063057005492", "category": "pets" },
+        { "merchant": "CanvasOnTheCheap", "url": "https://www.linkconnector.com/ta.php?lc=007949139296006219", "category": "ecommerce" },
+        { "merchant": "Carmel Car & Limo", "url": "https://www.linkconnector.com/ta.php?lc=007949021363003587", "category": "other" },
+        { "merchant": "Combat Flip Flops", "url": "https://www.linkconnector.com/ta.php?lc=007949108439006486", "category": "ecommerce" },
+        { "merchant": "Depositphotos Inc.", "url": "https://www.linkconnector.com/ta.php?lc=007949136603007653", "category": "media" },
+        { "merchant": "DiscountPetCare", "url": "https://www.linkconnector.com/ta.php?lc=007949053489005142", "category": "pets" },
+        { "merchant": "E TAX, LLC", "url": "https://www.linkconnector.com/ta.php?lc=007949027749003958", "category": "tax" },
+        { "merchant": "E-File.com", "url": "https://www.linkconnector.com/ta.php?lc=007949155896007874", "category": "tax" },
+        { "merchant": "Easy Canvas Prints", "url": "https://www.linkconnector.com/ta.php?lc=007949050767005020", "category": "ecommerce" },
+        { "merchant": "Edraw (Mind/Max)", "url": "https://www.linkconnector.com/ta.php?lc=007949165249006886", "category": "software" },
+        { "merchant": "Etching Expressions", "url": "https://www.linkconnector.com/ta.php?lc=007949154703007728", "category": "ecommerce" },
+        { "merchant": "Famisafe", "url": "https://www.linkconnector.com/ta.php?lc=007949154258006788", "category": "software" },
+        { "merchant": "Fieldtex Products", "url": "https://www.linkconnector.com/ta.php?lc=007949120619007379", "category": "health" },
+        { "merchant": "Graeter's Ice Cream", "url": "https://www.linkconnector.com/ta.php?lc=007949151790007794", "category": "ecommerce" },
+        { "merchant": "GunsInternational", "url": "https://www.linkconnector.com/ta.php?lc=007949046073005238", "category": "ecommerce" },
+        { "merchant": "HalloweenCostumes.com", "url": "https://www.linkconnector.com/ta.php?lc=007949155212007855", "category": "ecommerce" },
+        { "merchant": "HRCP", "url": "https://www.linkconnector.com/ta.php?lc=007949135821007664", "category": "education" },
+        { "merchant": "Illumeo, Inc", "url": "https://www.linkconnector.com/ta.php?lc=007949034133001545", "category": "education" },
+        { "merchant": "Incentrev", "url": "https://www.linkconnector.com/ta.php?lc=007949047416004897", "category": "finance" },
+        { "merchant": "Individual Software", "url": "https://www.linkconnector.com/ta.php?lc=007949110667007185", "category": "software" },
+        { "merchant": "InfiniteAloe", "url": "https://www.linkconnector.com/ta.php?lc=007949105959006539", "category": "health" },
+        { "merchant": "iSkysoft", "url": "https://www.linkconnector.com/ta.php?lc=007949099000005679", "category": "software" },
+        { "merchant": "iToolab (LuckyDog)", "url": "https://www.linkconnector.com/ta.php?lc=007949108972006513", "category": "software" },
+        { "merchant": "jAlbum AB", "url": "https://www.linkconnector.com/ta.php?lc=007949069873005391", "category": "software" },
+        { "merchant": "La Fuente Imports", "url": "https://www.linkconnector.com/ta.php?lc=007949079282005891", "category": "ecommerce" },
+        { "merchant": "LearnTastic (CPR)", "url": "https://www.linkconnector.com/ta.php?lc=007949155036007841", "category": "education" },
+        { "merchant": "LearnTastic (AHCA)", "url": "https://www.linkconnector.com/ta.php?lc=007949146929007736", "category": "education" },
+        { "merchant": "Maxpeedingrods (US)", "url": "https://www.linkconnector.com/ta.php?lc=007949154195006539", "category": "ecommerce" },
+        { "merchant": "Maxpeedingrods (AU)", "url": "https://www.linkconnector.com/ta.php?lc=007949136043006908", "category": "ecommerce" },
+        { "merchant": "Movavi Software", "url": "https://www.linkconnector.com/ta.php?lc=007949109440006513", "category": "software" },
+        { "merchant": "MuseumReplicas.com", "url": "https://www.linkconnector.com/ta.php?lc=007949109612005391", "category": "ecommerce" },
+        { "merchant": "Nordvpn S.A.", "url": "https://www.linkconnector.com/ta.php?lc=007949085070005891", "category": "software" },
+        { "merchant": "Nurse Jamie", "url": "https://www.linkconnector.com/ta.php?lc=007949155104007841", "category": "health" },
+        { "merchant": "Oakstone Medical", "url": "https://www.linkconnector.com/ta.php?lc=007949049546004978", "category": "health" },
+        { "merchant": "Personalabs", "url": "https://www.linkconnector.com/ta.php?lc=007949152445007736", "category": "health" },
+        { "merchant": "Picador Multimedia", "url": "https://www.linkconnector.com/ta.php?lc=007949164712007982", "category": "media" },
+        { "merchant": "Products On The Go", "url": "https://www.linkconnector.com/ta.php?lc=007949108750007124", "category": "ecommerce" },
+        { "merchant": "ReadyGolf", "url": "https://www.linkconnector.com/ta.php?lc=007949135537007633", "category": "ecommerce" },
+        { "merchant": "Renoise", "url": "https://www.linkconnector.com/ta.php?lc=007949165071007995", "category": "software" },
+        { "merchant": "RSE (bgmgirl.com)", "url": "https://www.linkconnector.com/ta.php?lc=007949162099007840", "category": "ecommerce" },
+        { "merchant": "Ryonet", "url": "https://www.linkconnector.com/ta.php?lc=007949155911007876", "category": "ecommerce" },
+        { "merchant": "Sidify Inc.", "url": "https://www.linkconnector.com/ta.php?lc=007949114496007306", "category": "software" },
+        { "merchant": "Snappy LLC (Appy Pie)", "url": "https://www.linkconnector.com/ta.php?lc=007949090967005541", "category": "software" },
+        { "merchant": "SSI Logic (PMTraining)", "url": "https://www.linkconnector.com/ta.php?lc=007949081796006139", "category": "education" },
+        { "merchant": "Surgent.com", "url": "https://www.linkconnector.com/ta.php?lc=007949163206006249", "category": "education" },
+        { "merchant": "Survey Junkie", "url": "https://www.linkconnector.com/ta.php?lc=007949153848007834", "category": "finance" },
+        { "merchant": "Tasty Ribbon", "url": "https://www.linkconnector.com/ta.php?lc=007949155938007865", "category": "ecommerce" },
+        { "merchant": "TaxExtension.com", "url": "https://www.linkconnector.com/ta.php?lc=007949121281006198", "category": "tax" },
+        { "merchant": "Tenorshare", "url": "https://www.linkconnector.com/ta.php?lc=007949139287006847", "category": "software" },
+        { "merchant": "The Ayurveda Experience", "url": "https://www.linkconnector.com/ta.php?lc=007949126292007580", "category": "health" },
+        { "merchant": "The Chess Store, Inc.", "url": "https://www.linkconnector.com/ta.php?lc=007949071778005057", "category": "ecommerce" },
+        { "merchant": "The Securities Institute", "url": "https://www.linkconnector.com/ta.php?lc=007949108329007101", "category": "finance" },
+        { "merchant": "Trademark Hardware", "url": "https://www.linkconnector.com/ta.php?lc=007949113406007272", "category": "ecommerce" },
+        { "merchant": "Trademark Soundproofing", "url": "https://www.linkconnector.com/ta.php?lc=007949107911007070", "category": "ecommerce" },
+        { "merchant": "UPDF (Superace)", "url": "https://www.linkconnector.com/ta.php?lc=007949147521007728", "category": "software" },
+        { "merchant": "Viper Tec Inc.", "url": "https://www.linkconnector.com/ta.php?lc=007949091308006550", "category": "ecommerce" },
+        { "merchant": "Warehouse 115, Inc.", "url": "https://www.linkconnector.com/ta.php?lc=007949102471006776", "category": "ecommerce" },
+        { "merchant": "Wondershare (Filmora)", "url": "https://www.linkconnector.com/ta.php?lc=007949048607004532", "category": "software" },
+        { "merchant": "Wondershare (PDFelement)", "url": "https://www.linkconnector.com/ta.php?lc=007949139355006776", "category": "software" },
+        { "merchant": "Wolters Kluwer (LWW)", "url": "https://www.linkconnector.com/ta.php?lc=007949019993003224", "category": "education" },
+        { "merchant": "ezTaxReturn.com", "url": "https://www.eztaxreturn.com", "category": "tax" }
+    ];
+
+    const inventoryWrap = document.getElementById('inventory');
+    const categories = [...new Set(affiliates.map(item => item.category))];
+
+    categories.forEach(cat => {
+        const section = document.createElement('section');
+        section.className = 'category-section';
+        
+        const title = document.createElement('h2');
+        title.textContent = cat;
+        section.appendChild(title);
+
+        const grid = document.createElement('div');
+        grid.className = 'merchant-grid';
+
+        affiliates.filter(a => a.category === cat).forEach(m => {
+            const card = document.createElement('div');
+            card.className = 'merchant-card';
+            card.innerHTML = `
+                <a href="${m.url}" target="_blank" rel="nofollow sponsored">${m.merchant}</a>
+                <span class="tag">${m.category}</span>
+            `;
+            grid.appendChild(card);
+        });
+
+        section.appendChild(grid);
+        inventoryWrap.appendChild(section);
+    });
+</script>
+
+</body>
+</html>
