@@ -97,7 +97,7 @@
     }
   },
   "2026-05-01": {
-    "timestamp": "2026-05-01T05:13:34.479Z",
+    "timestamp": "2026-05-01T05:26:46.051Z",
     "mode": "live",
     "topN": 300,
     "totalKeywords": 700,
@@ -185,7 +185,7 @@
         "bytes": 66780
       },
       "index.html": {
-        "status": "inserted",
+        "status": "updated",
         "bytes": 115139
       },
       "llms.txt": {
