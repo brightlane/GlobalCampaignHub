@@ -5352,7 +5352,7 @@
     {
       "slug": "best-nclex-question-banks-2026-boardvitals-vs-uworld-2467",
       "merchant": "gh-boardvitals",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "Best NCLEX Question Banks 2026: BoardVitals vs UWorld",
       "category_en": "Education",
@@ -5389,7 +5389,8 @@
           "q": "What languages are supported?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-05-01"
     },
     {
       "slug": "best-travel-products-for-professionals-in-2026-2468",
