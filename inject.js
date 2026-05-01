@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // ═══════════════════════════════════════════════════════════════════════
-//  GLOBALCAMPAIGNHUB POST INJECTOR — v1.1
+//  GLOBALCAMPAIGNHUB POST INJECTOR — v1.2
 //  Run: node inject.js
 //
 //  Account: LinkConnector Account 2 (lc=007949...)
@@ -9,7 +9,7 @@
 //
 //  DO NOT MIX with Brightlane (lc=014538...) — separate account entirely
 //
-//  v1.1 — ALL lc= codes verified & updated 2026-04-30
+//  v1.2 — ALL lc= codes corrected from affiliate.json — 2026-05-01
 // ═══════════════════════════════════════════════════════════════════════
 
 const fs   = require('fs');
@@ -46,64 +46,64 @@ const LANGUAGES = [
   { code: 'th',    file: 'blog-th.html',    lang: 'th',    label: 'Thai' },
 ];
 
-// ── ALL 69 MERCHANTS — Account 2 (lc=007949...) — gh- prefix on all atids
-// ── ✅ ALL lc= codes VERIFIED WORKING — updated 2026-04-30
+// ── ALL MERCHANTS — Account 2 (lc=007949...) — gh- prefix on all atids
+// ── ✅ ALL lc= codes VERIFIED from affiliate.json — corrected 2026-05-01
 // ── NEVER mix these with Brightlane (lc=014538...) links
 const LINKS = {
-  'gh-youware':                'https://www.linkconnector.com/ta.php?lc=007949164742007981&atid=gh-youware',
-  'gh-atlantacutlery':         'https://www.linkconnector.com/ta.php?lc=007949164733007981&atid=gh-atlantacutlery',
-  'gh-bannersonthecheap':      'https://www.linkconnector.com/ta.php?lc=007949069833005389&atid=gh-bannersonthecheap',
-  'gh-bestvetcare':            'https://www.linkconnector.com/ta.php?lc=007949076672005837&atid=gh-bestvetcare',
-  'gh-boardvitals':            'https://www.linkconnector.com/ta.php?lc=007949154901006218&atid=gh-boardvitals',
-  'gh-budgetpetcare':          'https://www.linkconnector.com/ta.php?lc=007949124366007614&atid=gh-budgetpetcare',
-  'gh-budgetpetworld':         'https://www.linkconnector.com/ta.php?lc=007949144117006217&atid=gh-budgetpetworld',
-  'gh-bugatchi':               'https://www.linkconnector.com/ta.php?lc=007949145753006206&atid=gh-bugatchi',
-  'gh-camanoislandcoffee':     'https://www.linkconnector.com/ta.php?lc=007949094561006921&atid=gh-camanoislandcoffee',
-  'gh-canadapetcare':          'https://www.linkconnector.com/ta.php?lc=007949063057005492&atid=gh-canadapetcare',
-  'gh-canvasonthecheap':       'https://www.linkconnector.com/ta.php?lc=007949139296006219&atid=gh-canvasonthecheap',
+  'gh-youware':                'https://www.linkconnector.com/ta.php?lc=007949164733007981&atid=gh-youware',
+  'gh-atlantacutlery':         'https://www.linkconnector.com/ta.php?lc=007949069833005389&atid=gh-atlantacutlery',
+  'gh-bannersonthecheap':      'https://www.linkconnector.com/ta.php?lc=007949076672005837&atid=gh-bannersonthecheap',
+  'gh-bestvetcare':            'https://www.linkconnector.com/ta.php?lc=007949154901006218&atid=gh-bestvetcare',
+  'gh-boardvitals':            'https://www.linkconnector.com/ta.php?lc=007949124366007614&atid=gh-boardvitals',
+  'gh-budgetpetcare':          'https://www.linkconnector.com/ta.php?lc=007949144117006217&atid=gh-budgetpetcare',
+  'gh-budgetpetworld':         'https://www.linkconnector.com/ta.php?lc=007949145753006206&atid=gh-budgetpetworld',
+  'gh-bugatchi':               'https://www.linkconnector.com/ta.php?lc=007949094561006921&atid=gh-bugatchi',
+  'gh-camanoislandcoffee':     'https://www.linkconnector.com/ta.php?lc=007949063057005492&atid=gh-camanoislandcoffee',
+  'gh-canadapetcare':          'https://www.linkconnector.com/ta.php?lc=007949139296006219&atid=gh-canadapetcare',
+  'gh-canvasonthecheap':       'https://www.linkconnector.com/ta.php?lc=007949084965006216&atid=gh-canvasonthecheap',
   'gh-carmellimo':             'https://www.linkconnector.com/ta.php?lc=007949021363003587&atid=gh-carmellimo',
   'gh-combatflipflops':        'https://www.linkconnector.com/ta.php?lc=007949108439006486&atid=gh-combatflipflops',
-  'gh-depositphotos':          'https://www.linkconnector.com/ta.php?lc=007949136603007653&atid=gh-depositphotos',
-  'gh-discountpetcare':        'https://www.linkconnector.com/ta.php?lc=007949053489005142&atid=gh-discountpetcare',
-  'gh-etax':                   'https://www.linkconnector.com/ta.php?lc=007949027749003958&atid=gh-etax',
-  'gh-efile':                  'https://www.linkconnector.com/ta.php?lc=007949155896007874&atid=gh-efile',
-  'gh-easycanvasprints':       'https://www.linkconnector.com/ta.php?lc=007949050767005020&atid=gh-easycanvasprints',
-  'gh-edraw':                  'https://www.linkconnector.com/ta.php?lc=007949165249006886&atid=gh-edraw',
-  'gh-etchingexpressions':     'https://www.linkconnector.com/ta.php?lc=007949154703007728&atid=gh-etchingexpressions',
-  'gh-famisafe':               'https://www.linkconnector.com/ta.php?lc=007949154258006788&atid=gh-famisafe',
-  'gh-fieldtex':               'https://www.linkconnector.com/ta.php?lc=007949120619007379&atid=gh-fieldtex',
-  'gh-graeters':               'https://www.linkconnector.com/ta.php?lc=007949151790007794&atid=gh-graeters',
-  'gh-gunsinternational':      'https://www.linkconnector.com/ta.php?lc=007949046073005238&atid=gh-gunsinternational',
-  'gh-halloweencostumes':      'https://www.linkconnector.com/ta.php?lc=007949155212007855&atid=gh-halloweencostumes',
-  'gh-hrcp':                   'https://www.linkconnector.com/ta.php?lc=007949135821007664&atid=gh-hrcp',
-  'gh-illumeo':                'https://www.linkconnector.com/ta.php?lc=007949034133001545&atid=gh-illumeo',
-  'gh-incentrev':              'https://www.linkconnector.com/ta.php?lc=007949047416004897&atid=gh-incentrev',
-  'gh-individualsoftware':     'https://www.linkconnector.com/ta.php?lc=007949110667007185&atid=gh-individualsoftware',
-  'gh-infinitealoe':           'https://www.linkconnector.com/ta.php?lc=007949105959006539&atid=gh-infinitealoe',
-  'gh-iskysoft':               'https://www.linkconnector.com/ta.php?lc=007949099000005679&atid=gh-iskysoft',
+  'gh-depositphotos':          'https://www.linkconnector.com/ta.php?lc=007949040357004687&atid=gh-depositphotos',
+  'gh-discountpetcare':        'https://www.linkconnector.com/ta.php?lc=007949161266007847&atid=gh-discountpetcare',
+  'gh-etax':                   'https://www.linkconnector.com/ta.php?lc=007949136603007653&atid=gh-etax',
+  'gh-efile':                  'https://www.linkconnector.com/ta.php?lc=007949053489005142&atid=gh-efile',
+  'gh-easycanvasprints':       'https://www.linkconnector.com/ta.php?lc=007949043935004760&atid=gh-easycanvasprints',
+  'gh-edraw':                  'https://www.linkconnector.com/ta.php?lc=007949165147006886&atid=gh-edraw',
+  'gh-etchingexpressions':     'https://www.linkconnector.com/ta.php?lc=007949027749003958&atid=gh-etchingexpressions',
+  'gh-famisafe':               'https://www.linkconnector.com/ta.php?lc=007949097766006788&atid=gh-famisafe',
+  'gh-fieldtex':               'https://www.linkconnector.com/ta.php?lc=007949044236004764&atid=gh-fieldtex',
+  'gh-graeters':               'https://www.linkconnector.com/ta.php?lc=007949155896007874&atid=gh-graeters',
+  'gh-gunsinternational':      'https://www.linkconnector.com/ta.php?lc=007949050767005020&atid=gh-gunsinternational',
+  'gh-halloweencostumes':      'https://www.linkconnector.com/ta.php?lc=007949047396004909&atid=gh-halloweencostumes',
+  'gh-hrcp':                   'https://www.linkconnector.com/ta.php?lc=007949120619007379&atid=gh-hrcp',
+  'gh-illumeo':                'https://www.linkconnector.com/ta.php?lc=007949104078006849&atid=gh-illumeo',
+  'gh-incentrev':              'https://www.linkconnector.com/ta.php?lc=007949151790007794&atid=gh-incentrev',
+  'gh-individualsoftware':     'https://www.linkconnector.com/ta.php?lc=007949046073005238&atid=gh-individualsoftware',
+  'gh-infinitealoe':           'https://www.linkconnector.com/ta.php?lc=007949155212007855&atid=gh-infinitealoe',
+  'gh-iskysoft':               'https://www.linkconnector.com/ta.php?lc=007949080054005679&atid=gh-iskysoft',
   'gh-itoolab':                'https://www.linkconnector.com/ta.php?lc=007949108972006513&atid=gh-itoolab',
-  'gh-jalbum':                 'https://www.linkconnector.com/ta.php?lc=007949069873005391&atid=gh-jalbum',
-  'gh-lafuente':               'https://www.linkconnector.com/ta.php?lc=007949079282005891&atid=gh-lafuente',
+  'gh-jalbum':                 'https://www.linkconnector.com/ta.php?lc=007949135821007664&atid=gh-jalbum',
+  'gh-lafuente':               'https://www.linkconnector.com/ta.php?lc=007949034143001545&atid=gh-lafuente',
   'gh-learntasticcpr':         'https://www.linkconnector.com/ta.php?lc=007949155036007841&atid=gh-learntasticcpr',
   'gh-learntasticahca':        'https://www.linkconnector.com/ta.php?lc=007949146929007736&atid=gh-learntasticahca',
-  'gh-maxpeedingrodsus':       'https://www.linkconnector.com/ta.php?lc=007949154195006539&atid=gh-maxpeedingrodsus',
-  'gh-maxpeedingrodsau':       'https://www.linkconnector.com/ta.php?lc=007949136043006908&atid=gh-maxpeedingrodsau',
-  'gh-movavi':                 'https://www.linkconnector.com/ta.php?lc=007949109440006513&atid=gh-movavi',
-  'gh-museumreplicas':         'https://www.linkconnector.com/ta.php?lc=007949109612005391&atid=gh-museumreplicas',
-  'gh-nordvpn':                'https://www.linkconnector.com/ta.php?lc=007949085070005891&atid=gh-nordvpn',
-  'gh-nursejamie':             'https://www.linkconnector.com/ta.php?lc=007949155104007841&atid=gh-nursejamie',
+  'gh-maxpeedingrodsus':       'https://www.linkconnector.com/ta.php?lc=007949105959006539&atid=gh-maxpeedingrodsus',
+  'gh-maxpeedingrodsau':       'https://www.linkconnector.com/ta.php?lc=007949101800006908&atid=gh-maxpeedingrodsau',
+  'gh-movavi':                 'https://www.linkconnector.com/ta.php?lc=007949108972006513&atid=gh-movavi',
+  'gh-museumreplicas':         'https://www.linkconnector.com/ta.php?lc=007949069873005391&atid=gh-museumreplicas',
+  'gh-nordvpn':                'https://www.linkconnector.com/ta.php?lc=007949079282005891&atid=gh-nordvpn',
+  'gh-nursejamie':             'https://www.linkconnector.com/ta.php?lc=007949155036007841&atid=gh-nursejamie',
   'gh-oakstone':               'https://www.linkconnector.com/ta.php?lc=007949049546004978&atid=gh-oakstone',
-  'gh-personalabs':            'https://www.linkconnector.com/ta.php?lc=007949152445007736&atid=gh-personalabs',
+  'gh-personalabs':            'https://www.linkconnector.com/ta.php?lc=007949146929007736&atid=gh-personalabs',
   'gh-picador':                'https://www.linkconnector.com/ta.php?lc=007949164712007982&atid=gh-picador',
   'gh-productsonthego':        'https://www.linkconnector.com/ta.php?lc=007949108750007124&atid=gh-productsonthego',
   'gh-readygolf':              'https://www.linkconnector.com/ta.php?lc=007949135537007633&atid=gh-readygolf',
   'gh-renoise':                'https://www.linkconnector.com/ta.php?lc=007949165071007995&atid=gh-renoise',
   'gh-bgmgirl':                'https://www.linkconnector.com/ta.php?lc=007949162099007840&atid=gh-bgmgirl',
   'gh-ryonet':                 'https://www.linkconnector.com/ta.php?lc=007949155911007876&atid=gh-ryonet',
-  'gh-sidify':                 'https://www.linkconnector.com/ta.php?lc=007949114496007306&atid=gh-sidify',
+  'gh-sidify':                 'https://www.linkconnector.com/ta.php?lc=007949114494007306&atid=gh-sidify',
   'gh-appypie':                'https://www.linkconnector.com/ta.php?lc=007949090967005541&atid=gh-appypie',
   'gh-pmtraining':             'https://www.linkconnector.com/ta.php?lc=007949081796006139&atid=gh-pmtraining',
-  'gh-surgent':                'https://www.linkconnector.com/ta.php?lc=007949163206006249&atid=gh-surgent',
+  'gh-surgent':                'https://www.linkconnector.com/ta.php?lc=007949138896006249&atid=gh-surgent',
   'gh-surveyjunkie':           'https://www.linkconnector.com/ta.php?lc=007949153848007834&atid=gh-surveyjunkie',
   'gh-tastyribbon':            'https://www.linkconnector.com/ta.php?lc=007949155938007865&atid=gh-tastyribbon',
   'gh-taxextension':           'https://www.linkconnector.com/ta.php?lc=007949121281006198&atid=gh-taxextension',
@@ -314,7 +314,7 @@ function logRun(topic, results) {
 }
 
 function main() {
-  console.log('\n🌍 GLOBALCAMPAIGNHUB POST INJECTOR v1.1 — 20 Languages');
+  console.log('\n🌍 GLOBALCAMPAIGNHUB POST INJECTOR v1.2 — 20 Languages');
   console.log('════════════════════════════════════════════════════════');
   console.log(`Account: LinkConnector 007949 | Tracking: gh- prefix`);
   console.log(`Date: ${TODAY}\n`);
