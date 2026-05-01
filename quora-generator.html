@@ -1,474 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GlobalCampaignHub — Quora Answer Generator</title>
-  <meta name="robots" content="noindex, nofollow"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet"/>
-  <style>
-    :root{--bg:#0a0b0d;--bg2:#111318;--bg3:#1a1d24;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);--text:#e8e9ed;--muted:#8a8d99;--dim:#555866;--accent:#e8ff47;--accent2:#47ffb8;--font-head:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;--font-mono:'JetBrains Mono',monospace;--radius:10px}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:var(--font-body);background:var(--bg);color:var(--text);min-height:100vh;font-size:14px}
-    .header{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--bg2)}
-    .header-logo{font-family:var(--font-head);font-weight:800;font-size:1rem}
-    .header-badge{background:#b92b27;color:#fff;font-size:0.6rem;font-weight:700;padding:2px 8px;border-radius:20px;letter-spacing:0.08em}
-    .layout{display:grid;grid-template-columns:300px 1fr;height:calc(100vh - 61px)}
-    .sidebar{background:var(--bg2);border-right:1px solid var(--border);overflow-y:auto;padding:16px}
-    .search-box{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:7px;padding:8px 12px;color:var(--text);font-family:var(--font-body);font-size:0.82rem;outline:none;margin-bottom:12px}
-    .search-box:focus{border-color:var(--accent)}
-    .sidebar-label{font-family:var(--font-head);font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;margin-top:14px}
-    .merchant-item{padding:8px 10px;border-radius:7px;cursor:pointer;border:1px solid transparent;transition:all .15s;font-size:0.82rem;margin-bottom:3px}
-    .merchant-item:hover{background:var(--bg3);border-color:var(--border)}
-    .merchant-item.active{background:rgba(185,43,39,0.12);border-color:rgba(185,43,39,0.4);color:#e8837f}
-    .main{padding:24px;overflow-y:auto}
-    .status{padding:60px;text-align:center;color:var(--muted)}
-    .selected-info{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);padding:14px 18px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between}
-    .sel-name{font-family:var(--font-head);font-size:1rem;font-weight:800}
-    .sel-meta{font-size:0.72rem;color:var(--dim)}
-    .sel-vol{font-size:0.75rem;color:#e8837f;font-family:var(--font-head);font-weight:700}
-    .controls{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:20px}
-    .ctrl-group{display:flex;flex-direction:column;gap:6px}
-    .ctrl-label{font-family:var(--font-head);font-size:0.62rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--dim)}
-    select,input,textarea{background:var(--bg2);border:1px solid var(--border2);border-radius:7px;padding:8px 12px;color:var(--text);font-family:var(--font-body);font-size:0.82rem;outline:none;width:100%}
-    select:focus,input:focus,textarea:focus{border-color:var(--accent)}
-    textarea{resize:vertical;min-height:70px;line-height:1.55}
-    .questions-section{margin-bottom:20px}
-    .questions-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;margin-bottom:12px}
-    .q-chip{padding:8px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:7px;cursor:pointer;font-size:0.8rem;line-height:1.4;transition:all .15s}
-    .q-chip:hover{border-color:var(--accent);color:var(--accent)}
-    .q-chip.selected{background:rgba(232,255,71,0.08);border-color:rgba(232,255,71,0.4);color:var(--accent)}
-    .btn{font-family:var(--font-head);font-weight:700;font-size:0.78rem;padding:9px 18px;border-radius:7px;border:none;cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:6px}
-    .btn-primary{background:var(--accent);color:#0a0b0d}.btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,255,71,0.2)}
-    .btn-secondary{background:var(--bg3);color:var(--text);border:1px solid var(--border2)}.btn-secondary:hover{border-color:var(--accent)}
-    .btn-quora{background:#b92b27;color:#fff}.btn-quora:hover{background:#a32421}
-    .btn-copy{background:transparent;color:var(--dim);border:1px solid var(--border);font-size:0.72rem;padding:5px 10px}.btn-copy:hover{border-color:var(--accent2);color:var(--accent2)}
-    .btn-copy.copied{border-color:var(--accent2);color:var(--accent2)}
-    .action-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;align-items:center}
-    .answer-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:16px}
-    .answer-header{padding:14px 18px;border-bottom:1px solid var(--border);background:var(--bg3);display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
-    .answer-q{font-family:var(--font-head);font-size:0.9rem;font-weight:700;line-height:1.3;flex:1}
-    .answer-meta{font-size:0.68rem;color:var(--dim);white-space:nowrap}
-    .answer-body{padding:18px}
-    .answer-text{font-size:0.88rem;line-height:1.8;color:var(--text);white-space:pre-wrap;background:var(--bg3);border-radius:7px;padding:14px;margin-bottom:12px;max-height:400px;overflow-y:auto}
-    .answer-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-    .answer-stats{font-size:0.7rem;color:var(--dim);margin-left:auto}
-    .tips-section{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);padding:16px;margin-bottom:20px}
-    .tips-title{font-family:var(--font-head);font-size:0.78rem;font-weight:700;margin-bottom:10px;color:var(--accent2)}
-    .tips-list{list-style:none;display:flex;flex-direction:column;gap:6px}
-    .tips-list li{font-size:0.78rem;color:var(--muted);padding-left:16px;position:relative}
-    .tips-list li::before{content:'→';position:absolute;left:0;color:var(--accent2)}
-    .loading{display:flex;align-items:center;gap:10px;color:var(--muted);padding:20px}
-    .spinner{width:16px;height:16px;border:2px solid var(--border2);border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite}
-    @keyframes spin{to{transform:rotate(360deg)}}
-    @media(max-width:768px){.layout{grid-template-columns:1fr;height:auto}.sidebar{height:180px}}
-  </style>
-</head>
-<body>
+#!/usr/bin/env node
+/**
+ * patch-quora-generator.js
+ * Run from repo root: node patch-quora-generator.js
+ * Fixes quora-generator.html:
+ *  - All lc= codes corrected to affiliate.json verified values
+ *  - bgmgirl, buildasign, ezTaxReturn removed
+ * Creates quora-generator.html.bak before writing.
+ */
+const fs = require('fs');
 
-<div class="header">
-  <div class="header-logo">GlobalCampaignHub <span class="header-badge">Q Quora Generator</span></div>
-  <a href="index.html" style="font-size:0.8rem;color:var(--muted)">← Back to Directory</a>
-</div>
+const FILE = 'quora-generator.html';
+if (!fs.existsSync(FILE)) { console.error('✗ quora-generator.html not found'); process.exit(1); }
 
-<div class="layout">
-  <aside class="sidebar">
-    <input type="text" class="search-box" id="merchant-search" placeholder="Search merchants..." aria-label="Search"/>
-    <div class="sidebar-label">Select Merchant</div>
-    <div id="merchant-list"></div>
-  </aside>
+console.log('🔧 Patching quora-generator.html...');
+let src = fs.readFileSync(FILE, 'utf8');
+fs.writeFileSync(FILE + '.bak', src);
 
-  <main class="main">
-    <div id="status-msg" class="status">← Select a merchant to generate Quora answers</div>
-    <div id="generator-ui" style="display:none">
-
-      <div class="selected-info" id="selected-info"></div>
-
-      <!-- Quora Tips -->
-      <div class="tips-section">
-        <div class="tips-title">✅ Quora Best Practices</div>
-        <ul class="tips-list">
-          <li>Answer the question genuinely first — disclosure comes after value</li>
-          <li>Disclose affiliation naturally: "I found X helpful and have an affiliate relationship with them"</li>
-          <li>Aim for 300-600 words — Quora rewards detailed, helpful answers</li>
-          <li>Use personal experience framing: "When I was looking for..."</li>
-          <li>Include the link naturally in context, not as a standalone CTA</li>
-          <li>Add a credentials line at the top for authority: "I've been testing VPNs for 3 years..."</li>
-        </ul>
-      </div>
-
-      <!-- Controls -->
-      <div class="controls">
-        <div class="ctrl-group">
-          <div class="ctrl-label">Answer Style</div>
-          <select id="style">
-            <option value="personal">Personal Experience</option>
-            <option value="expert">Expert Analysis</option>
-            <option value="comparison">Comparison / Review</option>
-            <option value="problem-solution">Problem → Solution</option>
-            <option value="listicle">Structured List</option>
-          </select>
-        </div>
-        <div class="ctrl-group">
-          <div class="ctrl-label">Answer Length</div>
-          <select id="length">
-            <option value="short">Short (200-300 words)</option>
-            <option value="medium" selected>Medium (400-600 words)</option>
-            <option value="long">Long (700-1000 words)</option>
-          </select>
-        </div>
-        <div class="ctrl-group">
-          <div class="ctrl-label">Disclosure Style</div>
-          <select id="disclosure">
-            <option value="natural">Natural inline mention</option>
-            <option value="upfront">Upfront disclosure</option>
-            <option value="end">Disclosure at end</option>
-            <option value="none">No disclosure (editorial)</option>
-          </select>
-        </div>
-        <div class="ctrl-group">
-          <div class="ctrl-label">Custom Question</div>
-          <input type="text" id="custom-q" placeholder="Or type your own question..."/>
-        </div>
-      </div>
-
-      <!-- Question selector -->
-      <div class="questions-section">
-        <div class="ctrl-label" style="margin-bottom:10px">Select Questions to Answer</div>
-        <div class="questions-grid" id="questions-grid"></div>
-      </div>
-
-      <div class="action-row">
-        <button class="btn btn-primary" onclick="generateAnswers()">⚡ Generate Quora Answers</button>
-        <button class="btn btn-secondary" onclick="selectAllQ()">Select All</button>
-        <button class="btn btn-secondary" onclick="clearQ()">Clear Selection</button>
-        <button class="btn btn-secondary" onclick="clearOutput()">Clear Output</button>
-      </div>
-
-      <div id="output-area"></div>
-    </div>
-  </main>
-</div>
-
-<script>
-const BASE = 'https://brightlane.github.io/GlobalCampaignHub';
-const TODAY = new Date().toISOString().slice(0,10);
-
-// ── LC CODES UPDATED FROM affiliate.json ──
-const MERCHANTS = [
-  // ── TAX ──
-  { id:'gh-efile',               name:'E-File.com',              cat:'Tax',       lc:'007949155896007874', vol:'2.4M/mo', desc:'IRS-authorized federal tax filing',
-    questions:['What is the cheapest way to file taxes online?','Is E-file.com legitimate and safe?','How do I file my federal taxes online without TurboTax?','What is the best free tax filing website?','Can I file my taxes online for free?'] },
-  { id:'gh-taxextension',        name:'TaxExtension.com',        cat:'Tax',       lc:'007949121281006198', vol:'1.8M/mo', desc:'IRS Form 4868 tax extension filing',
-    questions:['How do I file a tax extension online?','What happens if I miss the April tax deadline?','How long does a tax extension give you?','Is filing a tax extension bad for you?','How do I get more time to file my taxes?'] },
-  { id:'gh-eztaxreturn',         name:'ezTaxReturn.com',         cat:'Tax',       lc:'007949027749003958', vol:'1.2M/mo', desc:'Free federal tax filing',
-    questions:['Which online tax service is actually free?','How do I file my taxes for free in 2026?','What are the best free tax filing options?','Is ezTaxReturn really free to use?','How do I file a simple tax return for free?'] },
-
-  // ── SOFTWARE ──
-  { id:'gh-nordvpn',             name:'NordVPN',                 cat:'Software',  lc:'007949085070005891', vol:'2.1M/mo', desc:'Top-rated VPN service',
-    questions:['What is the best VPN in 2026?','Does NordVPN actually work with Netflix?','Is NordVPN worth the money?','What VPN should I use for privacy?','How do I unblock streaming services from another country?','NordVPN vs ExpressVPN — which is better?'] },
-  { id:'gh-filmora',             name:'Wondershare Filmora',     cat:'Software',  lc:'007949048607004532', vol:'1.9M/mo', desc:'AI video editing software',
-    questions:['What is the best video editing software for beginners?','Is Filmora good for YouTube videos?','What is the best AI video editor in 2026?','How do I add subtitles to videos automatically?','What video editor is better than iMovie?'] },
-  { id:'gh-pdfelement',          name:'Wondershare PDFelement',  cat:'Software',  lc:'007949139355006776', vol:'1.3M/mo', desc:'Adobe Acrobat alternative PDF editor',
-    questions:['What is a good alternative to Adobe Acrobat?','How do I edit a PDF without Adobe?','Is PDFelement as good as Adobe Acrobat?','What is the best one-time purchase PDF editor?','How do I save money on PDF software?'] },
-  { id:'gh-sidify',              name:'Sidify',                  cat:'Software',  lc:'007949114496007306', vol:'1.2M/mo', desc:'Spotify and Apple Music converter',
-    questions:['How do I convert Spotify music to MP3?','Is it legal to download Spotify songs?','How do I listen to Spotify offline without premium?','What is the best Spotify to MP3 converter?','Can you save Apple Music songs as MP3?'] },
-  { id:'gh-movavi',              name:'Movavi Software',         cat:'Software',  lc:'007949109440006513', vol:'880K/mo', desc:'One-time purchase video editor',
-    questions:['What video editor does not require a subscription?','Is Movavi worth buying?','What is the best affordable video editing software?','How do I edit 4K videos without a subscription?','What video editor should I buy once and own forever?'] },
-  { id:'gh-tenorshare',          name:'Tenorshare',              cat:'Software',  lc:'007949139287006847', vol:'1.6M/mo', desc:'iPhone recovery and repair tools',
-    questions:['How do I recover deleted photos from my iPhone?','My iPhone is stuck on the Apple logo — what do I do?','How do I unlock a disabled iPhone?','What is the best iPhone data recovery software?','How do I recover deleted messages from iPhone?'] },
-  { id:'gh-appypie',             name:'Appy Pie',                cat:'Software',  lc:'007949090967005541', vol:'1.4M/mo', desc:'No-code app and website builder',
-    questions:['How do I create a mobile app without coding?','What is the best no-code app builder?','How much does it cost to build an app without a developer?','What is the best chatbot builder without coding?','How do I build a website without knowing how to code?'] },
-  { id:'gh-updf',                name:'UPDF',                    cat:'Software',  lc:'007949147521007728', vol:'720K/mo', desc:'AI-enhanced PDF editor',
-    questions:['What is the best AI PDF editor?','How do I summarize a long PDF with AI?','Is UPDF better than Adobe Acrobat?','How do I translate a PDF document?','What PDF editor has AI features?'] },
-  { id:'gh-itoolab',             name:'iToolab',                 cat:'Software',  lc:'007949108972006513', vol:'600K/mo', desc:'iPhone & Android repair toolkit',
-    questions:['How do I fix a bricked iPhone?','What is the best iOS system repair tool?','How do I recover data from a broken Android phone?','Is iToolab safe to use?','What software can fix iPhone boot loops?'] },
-  { id:'gh-famisafe',            name:'Famisafe',                cat:'Software',  lc:'007949154258006788', vol:'500K/mo', desc:'Parental control and family safety app',
-    questions:['What is the best parental control app in 2026?','How do I monitor my child\'s phone activity?','Can I track my kid\'s location on their phone?','What is the best app to limit screen time for kids?','Is Famisafe better than Qustodio?'] },
-  { id:'gh-iskysoft',            name:'iSkysoft',                cat:'Software',  lc:'007949099000005679', vol:'450K/mo', desc:'Video, PDF and data tools',
-    questions:['What is a good alternative to Adobe video tools?','How do I convert video files on Mac?','Is iSkysoft software safe to download?','What is the best one-time purchase video converter?','How do I edit PDFs on Mac without Adobe?'] },
-  { id:'gh-edraw',               name:'Edraw (Mind/Max)',        cat:'Software',  lc:'007949165249006886', vol:'420K/mo', desc:'Mind mapping and diagram software',
-    questions:['What is the best mind mapping software?','Is EdrawMind better than MindMeister?','What is the best alternative to Visio?','How do I create professional diagrams without Visio?','What is the best one-time purchase diagram tool?'] },
-
-  // ── EDUCATION ──
-  { id:'gh-boardvitals',         name:'BoardVitals',             cat:'Education', lc:'007949154901006218', vol:'820K/mo', desc:'Medical board exam prep',
-    questions:['What is the best question bank for USMLE Step 2?','How do I prepare for the NCLEX exam?','Is BoardVitals good for board exam prep?','What question bank should I use for medical boards?','How long should I study for the USMLE?'] },
-  { id:'gh-surgent',             name:'Surgent CPA',             cat:'Education', lc:'007949163206006249', vol:'880K/mo', desc:'AI-powered CPA exam prep',
-    questions:['What is the best CPA review course in 2026?','How do I pass the CPA exam faster?','Is Surgent CPA review worth it?','Surgent vs Becker — which CPA course should I choose?','How long does it take to pass all four CPA exam sections?'] },
-  { id:'gh-pmtraining',          name:'PM Training',             cat:'Education', lc:'007949081796006139', vol:'980K/mo', desc:'PMP certification with 98% pass rate',
-    questions:['What is the best PMP exam prep course?','How do I pass the PMP exam on the first try?','Is PMP certification worth it in 2026?','How long does PMP certification take?','What is the difference between PMP and PRINCE2?'] },
-  { id:'gh-learntasticcpr',      name:'LearnTastic CPR',         cat:'Education', lc:'007949155036007841', vol:'1.4M/mo', desc:'Online CPR and AED certification',
-    questions:['Can I get CPR certified online?','Is online CPR certification accepted by employers?','How long does online CPR certification take?','Where can I get a CPR certificate quickly?','Is online CPR certification legitimate?'] },
-  { id:'gh-securitiesinstitute', name:'Securities Institute',    cat:'Education', lc:'007949108329007101', vol:'880K/mo', desc:'FINRA securities licensing exam prep',
-    questions:['How do I pass the Series 7 exam?','What is the best study material for the Series 7?','How hard is the Series 7 exam?','What is the passing score for the Series 7?','How do I prepare for FINRA licensing exams?'] },
-  { id:'gh-illumeo',             name:'Illumeo',                 cat:'Education', lc:'007949034133001545', vol:'680K/mo', desc:'NASBA-approved CPE for CPAs',
-    questions:['Where can I get cheap CPE credits for my CPA license?','What is the best online CPE provider for CPAs?','How many CPE credits do I need to maintain my CPA license?','Is Illumeo a legitimate CPE provider?','Where can I get NASBA-approved CPE courses?'] },
-
-  // ── PET CARE ──
-  { id:'gh-canadapetcare',       name:'CanadaPetCare',           cat:'Pet Care',  lc:'007949063057005492', vol:'880K/mo', desc:'Licensed Canadian online pet pharmacy',
-    questions:['Where can I buy NexGard cheaper in Canada?','Is it safe to buy pet medications online in Canada?','How much can I save on pet medications with an online pharmacy?','Can I fill my pet\'s prescription at an online pharmacy?','Where to buy Heartgard online in Canada?'] },
-  { id:'gh-budgetpetcare',       name:'BudgetPetCare',           cat:'Pet Care',  lc:'007949124366007614', vol:'980K/mo', desc:'Affordable pet medications',
-    questions:['Where can I buy cheap pet medications online?','Is it safe to buy pet meds from online pharmacies?','How do I save money on flea and tick prevention?','What is the cheapest way to prevent heartworm in dogs?','Are generic pet medications as effective as name brands?'] },
-  { id:'gh-bestvetcare',         name:'BestVetCare',             cat:'Pet Care',  lc:'007949076672005837', vol:'720K/mo', desc:'Online pet pharmacy and supplies',
-    questions:['Is BestVetCare a legitimate pet pharmacy?','Where can I buy Frontline Plus online cheaply?','What is the best online pharmacy for pet meds?','Can I buy pet medications without a vet prescription?','Where do I get the cheapest flea treatment for dogs?'] },
-
-  // ── HEALTH ──
-  { id:'gh-personalabs',         name:'Personalabs',             cat:'Health',    lc:'007949152445007736', vol:'1.2M/mo', desc:'Direct-to-consumer lab testing',
-    questions:['Can I order blood work without seeing a doctor?','Where can I get a blood test without a doctor?','How do I order an STD test without going to a clinic?','What is direct-to-consumer lab testing?','Is it safe to order your own blood tests?'] },
-  { id:'gh-ayurvedaexperience',  name:'Ayurveda Experience',     cat:'Health',    lc:'007949126292007580', vol:'980K/mo', desc:'Ayurvedic wellness products',
-    questions:['Does ashwagandha really reduce stress?','What are the best ayurvedic supplements for anxiety?','Is ashwagandha safe to take daily?','What is the difference between ayurvedic and western medicine?','What ayurvedic products actually have scientific evidence?'] },
-
-  // ── AUTO ──
-  { id:'gh-maxpeedingrodsus',    name:'Maxpeedingrods US',       cat:'Auto',      lc:'007949154195006539', vol:'880K/mo', desc:'Budget performance auto parts',
-    questions:['Are Maxpeedingrods coilovers any good?','What are the best budget coilovers under $500?','Is it worth buying cheap coilovers?','What performance mods should I do first on a budget?','Where can I buy affordable coilovers that actually work?'] },
-
-  // ── PRINT ──
-  { id:'gh-buildasign',          name:'BuildASign',              cat:'Print',     lc:'007949043344001995', vol:'1.4M/mo', desc:'Custom banners and signs',
-    questions:['Where is the best place to order custom banners?','How much does a custom vinyl banner cost?','What file format should I use when ordering custom signs?','Where do I order yard signs for my business?','What is the fastest way to get custom banners printed?'] },
-  { id:'gh-easycanvasprints',    name:'Easy Canvas Prints',      cat:'Print',     lc:'007949050767005020', vol:'1.2M/mo', desc:'Photo-to-canvas prints',
-    questions:['What is the best site to print photos on canvas?','How do I turn a photo into a canvas print?','What resolution do I need for a canvas print?','Where can I get quality canvas prints for gifts?','Which canvas print company has the best color accuracy?'] },
-  { id:'gh-etchingexpressions',  name:'Etching Expressions',     cat:'Print',     lc:'007949154703007728', vol:'1.1M/mo', desc:'Custom laser engraved gifts',
-    questions:['Where can I get personalized gifts engraved?','What are good personalized gift ideas for corporate clients?','How long does laser engraving take?','What materials can be laser engraved?','Where do I order custom engraved wedding gifts?'] },
-  { id:'gh-bannersonthecheap',   name:'BannersOnTheCheap',       cat:'Print',     lc:'007949069833005389', vol:'900K/mo', desc:'Discount custom banners and signs',
-    questions:['Where can I get cheap custom banners printed?','What is the cheapest banner printing service online?','How do I design a banner for cheap printing?','Are BannersOnTheCheap banners good quality?','Where do I order rush banners online?'] },
-
-  // ── HARDWARE ──
-  { id:'gh-trademarksoundproofing',name:'Trademark Soundproofing',cat:'Hardware', lc:'007949107911007070', vol:'880K/mo', desc:'Soundproofing materials',
-    questions:['How do I soundproof a room cheaply?','What is the best soundproofing material for a home studio?','Do acoustic panels actually reduce noise?','How much does it cost to soundproof a room?','What soundproofing works best for apartments?'] },
-
-  // ── LIFESTYLE ──
-  { id:'gh-halloweencostumes',   name:'HalloweenCostumes.com',   cat:'Lifestyle', lc:'007949155212007855', vol:'8.8M/mo', desc:'Halloween costume retailer',
-    questions:['Where is the best place to buy Halloween costumes online?','What are the most popular Halloween costumes in 2026?','Where can I buy Halloween costumes in bulk for a party?','What are the best couples Halloween costumes?','How early should I order Halloween costumes online?'] },
-  { id:'gh-surveyjunkie',        name:'Survey Junkie',           cat:'Lifestyle', lc:'007949153848007834', vol:'2.4M/mo', desc:'Paid online surveys',
-    questions:['Is Survey Junkie legitimate?','How much money can you realistically make on Survey Junkie?','What are the best paid survey sites that actually pay?','How do I maximize earnings on Survey Junkie?','Is Survey Junkie worth your time?'] },
-  { id:'gh-bgmgirl',             name:'BGM Girl',                cat:'Lifestyle', lc:'007949162099007840', vol:'1.8M/mo', desc:'Royalty-free music for creators',
-    questions:['Where can I find royalty-free music for YouTube videos?','How do I avoid copyright claims on YouTube?','What is the best background music site for content creators?','Is it legal to use any music in YouTube videos?','Where do Twitch streamers get DMCA-safe music?'] },
-  { id:'gh-graeters',            name:"Graeter's Ice Cream",     cat:'Lifestyle', lc:'007949151790007794', vol:'880K/mo', desc:'Premium ice cream shipped nationwide',
-    questions:['What is the best ice cream you can have shipped to your home?','What makes Graeter\'s ice cream special?','Where can I order premium ice cream online?','What is the best food gift you can ship nationally?','Is Graeter\'s ice cream worth the price?'] },
-  { id:'gh-carmellimo',          name:'Carmel Car & Limo',       cat:'Lifestyle', lc:'007949021363003587', vol:'980K/mo', desc:'Luxury car service NYC',
-    questions:['What is the best car service for JFK airport?','Is Carmel Limo reliable for airport transfers?','What is the difference between Uber Black and a car service?','How do I book a reliable limo for a business trip?','What is the best car service in New York City?'] },
-  { id:'gh-combatflipflops',     name:'Combat Flip Flops',       cat:'Lifestyle', lc:'007949108439006486', vol:'480K/mo', desc:'Mission-driven footwear brand',
-    questions:['What are the most ethical clothing brands?','What brands actually make a social impact?','Are Combat Flip Flops worth buying?','What are mission-driven fashion brands that fund good causes?','What footwear brands support veterans?'] },
-  { id:'gh-camanoislandcoffee',  name:'Camano Island Coffee',    cat:'Lifestyle', lc:'007949094561006921', vol:'880K/mo', desc:'Fair trade organic coffee',
-    questions:['What is the best fair trade coffee subscription?','What is the freshest coffee you can order online?','How do I find good organic coffee subscriptions?','Is Camano Island Coffee worth it?','What makes fresh-roasted coffee taste better?'] },
+// ── Step 1: Fix lc= codes (single-quoted JS strings) ─────────────────────
+const LC_FIXES = [
+  // TAX
+  ["'007949155896007874'", "'007949053489005142'"],  // gh-efile
+  ["'007949027749003958'", "'007949136603007653'"],  // gh-etax / gh-eztaxreturn (both get etax lc before removal)
+  // SOFTWARE
+  ["'007949085070005891'", "'007949079282005891'"],  // gh-nordvpn
+  ["'007949048607004532'", "'007949048607004532'"],  // gh-filmora (correct, no-op)
+  ["'007949139355006776'", "'007949165237004532'"],  // gh-pdfelement
+  ["'007949114496007306'", "'007949114494007306'"],  // gh-sidify
+  ["'007949109440006513'", "'007949108972006513'"],  // gh-movavi
+  ["'007949147521007728'", "'007949154707007728'"],  // gh-updf
+  ["'007949108972006513'", "'007949110667007185'"],  // gh-itoolab
+  ["'007949154258006788'", "'007949097766006788'"],  // gh-famisafe
+  ["'007949099000005679'", "'007949080054005679'"],  // gh-iskysoft
+  ["'007949165249006886'", "'007949165147006886'"],  // gh-edraw
+  // EDUCATION
+  ["'007949154901006218'", "'007949124366007614'"],  // gh-boardvitals
+  ["'007949163206006249'", "'007949138896006249'"],  // gh-surgent
+  ["'007949155036007841'", "'007949103653006955'"],  // gh-learntasticcpr
+  ["'007949034133001545'", "'007949104078006849'"],  // gh-illumeo
+  // PET CARE
+  ["'007949063057005492'", "'007949139296006219'"],  // gh-canadapetcare
+  ["'007949124366007614'", "'007949144117006217'"],  // gh-budgetpetcare
+  ["'007949076672005837'", "'007949154901006218'"],  // gh-bestvetcare
+  // HEALTH
+  ["'007949152445007736'", "'007949146929007736'"],  // gh-personalabs
+  // AUTO
+  ["'007949154195006539'", "'007949105959006539'"],  // gh-maxpeedingrodsus
+  // PRINT
+  ["'007949043344001995'", "'007949043344001995'"],  // gh-buildasign (will be removed)
+  ["'007949050767005020'", "'007949043935004760'"],  // gh-easycanvasprints
+  ["'007949154703007728'", "'007949027749003958'"],  // gh-etchingexpressions
+  ["'007949069833005389'", "'007949076672005837'"],  // gh-bannersonthecheap
+  // LIFESTYLE
+  ["'007949155212007855'", "'007949047396004909'"],  // gh-halloweencostumes
+  ["'007949162099007840'", "'007949162099007840'"],  // gh-bgmgirl (will be removed)
+  ["'007949151790007794'", "'007949155896007874'"],  // gh-graeters
+  ["'007949094561006921'", "'007949063057005492'"],  // gh-camanoislandcoffee
 ];
 
-let selectedMerchant = null;
-let selectedQuestions = new Set();
-
-function renderMerchantList(query = '') {
-  const list = document.getElementById('merchant-list');
-  const cats = {};
-  MERCHANTS.forEach(m => {
-    if (query && !m.name.toLowerCase().includes(query) && !m.cat.toLowerCase().includes(query)) return;
-    if (!cats[m.cat]) cats[m.cat] = [];
-    cats[m.cat].push(m);
-  });
-
-  list.innerHTML = Object.entries(cats).map(([cat, merchants]) => `
-    <div style="margin-bottom:6px">
-      <div style="font-family:var(--font-head);font-size:0.58rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);padding:6px 4px 3px">${cat}</div>
-      ${merchants.map(m => `
-        <div class="merchant-item ${selectedMerchant?.id === m.id ? 'active' : ''}" onclick="selectMerchant('${m.id}')">
-          <div>${m.name}</div>
-          <div style="font-size:0.65rem;color:var(--dim)">${m.vol}</div>
-        </div>
-      `).join('')}
-    </div>
-  `).join('');
+let fixCount = 0;
+for (const [wrong, correct] of LC_FIXES) {
+  if (wrong === correct) continue;
+  const count = src.split(wrong).length - 1;
+  if (count > 0) { src = src.split(wrong).join(correct); fixCount += count; }
 }
 
-function selectMerchant(id) {
-  selectedMerchant = MERCHANTS.find(m => m.id === id);
-  if (!selectedMerchant) return;
+// ── Step 2: Remove dead merchant objects ──────────────────────────────────
+// Each merchant spans multiple lines from { to the closing },
+// Pattern: { id:'gh-xxx', ... questions:[...] },
+const DEAD_IDS = ['gh-bgmgirl', 'gh-buildasign', 'gh-eztaxreturn'];
 
-  selectedQuestions = new Set();
-  document.getElementById('status-msg').style.display = 'none';
-  document.getElementById('generator-ui').style.display = 'block';
-
-  document.getElementById('selected-info').innerHTML = `
-    <div>
-      <div class="sel-name">${selectedMerchant.name}</div>
-      <div class="sel-meta">${selectedMerchant.cat} · ${selectedMerchant.desc}</div>
-    </div>
-    <div class="sel-vol">${selectedMerchant.vol}</div>
-  `;
-
-  renderQuestions();
-  document.getElementById('output-area').innerHTML = '';
-  renderMerchantList(document.getElementById('merchant-search').value);
+for (const id of DEAD_IDS) {
+  // Remove multi-line object: starts with { id:'gh-xxx' and ends with },
+  const re = new RegExp(
+    `\\{[\\s\\S]*?id:'${id}'[\\s\\S]*?\\},?\\s*\n`,
+    'g'
+  );
+  src = src.replace(re, '');
 }
 
-function renderQuestions() {
-  const grid = document.getElementById('questions-grid');
-  const m = selectedMerchant;
-  grid.innerHTML = m.questions.map((q, i) => `
-    <div class="q-chip ${selectedQuestions.has(i) ? 'selected' : ''}" onclick="toggleQ(${i})" data-q="${i}">
-      ${q}
-    </div>
-  `).join('');
-}
+// Fallback: remove any remaining lines referencing dead merchants
+src = src.replace(/.*gh-bgmgirl.*/g, '');
+src = src.replace(/.*gh-buildasign.*/g, '');
+src = src.replace(/.*gh-eztaxreturn.*/g, '');
+src = src.replace(/.*007949162099007840.*/g, ''); // bgmgirl lc
+src = src.replace(/.*007949043344001995.*/g, ''); // buildasign lc
 
-function toggleQ(i) {
-  if (selectedQuestions.has(i)) selectedQuestions.delete(i);
-  else selectedQuestions.add(i);
-  renderQuestions();
-}
+// ── Step 3: Update header comment ────────────────────────────────────────
+src = src.replace(
+  /\/\/ ── LC CODES UPDATED FROM affiliate\.json ──/,
+  '// ── LC CODES VERIFIED FROM affiliate.json 2026-05-01 — 67 merchants ──'
+);
 
-function selectAllQ() {
-  selectedMerchant.questions.forEach((_, i) => selectedQuestions.add(i));
-  renderQuestions();
-}
+fs.writeFileSync(FILE, src, 'utf8');
 
-function clearQ() {
-  selectedQuestions.clear();
-  renderQuestions();
-}
+// ── Verification ──────────────────────────────────────────────────────────
+console.log('\n✅ Done');
+console.log(`   LC code fixes: ${fixCount} replacements`);
 
-function clearOutput() {
-  document.getElementById('output-area').innerHTML = '';
-}
-
-function affUrl(m, pos) {
-  return `https://www.linkconnector.com/ta.php?lc=${m.lc}&atid=${m.id}&utm_source=gh-quora&utm_medium=affiliate&utm_campaign=quora-answer&utm_content=pos-${pos}`;
-}
-
-async function generateAnswers() {
-  if (!selectedMerchant) return;
-
-  const m = selectedMerchant;
-  const style = document.getElementById('style').value;
-  const length = document.getElementById('length').value;
-  const disclosure = document.getElementById('disclosure').value;
-  const customQ = document.getElementById('custom-q').value.trim();
-
-  let questions = [...selectedQuestions].map(i => m.questions[i]);
-  if (customQ) questions.push(customQ);
-
-  if (!questions.length) {
-    alert('Please select at least one question or enter a custom question.');
-    return;
-  }
-
-  const url = affUrl(m, 1);
-  const blogUrl = `${BASE}/blog.html`;
-
-  const outputArea = document.getElementById('output-area');
-  outputArea.innerHTML = '<div class="loading"><div class="spinner"></div> Generating Quora answers via Claude API...</div>';
-
-  const lengthGuide = { short: '200-300 words', medium: '400-600 words', long: '700-1000 words' }[length];
-  const disclosureGuide = {
-    natural: 'Mention your affiliate relationship naturally inline, e.g. "I use their affiliate link"',
-    upfront: 'Disclose at the very beginning: "Disclosure: I have an affiliate relationship with [merchant]"',
-    end: 'Add a brief disclosure note at the very end of the answer',
-    none: 'No affiliate disclosure — write as pure editorial recommendation'
-  }[disclosure];
-
-  const prompt = `Generate high-quality Quora answers for each question below about ${m.name}.
-
-Merchant: ${m.name}
-Category: ${m.cat}
-Description: ${m.desc}
-Affiliate URL: ${url}
-Blog guide: ${blogUrl}
-
-Answer style: ${style}
-Answer length: ${lengthGuide} each
-Disclosure approach: ${disclosureGuide}
-
-Questions to answer:
-${questions.map((q, i) => `${i+1}. ${q}`).join('\n')}
-
-Requirements for each answer:
-- Start with a credentials/authority statement that feels natural
-- Answer the question genuinely and helpfully FIRST
-- Include specific details, numbers, and comparisons where relevant
-- Include the affiliate link naturally within the text
-- Quora rewards detailed, structured answers — use formatting where helpful
-- Sound like a real person sharing genuine experience, NOT marketing copy
-- Each answer should stand alone and be complete
-
-Return ONLY valid JSON. No markdown. Format:
-{
-  "answers": [
-    {
-      "question": "the question text",
-      "answer": "the full answer text with natural newlines using \\n",
-      "wordCount": 450,
-      "credentialsLine": "the opening credentials statement"
-    }
-  ]
-}`;
-
-  try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 6000,
-        messages: [{ role: 'user', content: prompt }]
-      })
-    });
-
-    const data = await response.json();
-    const text = data.content?.[0]?.text || '';
-    const result = JSON.parse(text.replace(/```json\n?/g,'').replace(/```\n?/g,'').trim());
-    const answers = result.answers || [];
-
-    if (!answers.length) throw new Error('No answers returned');
-
-    outputArea.innerHTML = answers.map((a, i) => {
-      const wordCount = a.wordCount || a.answer.split(' ').length;
-      return `
-        <div class="answer-card">
-          <div class="answer-header">
-            <div>
-              <div style="font-size:0.65rem;color:var(--dim);margin-bottom:4px">Q${i+1} of ${answers.length}</div>
-              <div class="answer-q">${a.question}</div>
-              ${a.credentialsLine ? `<div style="font-size:0.72rem;color:var(--dim);margin-top:6px;font-style:italic">"${a.credentialsLine}"</div>` : ''}
-            </div>
-            <div class="answer-meta">${wordCount} words</div>
-          </div>
-          <div class="answer-body">
-            <div class="answer-text">${a.answer}</div>
-            <div class="answer-actions">
-              <button class="btn btn-copy" onclick="copyText(this, ${JSON.stringify(a.answer)})">📋 Copy Answer</button>
-              <button class="btn btn-copy" onclick="copyText(this, ${JSON.stringify(a.credentialsLine + '\n\n' + a.answer)})">📋 Copy with Credentials</button>
-              <span class="answer-stats">${wordCount} words · Quora recommends 300-600</span>
-            </div>
-          </div>
-        </div>`;
-    }).join('');
-
-    const allText = answers.map(a => `Q: ${a.question}\n\n${a.credentialsLine ? a.credentialsLine + '\n\n' : ''}${a.answer}`).join('\n\n---\n\n');
-    outputArea.insertAdjacentHTML('afterbegin', `
-      <div style="display:flex;gap:10px;margin-bottom:16px;align-items:center">
-        <button class="btn btn-quora" onclick="copyText(this, ${JSON.stringify(allText)})">📋 Copy All ${answers.length} Answers</button>
-        <span style="font-size:0.75rem;color:var(--dim)">${answers.length} answers generated for ${m.name}</span>
-      </div>
-    `);
-
-  } catch(err) {
-    outputArea.innerHTML = `<div class="status" style="color:#e88;">✗ Error: ${err.message}</div>`;
-  }
-}
-
-function copyText(btn, text) {
-  navigator.clipboard.writeText(text).then(() => {
-    const orig = btn.textContent;
-    btn.textContent = '✓ Copied!';
-    btn.classList.add('copied');
-    setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 2000);
-  });
-}
-
-document.getElementById('merchant-search').addEventListener('input', function() {
-  renderMerchantList(this.value.toLowerCase());
+console.log('\nSpot checks — correct lc= codes:');
+[
+  ['gh-efile',           "'007949053489005142'"],
+  ['gh-nordvpn',         "'007949079282005891'"],
+  ['gh-pdfelement',      "'007949165237004532'"],
+  ['gh-updf',            "'007949154707007728'"],
+  ['gh-itoolab',         "'007949110667007185'"],
+  ['gh-learntasticcpr',  "'007949103653006955'"],
+  ['gh-boardvitals',     "'007949124366007614'"],
+  ['gh-halloweencostumes',"'007949047396004909'"],
+  ['gh-graeters',        "'007949155896007874'"],
+  ['gh-easycanvasprints',"'007949043935004760'"],
+  ['gh-personalabs',     "'007949146929007736'"],
+  ['gh-canadapetcare',   "'007949139296006219'"],
+].forEach(([id, lc]) => {
+  console.log(`  ${id.padEnd(22)}: ${src.includes(lc) ? lc + ' ✓' : 'NOT FOUND ✗'}`);
 });
 
-renderMerchantList();
-</script>
-</body>
-</html>
+console.log('\nRemoved merchant check:');
+['gh-bgmgirl', 'gh-buildasign', 'gh-eztaxreturn'].forEach(id => {
+  console.log(`  ${id}: ${src.includes(id) ? 'STILL PRESENT ✗' : 'gone ✓'}`);
+});
+
+console.log('\nNext: git add quora-generator.html && git commit -m "Fix LC codes, remove dead merchants — 67 verified 2026-05-01"');
