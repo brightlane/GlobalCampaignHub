@@ -5923,7 +5923,7 @@
       "slug": "mass-loaded-vinyl-soundproofing-2026-is-it-worth-it-2461",
       "merchant": "gh-trademarksoundproofing",
       "lc": "007949107911007070",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "Mass Loaded Vinyl Soundproofing 2026: Is It Worth It?",
       "category_en": "Hardware",
@@ -5960,7 +5960,8 @@
           "q": "What languages are buyer guides available in?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-05-01"
     },
     {
       "slug": "famisafe-review-2026-best-parental-control-app-2462",
