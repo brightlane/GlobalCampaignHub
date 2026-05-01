@@ -6275,7 +6275,7 @@
       "slug": "youware-vs-canva-2026-which-creative-platform-wins-2469",
       "merchant": "gh-youware",
       "lc": "007949164742007981",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "YouWare vs Canva 2026: Which Creative Platform Wins?",
       "category_en": "Software",
@@ -6312,7 +6312,8 @@
           "q": "What languages are buyer guides available in?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-05-01"
     },
     {
       "slug": "how-to-create-a-selfhosted-photo-gallery-2026-6962",
