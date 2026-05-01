@@ -31,28 +31,28 @@
   "2026-05-01": {
     "date": "2026-05-01",
     "generated": 50,
-    "total_before": 227,
-    "total_after": 277,
+    "total_before": 277,
+    "total_after": 327,
     "lang_breakdown": {
-      "pl": 6,
-      "th": 3,
-      "pt": 7,
-      "id": 2,
-      "it": 5,
-      "tr": 4,
-      "hi": 1,
-      "vi": 1,
-      "es": 1,
-      "ar": 4,
-      "de": 4,
-      "ko": 2,
-      "zh": 1,
-      "ja": 3,
-      "en": 2,
-      "pt-br": 2,
+      "en": 10,
+      "zh": 4,
       "zh-tw": 1,
-      "fr": 1
+      "pl": 1,
+      "pt": 3,
+      "id": 5,
+      "th": 1,
+      "hi": 1,
+      "it": 5,
+      "vi": 1,
+      "nl": 2,
+      "es": 2,
+      "de": 4,
+      "tr": 2,
+      "pt-br": 3,
+      "ko": 3,
+      "ja": 1,
+      "ar": 1
     },
-    "timestamp": "2026-05-01T00:02:07.369Z"
+    "timestamp": "2026-05-01T00:07:04.997Z"
   }
 }
