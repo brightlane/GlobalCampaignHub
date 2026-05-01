@@ -4363,7 +4363,7 @@
     {
       "slug": "best-soundproofing-materials-in-2026-what-actually-works-15",
       "merchant": "gh-trademarksoundproofing",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "Best Soundproofing Materials in 2026: What Actually Works?",
       "category_en": "Hardware",
@@ -4400,7 +4400,8 @@
           "q": "What languages are supported?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-05-01"
     },
     {
       "slug": "jalbum-review-2026-build-photo-websites-without-coding-16",
