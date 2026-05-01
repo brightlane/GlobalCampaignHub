@@ -2,7 +2,8 @@
 /**
  * patch-campaign-page.js
  * Run from your repo root: node patch-campaign-page.js
- * Fixes all LC codes in campaign-page.html — 51 corrections + 68→70 merchant count.
+ * Fixes all LC codes in campaign-page.html — verified from affiliate.json 2026-05-01
+ * Removes bgmgirl and buildasign references.
  * Creates campaign-page.html.bak before writing.
  */
 const fs = require('fs');
@@ -14,96 +15,272 @@ if (!fs.existsSync(FILE)) {
   process.exit(1);
 }
 
+// ── Verified LC codes from affiliate.json 2026-05-01 ─────────────────────────
+// Format: 'any_old_value': 'correct_value'
+// Covers both fabricated codes AND previously "corrected" codes that were wrong
+const CORRECT_LC = {
+  'gh-efile':                '007949053489005142',
+  'gh-etax':                 '007949136603007653',
+  'gh-taxextension':         '007949121281006198',
+  'gh-nordvpn':              '007949079282005891',
+  'gh-filmora':              '007949048607004532',
+  'gh-pdfelement':           '007949165237004532',
+  'gh-sidify':               '007949114494007306',
+  'gh-movavi':               '007949108972006513',
+  'gh-tenorshare':           '007949139287006847',
+  'gh-appypie':              '007949090967005541',
+  'gh-updf':                 '007949154707007728',
+  'gh-itoolab':              '007949110667007185',
+  'gh-famisafe':             '007949097766006788',
+  'gh-depositphotos':        '007949040357004687',
+  'gh-edraw':                '007949165147006886',
+  'gh-iskysoft':             '007949080054005679',
+  'gh-jalbum':               '007949135821007664',
+  'gh-renoise':              '007949165071007995',
+  'gh-picador':              '007949164712007982',
+  'gh-youware':              '007949164733007981',
+  'gh-individualsoftware':   '007949046073005238',
+  'gh-boardvitals':          '007949124366007614',
+  'gh-surgent':              '007949138896006249',
+  'gh-pmtraining':           '007949081796006139',
+  'gh-learntasticcpr':       '007949103653006955',
+  'gh-securitiesinstitute':  '007949108329007101',
+  'gh-illumeo':              '007949104078006849',
+  'gh-hrcp':                 '007949120619007379',
+  'gh-oakstone':             '007949049546004978',
+  'gh-wolterskluwer':        '007949165370003224',
+  'gh-learntasticahca':      '007949047416004897',
+  'gh-canadapetcare':        '007949139296006219',
+  'gh-budgetpetcare':        '007949144117006217',
+  'gh-bestvetcare':          '007949154901006218',
+  'gh-discountpetcare':      '007949161266007847',
+  'gh-budgetpetworld':       '007949145753006206',
+  'gh-personalabs':          '007949146929007736',
+  'gh-ayurvedaexperience':   '007949126292007580',
+  'gh-nursejamie':           '007949155036007841',
+  'gh-infinitealoe':         '007949155212007855',
+  'gh-fieldtex':             '007949044236004764',
+  'gh-maxpeedingrodsus':     '007949105959006539',
+  'gh-maxpeedingrodsau':     '007949101800006908',
+  'gh-lafuente':             '007949034143001545',
+  'gh-easycanvasprints':     '007949043935004760',
+  'gh-etchingexpressions':   '007949027749003958',
+  'gh-bannersonthecheap':    '007949076672005837',
+  'gh-canvasonthecheap':     '007949084965006216',
+  'gh-ryonet':               '007949155911007876',
+  'gh-trademarkhardware':    '007949113406007272',
+  'gh-trademarksoundproofing':'007949107911007070',
+  'gh-warehouse115':         '007949102471006776',
+  'gh-productsonthego':      '007949137847007124',
+  'gh-halloweencostumes':    '007949047396004909',
+  'gh-surveyjunkie':         '007949153848007834',
+  'gh-graeters':             '007949155896007874',
+  'gh-carmellimo':           '007949021363003587',
+  'gh-tastyribbon':          '007949155938007865',
+  'gh-combatflipflops':      '007949108439006486',
+  'gh-camanoislandcoffee':   '007949063057005492',
+  'gh-gunsinternational':    '007949050767005020',
+  'gh-thechessstore':        '007949071778005057',
+  'gh-museumreplicas':       '007949069873005391',
+  'gh-atlantacutlery':       '007949069833005389',
+  'gh-vipertec':             '007949091308006550',
+  'gh-bugatchi':             '007949094561006921',
+  'gh-readygolf':            '007949135537007633',
+  'gh-incentrev':            '007949151790007794',
+};
+
+// All known old/wrong lc codes → correct lc code mapping
 const REPLACEMENTS = {
-  '007949053344002874': '007949155212007855', // gh-halloweencostumes
-  '007949033344001882': '007949153848007834', // gh-surveyjunkie
-  '007949021469002241': '007949155896007874', // gh-efile
-  '007949143344006843': '007949085070005891', // gh-nordvpn
-  '007949165260004532': '007949048607004532', // gh-filmora
-  '007949033342002305': '007949121281006198', // gh-taxextension
-  '007949153344007992': '007949162099007840', // gh-bgmgirl
-  '007949163344008992': '007949139287006847', // gh-tenorshare
-  '007949153344007442': '007949090967005541', // gh-appypie
-  '007949143344006112': '007949155036007841', // gh-learntasticcpr
-  '007949165372004532': '007949139355006776', // gh-pdfelement
-  '007949063344003112': '007949050767005020', // gh-easycanvasprints
-  '007949163344007882': '007949114496007306', // gh-sidify
-  '007949133344005442': '007949152445007736', // gh-personalabs
-  '007949083344004332': '007949154703007728', // gh-etchingexpressions
-  '007949123344006122': '007949163206006249', // gh-surgent
-  '007949103344005118': '007949124366007614', // gh-budgetpetcare
-  '007949143344006992': '007949081796006139', // gh-pmtraining
-  '007949073344003661': '007949069833005389', // gh-bannersonthecheap
-  '007949113344005987': '007949108329007101', // gh-securitiesinstitute
-  '007949133344006421': '007949154195006539', // gh-maxpeedingrodsus
-  '007949103344005112': '007949071778005057', // gh-thechessstore
-  '007949133344006118': '007949107911007070', // gh-trademarksoundproofing
-  '007949163344008221': '007949126292007580', // gh-ayurvedaexperience
-  '007949073344003662': '007949139296006219', // gh-canvasonthecheap
-  '007949093344005114': '007949135821007664', // gh-hrcp
-  '007949123344005441': '007949053489005142', // gh-discountpetcare
-  '007949153344007881': '007949155938007865', // gh-tastyribbon
-  '007949053344002441': '007949094561006921', // gh-camanoislandcoffee
-  '007949083344004721': '007949063057005492', // gh-canadapetcare
-  '007949113344005224': '007949144117006217', // gh-budgetpetworld
-  '007949143344006881': '007949108439006486', // gh-combatflipflops
-  '007949073344004112': '007949151790007794', // gh-graeters
-  '007949103344005432': '007949049546004978', // gh-oakstone
-  '007949084633004512': '007949155911007876', // gh-ryonet
-  '007949133344006224': '007949091308006550', // gh-vipertec
-  '007949083344003992': '007949079282005891', // gh-lafuente
-  '007949053344002881': '007949021363003587', // gh-carmellimo
-  '007949093344004221': '007949046073005238', // gh-gunsinternational
-  '007949123344005771': '007949164733007981', // gh-atlantacutlery
-  '007949143344006221': '007949034133001545', // gh-illumeo
-  '007949143344006551': '007949165071007995', // gh-renoise
-  '007949143344006442': '007949069873005391', // gh-jalbum
-  '007949163344008441': '007949108972006513', // gh-itoolab
-  '007949163344007442': '007949102471006776', // gh-warehouse115
-  '007949123344005118': '007949120619007379', // gh-fieldtex
-  '007949123344005991': '007949047416004897', // gh-incentrev
-  '007949113344005442': '007949109612005391', // gh-museumreplicas
-  '007949165246006886': '007949165249006886', // gh-edraw (middle digits corrected)
-  '007949165370003224': '007949019993003224', // gh-wolterskluwer
-  '007949163344008112': '007949147521007728', // gh-updf
+  // TAX
+  '007949021469002241': CORRECT_LC['gh-efile'],
+  '007949155896007874': CORRECT_LC['gh-efile'],        // was wrongly assigned to efile before
+  '007949113645003507': CORRECT_LC['gh-etax'],
+  '007949027749003958': CORRECT_LC['gh-etax'],
+  '007949033342002305': CORRECT_LC['gh-taxextension'],
+  // SOFTWARE
+  '007949143344006843': CORRECT_LC['gh-nordvpn'],
+  '007949085070005891': CORRECT_LC['gh-nordvpn'],
+  '007949165260004532': CORRECT_LC['gh-filmora'],
+  '007949165372004532': CORRECT_LC['gh-pdfelement'],
+  '007949139355006776': CORRECT_LC['gh-pdfelement'],
+  '007949163344007882': CORRECT_LC['gh-sidify'],
+  '007949114496007306': CORRECT_LC['gh-sidify'],
+  '007949153344007119': CORRECT_LC['gh-movavi'],
+  '007949109440006513': CORRECT_LC['gh-movavi'],
+  '007949163344008992': CORRECT_LC['gh-tenorshare'],
+  '007949153344007442': CORRECT_LC['gh-appypie'],
+  '007949163344008112': CORRECT_LC['gh-updf'],
+  '007949147521007728': CORRECT_LC['gh-updf'],
+  '007949163344008441': CORRECT_LC['gh-itoolab'],
+  '007949108972006513': CORRECT_LC['gh-itoolab'],
+  '007949154258006788': CORRECT_LC['gh-famisafe'],
+  '007949063344003921': CORRECT_LC['gh-depositphotos'],
+  '007949136603007653': CORRECT_LC['gh-depositphotos'],
+  '007949165246006886': CORRECT_LC['gh-edraw'],
+  '007949165249006886': CORRECT_LC['gh-edraw'],
+  '007949099000005679': CORRECT_LC['gh-iskysoft'],
+  '007949143344006442': CORRECT_LC['gh-jalbum'],
+  '007949069873005391': CORRECT_LC['gh-jalbum'],
+  '007949143344006551': CORRECT_LC['gh-renoise'],
+  '007949133344006228': CORRECT_LC['gh-picador'],
+  '007949163344008118': CORRECT_LC['gh-youware'],
+  '007949164742007981': CORRECT_LC['gh-youware'],
+  '007949133344005882': CORRECT_LC['gh-individualsoftware'],
+  '007949110667007185': CORRECT_LC['gh-individualsoftware'],
+  // EDUCATION
+  '007949114675005824': CORRECT_LC['gh-boardvitals'],
+  '007949154901006218': CORRECT_LC['gh-boardvitals'],
+  '007949123344006122': CORRECT_LC['gh-surgent'],
+  '007949163206006249': CORRECT_LC['gh-surgent'],
+  '007949143344006992': CORRECT_LC['gh-pmtraining'],
+  '007949143344006112': CORRECT_LC['gh-learntasticcpr'],
+  '007949155036007841': CORRECT_LC['gh-learntasticcpr'],
+  '007949113344005987': CORRECT_LC['gh-securitiesinstitute'],
+  '007949143344006221': CORRECT_LC['gh-illumeo'],
+  '007949034133001545': CORRECT_LC['gh-illumeo'],
+  '007949093344005114': CORRECT_LC['gh-hrcp'],
+  '007949135821007664': CORRECT_LC['gh-hrcp'],
+  '007949103344005432': CORRECT_LC['gh-oakstone'],
+  '007949019993003224': CORRECT_LC['gh-wolterskluwer'],
+  '007949165370003224': CORRECT_LC['gh-wolterskluwer'],  // keep correct
+  '007949143344006113': CORRECT_LC['gh-learntasticahca'],
+  '007949146929007736': CORRECT_LC['gh-learntasticahca'],
+  // PET CARE
+  '007949083344004721': CORRECT_LC['gh-canadapetcare'],
+  '007949063057005492': CORRECT_LC['gh-canadapetcare'],
+  '007949103344005118': CORRECT_LC['gh-budgetpetcare'],
+  '007949124366007614': CORRECT_LC['gh-budgetpetcare'],
+  '007949093344004992': CORRECT_LC['gh-bestvetcare'],
+  '007949076672005837': CORRECT_LC['gh-bestvetcare'],
+  '007949123344005441': CORRECT_LC['gh-discountpetcare'],
+  '007949053489005142': CORRECT_LC['gh-discountpetcare'],
+  '007949113344005224': CORRECT_LC['gh-budgetpetworld'],
+  '007949144117006217': CORRECT_LC['gh-budgetpetworld'],
+  // HEALTH
+  '007949133344005442': CORRECT_LC['gh-personalabs'],
+  '007949152445007736': CORRECT_LC['gh-personalabs'],
+  '007949163344008221': CORRECT_LC['gh-ayurvedaexperience'],
+  '007949153344007112': CORRECT_LC['gh-nursejamie'],
+  '007949155104007841': CORRECT_LC['gh-nursejamie'],
+  '007949105959006539': CORRECT_LC['gh-infinitealoe'],
+  '007949123344005118': CORRECT_LC['gh-fieldtex'],
+  '007949120619007379': CORRECT_LC['gh-fieldtex'],
+  // AUTO
+  '007949133344006421': CORRECT_LC['gh-maxpeedingrodsus'],
+  '007949154195006539': CORRECT_LC['gh-maxpeedingrodsus'],
+  '007949143344006554': CORRECT_LC['gh-maxpeedingrodsau'],
+  '007949136043006908': CORRECT_LC['gh-maxpeedingrodsau'],
+  '007949083344003992': CORRECT_LC['gh-lafuente'],
+  '007949079282005891': CORRECT_LC['gh-lafuente'],
+  // PRINT
+  '007949063344003112': CORRECT_LC['gh-easycanvasprints'],
+  '007949050767005020': CORRECT_LC['gh-easycanvasprints'],
+  '007949083344004332': CORRECT_LC['gh-etchingexpressions'],
+  '007949154703007728': CORRECT_LC['gh-etchingexpressions'],
+  '007949073344003661': CORRECT_LC['gh-bannersonthecheap'],
+  '007949069833005389': CORRECT_LC['gh-bannersonthecheap'],
+  '007949073344003662': CORRECT_LC['gh-canvasonthecheap'],
+  '007949139296006219': CORRECT_LC['gh-canvasonthecheap'],
+  '007949084633004512': CORRECT_LC['gh-ryonet'],
+  // HARDWARE
+  '007949123344005912': CORRECT_LC['gh-trademarkhardware'],
+  '007949133344006118': CORRECT_LC['gh-trademarksoundproofing'],
+  '007949163344007442': CORRECT_LC['gh-warehouse115'],
+  '007949113344004882': CORRECT_LC['gh-productsonthego'],
+  '007949108750007124': CORRECT_LC['gh-productsonthego'],
+  // LIFESTYLE
+  '007949053344002874': CORRECT_LC['gh-halloweencostumes'],
+  '007949155212007855': CORRECT_LC['gh-halloweencostumes'],
+  '007949033344001882': CORRECT_LC['gh-surveyjunkie'],
+  '007949073344004112': CORRECT_LC['gh-graeters'],
+  '007949151790007794': CORRECT_LC['gh-graeters'],
+  '007949053344002881': CORRECT_LC['gh-carmellimo'],
+  '007949153344007881': CORRECT_LC['gh-tastyribbon'],
+  '007949143344006881': CORRECT_LC['gh-combatflipflops'],
+  '007949053344002441': CORRECT_LC['gh-camanoislandcoffee'],
+  '007949094561006921': CORRECT_LC['gh-camanoislandcoffee'],
+  '007949093344004221': CORRECT_LC['gh-gunsinternational'],
+  '007949046073005238': CORRECT_LC['gh-gunsinternational'],
+  '007949103344005112': CORRECT_LC['gh-thechessstore'],
+  '007949113344005442': CORRECT_LC['gh-museumreplicas'],
+  '007949109612005391': CORRECT_LC['gh-museumreplicas'],
+  '007949123344005771': CORRECT_LC['gh-atlantacutlery'],
+  '007949164733007981': CORRECT_LC['gh-atlantacutlery'],
+  '007949133344006224': CORRECT_LC['gh-vipertec'],
+  '007949153344007662': CORRECT_LC['gh-bugatchi'],
+  '007949145753006206': CORRECT_LC['gh-bugatchi'],
+  '007949103344004551': CORRECT_LC['gh-readygolf'],
+  '007949123344005991': CORRECT_LC['gh-incentrev'],
+  '007949047416004897': CORRECT_LC['gh-incentrev'],
 };
 
 console.log('🔧 Patching campaign-page.html...');
 let src = fs.readFileSync(FILE, 'utf8');
-fs.writeFileSync(FILE + '.bak', src); // backup
+fs.writeFileSync(FILE + '.bak', src);
 
+// Apply lc replacements
 let total = 0;
 for (const [oldLc, newLc] of Object.entries(REPLACEMENTS)) {
+  if (oldLc === newLc) continue; // skip no-ops
   const re = new RegExp(oldLc, 'g');
   const hits = (src.match(re) || []).length;
-  if (hits > 0) { src = src.replace(re, newLc); total += hits; }
+  if (hits > 0) {
+    src = src.replace(re, newLc);
+    total += hits;
+  }
 }
 
-// Fix merchant count
-src = src.replace(/\b68 merchants\b/g, '70 merchants');
-src = src.replace(/covering 68/g, 'covering 70');
+// Remove bgmgirl and buildasign — strip entire merchant card/section lines
+// Remove any line containing gh-bgmgirl or gh-buildasign or their lc codes
+const DEAD_PATTERNS = [
+  /.*gh-bgmgirl.*/g,
+  /.*gh-buildasign.*/g,
+  /.*007949162099007840.*/g,  // bgmgirl lc
+  /.*007949153344007992.*/g,  // bgmgirl old fabricated lc
+  /.*007949043344001995.*/g,  // buildasign lc
+];
+let removedLines = 0;
+for (const pat of DEAD_PATTERNS) {
+  const before = src.split('\n').length;
+  src = src.replace(pat, '');
+  removedLines += before - src.split('\n').length;
+}
+
+// Fix merchant counts
+src = src.replace(/\b68\s+merchants\b/g, '67 merchants');
+src = src.replace(/\b70\s+merchants\b/g, '67 merchants');
+src = src.replace(/covering\s+68/g, 'covering 67');
+src = src.replace(/covering\s+70/g, 'covering 67');
 
 fs.writeFileSync(FILE, src, 'utf8');
 
-// Verify
-let remaining = 0;
-for (const old of Object.keys(REPLACEMENTS)) {
-  if (src.includes(old)) { console.error('  STILL PRESENT:', old); remaining++; }
-}
-
-console.log(`\n✅ Done`);
-console.log(`   LC replacements: ${total} instances across ${Object.keys(REPLACEMENTS).length} codes`);
-console.log(`   Old codes remaining: ${remaining}`);
+// Verify — check correct codes are present, old ones gone
+console.log('\n✅ Done');
+console.log(`   LC replacements: ${total} instances`);
+console.log(`   Lines removed (bgmgirl/buildasign): ${removedLines}`);
 console.log(`   Backup: campaign-page.html.bak`);
-console.log('\nSpot checks:');
-[
-  ['gh-efile',           '007949155896007874'],
-  ['gh-nordvpn',         '007949085070005891'],
-  ['gh-halloweencostumes','007949155212007855'],
+
+console.log('\nSpot checks — correct lc= codes:');
+const checks = [
+  ['gh-efile',           '007949053489005142'],
+  ['gh-etax',            '007949136603007653'],
+  ['gh-nordvpn',         '007949079282005891'],
+  ['gh-updf',            '007949154707007728'],
+  ['gh-itoolab',         '007949110667007185'],
+  ['gh-wolterskluwer',   '007949165370003224'],
+  ['gh-learntasticcpr',  '007949103653006955'],
+  ['gh-learntasticahca', '007949047416004897'],
+  ['gh-productsonthego', '007949137847007124'],
+  ['gh-halloweencostumes','007949047396004909'],
+  ['gh-graeters',        '007949155896007874'],
   ['gh-surveyjunkie',    '007949153848007834'],
-  ['gh-buildasign',      '007949043344001995'],
-].forEach(([id, lc]) => {
-  console.log(`  ${id}: ${src.includes(lc) ? '✓' : 'MISSING'}`);
+];
+checks.forEach(([id, lc]) => {
+  console.log(`  ${id.padEnd(22)}: ${src.includes(lc) ? lc + ' ✓' : 'NOT FOUND ✗'}`);
 });
 
-console.log('\nNext: git add campaign-page.html && git commit -m "Fix LC codes — 70 merchants verified 2026-04-30"');
+console.log('\nDead merchant check:');
+console.log(`  gh-bgmgirl present:    ${src.includes('gh-bgmgirl') ? 'YES ✗' : 'NO ✓'}`);
+console.log(`  gh-buildasign present: ${src.includes('gh-buildasign') ? 'YES ✗' : 'NO ✓'}`);
+
+console.log('\nNext: git add campaign-page.html && git commit -m "Fix LC codes — 67 merchants verified 2026-05-01"');
