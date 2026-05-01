@@ -30,23 +30,15 @@
   },
   "2026-05-01": {
     "date": "2026-05-01",
-    "generated": 18,
-    "total_before": 677,
-    "total_after": 695,
+    "generated": 4,
+    "total_before": 695,
+    "total_after": 699,
     "lang_breakdown": {
-      "zh": 1,
       "ja": 1,
-      "vi": 2,
-      "hi": 1,
-      "en": 4,
-      "pt-br": 2,
-      "th": 2,
-      "pt": 1,
-      "pl": 1,
-      "id": 1,
-      "ru": 1,
-      "zh-tw": 1
+      "zh": 1,
+      "th": 1,
+      "de": 1
     },
-    "timestamp": "2026-05-01T01:17:29.185Z"
+    "timestamp": "2026-05-01T01:20:21.200Z"
   }
 }
