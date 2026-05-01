@@ -4578,7 +4578,7 @@
     {
       "slug": "where-to-buy-home-improvement-parts-online-in-2026-2449",
       "merchant": "gh-trademarkhardware",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "Where to Buy Home Improvement Parts Online in 2026",
       "category_en": "Hardware",
@@ -4615,7 +4615,8 @@
           "q": "What languages are supported?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-05-01"
     },
     {
       "slug": "best-video-editors-with-no-subscription-in-2026-2450",

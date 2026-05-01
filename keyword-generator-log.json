@@ -30,15 +30,12 @@
   },
   "2026-05-01": {
     "date": "2026-05-01",
-    "generated": 4,
-    "total_before": 695,
-    "total_after": 699,
+    "generated": 1,
+    "total_before": 699,
+    "total_after": 700,
     "lang_breakdown": {
-      "ja": 1,
-      "zh": 1,
-      "th": 1,
-      "de": 1
+      "th": 1
     },
-    "timestamp": "2026-05-01T01:20:21.200Z"
+    "timestamp": "2026-05-01T01:27:13.479Z"
   }
 }
