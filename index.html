@@ -1,467 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>GlobalCampaignHub — Affiliate Directory</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
-<style>
-  :root {
-    --bg: #0a0a0f;
-    --surface: #13131a;
-    --surface2: #1c1c26;
-    --border: rgba(255,255,255,0.07);
-    --accent: #e8ff47;
-    --accent2: #7b6cff;
-    --text: #f0f0f5;
-    --muted: #7a7a90;
-    --card-hover: #1e1e2e;
-    --radius: 12px;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+#!/usr/bin/env node
+/**
+ * patch-index.js
+ * Run from repo root: node patch-index.js
+ * Replaces the affiliates array in index.html with 70 merchants, canonical LCs.
+ * Removes ezTaxReturn (out of business).
+ * Adds famisafe, iskysoft, infinitealoe.
+ * Creates index.html.bak before writing.
+ */
+const fs = require('fs');
+const path = require('path');
 
-  /* ── NOISE OVERLAY ── */
-  body::before {
-    content: '';
-    position: fixed; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none; z-index: 9999; opacity: 0.4;
-  }
+const FILE = path.join(__dirname, 'index.html');
+if (!fs.existsSync(FILE)) {
+  console.error('✗ index.html not found in current directory');
+  process.exit(1);
+}
 
-  /* ── GLOWING BLOBS ── */
-  .blob {
-    position: fixed; border-radius: 50%; filter: blur(120px);
-    pointer-events: none; z-index: 0; opacity: 0.18;
-  }
-  .blob-1 { width: 600px; height: 600px; background: var(--accent2); top: -200px; left: -200px; }
-  .blob-2 { width: 500px; height: 500px; background: var(--accent); bottom: -150px; right: -100px; opacity: 0.08; }
+// ── Corrected affiliates array (70 merchants, canonical LCs, no ezTaxReturn) ──
+const NEW_AFFILIATES = `const affiliates = [
+  // TAX (3) — ezTaxReturn removed (out of business)
+  { merchant: "E-file.com",              url: "https://www.linkconnector.com/ta.php?lc=007949155896007874&atid=gh-efile",               category: "tax" },
+  { merchant: "E TAX, LLC",              url: "https://www.linkconnector.com/ta.php?lc=007949027749003958&atid=gh-etax",                category: "tax" },
+  { merchant: "TaxExtension.com",        url: "https://www.linkconnector.com/ta.php?lc=007949121281006198&atid=gh-taxextension",        category: "tax" },
+  // SOFTWARE (19)
+  { merchant: "NordVPN",                 url: "https://www.linkconnector.com/ta.php?lc=007949085070005891&atid=gh-nordvpn",             category: "software" },
+  { merchant: "Wondershare Filmora",     url: "https://www.linkconnector.com/ta.php?lc=007949048607004532&atid=gh-filmora",             category: "software" },
+  { merchant: "Wondershare PDFelement",  url: "https://www.linkconnector.com/ta.php?lc=007949139355006776&atid=gh-pdfelement",          category: "software" },
+  { merchant: "Sidify Inc.",             url: "https://www.linkconnector.com/ta.php?lc=007949114496007306&atid=gh-sidify",              category: "software" },
+  { merchant: "Movavi Software",         url: "https://www.linkconnector.com/ta.php?lc=007949109440006513&atid=gh-movavi",              category: "software" },
+  { merchant: "Tenorshare",              url: "https://www.linkconnector.com/ta.php?lc=007949139287006847&atid=gh-tenorshare",          category: "software" },
+  { merchant: "Appy Pie (Snappy)",       url: "https://www.linkconnector.com/ta.php?lc=007949090967005541&atid=gh-appypie",             category: "software" },
+  { merchant: "UPDF (Superace)",         url: "https://www.linkconnector.com/ta.php?lc=007949147521007728&atid=gh-updf",                category: "software" },
+  { merchant: "iToolab (LuckyDog)",      url: "https://www.linkconnector.com/ta.php?lc=007949108972006513&atid=gh-itoolab",             category: "software" },
+  { merchant: "FamiSafe (Wondershare)",  url: "https://www.linkconnector.com/ta.php?lc=007949154258006788&atid=gh-famisafe",            category: "software" },
+  { merchant: "Depositphotos Inc.",      url: "https://www.linkconnector.com/ta.php?lc=007949136603007653&atid=gh-depositphotos",       category: "media" },
+  { merchant: "Edraw (Mind/Max)",        url: "https://www.linkconnector.com/ta.php?lc=007949165249006886&atid=gh-edraw",               category: "software" },
+  { merchant: "iSkysoft Software",       url: "https://www.linkconnector.com/ta.php?lc=007949099000005679&atid=gh-iskysoft",            category: "software" },
+  { merchant: "jAlbum AB",               url: "https://www.linkconnector.com/ta.php?lc=007949069873005391&atid=gh-jalbum",              category: "software" },
+  { merchant: "Renoise",                 url: "https://www.linkconnector.com/ta.php?lc=007949165071007995&atid=gh-renoise",             category: "software" },
+  { merchant: "Picador Multimedia",      url: "https://www.linkconnector.com/ta.php?lc=007949164712007982&atid=gh-picador",             category: "media" },
+  { merchant: "Arco AI HK (YouWare)",    url: "https://www.linkconnector.com/ta.php?lc=007949164742007981&atid=gh-youware",             category: "software" },
+  { merchant: "Individual Software",     url: "https://www.linkconnector.com/ta.php?lc=007949110667007185&atid=gh-individualsoftware",  category: "software" },
+  // EDUCATION (10)
+  { merchant: "BoardVitals",             url: "https://www.linkconnector.com/ta.php?lc=007949154901006218&atid=gh-boardvitals",         category: "education" },
+  { merchant: "Surgent CPA",             url: "https://www.linkconnector.com/ta.php?lc=007949163206006249&atid=gh-surgent",             category: "education" },
+  { merchant: "SSI Logic (PMTraining)",  url: "https://www.linkconnector.com/ta.php?lc=007949081796006139&atid=gh-pmtraining",          category: "education" },
+  { merchant: "LearnTastic CPR",         url: "https://www.linkconnector.com/ta.php?lc=007949155036007841&atid=gh-learntasticcpr",      category: "education" },
+  { merchant: "The Securities Institute",url: "https://www.linkconnector.com/ta.php?lc=007949108329007101&atid=gh-securitiesinstitute", category: "education" },
+  { merchant: "Illumeo, Inc.",           url: "https://www.linkconnector.com/ta.php?lc=007949034133001545&atid=gh-illumeo",             category: "education" },
+  { merchant: "HRCP",                    url: "https://www.linkconnector.com/ta.php?lc=007949135821007664&atid=gh-hrcp",                category: "education" },
+  { merchant: "Oakstone Medical",        url: "https://www.linkconnector.com/ta.php?lc=007949049546004978&atid=gh-oakstone",            category: "education" },
+  { merchant: "Wolters Kluwer (LWW)",    url: "https://www.linkconnector.com/ta.php?lc=007949019993003224&atid=gh-wolterskluwer",       category: "education" },
+  { merchant: "LearnTastic AHCA",        url: "https://www.linkconnector.com/ta.php?lc=007949146929007736&atid=gh-learntasticahca",     category: "education" },
+  // PET CARE (5)
+  { merchant: "CanadaPetCare.com",       url: "https://www.linkconnector.com/ta.php?lc=007949063057005492&atid=gh-canadapetcare",       category: "pets" },
+  { merchant: "BudgetPetCare.com",       url: "https://www.linkconnector.com/ta.php?lc=007949124366007614&atid=gh-budgetpetcare",       category: "pets" },
+  { merchant: "BestVetCare.com",         url: "https://www.linkconnector.com/ta.php?lc=007949076672005837&atid=gh-bestvetcare",         category: "pets" },
+  { merchant: "DiscountPetCare",         url: "https://www.linkconnector.com/ta.php?lc=007949053489005142&atid=gh-discountpetcare",     category: "pets" },
+  { merchant: "BudgetPetWorld.com",      url: "https://www.linkconnector.com/ta.php?lc=007949144117006217&atid=gh-budgetpetworld",      category: "pets" },
+  // HEALTH (5)
+  { merchant: "Personalabs",             url: "https://www.linkconnector.com/ta.php?lc=007949152445007736&atid=gh-personalabs",         category: "health" },
+  { merchant: "The Ayurveda Experience", url: "https://www.linkconnector.com/ta.php?lc=007949126292007580&atid=gh-ayurvedaexperience",  category: "health" },
+  { merchant: "Nurse Jamie",             url: "https://www.linkconnector.com/ta.php?lc=007949155104007841&atid=gh-nursejamie",          category: "health" },
+  { merchant: "InfiniteAloe",            url: "https://www.linkconnector.com/ta.php?lc=007949105959006539&atid=gh-infinitealoe",        category: "health" },
+  { merchant: "Fieldtex Products",       url: "https://www.linkconnector.com/ta.php?lc=007949120619007379&atid=gh-fieldtex",            category: "health" },
+  // AUTO (3)
+  { merchant: "Maxpeedingrods (US)",     url: "https://www.linkconnector.com/ta.php?lc=007949154195006539&atid=gh-maxpeedingrodsus",    category: "ecommerce" },
+  { merchant: "Maxpeedingrods (AU)",     url: "https://www.linkconnector.com/ta.php?lc=007949136043006908&atid=gh-maxpeedingrodsau",    category: "ecommerce" },
+  { merchant: "La Fuente Imports",       url: "https://www.linkconnector.com/ta.php?lc=007949079282005891&atid=gh-lafuente",            category: "ecommerce" },
+  // PRINT (6)
+  { merchant: "BuildASign",              url: "https://www.linkconnector.com/ta.php?lc=007949043344001995&atid=gh-buildasign",          category: "ecommerce" },
+  { merchant: "Easy Canvas Prints",      url: "https://www.linkconnector.com/ta.php?lc=007949050767005020&atid=gh-easycanvasprints",    category: "ecommerce" },
+  { merchant: "Etching Expressions",     url: "https://www.linkconnector.com/ta.php?lc=007949154703007728&atid=gh-etchingexpressions",  category: "ecommerce" },
+  { merchant: "BannersOnTheCheap",       url: "https://www.linkconnector.com/ta.php?lc=007949069833005389&atid=gh-bannersonthecheap",   category: "ecommerce" },
+  { merchant: "CanvasOnTheCheap",        url: "https://www.linkconnector.com/ta.php?lc=007949139296006219&atid=gh-canvasonthecheap",    category: "ecommerce" },
+  { merchant: "Ryonet",                  url: "https://www.linkconnector.com/ta.php?lc=007949155911007876&atid=gh-ryonet",              category: "ecommerce" },
+  // HARDWARE (4)
+  { merchant: "Trademark Hardware",      url: "https://www.linkconnector.com/ta.php?lc=007949113406007272&atid=gh-trademarkhardware",   category: "ecommerce" },
+  { merchant: "Trademark Soundproofing", url: "https://www.linkconnector.com/ta.php?lc=007949107911007070&atid=gh-trademarksoundproofing", category: "ecommerce" },
+  { merchant: "Warehouse 115, Inc.",     url: "https://www.linkconnector.com/ta.php?lc=007949102471006776&atid=gh-warehouse115",        category: "ecommerce" },
+  { merchant: "Products On The Go",      url: "https://www.linkconnector.com/ta.php?lc=007949108750007124&atid=gh-productsonthego",     category: "ecommerce" },
+  // LIFESTYLE (18)
+  { merchant: "HalloweenCostumes.com",   url: "https://www.linkconnector.com/ta.php?lc=007949155212007855&atid=gh-halloweencostumes",   category: "ecommerce" },
+  { merchant: "Survey Junkie",           url: "https://www.linkconnector.com/ta.php?lc=007949153848007834&atid=gh-surveyjunkie",        category: "finance" },
+  { merchant: "RSE (bgmgirl.com)",       url: "https://www.linkconnector.com/ta.php?lc=007949162099007840&atid=gh-bgmgirl",             category: "ecommerce" },
+  { merchant: "Graeter's Ice Cream",     url: "https://www.linkconnector.com/ta.php?lc=007949151790007794&atid=gh-graeters",            category: "ecommerce" },
+  { merchant: "Carmel Car & Limo",       url: "https://www.linkconnector.com/ta.php?lc=007949021363003587&atid=gh-carmellimo",          category: "other" },
+  { merchant: "Tasty Ribbon",            url: "https://www.linkconnector.com/ta.php?lc=007949155938007865&atid=gh-tastyribbon",         category: "ecommerce" },
+  { merchant: "Combat Flip Flops",       url: "https://www.linkconnector.com/ta.php?lc=007949108439006486&atid=gh-combatflipflops",     category: "ecommerce" },
+  { merchant: "Camano Island Coffee",    url: "https://www.linkconnector.com/ta.php?lc=007949094561006921&atid=gh-camanoislandcoffee",  category: "ecommerce" },
+  { merchant: "GunsInternational",       url: "https://www.linkconnector.com/ta.php?lc=007949046073005238&atid=gh-gunsinternational",   category: "ecommerce" },
+  { merchant: "The Chess Store, Inc.",   url: "https://www.linkconnector.com/ta.php?lc=007949071778005057&atid=gh-thechessstore",       category: "ecommerce" },
+  { merchant: "MuseumReplicas.com",      url: "https://www.linkconnector.com/ta.php?lc=007949109612005391&atid=gh-museumreplicas",      category: "ecommerce" },
+  { merchant: "Atlanta Cutlery Corp.",   url: "https://www.linkconnector.com/ta.php?lc=007949164733007981&atid=gh-atlantacutlery",      category: "ecommerce" },
+  { merchant: "Viper Tec Inc.",          url: "https://www.linkconnector.com/ta.php?lc=007949091308006550&atid=gh-vipertec",            category: "ecommerce" },
+  { merchant: "Bugatchi",                url: "https://www.linkconnector.com/ta.php?lc=007949145753006206&atid=gh-bugatchi",            category: "ecommerce" },
+  { merchant: "ReadyGolf",               url: "https://www.linkconnector.com/ta.php?lc=007949135537007633&atid=gh-readygolf",           category: "ecommerce" },
+  { merchant: "Incentrev",               url: "https://www.linkconnector.com/ta.php?lc=007949047416004897&atid=gh-incentrev",           category: "finance" },
+];`;
 
-  /* ── HEADER ── */
-  header {
-    position: relative; z-index: 10;
-    padding: 48px 40px 32px;
-    border-bottom: 1px solid var(--border);
-    display: flex; flex-direction: column; gap: 8px;
-    background: linear-gradient(180deg, rgba(123,108,255,0.07) 0%, transparent 100%);
-  }
-  .logo-row {
-    display: flex; align-items: center; gap: 14px; margin-bottom: 6px;
-  }
-  .logo-icon {
-    width: 42px; height: 42px; border-radius: 10px;
-    background: linear-gradient(135deg, var(--accent2), var(--accent));
-    display: flex; align-items: center; justify-content: center;
-    font-size: 20px; font-weight: 800; color: #0a0a0f;
-    font-family: 'Syne', sans-serif;
-    flex-shrink: 0;
-  }
-  .site-name {
-    font-family: 'Syne', sans-serif;
-    font-size: 22px; font-weight: 700;
-    letter-spacing: -0.3px;
-    background: linear-gradient(90deg, #fff 60%, var(--accent2));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  }
-  header h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(32px, 5vw, 52px);
-    font-weight: 800; letter-spacing: -1.5px;
-    line-height: 1.1;
-    max-width: 700px;
-  }
-  header h1 span { color: var(--accent); }
-  header p {
-    color: var(--muted); font-size: 16px; font-weight: 300;
-    max-width: 500px; line-height: 1.6; margin-top: 4px;
-  }
+let src = fs.readFileSync(FILE, 'utf8');
+fs.writeFileSync(FILE + '.bak', src);
 
-  /* ── CONTROLS ── */
-  .controls {
-    position: sticky; top: 0; z-index: 20;
-    padding: 16px 40px;
-    background: rgba(10,10,15,0.85);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-    display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
-  }
-  .search-wrap {
-    position: relative; flex: 1; min-width: 240px; max-width: 420px;
-  }
-  .search-wrap svg {
-    position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
-    color: var(--muted); pointer-events: none;
-  }
-  #searchInput {
-    width: 100%; padding: 11px 14px 11px 42px;
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 8px; color: var(--text);
-    font-family: 'DM Sans', sans-serif; font-size: 14px;
-    outline: none; transition: border-color 0.2s, box-shadow 0.2s;
-  }
-  #searchInput::placeholder { color: var(--muted); }
-  #searchInput:focus {
-    border-color: var(--accent2);
-    box-shadow: 0 0 0 3px rgba(123,108,255,0.15);
-  }
-  .filters { display: flex; gap: 8px; flex-wrap: wrap; }
-  .filter-btn {
-    padding: 8px 16px; border-radius: 100px;
-    border: 1px solid var(--border);
-    background: var(--surface); color: var(--muted);
-    font-family: 'DM Sans', sans-serif; font-size: 13px;
-    cursor: pointer; transition: all 0.18s; white-space: nowrap;
-  }
-  .filter-btn:hover { border-color: var(--accent2); color: var(--text); }
-  .filter-btn.active {
-    background: var(--accent2); border-color: var(--accent2);
-    color: #fff; font-weight: 500;
-  }
-  .count-badge {
-    margin-left: auto;
-    font-size: 13px; color: var(--muted);
-    white-space: nowrap;
-  }
-  .count-badge strong { color: var(--text); }
+// Find and replace the affiliates array
+const start = src.indexOf('const affiliates = [');
+const end   = src.indexOf('];', start) + 2;
 
-  /* ── GRID ── */
-  main {
-    position: relative; z-index: 10;
-    padding: 32px 40px 60px;
-  }
-  #grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 16px;
-  }
+if (start === -1 || end === 1) {
+  console.error('✗ Could not find "const affiliates = [" in index.html');
+  process.exit(1);
+}
 
-  /* ── CARD ── */
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px;
-    display: flex; flex-direction: column; gap: 14px;
-    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-    animation: fadeUp 0.35s ease both;
-  }
-  .card:hover {
-    transform: translateY(-3px);
-    border-color: rgba(123,108,255,0.35);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(123,108,255,0.1);
-    background: var(--card-hover);
-  }
-  .card-top { display: flex; align-items: center; gap: 12px; }
-  .merchant-logo {
-    width: 44px; height: 44px; border-radius: 8px;
-    background: linear-gradient(135deg, var(--surface2), #2a2a3d);
-    border: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Syne', sans-serif; font-weight: 700;
-    font-size: 16px; color: var(--accent);
-    flex-shrink: 0; overflow: hidden;
-    text-transform: uppercase;
-  }
-  .merchant-logo img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
-  .card-info { flex: 1; min-width: 0; }
-  .card-name {
-    font-family: 'Syne', sans-serif;
-    font-size: 14px; font-weight: 600;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    color: var(--text);
-  }
-  .card-category {
-    display: inline-block; margin-top: 4px;
-    font-size: 11px; padding: 2px 8px; border-radius: 100px;
-    font-weight: 500; letter-spacing: 0.3px;
-  }
-  .card-link {
-    display: flex; align-items: center; justify-content: center; gap: 7px;
-    padding: 10px; border-radius: 8px;
-    background: linear-gradient(135deg, var(--accent2), #9d92ff);
-    color: #fff; font-size: 13px; font-weight: 500;
-    text-decoration: none; transition: opacity 0.18s, transform 0.18s;
-    font-family: 'DM Sans', sans-serif;
-  }
-  .card-link:hover { opacity: 0.88; transform: scale(0.98); }
-  .card-link svg { flex-shrink: 0; }
+src = src.slice(0, start) + NEW_AFFILIATES + src.slice(end);
+fs.writeFileSync(FILE, src, 'utf8');
 
-  /* ── EMPTY ── */
-  #empty {
-    display: none; text-align: center;
-    padding: 80px 40px; color: var(--muted);
-  }
-  #empty svg { opacity: 0.3; margin-bottom: 16px; }
-  #empty p { font-size: 18px; }
+// Verify
+const pairs = [...src.matchAll(/lc=(\d{18})&atid=gh-([\w]+)/g)];
+console.log(`✅ Done — ${pairs.length} merchants in affiliates array`);
+console.log(`   ezTaxReturn present: ${src.includes('eztaxreturn') ? '⚠ YES' : 'NO ✓'}`);
+console.log(`   famisafe present:    ${src.includes('gh-famisafe') ? 'YES ✓' : '⚠ NO'}`);
+console.log(`   iskysoft present:    ${src.includes('gh-iskysoft') ? 'YES ✓' : '⚠ NO'}`);
+console.log(`   infinitealoe present:${src.includes('gh-infinitealoe') ? 'YES ✓' : '⚠ NO'}`);
 
-  /* ── CATEGORY COLORS ── */
-  .cat-tax      { background: rgba(232,255,71,0.12); color: #c8e820; }
-  .cat-education { background: rgba(123,108,255,0.18); color: #a89eff; }
-  .cat-software  { background: rgba(64,196,255,0.15); color: #5acfff; }
-  .cat-pets      { background: rgba(255,155,80,0.15); color: #ffb070; }
-  .cat-ecommerce { background: rgba(255,100,160,0.15); color: #ff88cc; }
-  .cat-finance   { background: rgba(80,220,140,0.15); color: #60e899; }
-  .cat-health    { background: rgba(255,80,100,0.15); color: #ff7080; }
-  .cat-media     { background: rgba(200,100,255,0.15); color: #d070ff; }
-  .cat-other     { background: rgba(180,180,180,0.1); color: #aaa; }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(14px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  @media (max-width: 640px) {
-    header { padding: 32px 20px 24px; }
-    .controls { padding: 14px 20px; }
-    main { padding: 20px 20px 48px; }
-  }
-</style>
-<!-- KW-DATA:START -->
-<script id="gh-kw-data" type="application/json">
-[{"kw":"nursejamie coupon code 2026","vol":54945,"m":"gh-nursejamie","lc":"007949155104007841","cat":"Health","slug":"nurse-jamie-review-2026"},{"kw":"combatflipflops discount 2026","vol":54805,"m":"gh-combatflipflops","lc":"007949108439006486","cat":"Lifestyle","slug":"combat-flip-flops-mission-2026"},{"kw":"renoise pricing 2026","vol":54777,"m":"gh-renoise","lc":"007949165071007995","cat":"Software","slug":"renoise-music-production-2026"},{"kw":"best tastyribbon alternatives 2026","vol":54738,"m":"gh-tastyribbon","lc":"007949155938007865","cat":"Lifestyle","slug":"tasty-ribbon-food-gifts-2026"},{"kw":"is bannersonthecheap worth it 2026","vol":54426,"m":"gh-bannersonthecheap","lc":"007949069833005389","cat":"Print","slug":"banners-on-the-cheap-guide-2026"},{"kw":"ayurvedaexperience free trial 2026","vol":54116,"m":"gh-ayurvedaexperience","lc":"007949126292007580","cat":"Health","slug":"ayurveda-experience-review-2026"},{"kw":"wolterskluwer coupon code 2026","vol":54037,"m":"gh-wolterskluwer","lc":"007949019993003224","cat":"Education","slug":"wolters-kluwer-medical-books-2026"},{"kw":"how to use buildasign","vol":53967,"m":"gh-buildasign","lc":"007949043344001995","cat":"Print","slug":"buildasign-custom-prints-2026"},{"kw":"is easycanvasprints worth it 2026","vol":53869,"m":"gh-easycanvasprints","lc":"007949050767005020","cat":"Print","slug":"easy-canvas-prints-guide-2026"},{"kw":"securitiesinstitute free trial 2026","vol":53428,"m":"gh-securitiesinstitute","lc":"007949108329007101","cat":"Education","slug":"securities-institute-exam-prep-2026"},{"kw":"incentrev free trial 2026","vol":53350,"m":"gh-incentrev","lc":"007949047416004897","cat":"Lifestyle","slug":"incentrev-rewards-2026"},{"kw":"best productsonthego alternatives 2026","vol":53286,"m":"gh-productsonthego","lc":"007949108750007124","cat":"Hardware","slug":"products-on-the-go-2026"},{"kw":"tenorshare vs competitors 2026","vol":53247,"m":"gh-tenorshare","lc":"007949139287006847","cat":"Software","slug":"tenorshare-iphone-tools-2026"},{"kw":"best warehouse115 alternatives 2026","vol":53208,"m":"gh-warehouse115","lc":"007949102471006776","cat":"Hardware","slug":"warehouse115-review-2026"},{"kw":"discountpetcare vs competitors 2026","vol":53177,"m":"gh-discountpetcare","lc":"007949053489005142","cat":"Pet Care","slug":"discountpetcare-review-2026"},{"kw":"is learntasticcpr worth it 2026","vol":53066,"m":"gh-learntasticcpr","lc":"007949155036007841","cat":"Education","slug":"learnstastic-cpr-certification-2026"},{"kw":"nordvpn coupon code 2026","vol":52897,"m":"gh-nordvpn","lc":"007949085070005891","cat":"Software","slug":"nordvpn-review-2026"},{"kw":"budgetpetworld discount 2026","vol":52875,"m":"gh-budgetpetworld","lc":"007949144117006217","cat":"Pet Care","slug":"budgetpetworld-review-2026"},{"kw":"discountpetcare review 2026","vol":52780,"m":"gh-discountpetcare","lc":"007949053489005142","cat":"Pet Care","slug":"discountpetcare-review-2026"},{"kw":"nursejamie discount 2026","vol":52749,"m":"gh-nursejamie","lc":"007949155104007841","cat":"Health","slug":"nurse-jamie-review-2026"},{"kw":"learntasticahca free trial 2026","vol":52648,"m":"gh-learntasticahca","lc":"007949146929007736","cat":"Education","slug":"learntastic-ahca-review-2026"},{"kw":"combatflipflops free trial 2026","vol":52647,"m":"gh-combatflipflops","lc":"007949108439006486","cat":"Lifestyle","slug":"combat-flip-flops-mission-2026"},{"kw":"gunsinternational review 2026","vol":52402,"m":"gh-gunsinternational","lc":"007949046073005238","cat":"Lifestyle","slug":"gunsinternational-marketplace-2026"},{"kw":"vipertec pros and cons","vol":52324,"m":"gh-vipertec","lc":"007949091308006550","cat":"Lifestyle","slug":"vipertec-tactical-knives-2026"},{"kw":"filmora coupon code 2026","vol":52082,"m":"gh-filmora","lc":"007949048607004532","cat":"Software","slug":"filmora-ai-features-2026"},{"kw":"best easycanvasprints alternatives 2026","vol":52075,"m":"gh-easycanvasprints","lc":"007949050767005020","cat":"Print","slug":"easy-canvas-prints-guide-2026"},{"kw":"how to use etax","vol":52025,"m":"gh-etax","lc":"007949027749003958","cat":"Tax","slug":"etax-llc-tax-filing-2026"},{"kw":"itoolab pricing 2026","vol":51921,"m":"gh-itoolab","lc":"007949108972006513","cat":"Software","slug":"itoolab-iphone-manager-2026"},{"kw":"etchingexpressions coupon code 2026","vol":51885,"m":"gh-etchingexpressions","lc":"007949154703007728","cat":"Print","slug":"etching-expressions-gifts-2026"},{"kw":"fieldtex vs competitors 2026","vol":51692,"m":"gh-fieldtex","lc":"007949120619007379","cat":"Health","slug":"fieldtex-first-aid-2026"},{"kw":"graeters pricing 2026","vol":51670,"m":"gh-graeters","lc":"007949151790007794","cat":"Lifestyle","slug":"graeter-ice-cream-delivery-2026"},{"kw":"how to use infinitealoe","vol":51628,"m":"gh-infinitealoe","lc":"007949105959006539","cat":"Health","slug":"infinitealoe-skincare-review-2026"},{"kw":"how to use movavi","vol":51528,"m":"gh-movavi","lc":"007949109440006513","cat":"Software","slug":"movavi-video-editor-2026"},{"kw":"maxpeedingrodsau free trial 2026","vol":51468,"m":"gh-maxpeedingrodsau","lc":"007949136043006908","cat":"Auto","slug":"maxpeedingrods-au-review-2026"},{"kw":"carmellimo free trial 2026","vol":51456,"m":"gh-carmellimo","lc":"007949021363003587","cat":"Lifestyle","slug":"carmel-limo-service-2026"},{"kw":"individualsoftware pricing 2026","vol":51323,"m":"gh-individualsoftware","lc":"007949110667007185","cat":"Software","slug":"individual-software-review-2026"},{"kw":"bannersonthecheap discount 2026","vol":51018,"m":"gh-bannersonthecheap","lc":"007949069833005389","cat":"Print","slug":"banners-on-the-cheap-guide-2026"},{"kw":"infinitealoe pros and cons","vol":50868,"m":"gh-infinitealoe","lc":"007949105959006539","cat":"Health","slug":"infinitealoe-skincare-review-2026"},{"kw":"canadapetcare coupon code 2026","vol":50771,"m":"gh-canadapetcare","lc":"007949063057005492","cat":"Pet Care","slug":"canada-pet-care-vs-vet-2026"},{"kw":"hrcp vs competitors 2026","vol":50688,"m":"gh-hrcp","lc":"007949135821007664","cat":"Education","slug":"hrcp-hr-certification-2026"},{"kw":"how to use sidify","vol":50564,"m":"gh-sidify","lc":"007949114496007306","cat":"Software","slug":"sidify-spotify-converter-2026"},{"kw":"ryonet free trial 2026","vol":50445,"m":"gh-ryonet","lc":"007949155911007876","cat":"Print","slug":"ryonet-screen-printing-2026"},{"kw":"maxpeedingrodsau pros and cons","vol":50430,"m":"gh-maxpeedingrodsau","lc":"007949136043006908","cat":"Auto","slug":"maxpeedingrods-au-review-2026"},{"kw":"learntasticahca pricing 2026","vol":50262,"m":"gh-learntasticahca","lc":"007949146929007736","cat":"Education","slug":"learntastic-ahca-review-2026"},{"kw":"tastyribbon free trial 2026","vol":50162,"m":"gh-tastyribbon","lc":"007949155938007865","cat":"Lifestyle","slug":"tasty-ribbon-food-gifts-2026"},{"kw":"securitiesinstitute coupon code 2026","vol":50132,"m":"gh-securitiesinstitute","lc":"007949108329007101","cat":"Education","slug":"securities-institute-exam-prep-2026"},{"kw":"illumeo review 2026","vol":50078,"m":"gh-illumeo","lc":"007949034133001545","cat":"Education","slug":"illumeo-professional-development-2026"},{"kw":"securitiesinstitute pricing 2026","vol":49945,"m":"gh-securitiesinstitute","lc":"007949108329007101","cat":"Education","slug":"securities-institute-exam-prep-2026"},{"kw":"combatflipflops vs competitors 2026","vol":49925,"m":"gh-combatflipflops","lc":"007949108439006486","cat":"Lifestyle","slug":"combat-flip-flops-mission-2026"},{"kw":"how to use individualsoftware","vol":49791,"m":"gh-individualsoftware","lc":"007949110667007185","cat":"Software","slug":"individual-software-review-2026"},{"kw":"best atlantacutlery alternatives 2026","vol":49769,"m":"gh-atlantacutlery","lc":"007949164733007981","cat":"Lifestyle","slug":"atlanta-cutlery-review-2026"},{"kw":"budgetpetworld free trial 2026","vol":49515,"m":"gh-budgetpetworld","lc":"007949144117006217","cat":"Pet Care","slug":"budgetpetworld-review-2026"},{"kw":"how to use boardvitals","vol":49344,"m":"gh-boardvitals","lc":"007949154901006218","cat":"Education","slug":"boardvitals-medical-exam-prep-2026"},{"kw":"thechessstore coupon code 2026","vol":49234,"m":"gh-thechessstore","lc":"007949071778005057","cat":"Lifestyle","slug":"chess-store-buying-guide-2026"},{"kw":"graeters free trial 2026","vol":49145,"m":"gh-graeters","lc":"007949151790007794","cat":"Lifestyle","slug":"graeter-ice-cream-delivery-2026"},{"kw":"bannersonthecheap pros and cons","vol":49063,"m":"gh-bannersonthecheap","lc":"007949069833005389","cat":"Print","slug":"banners-on-the-cheap-guide-2026"},{"kw":"how to use bugatchi","vol":48996,"m":"gh-bugatchi","lc":"007949145753006206","cat":"Lifestyle","slug":"bugatchi-mens-fashion-2026"},{"kw":"is pdfelement worth it 2026","vol":48938,"m":"gh-pdfelement","lc":"007949139355006776","cat":"Software","slug":"pdfelement-vs-acrobat-2026"},{"kw":"nursejamie pros and cons","vol":48581,"m":"gh-nursejamie","lc":"007949155104007841","cat":"Health","slug":"nurse-jamie-review-2026"},{"kw":"boardvitals pros and cons","vol":48515,"m":"gh-boardvitals","lc":"007949154901006218","cat":"Education","slug":"boardvitals-medical-exam-prep-2026"},{"kw":"sidify discount 2026","vol":48421,"m":"gh-sidify","lc":"007949114496007306","cat":"Software","slug":"sidify-spotify-converter-2026"},{"kw":"best incentrev alternatives 2026","vol":48159,"m":"gh-incentrev","lc":"007949047416004897","cat":"Lifestyle","slug":"incentrev-rewards-2026"},{"kw":"oakstone free trial 2026","vol":47989,"m":"gh-oakstone","lc":"007949049546004978","cat":"Education","slug":"oakstone-cme-review-2026"},{"kw":"oakstone review 2026","vol":47974,"m":"gh-oakstone","lc":"007949049546004978","cat":"Education","slug":"oakstone-cme-review-2026"},{"kw":"individualsoftware review 2026","vol":47791,"m":"gh-individualsoftware","lc":"007949110667007185","cat":"Software","slug":"individual-software-review-2026"},{"kw":"easycanvasprints discount 2026","vol":47639,"m":"gh-easycanvasprints","lc":"007949050767005020","cat":"Print","slug":"easy-canvas-prints-guide-2026"},{"kw":"is museumreplicas worth it 2026","vol":47604,"m":"gh-museumreplicas","lc":"007949109612005391","cat":"Lifestyle","slug":"museum-replicas-collectibles-2026"},{"kw":"is personalabs worth it 2026","vol":47094,"m":"gh-personalabs","lc":"007949152445007736","cat":"Health","slug":"personalabs-lab-tests-2026"},{"kw":"best individualsoftware alternatives 2026","vol":47080,"m":"gh-individualsoftware","lc":"007949110667007185","cat":"Software","slug":"individual-software-review-2026"},{"kw":"maxpeedingrodsus pricing 2026","vol":46878,"m":"gh-maxpeedingrodsus","lc":"007949154195006539","cat":"Auto","slug":"maxpeedingrods-review-2026"},{"kw":"best sidify alternatives 2026","vol":46854,"m":"gh-sidify","lc":"007949114496007306","cat":"Software","slug":"sidify-spotify-converter-2026"},{"kw":"budgetpetworld coupon code 2026","vol":46796,"m":"gh-budgetpetworld","lc":"007949144117006217","cat":"Pet Care","slug":"budgetpetworld-review-2026"},{"kw":"hrcp discount 2026","vol":46334,"m":"gh-hrcp","lc":"007949135821007664","cat":"Education","slug":"hrcp-hr-certification-2026"},{"kw":"how to use oakstone","vol":46251,"m":"gh-oakstone","lc":"007949049546004978","cat":"Education","slug":"oakstone-cme-review-2026"},{"kw":"is wolterskluwer worth it 2026","vol":46073,"m":"gh-wolterskluwer","lc":"007949019993003224","cat":"Education","slug":"wolters-kluwer-medical-books-2026"},{"kw":"halloweencostumes vs competitors 2026","vol":45715,"m":"gh-halloweencostumes","lc":"007949155212007855","cat":"Lifestyle","slug":"halloween-costumes-guide-2026"},{"kw":"bannersonthecheap vs competitors 2026","vol":45624,"m":"gh-bannersonthecheap","lc":"007949069833005389","cat":"Print","slug":"banners-on-the-cheap-guide-2026"},{"kw":"how to use trademarkhardware","vol":45606,"m":"gh-trademarkhardware","lc":"007949113406007272","cat":"Hardware","slug":"trademark-hardware-guide-2026"},{"kw":"how to use famisafe","vol":45499,"m":"gh-famisafe","lc":"007949154258006788","cat":"Software","slug":"famisafe-parental-control-2026"},{"kw":"bestvetcare pricing 2026","vol":45244,"m":"gh-bestvetcare","lc":"007949076672005837","cat":"Pet Care","slug":"bestvetcare-review-2026"},{"kw":"readygolf review 2026","vol":45089,"m":"gh-readygolf","lc":"007949135537007633","cat":"Lifestyle","slug":"readygolf-guide-2026"},{"kw":"movavi coupon code 2026","vol":44918,"m":"gh-movavi","lc":"007949109440006513","cat":"Software","slug":"movavi-video-editor-2026"},{"kw":"personalabs pricing 2026","vol":44531,"m":"gh-personalabs","lc":"007949152445007736","cat":"Health","slug":"personalabs-lab-tests-2026"},{"kw":"updf coupon code 2026","vol":44461,"m":"gh-updf","lc":"007949147521007728","cat":"Software","slug":"updf-pdf-editor-review-2026"},{"kw":"nordvpn pricing 2026","vol":44076,"m":"gh-nordvpn","lc":"007949085070005891","cat":"Software","slug":"nordvpn-review-2026"},{"kw":"individualsoftware coupon code 2026","vol":43850,"m":"gh-individualsoftware","lc":"007949110667007185","cat":"Software","slug":"individual-software-review-2026"},{"kw":"easycanvasprints pros and cons","vol":43686,"m":"gh-easycanvasprints","lc":"007949050767005020","cat":"Print","slug":"easy-canvas-prints-guide-2026"},{"kw":"infinitealoe free trial 2026","vol":43580,"m":"gh-infinitealoe","lc":"007949105959006539","cat":"Health","slug":"infinitealoe-skincare-review-2026"},{"kw":"best museumreplicas alternatives 2026","vol":43126,"m":"gh-museumreplicas","lc":"007949109612005391","cat":"Lifestyle","slug":"museum-replicas-collectibles-2026"},{"kw":"readygolf pros and cons","vol":42806,"m":"gh-readygolf","lc":"007949135537007633","cat":"Lifestyle","slug":"readygolf-guide-2026"},{"kw":"best famisafe alternatives 2026","vol":42772,"m":"gh-famisafe","lc":"007949154258006788","cat":"Software","slug":"famisafe-parental-control-2026"},{"kw":"how to use learntasticahca","vol":42676,"m":"gh-learntasticahca","lc":"007949146929007736","cat":"Education","slug":"learntastic-ahca-review-2026"},{"kw":"picador free trial 2026","vol":42652,"m":"gh-picador","lc":"007949164712007982","cat":"Software","slug":"picador-multimedia-review-2026"},{"kw":"youware pros and cons","vol":42624,"m":"gh-youware","lc":"007949164742007981","cat":"Software","slug":"youware-review-2026"},{"kw":"how to use maxpeedingrodsau","vol":42614,"m":"gh-maxpeedingrodsau","lc":"007949136043006908","cat":"Auto","slug":"maxpeedingrods-au-review-2026"},{"kw":"itoolab vs competitors 2026","vol":42478,"m":"gh-itoolab","lc":"007949108972006513","cat":"Software","slug":"itoolab-iphone-manager-2026"},{"kw":"depositphotos review 2026","vol":42364,"m":"gh-depositphotos","lc":"007949136603007653","cat":"Software","slug":"depositphotos-review-2026"},{"kw":"best updf alternatives 2026","vol":42285,"m":"gh-updf","lc":"007949147521007728","cat":"Software","slug":"updf-pdf-editor-review-2026"},{"kw":"is gunsinternational worth it 2026","vol":42284,"m":"gh-gunsinternational","lc":"007949046073005238","cat":"Lifestyle","slug":"gunsinternational-marketplace-2026"},{"kw":"etchingexpressions vs competitors 2026","vol":42179,"m":"gh-etchingexpressions","lc":"007949154703007728","cat":"Print","slug":"etching-expressions-gifts-2026"},{"kw":"how to use pdfelement","vol":42109,"m":"gh-pdfelement","lc":"007949139355006776","cat":"Software","slug":"pdfelement-vs-acrobat-2026"},{"kw":"canvasonthecheap pricing 2026","vol":42091,"m":"gh-canvasonthecheap","lc":"007949139296006219","cat":"Print","slug":"canvas-on-the-cheap-guide-2026"},{"kw":"carmellimo discount 2026","vol":42089,"m":"gh-carmellimo","lc":"007949021363003587","cat":"Lifestyle","slug":"carmel-limo-service-2026"},{"kw":"oakstone vs competitors 2026","vol":42079,"m":"gh-oakstone","lc":"007949049546004978","cat":"Education","slug":"oakstone-cme-review-2026"},{"kw":"is bugatchi worth it 2026","vol":41913,"m":"gh-bugatchi","lc":"007949145753006206","cat":"Lifestyle","slug":"bugatchi-mens-fashion-2026"},{"kw":"easycanvasprints pricing 2026","vol":41742,"m":"gh-easycanvasprints","lc":"007949050767005020","cat":"Print","slug":"easy-canvas-prints-guide-2026"},{"kw":"how to use lafuente","vol":41675,"m":"gh-lafuente","lc":"007949079282005891","cat":"Auto","slug":"la-fuente-imports-review-2026"},{"kw":"how to use securitiesinstitute","vol":41488,"m":"gh-securitiesinstitute","lc":"007949108329007101","cat":"Education","slug":"securities-institute-exam-prep-2026"},{"kw":"learntasticcpr vs competitors 2026","vol":41327,"m":"gh-learntasticcpr","lc":"007949155036007841","cat":"Education","slug":"learnstastic-cpr-certification-2026"},{"kw":"surveyjunkie pricing 2026","vol":41129,"m":"gh-surveyjunkie","lc":"007949153848007834","cat":"Lifestyle","slug":"surveyjunkie-earn-online-2026"},{"kw":"is appypie worth it 2026","vol":40795,"m":"gh-appypie","lc":"007949090967005541","cat":"Software","slug":"appy-pie-no-code-tools-2026"},{"kw":"incentrev coupon code 2026","vol":40652,"m":"gh-incentrev","lc":"007949047416004897","cat":"Lifestyle","slug":"incentrev-rewards-2026"},{"kw":"how to use easycanvasprints","vol":40585,"m":"gh-easycanvasprints","lc":"007949050767005020","cat":"Print","slug":"easy-canvas-prints-guide-2026"},{"kw":"nordvpn vs competitors 2026","vol":40408,"m":"gh-nordvpn","lc":"007949085070005891","cat":"Software","slug":"nordvpn-review-2026"},{"kw":"carmellimo coupon code 2026","vol":39697,"m":"gh-carmellimo","lc":"007949021363003587","cat":"Lifestyle","slug":"carmel-limo-service-2026"},{"kw":"bestvetcare discount 2026","vol":39573,"m":"gh-bestvetcare","lc":"007949076672005837","cat":"Pet Care","slug":"bestvetcare-review-2026"},{"kw":"personalabs review 2026","vol":39197,"m":"gh-personalabs","lc":"007949152445007736","cat":"Health","slug":"personalabs-lab-tests-2026"},{"kw":"trademarkhardware review 2026","vol":39042,"m":"gh-trademarkhardware","lc":"007949113406007272","cat":"Hardware","slug":"trademark-hardware-guide-2026"},{"kw":"thechessstore pros and cons","vol":38679,"m":"gh-thechessstore","lc":"007949071778005057","cat":"Lifestyle","slug":"chess-store-buying-guide-2026"},{"kw":"etax pros and cons","vol":38578,"m":"gh-etax","lc":"007949027749003958","cat":"Tax","slug":"etax-llc-tax-filing-2026"},{"kw":"buildasign pricing 2026","vol":38384,"m":"gh-buildasign","lc":"007949043344001995","cat":"Print","slug":"buildasign-custom-prints-2026"},{"kw":"taxextension coupon code 2026","vol":38362,"m":"gh-taxextension","lc":"007949121281006198","cat":"Tax","slug":"tax-extension-deadline-guide-2026"},{"kw":"best youware alternatives 2026","vol":38176,"m":"gh-youware","lc":"007949164742007981","cat":"Software","slug":"youware-review-2026"},{"kw":"tenorshare pricing 2026","vol":37709,"m":"gh-tenorshare","lc":"007949139287006847","cat":"Software","slug":"tenorshare-iphone-tools-2026"},{"kw":"jalbum review 2026","vol":37689,"m":"gh-jalbum","lc":"007949069873005391","cat":"Software","slug":"jalbum-photo-gallery-2026"},{"kw":"lafuente discount 2026","vol":37640,"m":"gh-lafuente","lc":"007949079282005891","cat":"Auto","slug":"la-fuente-imports-review-2026"},{"kw":"best pdfelement alternatives 2026","vol":37284,"m":"gh-pdfelement","lc":"007949139355006776","cat":"Software","slug":"pdfelement-vs-acrobat-2026"},{"kw":"youware coupon code 2026","vol":37151,"m":"gh-youware","lc":"007949164742007981","cat":"Software","slug":"youware-review-2026"},{"kw":"productsonthego pros and cons","vol":37109,"m":"gh-productsonthego","lc":"007949108750007124","cat":"Hardware","slug":"products-on-the-go-2026"},{"kw":"is etchingexpressions worth it 2026","vol":37057,"m":"gh-etchingexpressions","lc":"007949154703007728","cat":"Print","slug":"etching-expressions-gifts-2026"},{"kw":"best nursejamie alternatives 2026","vol":36797,"m":"gh-nursejamie","lc":"007949155104007841","cat":"Health","slug":"nurse-jamie-review-2026"},{"kw":"canvasonthecheap review 2026","vol":36498,"m":"gh-canvasonthecheap","lc":"007949139296006219","cat":"Print","slug":"canvas-on-the-cheap-guide-2026"},{"kw":"is camanoislandcoffee worth it 2026","vol":36413,"m":"gh-camanoislandcoffee","lc":"007949094561006921","cat":"Lifestyle","slug":"camano-island-coffee-review-2026"},{"kw":"jalbum pricing 2026","vol":35883,"m":"gh-jalbum","lc":"007949069873005391","cat":"Software","slug":"jalbum-photo-gallery-2026"},{"kw":"is illumeo worth it 2026","vol":35572,"m":"gh-illumeo","lc":"007949034133001545","cat":"Education","slug":"illumeo-professional-development-2026"},{"kw":"taxextension discount 2026","vol":35226,"m":"gh-taxextension","lc":"007949121281006198","cat":"Tax","slug":"tax-extension-deadline-guide-2026"},{"kw":"is carmellimo worth it 2026","vol":35180,"m":"gh-carmellimo","lc":"007949021363003587","cat":"Lifestyle","slug":"carmel-limo-service-2026"},{"kw":"bgmgirl review 2026","vol":34952,"m":"gh-bgmgirl","lc":"007949162099007840","cat":"Lifestyle","slug":"bgmgirl-creator-music-2026"},{"kw":"how to use budgetpetworld","vol":34897,"m":"gh-budgetpetworld","lc":"007949144117006217","cat":"Pet Care","slug":"budgetpetworld-review-2026"},{"kw":"famisafe discount 2026","vol":34888,"m":"gh-famisafe","lc":"007949154258006788","cat":"Software","slug":"famisafe-parental-control-2026"},{"kw":"fieldtex pros and cons","vol":34791,"m":"gh-fieldtex","lc":"007949120619007379","cat":"Health","slug":"fieldtex-first-aid-2026"},{"kw":"picador pricing 2026","vol":34280,"m":"gh-picador","lc":"007949164712007982","cat":"Software","slug":"picador-multimedia-review-2026"},{"kw":"oakstone coupon code 2026","vol":34161,"m":"gh-oakstone","lc":"007949049546004978","cat":"Education","slug":"oakstone-cme-review-2026"},{"kw":"best hrcp alternatives 2026","vol":34023,"m":"gh-hrcp","lc":"007949135821007664","cat":"Education","slug":"hrcp-hr-certification-2026"},{"kw":"movavi pros and cons","vol":33991,"m":"gh-movavi","lc":"007949109440006513","cat":"Software","slug":"movavi-video-editor-2026"},{"kw":"museumreplicas pros and cons","vol":33844,"m":"gh-museumreplicas","lc":"007949109612005391","cat":"Lifestyle","slug":"museum-replicas-collectibles-2026"},{"kw":"best taxextension alternatives 2026","vol":33451,"m":"gh-taxextension","lc":"007949121281006198","cat":"Tax","slug":"tax-extension-deadline-guide-2026"},{"kw":"nursejamie free trial 2026","vol":33227,"m":"gh-nursejamie","lc":"007949155104007841","cat":"Health","slug":"nurse-jamie-review-2026"},{"kw":"is canvasonthecheap worth it 2026","vol":32975,"m":"gh-canvasonthecheap","lc":"007949139296006219","cat":"Print","slug":"canvas-on-the-cheap-guide-2026"},{"kw":"carmellimo review 2026","vol":32931,"m":"gh-carmellimo","lc":"007949021363003587","cat":"Lifestyle","slug":"carmel-limo-service-2026"},{"kw":"how to use museumreplicas","vol":32504,"m":"gh-museumreplicas","lc":"007949109612005391","cat":"Lifestyle","slug":"museum-replicas-collectibles-2026"},{"kw":"iskysoft vs competitors 2026","vol":32147,"m":"gh-iskysoft","lc":"007949099000005679","cat":"Software","slug":"iskysoft-review-2026"},{"kw":"how to use halloweencostumes","vol":32108,"m":"gh-halloweencostumes","lc":"007949155212007855","cat":"Lifestyle","slug":"halloween-costumes-guide-2026"},{"kw":"efile discount 2026","vol":31959,"m":"gh-efile","lc":"007949155896007874","cat":"Tax","slug":"efile-vs-turbotax-2026"},{"kw":"warehouse115 discount 2026","vol":31849,"m":"gh-warehouse115","lc":"007949102471006776","cat":"Hardware","slug":"warehouse115-review-2026"},{"kw":"boardvitals review 2026","vol":31845,"m":"gh-boardvitals","lc":"007949154901006218","cat":"Education","slug":"boardvitals-medical-exam-prep-2026"},{"kw":"best fieldtex alternatives 2026","vol":31833,"m":"gh-fieldtex","lc":"007949120619007379","cat":"Health","slug":"fieldtex-first-aid-2026"},{"kw":"securitiesinstitute discount 2026","vol":31591,"m":"gh-securitiesinstitute","lc":"007949108329007101","cat":"Education","slug":"securities-institute-exam-prep-2026"},{"kw":"oakstone pricing 2026","vol":31530,"m":"gh-oakstone","lc":"007949049546004978","cat":"Education","slug":"oakstone-cme-review-2026"},{"kw":"itoolab review 2026","vol":31180,"m":"gh-itoolab","lc":"007949108972006513","cat":"Software","slug":"itoolab-iphone-manager-2026"},{"kw":"best nordvpn alternatives 2026","vol":30965,"m":"gh-nordvpn","lc":"007949085070005891","cat":"Software","slug":"nordvpn-review-2026"},{"kw":"productsonthego vs competitors 2026","vol":29956,"m":"gh-productsonthego","lc":"007949108750007124","cat":"Hardware","slug":"products-on-the-go-2026"},{"kw":"camanoislandcoffee discount 2026","vol":29818,"m":"gh-camanoislandcoffee","lc":"007949094561006921","cat":"Lifestyle","slug":"camano-island-coffee-review-2026"},{"kw":"buildasign review 2026","vol":29654,"m":"gh-buildasign","lc":"007949043344001995","cat":"Print","slug":"buildasign-custom-prints-2026"},{"kw":"how to use maxpeedingrodsus","vol":29526,"m":"gh-maxpeedingrodsus","lc":"007949154195006539","cat":"Auto","slug":"maxpeedingrods-review-2026"},{"kw":"bestvetcare free trial 2026","vol":29508,"m":"gh-bestvetcare","lc":"007949076672005837","cat":"Pet Care","slug":"bestvetcare-review-2026"},{"kw":"updf pros and cons","vol":29417,"m":"gh-updf","lc":"007949147521007728","cat":"Software","slug":"updf-pdf-editor-review-2026"},{"kw":"how to use tenorshare","vol":29166,"m":"gh-tenorshare","lc":"007949139287006847","cat":"Software","slug":"tenorshare-iphone-tools-2026"},{"kw":"best bgmgirl alternatives 2026","vol":28878,"m":"gh-bgmgirl","lc":"007949162099007840","cat":"Lifestyle","slug":"bgmgirl-creator-music-2026"},{"kw":"is graeters worth it 2026","vol":28640,"m":"gh-graeters","lc":"007949151790007794","cat":"Lifestyle","slug":"graeter-ice-cream-delivery-2026"},{"kw":"surgent discount 2026","vol":28431,"m":"gh-surgent","lc":"007949163206006249","cat":"Education","slug":"surgent-cpa-exam-prep-2026"},{"kw":"trademarkhardware vs competitors 2026","vol":28290,"m":"gh-trademarkhardware","lc":"007949113406007272","cat":"Hardware","slug":"trademark-hardware-guide-2026"},{"kw":"atlantacutlery vs competitors 2026","vol":27997,"m":"gh-atlantacutlery","lc":"007949164733007981","cat":"Lifestyle","slug":"atlanta-cutlery-review-2026"},{"kw":"bugatchi review 2026","vol":27936,"m":"gh-bugatchi","lc":"007949145753006206","cat":"Lifestyle","slug":"bugatchi-mens-fashion-2026"},{"kw":"is boardvitals worth it 2026","vol":27916,"m":"gh-boardvitals","lc":"007949154901006218","cat":"Education","slug":"boardvitals-medical-exam-prep-2026"},{"kw":"lafuente review 2026","vol":27481,"m":"gh-lafuente","lc":"007949079282005891","cat":"Auto","slug":"la-fuente-imports-review-2026"},{"kw":"best bestvetcare alternatives 2026","vol":27221,"m":"gh-bestvetcare","lc":"007949076672005837","cat":"Pet Care","slug":"bestvetcare-review-2026"},{"kw":"iskysoft pros and cons","vol":27129,"m":"gh-iskysoft","lc":"007949099000005679","cat":"Software","slug":"iskysoft-review-2026"},{"kw":"is movavi worth it 2026","vol":27099,"m":"gh-movavi","lc":"007949109440006513","cat":"Software","slug":"movavi-video-editor-2026"},{"kw":"pmtraining free trial 2026","vol":26956,"m":"gh-pmtraining","lc":"007949081796006139","cat":"Education","slug":"pm-training-pmp-2026"},{"kw":"best surgent alternatives 2026","vol":26887,"m":"gh-surgent","lc":"007949163206006249","cat":"Education","slug":"surgent-cpa-exam-prep-2026"},{"kw":"movavi discount 2026","vol":26788,"m":"gh-movavi","lc":"007949109440006513","cat":"Software","slug":"movavi-video-editor-2026"},{"kw":"oakstone discount 2026","vol":26650,"m":"gh-oakstone","lc":"007949049546004978","cat":"Education","slug":"oakstone-cme-review-2026"},{"kw":"halloweencostumes discount 2026","vol":26479,"m":"gh-halloweencostumes","lc":"007949155212007855","cat":"Lifestyle","slug":"halloween-costumes-guide-2026"},{"kw":"gunsinternational coupon code 2026","vol":26426,"m":"gh-gunsinternational","lc":"007949046073005238","cat":"Lifestyle","slug":"gunsinternational-marketplace-2026"},{"kw":"bgmgirl free trial 2026","vol":25912,"m":"gh-bgmgirl","lc":"007949162099007840","cat":"Lifestyle","slug":"bgmgirl-creator-music-2026"},{"kw":"buildasign discount 2026","vol":25839,"m":"gh-buildasign","lc":"007949043344001995","cat":"Print","slug":"buildasign-custom-prints-2026"},{"kw":"efile vs competitors 2026","vol":25709,"m":"gh-efile","lc":"007949155896007874","cat":"Tax","slug":"efile-vs-turbotax-2026"},{"kw":"graeters discount 2026","vol":25677,"m":"gh-graeters","lc":"007949151790007794","cat":"Lifestyle","slug":"graeter-ice-cream-delivery-2026"},{"kw":"best filmora alternatives 2026","vol":25600,"m":"gh-filmora","lc":"007949048607004532","cat":"Software","slug":"filmora-ai-features-2026"},{"kw":"camanoislandcoffee vs competitors 2026","vol":25567,"m":"gh-camanoislandcoffee","lc":"007949094561006921","cat":"Lifestyle","slug":"camano-island-coffee-review-2026"},{"kw":"maxpeedingrodsus free trial 2026","vol":25477,"m":"gh-maxpeedingrodsus","lc":"007949154195006539","cat":"Auto","slug":"maxpeedingrods-review-2026"},{"kw":"is ryonet worth it 2026","vol":25433,"m":"gh-ryonet","lc":"007949155911007876","cat":"Print","slug":"ryonet-screen-printing-2026"},{"kw":"canadapetcare pros and cons","vol":25396,"m":"gh-canadapetcare","lc":"007949063057005492","cat":"Pet Care","slug":"canada-pet-care-vs-vet-2026"},{"kw":"how to use illumeo","vol":25210,"m":"gh-illumeo","lc":"007949034133001545","cat":"Education","slug":"illumeo-professional-development-2026"},{"kw":"ryonet pros and cons","vol":25069,"m":"gh-ryonet","lc":"007949155911007876","cat":"Print","slug":"ryonet-screen-printing-2026"},{"kw":"best trademarkhardware alternatives 2026","vol":25052,"m":"gh-trademarkhardware","lc":"007949113406007272","cat":"Hardware","slug":"trademark-hardware-guide-2026"},{"kw":"trademarksoundproofing vs competitors 2026","vol":24913,"m":"gh-trademarksoundproofing","lc":"007949107911007070","cat":"Hardware","slug":"soundproofing-guide-2026"},{"kw":"learntasticcpr pros and cons","vol":24872,"m":"gh-learntasticcpr","lc":"007949155036007841","cat":"Education","slug":"learnstastic-cpr-certification-2026"},{"kw":"best etchingexpressions alternatives 2026","vol":24838,"m":"gh-etchingexpressions","lc":"007949154703007728","cat":"Print","slug":"etching-expressions-gifts-2026"},{"kw":"budgetpetworld review 2026","vol":24805,"m":"gh-budgetpetworld","lc":"007949144117006217","cat":"Pet Care","slug":"budgetpetworld-review-2026"},{"kw":"tastyribbon review 2026","vol":24170,"m":"gh-tastyribbon","lc":"007949155938007865","cat":"Lifestyle","slug":"tasty-ribbon-food-gifts-2026"},{"kw":"discountpetcare pros and cons","vol":24160,"m":"gh-discountpetcare","lc":"007949053489005142","cat":"Pet Care","slug":"discountpetcare-review-2026"},{"kw":"jalbum pros and cons","vol":24099,"m":"gh-jalbum","lc":"007949069873005391","cat":"Software","slug":"jalbum-photo-gallery-2026"},{"kw":"warehouse115 pricing 2026","vol":23767,"m":"gh-warehouse115","lc":"007949102471006776","cat":"Hardware","slug":"warehouse115-review-2026"},{"kw":"bugatchi pros and cons","vol":23711,"m":"gh-bugatchi","lc":"007949145753006206","cat":"Lifestyle","slug":"bugatchi-mens-fashion-2026"},{"kw":"depositphotos vs competitors 2026","vol":23344,"m":"gh-depositphotos","lc":"007949136603007653","cat":"Software","slug":"depositphotos-review-2026"},{"kw":"graeters pros and cons","vol":22916,"m":"gh-graeters","lc":"007949151790007794","cat":"Lifestyle","slug":"graeter-ice-cream-delivery-2026"},{"kw":"ayurvedaexperience discount 2026","vol":22906,"m":"gh-ayurvedaexperience","lc":"007949126292007580","cat":"Health","slug":"ayurveda-experience-review-2026"},{"kw":"how to use canadapetcare","vol":22746,"m":"gh-canadapetcare","lc":"007949063057005492","cat":"Pet Care","slug":"canada-pet-care-vs-vet-2026"},{"kw":"boardvitals vs competitors 2026","vol":22465,"m":"gh-boardvitals","lc":"007949154901006218","cat":"Education","slug":"boardvitals-medical-exam-prep-2026"},{"kw":"taxextension pricing 2026","vol":22416,"m":"gh-taxextension","lc":"007949121281006198","cat":"Tax","slug":"tax-extension-deadline-guide-2026"},{"kw":"fieldtex free trial 2026","vol":22332,"m":"gh-fieldtex","lc":"007949120619007379","cat":"Health","slug":"fieldtex-first-aid-2026"},{"kw":"famisafe vs competitors 2026","vol":22309,"m":"gh-famisafe","lc":"007949154258006788","cat":"Software","slug":"famisafe-parental-control-2026"},{"kw":"best infinitealoe alternatives 2026","vol":22157,"m":"gh-infinitealoe","lc":"007949105959006539","cat":"Health","slug":"infinitealoe-skincare-review-2026"},{"kw":"movavi vs competitors 2026","vol":22096,"m":"gh-movavi","lc":"007949109440006513","cat":"Software","slug":"movavi-video-editor-2026"},{"kw":"best jalbum alternatives 2026","vol":22076,"m":"gh-jalbum","lc":"007949069873005391","cat":"Software","slug":"jalbum-photo-gallery-2026"},{"kw":"how to use nordvpn","vol":22057,"m":"gh-nordvpn","lc":"007949085070005891","cat":"Software","slug":"nordvpn-review-2026"},{"kw":"bugatchi free trial 2026","vol":21994,"m":"gh-bugatchi","lc":"007949145753006206","cat":"Lifestyle","slug":"bugatchi-mens-fashion-2026"},{"kw":"how to use hrcp","vol":21946,"m":"gh-hrcp","lc":"007949135821007664","cat":"Education","slug":"hrcp-hr-certification-2026"},{"kw":"depositphotos pricing 2026","vol":21906,"m":"gh-depositphotos","lc":"007949136603007653","cat":"Software","slug":"depositphotos-review-2026"},{"kw":"sidify free trial 2026","vol":21893,"m":"gh-sidify","lc":"007949114496007306","cat":"Software","slug":"sidify-spotify-converter-2026"},{"kw":"ryonet review 2026","vol":21856,"m":"gh-ryonet","lc":"007949155911007876","cat":"Print","slug":"ryonet-screen-printing-2026"},{"kw":"itoolab free trial 2026","vol":21771,"m":"gh-itoolab","lc":"007949108972006513","cat":"Software","slug":"itoolab-iphone-manager-2026"},{"kw":"bannersonthecheap pricing 2026","vol":20919,"m":"gh-bannersonthecheap","lc":"007949069833005389","cat":"Print","slug":"banners-on-the-cheap-guide-2026"},{"kw":"ryonet pricing 2026","vol":20791,"m":"gh-ryonet","lc":"007949155911007876","cat":"Print","slug":"ryonet-screen-printing-2026"},{"kw":"how to use warehouse115","vol":20766,"m":"gh-warehouse115","lc":"007949102471006776","cat":"Hardware","slug":"warehouse115-review-2026"},{"kw":"halloweencostumes free trial 2026","vol":20715,"m":"gh-halloweencostumes","lc":"007949155212007855","cat":"Lifestyle","slug":"halloween-costumes-guide-2026"},{"kw":"budgetpetcare discount 2026","vol":20302,"m":"gh-budgetpetcare","lc":"007949124366007614","cat":"Pet Care","slug":"budget-pet-care-guide-2026"},{"kw":"is oakstone worth it 2026","vol":20241,"m":"gh-oakstone","lc":"007949049546004978","cat":"Education","slug":"oakstone-cme-review-2026"},{"kw":"atlantacutlery review 2026","vol":20237,"m":"gh-atlantacutlery","lc":"007949164733007981","cat":"Lifestyle","slug":"atlanta-cutlery-review-2026"},{"kw":"edraw review 2026","vol":19921,"m":"gh-edraw","lc":"007949165249006886","cat":"Software","slug":"edraw-mind-map-review-2026"},{"kw":"renoise review 2026","vol":19705,"m":"gh-renoise","lc":"007949165071007995","cat":"Software","slug":"renoise-music-production-2026"},{"kw":"surgent pricing 2026","vol":19514,"m":"gh-surgent","lc":"007949163206006249","cat":"Education","slug":"surgent-cpa-exam-prep-2026"},{"kw":"museumreplicas discount 2026","vol":19207,"m":"gh-museumreplicas","lc":"007949109612005391","cat":"Lifestyle","slug":"museum-replicas-collectibles-2026"},{"kw":"is warehouse115 worth it 2026","vol":19043,"m":"gh-warehouse115","lc":"007949102471006776","cat":"Hardware","slug":"warehouse115-review-2026"},{"kw":"wolterskluwer pricing 2026","vol":18910,"m":"gh-wolterskluwer","lc":"007949019993003224","cat":"Education","slug":"wolters-kluwer-medical-books-2026"},{"kw":"is surveyjunkie worth it 2026","vol":18710,"m":"gh-surveyjunkie","lc":"007949153848007834","cat":"Lifestyle","slug":"surveyjunkie-earn-online-2026"},{"kw":"bestvetcare coupon code 2026","vol":18491,"m":"gh-bestvetcare","lc":"007949076672005837","cat":"Pet Care","slug":"bestvetcare-review-2026"},{"kw":"surgent vs competitors 2026","vol":18342,"m":"gh-surgent","lc":"007949163206006249","cat":"Education","slug":"surgent-cpa-exam-prep-2026"},{"kw":"readygolf discount 2026","vol":18313,"m":"gh-readygolf","lc":"007949135537007633","cat":"Lifestyle","slug":"readygolf-guide-2026"},{"kw":"best carmellimo alternatives 2026","vol":17986,"m":"gh-carmellimo","lc":"007949021363003587","cat":"Lifestyle","slug":"carmel-limo-service-2026"},{"kw":"how to use ryonet","vol":17875,"m":"gh-ryonet","lc":"007949155911007876","cat":"Print","slug":"ryonet-screen-printing-2026"},{"kw":"sidify coupon code 2026","vol":17838,"m":"gh-sidify","lc":"007949114496007306","cat":"Software","slug":"sidify-spotify-converter-2026"},{"kw":"jalbum vs competitors 2026","vol":17717,"m":"gh-jalbum","lc":"007949069873005391","cat":"Software","slug":"jalbum-photo-gallery-2026"},{"kw":"nordvpn discount 2026","vol":17438,"m":"gh-nordvpn","lc":"007949085070005891","cat":"Software","slug":"nordvpn-review-2026"},{"kw":"how to use learntasticcpr","vol":17428,"m":"gh-learntasticcpr","lc":"007949155036007841","cat":"Education","slug":"learnstastic-cpr-certification-2026"},{"kw":"bestvetcare pros and cons","vol":17410,"m":"gh-bestvetcare","lc":"007949076672005837","cat":"Pet Care","slug":"bestvetcare-review-2026"},{"kw":"how to use trademarksoundproofing","vol":17399,"m":"gh-trademarksoundproofing","lc":"007949107911007070","cat":"Hardware","slug":"soundproofing-guide-2026"},{"kw":"bestvetcare vs competitors 2026","vol":17225,"m":"gh-bestvetcare","lc":"007949076672005837","cat":"Pet Care","slug":"bestvetcare-review-2026"},{"kw":"illumeo coupon code 2026","vol":17029,"m":"gh-illumeo","lc":"007949034133001545","cat":"Education","slug":"illumeo-professional-development-2026"},{"kw":"nordvpn pros and cons","vol":16880,"m":"gh-nordvpn","lc":"007949085070005891","cat":"Software","slug":"nordvpn-review-2026"},{"kw":"is thechessstore worth it 2026","vol":16535,"m":"gh-thechessstore","lc":"007949071778005057","cat":"Lifestyle","slug":"chess-store-buying-guide-2026"},{"kw":"canvasonthecheap free trial 2026","vol":16332,"m":"gh-canvasonthecheap","lc":"007949139296006219","cat":"Print","slug":"canvas-on-the-cheap-guide-2026"},{"kw":"how to use taxextension","vol":16221,"m":"gh-taxextension","lc":"007949121281006198","cat":"Tax","slug":"tax-extension-deadline-guide-2026"},{"kw":"pmtraining pricing 2026","vol":16098,"m":"gh-pmtraining","lc":"007949081796006139","cat":"Education","slug":"pm-training-pmp-2026"},{"kw":"is incentrev worth it 2026","vol":15695,"m":"gh-incentrev","lc":"007949047416004897","cat":"Lifestyle","slug":"incentrev-rewards-2026"},{"kw":"ryonet discount 2026","vol":15694,"m":"gh-ryonet","lc":"007949155911007876","cat":"Print","slug":"ryonet-screen-printing-2026"},{"kw":"discountpetcare discount 2026","vol":15669,"m":"gh-discountpetcare","lc":"007949053489005142","cat":"Pet Care","slug":"discountpetcare-review-2026"},{"kw":"best boardvitals alternatives 2026","vol":15628,"m":"gh-boardvitals","lc":"007949154901006218","cat":"Education","slug":"boardvitals-medical-exam-prep-2026"},{"kw":"incentrev review 2026","vol":15103,"m":"gh-incentrev","lc":"007949047416004897","cat":"Lifestyle","slug":"incentrev-rewards-2026"},{"kw":"boardvitals discount 2026","vol":15101,"m":"gh-boardvitals","lc":"007949154901006218","cat":"Education","slug":"boardvitals-medical-exam-prep-2026"},{"kw":"is etax worth it 2026","vol":15033,"m":"gh-etax","lc":"007949027749003958","cat":"Tax","slug":"etax-llc-tax-filing-2026"},{"kw":"best discountpetcare alternatives 2026","vol":14788,"m":"gh-discountpetcare","lc":"007949053489005142","cat":"Pet Care","slug":"discountpetcare-review-2026"},{"kw":"maxpeedingrodsau discount 2026","vol":14760,"m":"gh-maxpeedingrodsau","lc":"007949136043006908","cat":"Auto","slug":"maxpeedingrods-au-review-2026"},{"kw":"bannersonthecheap free trial 2026","vol":14559,"m":"gh-bannersonthecheap","lc":"007949069833005389","cat":"Print","slug":"banners-on-the-cheap-guide-2026"},{"kw":"hrcp free trial 2026","vol":14531,"m":"gh-hrcp","lc":"007949135821007664","cat":"Education","slug":"hrcp-hr-certification-2026"},{"kw":"best budgetpetworld alternatives 2026","vol":14358,"m":"gh-budgetpetworld","lc":"007949144117006217","cat":"Pet Care","slug":"budgetpetworld-review-2026"},{"kw":"canadapetcare review 2026","vol":14244,"m":"gh-canadapetcare","lc":"007949063057005492","cat":"Pet Care","slug":"canada-pet-care-vs-vet-2026"},{"kw":"best pmtraining alternatives 2026","vol":14243,"m":"gh-pmtraining","lc":"007949081796006139","cat":"Education","slug":"pm-training-pmp-2026"},{"kw":"is lafuente worth it 2026","vol":14195,"m":"gh-lafuente","lc":"007949079282005891","cat":"Auto","slug":"la-fuente-imports-review-2026"},{"kw":"carmellimo pricing 2026","vol":14191,"m":"gh-carmellimo","lc":"007949021363003587","cat":"Lifestyle","slug":"carmel-limo-service-2026"},{"kw":"best camanoislandcoffee alternatives 2026","vol":13159,"m":"gh-camanoislandcoffee","lc":"007949094561006921","cat":"Lifestyle","slug":"camano-island-coffee-review-2026"},{"kw":"best learntasticcpr alternatives 2026","vol":12827,"m":"gh-learntasticcpr","lc":"007949155036007841","cat":"Education","slug":"learnstastic-cpr-certification-2026"},{"kw":"updf discount 2026","vol":12815,"m":"gh-updf","lc":"007949147521007728","cat":"Software","slug":"updf-pdf-editor-review-2026"},{"kw":"filmora discount 2026","vol":12614,"m":"gh-filmora","lc":"007949048607004532","cat":"Software","slug":"filmora-ai-features-2026"},{"kw":"canvasonthecheap pros and cons","vol":12578,"m":"gh-canvasonthecheap","lc":"007949139296006219","cat":"Print","slug":"canvas-on-the-cheap-guide-2026"},{"kw":"is securitiesinstitute worth it 2026","vol":12288,"m":"gh-securitiesinstitute","lc":"007949108329007101","cat":"Education","slug":"securities-institute-exam-prep-2026"},{"kw":"is famisafe worth it 2026","vol":12229,"m":"gh-famisafe","lc":"007949154258006788","cat":"Software","slug":"famisafe-parental-control-2026"},{"kw":"is productsonthego worth it 2026","vol":12193,"m":"gh-productsonthego","lc":"007949108750007124","cat":"Hardware","slug":"products-on-the-go-2026"},{"kw":"surveyjunkie pros and cons","vol":11863,"m":"gh-surveyjunkie","lc":"007949153848007834","cat":"Lifestyle","slug":"surveyjunkie-earn-online-2026"},{"kw":"is ayurvedaexperience worth it 2026","vol":11845,"m":"gh-ayurvedaexperience","lc":"007949126292007580","cat":"Health","slug":"ayurveda-experience-review-2026"},{"kw":"boardvitals pricing 2026","vol":11738,"m":"gh-boardvitals","lc":"007949154901006218","cat":"Education","slug":"boardvitals-medical-exam-prep-2026"},{"kw":"lafuente pros and cons","vol":11663,"m":"gh-lafuente","lc":"007949079282005891","cat":"Auto","slug":"la-fuente-imports-review-2026"},{"kw":"readygolf vs competitors 2026","vol":11578,"m":"gh-readygolf","lc":"007949135537007633","cat":"Lifestyle","slug":"readygolf-guide-2026"},{"kw":"gunsinternational discount 2026","vol":11451,"m":"gh-gunsinternational","lc":"007949046073005238","cat":"Lifestyle","slug":"gunsinternational-marketplace-2026"},{"kw":"illumeo pros and cons","vol":11355,"m":"gh-illumeo","lc":"007949034133001545","cat":"Education","slug":"illumeo-professional-development-2026"},{"kw":"museumreplicas pricing 2026","vol":11094,"m":"gh-museumreplicas","lc":"007949109612005391","cat":"Lifestyle","slug":"museum-replicas-collectibles-2026"},{"kw":"incentrev vs competitors 2026","vol":10836,"m":"gh-incentrev","lc":"007949047416004897","cat":"Lifestyle","slug":"incentrev-rewards-2026"},{"kw":"youware free trial 2026","vol":10822,"m":"gh-youware","lc":"007949164742007981","cat":"Software","slug":"youware-review-2026"},{"kw":"budgetpetworld vs competitors 2026","vol":10795,"m":"gh-budgetpetworld","lc":"007949144117006217","cat":"Pet Care","slug":"budgetpetworld-review-2026"},{"kw":"best edraw alternatives 2026","vol":10674,"m":"gh-edraw","lc":"007949165249006886","cat":"Software","slug":"edraw-mind-map-review-2026"},{"kw":"taxextension free trial 2026","vol":10297,"m":"gh-taxextension","lc":"007949121281006198","cat":"Tax","slug":"tax-extension-deadline-guide-2026"},{"kw":"bestvetcare review 2026","vol":10292,"m":"gh-bestvetcare","lc":"007949076672005837","cat":"Pet Care","slug":"bestvetcare-review-2026"},{"kw":"trademarkhardware coupon code 2026","vol":10260,"m":"gh-trademarkhardware","lc":"007949113406007272","cat":"Hardware","slug":"trademark-hardware-guide-2026"},{"kw":"how to use wolterskluwer","vol":10201,"m":"gh-wolterskluwer","lc":"007949019993003224","cat":"Education","slug":"wolters-kluwer-medical-books-2026"},{"kw":"incentrev pros and cons","vol":10164,"m":"gh-incentrev","lc":"007949047416004897","cat":"Lifestyle","slug":"incentrev-rewards-2026"},{"kw":"best iskysoft alternatives 2026","vol":10041,"m":"gh-iskysoft","lc":"007949099000005679","cat":"Software","slug":"iskysoft-review-2026"},{"kw":"etax discount 2026","vol":10024,"m":"gh-etax","lc":"007949027749003958","cat":"Tax","slug":"etax-llc-tax-filing-2026"},{"kw":"museumreplicas free trial 2026","vol":10014,"m":"gh-museumreplicas","lc":"007949109612005391","cat":"Lifestyle","slug":"museum-replicas-collectibles-2026"}]
-</script>
-<meta name="keywords" content="nursejamie coupon code 2026, combatflipflops discount 2026, renoise pricing 2026, best tastyribbon alternatives 2026, is bannersonthecheap worth it 2026, ayurvedaexperience free trial 2026, wolterskluwer coupon code 2026, how to use buildasign, is easycanvasprints worth it 2026, securitiesinstitute free trial 2026, incentrev free trial 2026, best productsonthego alternatives 2026, tenorshare vs competitors 2026, best warehouse115 alternatives 2026, discountpetcare vs competitors 2026, is learntasticcpr worth it 2026, nordvpn coupon code 2026, budgetpetworld discount 2026, discountpetcare review 2026, nursejamie discount 2026">
-<!-- Categories: Auto | Education | Hardware | Health | Lifestyle | Pet Care | Print | Software | Tax -->
-<!-- Merchants: 70 | Keywords: 300 -->
-<!-- Generated: 2026-05-01 -->
-<!-- KW-DATA:END -->
-</head>
-<body>
-
-<div class="blob blob-1"></div>
-<div class="blob blob-2"></div>
-
-<header>
-  <div class="logo-row">
-    <div class="logo-icon">G</div>
-    <div class="site-name">GlobalCampaignHub</div>
-  </div>
-  <h1>Affiliate <span>Directory</span></h1>
-  <p>Browse and launch all your affiliate campaigns in one place.</p>
-</header>
-
-<div class="controls">
-  <div class="search-wrap">
-    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <input type="text" id="searchInput" placeholder="Search merchants…" autocomplete="off" />
-  </div>
-  <div class="filters" id="filters"></div>
-  <div class="count-badge"><strong id="visibleCount">0</strong> merchants</div>
-</div>
-
-<main>
-  <div id="grid"></div>
-  <div id="empty">
-    <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-    <p>No merchants match your search.</p>
-  </div>
-</main>
-
-<script>
-const affiliates = [
-  { merchant: "E-file.com",              url: "https://www.linkconnector.com/ta.php?lc=007949021469002241&atid=efile",            category: "tax" },
-  { merchant: "E TAX, LLC",              url: "https://www.linkconnector.com/ta.php?lc=007949113645003507&atid=etax",             category: "tax" },
-  { merchant: "TaxExtension.com",        url: "https://www.linkconnector.com/ta.php?lc=007949033342002305&atid=taxextension",     category: "tax" },
-  { merchant: "ezTaxReturn.com",         url: "https://www.linkconnector.com/ta.php?lc=007949053344004952&atid=eztaxreturn",      category: "tax" },
-  { merchant: "BoardVitals",             url: "https://www.linkconnector.com/ta.php?lc=007949114675005824&atid=boardvitals",      category: "education" },
-  { merchant: "Ryonet",                  url: "https://www.linkconnector.com/ta.php?lc=007949084633004512&atid=ryonet",           category: "ecommerce" },
-  { merchant: "Surgent.com",             url: "https://www.linkconnector.com/ta.php?lc=007949123344006122&atid=surgent",          category: "education" },
-  { merchant: "HRCP",                    url: "https://www.linkconnector.com/ta.php?lc=007949093344005114&atid=hrcp",             category: "education" },
-  { merchant: "Oakstone Medical",        url: "https://www.linkconnector.com/ta.php?lc=007949103344005432&atid=oakstone",         category: "health" },
-  { merchant: "The Securities Institute",url: "https://www.linkconnector.com/ta.php?lc=007949113344005987&atid=securitiesinstitute", category: "finance" },
-  { merchant: "Nordvpn S.A.",            url: "https://www.linkconnector.com/ta.php?lc=007949143344006843&atid=nordvpn",          category: "software" },
-  { merchant: "Depositphotos Inc.",      url: "https://www.linkconnector.com/ta.php?lc=007949063344003921&atid=depositphotos",    category: "media" },
-  { merchant: "HalloweenCostumes.com",   url: "https://www.linkconnector.com/ta.php?lc=007949053344002874&atid=halloweencostumes",category: "ecommerce" },
-  { merchant: "Wondershare (Filmora)",   url: "https://www.linkconnector.com/ta.php?lc=007949165260004532&atid=filmora",          category: "software" },
-  { merchant: "Wondershare (PDFelement)",url: "https://www.linkconnector.com/ta.php?lc=007949165372004532&atid=pdfelement",       category: "software" },
-  { merchant: "Edraw (Mind/Max)",        url: "https://www.linkconnector.com/ta.php?lc=007949165246006886&atid=edraw",            category: "software" },
-  { merchant: "CanadaPetCare.com",       url: "https://www.linkconnector.com/ta.php?lc=007949083344004721&atid=canadapetcare",    category: "pets" },
-  { merchant: "BestVetCare.com",         url: "https://www.linkconnector.com/ta.php?lc=007949093344004992&atid=bestvetcare",      category: "pets" },
-  { merchant: "BudgetPetCare.com",       url: "https://www.linkconnector.com/ta.php?lc=007949103344005118&atid=budgetpetcare",    category: "pets" },
-  { merchant: "BudgetPetWorld.com",      url: "https://www.linkconnector.com/ta.php?lc=007949113344005224&atid=budgetpetworld",   category: "pets" },
-  { merchant: "DiscountPetCare",         url: "https://www.linkconnector.com/ta.php?lc=007949123344005441&atid=discountpetcare",  category: "pets" },
-  { merchant: "Nurse Jamie",             url: "https://www.linkconnector.com/ta.php?lc=007949153344007112&atid=nursejamie",       category: "health" },
-  { merchant: "Maxpeedingrods (US)",     url: "https://www.linkconnector.com/ta.php?lc=007949133344006421&atid=maxpeedingrodsus", category: "ecommerce" },
-  { merchant: "Maxpeedingrods (AU)",     url: "https://www.linkconnector.com/ta.php?lc=007949143344006554&atid=maxpeedingrodsau", category: "ecommerce" },
-  { merchant: "Trademark Hardware",      url: "https://www.linkconnector.com/ta.php?lc=007949123344005912&atid=trademarkhardware",category: "ecommerce" },
-  { merchant: "Trademark Soundproofing", url: "https://www.linkconnector.com/ta.php?lc=007949133344006118&atid=trademarksoundproofing", category: "ecommerce" },
-  { merchant: "Warehouse 115, Inc.",     url: "https://www.linkconnector.com/ta.php?lc=007949163344007442&atid=warehouse115",     category: "ecommerce" },
-  { merchant: "Graeter's Ice Cream",     url: "https://www.linkconnector.com/ta.php?lc=007949073344004112&atid=graeters",         category: "ecommerce" },
-  { merchant: "Etching Expressions",     url: "https://www.linkconnector.com/ta.php?lc=007949083344004332&atid=etchingexpressions",category: "ecommerce" },
-  { merchant: "The Chess Store, Inc.",   url: "https://www.linkconnector.com/ta.php?lc=007949103344005112&atid=thechessstore",    category: "ecommerce" },
-  { merchant: "MuseumReplicas.com",      url: "https://www.linkconnector.com/ta.php?lc=007949113344005442&atid=museumreplicas",   category: "ecommerce" },
-  { merchant: "Atlanta Cutlery Corp.",   url: "https://www.linkconnector.com/ta.php?lc=007949123344005771&atid=atlantacutlery",   category: "ecommerce" },
-  { merchant: "Viper Tec Inc.",          url: "https://www.linkconnector.com/ta.php?lc=007949133344006224&atid=vipertec",         category: "ecommerce" },
-  { merchant: "Combat Flip Flops",       url: "https://www.linkconnector.com/ta.php?lc=007949143344006881&atid=combatflipflops",  category: "ecommerce" },
-  { merchant: "Camano Island Coffee",    url: "https://www.linkconnector.com/ta.php?lc=007949053344002441&atid=camanoislandcoffee",category: "ecommerce" },
-  { merchant: "Sidify Inc.",             url: "https://www.linkconnector.com/ta.php?lc=007949163344007882&atid=sidify",           category: "software" },
-  { merchant: "Movavi Software",         url: "https://www.linkconnector.com/ta.php?lc=007949153344007119&atid=movavi",           category: "software" },
-  { merchant: "jAlbum AB",               url: "https://www.linkconnector.com/ta.php?lc=007949143344006442&atid=jalbum",           category: "software" },
-  { merchant: "UPDF (Superace)",         url: "https://www.linkconnector.com/ta.php?lc=007949163344008112&atid=updf",             category: "software" },
-  { merchant: "iToolab (LuckyDog)",      url: "https://www.linkconnector.com/ta.php?lc=007949163344008441&atid=itoolab",          category: "software" },
-  { merchant: "Tenorshare",              url: "https://www.linkconnector.com/ta.php?lc=007949163344008992&atid=tenorshare",       category: "software" },
-  { merchant: "Appy Pie (Snappy)",       url: "https://www.linkconnector.com/ta.php?lc=007949153344007442&atid=appypie",          category: "software" },
-  { merchant: "Illumeo, Inc",            url: "https://www.linkconnector.com/ta.php?lc=007949143344006221&atid=illumeo",          category: "education" },
-  { merchant: "Wolters Kluwer (LWW)",    url: "https://www.linkconnector.com/ta.php?lc=007949165370003224&atid=wolterskluwer",    category: "education" },
-  { merchant: "Individual Software",     url: "https://www.linkconnector.com/ta.php?lc=007949133344005882&atid=individualsoftware",category: "software" },
-  { merchant: "LearnTastic (CPR)",       url: "https://www.linkconnector.com/ta.php?lc=007949143344006112&atid=learntasticcpr",   category: "education" },
-  { merchant: "LearnTastic (AHCA)",      url: "https://www.linkconnector.com/ta.php?lc=007949143344006113&atid=learntasticahca",  category: "education" },
-  { merchant: "Personalabs",             url: "https://www.linkconnector.com/ta.php?lc=007949133344005442&atid=personalabs",      category: "health" },
-  { merchant: "Fieldtex Products",       url: "https://www.linkconnector.com/ta.php?lc=007949123344005118&atid=fieldtex",         category: "health" },
-  { merchant: "Products On The Go",      url: "https://www.linkconnector.com/ta.php?lc=007949113344004882&atid=productsonthego",  category: "ecommerce" },
-  { merchant: "ReadyGolf",               url: "https://www.linkconnector.com/ta.php?lc=007949103344004551&atid=readygolf",         category: "ecommerce" },
-  { merchant: "GunsInternational",       url: "https://www.linkconnector.com/ta.php?lc=007949093344004221&atid=gunsinternational", category: "ecommerce" },
-  { merchant: "La Fuente Imports",       url: "https://www.linkconnector.com/ta.php?lc=007949083344003992&atid=lafuente",         category: "ecommerce" },
-  { merchant: "BannersOnTheCheap",       url: "https://www.linkconnector.com/ta.php?lc=007949073344003661&atid=bannersonthecheap",category: "ecommerce" },
-  { merchant: "CanvasOnTheCheap",        url: "https://www.linkconnector.com/ta.php?lc=007949073344003662&atid=canvasonthecheap", category: "ecommerce" },
-  { merchant: "Easy Canvas Prints",      url: "https://www.linkconnector.com/ta.php?lc=007949063344003112&atid=easycanvasprints",  category: "ecommerce" },
-  { merchant: "Carmel Car & Limo",       url: "https://www.linkconnector.com/ta.php?lc=007949053344002881&atid=carmellimo",        category: "other" },
-  { merchant: "Arco Al HK (YouWare)",    url: "https://www.linkconnector.com/ta.php?lc=007949163344008118&atid=youware",           category: "software" },
-  { merchant: "Bugatchi",                url: "https://www.linkconnector.com/ta.php?lc=007949153344007662&atid=bugatchi",          category: "ecommerce" },
-  { merchant: "SSI Logic (PMTraining)",  url: "https://www.linkconnector.com/ta.php?lc=007949143344006992&atid=pmtraining",        category: "education" },
-  { merchant: "Survey Junkie",           url: "https://www.linkconnector.com/ta.php?lc=007949033344001882&atid=surveyjunkie",      category: "finance" },
-  { merchant: "Tasty Ribbon",            url: "https://www.linkconnector.com/ta.php?lc=007949153344007881&atid=tastyribbon",       category: "ecommerce" },
-  { merchant: "The Ayurveda Experience", url: "https://www.linkconnector.com/ta.php?lc=007949163344008221&atid=ayurvedaexperience",category: "health" },
-  { merchant: "RSE (bgmgirl.com)",       url: "https://www.linkconnector.com/ta.php?lc=007949153344007992&atid=bgmgirl",           category: "ecommerce" },
-  { merchant: "Renoise",                 url: "https://www.linkconnector.com/ta.php?lc=007949143344006551&atid=renoise",            category: "software" },
-  { merchant: "Picador Multimedia",      url: "https://www.linkconnector.com/ta.php?lc=007949133344006228&atid=picador",            category: "media" },
-  { merchant: "Incentrev",               url: "https://www.linkconnector.com/ta.php?lc=007949123344005991&atid=incentrev",          category: "finance" },
-  { merchant: "BuildASign",              url: "https://www.linkconnector.com/ta.php?lc=007949043344001995&atid=buildasign",          category: "ecommerce" },
+// Spot-check LCs
+const spot = [
+  ['efile',          '007949155896007874'],
+  ['nordvpn',        '007949085070005891'],
+  ['halloweencostumes','007949155212007855'],
+  ['surveyjunkie',   '007949153848007834'],
+  ['buildasign',     '007949043344001995'],
+  ['carmellimo',     '007949021363003587'],
 ];
-
-const categoryLabels = {
-  tax: "Tax",
-  education: "Education",
-  software: "Software",
-  pets: "Pets",
-  ecommerce: "Shopping",
-  finance: "Finance",
-  health: "Health",
-  media: "Media",
-  other: "Other",
-};
-
-const categories = ["all", ...Object.keys(categoryLabels)];
-let activeFilter = "all";
-let searchTerm = "";
-
-// Build filters
-const filtersEl = document.getElementById("filters");
-categories.forEach(cat => {
-  const btn = document.createElement("button");
-  btn.className = "filter-btn" + (cat === "all" ? " active" : "");
-  btn.dataset.cat = cat;
-  btn.textContent = cat === "all" ? "All" : categoryLabels[cat];
-  btn.addEventListener("click", () => {
-    activeFilter = cat;
-    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    render();
-  });
-  filtersEl.appendChild(btn);
+spot.forEach(([atid, lc]) => {
+  console.log(`   ${atid}: ${src.includes(`lc=${lc}&atid=gh-${atid}`) ? '✓' : '❌ WRONG'}`);
 });
 
-function getInitials(name) {
-  return name.replace(/[^a-zA-Z\s]/g, "").split(/\s+/).map(w => w[0]).join("").slice(0, 2).toUpperCase() || "?";
-}
-
-function getFaviconUrl(merchantUrl) {
-  try {
-    const domain = new URL(merchantUrl).hostname;
-    return `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
-  } catch { return null; }
-}
-
-function render() {
-  const grid = document.getElementById("grid");
-  const empty = document.getElementById("empty");
-  grid.innerHTML = "";
-
-  const filtered = affiliates.filter(a => {
-    const matchSearch = a.merchant.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchCat = activeFilter === "all" || a.category === activeFilter;
-    return matchSearch && matchCat;
-  });
-
-  document.getElementById("visibleCount").textContent = filtered.length;
-
-  if (filtered.length === 0) {
-    empty.style.display = "block";
-    return;
-  }
-  empty.style.display = "none";
-
-  filtered.forEach((a, i) => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.style.animationDelay = `${Math.min(i * 0.04, 0.6)}s`;
-
-    const faviconUrl = getFaviconUrl(a.url);
-    const initials = getInitials(a.merchant);
-    const catClass = `cat-${a.category}`;
-    const catLabel = categoryLabels[a.category] || "Other";
-
-    card.innerHTML = `
-      <div class="card-top">
-        <div class="merchant-logo" id="logo-${i}">
-          ${initials}
-        </div>
-        <div class="card-info">
-          <div class="card-name" title="${a.merchant}">${a.merchant}</div>
-          <span class="card-category ${catClass}">${catLabel}</span>
-        </div>
-      </div>
-      <a class="card-link" href="${a.url}" target="_blank" rel="noopener noreferrer">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        Visit Campaign
-      </a>
-    `;
-
-    grid.appendChild(card);
-
-    // Lazy-load favicon
-    if (faviconUrl) {
-      const logoEl = card.querySelector(`#logo-${i}`);
-      const img = new Image();
-      img.onload = () => {
-        logoEl.innerHTML = `<img src="${faviconUrl}" alt="${a.merchant}" />`;
-      };
-      img.src = faviconUrl;
-    }
-  });
-}
-
-document.getElementById("searchInput").addEventListener("input", e => {
-  searchTerm = e.target.value;
-  render();
-});
-
-render();
-
-  // ── KEYWORD_INJECTOR_DATA ──
-  const GH_TOP_KEYWORDS = [
-    { keyword: "halloween costumes 2026", volume: 8800000, merchant: "gh-halloweencostumes", affUrl: "https://www.linkconnector.com/ta.php?lc=007949155212007855&atid=gh-halloweencostumes&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=halloween-costumes-guide-2026&utm_content=kw-pos-1", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=halloween-costumes-guide-2026__2026-04-30", cat: "Lifestyle" },
-    { keyword: "adult halloween costumes", volume: 3200000, merchant: "gh-halloweencostumes", affUrl: "https://www.linkconnector.com/ta.php?lc=007949155212007855&atid=gh-halloweencostumes&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=halloween-costumes-guide-2026&utm_content=kw-pos-2", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=halloween-costumes-guide-2026__2026-04-30", cat: "Lifestyle" },
-    { keyword: "make money online surveys", volume: 2400000, merchant: "gh-surveyjunkie", affUrl: "https://www.linkconnector.com/ta.php?lc=007949153848007834&atid=gh-surveyjunkie&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=surveyjunkie-earn-online-2026&utm_content=kw-pos-3", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=surveyjunkie-earn-online-2026__2026-04-30", cat: "Lifestyle" },
-    { keyword: "file taxes online", volume: 2400000, merchant: "gh-efile", affUrl: "https://www.linkconnector.com/ta.php?lc=007949155896007874&atid=gh-efile&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=efile-vs-turbotax-2026&utm_content=kw-pos-4", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=efile-vs-turbotax-2026__2026-04-30", cat: "Tax" },
-    { keyword: "best vpn 2026", volume: 2100000, merchant: "gh-nordvpn", affUrl: "https://www.linkconnector.com/ta.php?lc=007949085070005891&atid=gh-nordvpn&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=nordvpn-review-2026&utm_content=kw-pos-5", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=nordvpn-review-2026__2026-04-30", cat: "Software" },
-    { keyword: "kids halloween costumes", volume: 2100000, merchant: "gh-halloweencostumes", affUrl: "https://www.linkconnector.com/ta.php?lc=007949155212007855&atid=gh-halloweencostumes&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=halloween-kids-costume-guide-2026&utm_content=kw-pos-6", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=halloween-kids-costume-guide-2026__2026-04-30", cat: "Lifestyle" },
-    { keyword: "online tax filing", volume: 1900000, merchant: "gh-efile", affUrl: "https://www.linkconnector.com/ta.php?lc=007949155896007874&atid=gh-efile&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=efile-vs-turbotax-2026&utm_content=kw-pos-7", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=efile-vs-turbotax-2026__2026-04-30", cat: "Tax" },
-    { keyword: "best video editor 2026", volume: 1900000, merchant: "gh-filmora", affUrl: "https://www.linkconnector.com/ta.php?lc=007949048607004532&atid=gh-filmora&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=filmora-ai-features-2026&utm_content=kw-pos-8", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=filmora-ai-features-2026__2026-04-30", cat: "Software" },
-    { keyword: "tax extension 2026", volume: 1800000, merchant: "gh-taxextension", affUrl: "https://www.linkconnector.com/ta.php?lc=007949121281006198&atid=gh-taxextension&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=tax-extension-deadline-guide-2026&utm_content=kw-pos-9", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=tax-extension-deadline-guide-2026__2026-04-30", cat: "Tax" },
-    { keyword: "nordvpn review", volume: 1800000, merchant: "gh-nordvpn", affUrl: "https://www.linkconnector.com/ta.php?lc=007949085070005891&atid=gh-nordvpn&utm_source=gh-keyword-injector&utm_medium=affiliate&utm_campaign=nordvpn-review-2026&utm_content=kw-pos-10", blogUrl: "https://brightlane.github.io/GlobalCampaignHub/blog.html?p=nordvpn-review-2026__2026-04-30", cat: "Software" }
-  ];
-  const GH_KW_UPDATED = '2026-04-30';
-</script>
-</body>
-</html>
+console.log('\nNext: git add index.html && git commit -m "Fix affiliates array — 70 merchants, canonical LCs 2026-04-30"');
