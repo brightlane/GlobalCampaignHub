@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affiliate Directory (70 Items)</title>
+
+<style>
+body {margin:0;font-family:Arial;background:#0f172a;color:#fff;}
+header {text-align:center;padding:20px;background:#020617;}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:12px;
+  padding:20px;
+}
+.card {
+  background:#1e293b;
+  padding:12px;
+  border-radius:10px;
+}
+img {
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  border-radius:8px;
+}
+a {
+  color:#22c55e;
+  font-weight:bold;
+  text-decoration:none;
+  display:block;
+  margin-top:6px;
+}
+p {font-size:12px;opacity:0.9;line-height:1.3;}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🔥 Full Affiliate Directory (70 Tools & Deals)</h1>
+<p>Complete list of all your affiliate offers</p>
+</header>
+
+<div class="grid" id="grid"></div>
+
+<script>
+const items = [
+
+/* ================= SOFTWARE ================= */
+
+["YouWare","Fast development tools for building web projects efficiently.","007949164742007981","youware"],
+["Edraw","Diagram and mind-mapping tool for planning ideas visually.","007949165249006886","edraw"],
+["FamiSafe","Parental control app for monitoring and protecting kids online.","007949154258006788","famisafe"],
+["Individual Software","Productivity and learning software suite for personal growth.","007949110667007185","individualsoftware"],
+["iSkysoft","Media tools for video, file conversion and editing tasks.","007949099000005679","iskysoft"],
+["iToolab","Mobile repair and data recovery software tools.","007949108972006513","itoolab"],
+["jAlbum","Create and publish online photo galleries easily.","007949069873005391","jalbum"],
+["Movavi","Beginner-friendly video editing software for creators.","007949109440006513","movavi"],
+["NordVPN","Secure VPN for privacy and safe browsing online.","007949085070005891","nordvpn"],
+["Renoise","Advanced digital audio workstation for music production.","007949165071007995","renoise"],
+["Sidify","Convert and download music from streaming platforms.","007949114496007306","sidify"],
+["Appy Pie","No-code platform for building apps and websites.","007949090967005541","appypie"],
+["Tenorshare","Data recovery and system repair tools for devices.","007949139287006847","tenorshare"],
+["UPDF","Modern PDF editor for documents and productivity.","007949147521007728","updf"],
+["Filmora","Easy video editing software for beginners and pros.","007949048607004532","filmora"],
+["PDFelement","All-in-one PDF editing and management software.","007949139355006776","pdfelement"],
+
+/* ================= ECOMMERCE ================= */
+
+["Atlanta Cutlery","Knives, swords, and historical replica collectibles.","007949164733007981","atlantacutlery"],
+["BannersOnTheCheap","Affordable custom banners for events and marketing.","007949069833005389","bannersonthecheap"],
+["Bugatchi","Premium men’s fashion and apparel brand.","007949145753006206","bugatchi"],
+["Camano Island Coffee","Ethically sourced premium coffee brand.","007949094561006921","camanoislandcoffee"],
+["CanvasOnTheCheap","Turn your photos into canvas wall art.","007949139296006219","canvasonthecheap"],
+["Combat Flip Flops","Ethical footwear and apparel brand.","007949108439006486","combatflipflops"],
+["Etching Expressions","Personalized engraved gifts and custom items.","007949154703007728","etchingexpressions"],
+["Graeter's Ice Cream","Premium handcrafted ice cream brand.","007949151790007794","graeters"],
+["HalloweenCostumes","Large selection of costumes for all occasions.","007949155212007855","halloweencostumes"],
+["The Chess Store","Chess sets, boards, and accessories.","007949071778005057","thechessstore"],
+["La Fuente Imports","Home décor and imported artisan goods.","007949079282005891","lafuenteimports"],
+["Maxpeedingrods US","Auto parts and performance accessories.","007949154195006539","maxpeedingrods"],
+["Maxpeedingrods AU","Automotive parts and tools for Australia.","007949136043006908","maxpeedingrods"],
+["Museum Replicas","Historical weapons and replica collectibles.","007949109612005391","museumreplicas"],
+["Ryonet","Screen printing supplies and equipment.","007949155911007876","ryonet"],
+["Tasty Ribbon","Craft and baking supplies retailer.","007949155938007865","tastyribbon"],
+["Trademark Hardware","Specialty hardware and home solutions.","007949113406007272","trademarkhardware"],
+["Trademark Soundproofing","Acoustic and soundproofing materials.","007949107911007070","trademarksoundproofing"],
+["Warehouse 115","General ecommerce discount store.","007949102471006776","warehouse115"],
+["Viper Tec","Self-defense and tactical gear products.","007949091308006550","vipertec"],
+
+/* ================= PETS ================= */
+
+["BestVetCare","Discount pet medications and supplies.","007949076672005837","bestvetcare"],
+["BudgetPetCare","Affordable pet medications and treatments.","007949124366007614","budgetpetcare"],
+["BudgetPetWorld","Low-cost pet care and health products.","007949144117006217","budgetpetworld"],
+["CanadaPetCare","Pet healthcare products at discounted prices.","007949063057005492","canadapetcare"],
+["DiscountPetCare","Budget-friendly pet treatments and supplies.","007949053489005142","discountpetcare"],
+
+/* ================= EDUCATION ================= */
+
+["BoardVitals","Medical exam prep and study resources.","007949154901006218","boardvitals"],
+["HRCP","Certification and professional training programs.","007949135821007664","hrcp"],
+["Illumeo","Online business and finance education platform.","007949034133001545","illumeo"],
+["LearnTastic CPR","CPR certification training courses.","007949155036007841","learntastic"],
+["LearnTastic AHCA","Healthcare compliance training courses.","007949146929007736","learntastic"],
+["PMTraining","Project management certification prep courses.","007949081796006139","pmtraining"],
+["Surgent","Accounting and CPA exam prep training.","007949163206006249","surgent"],
+["Wolters Kluwer","Professional medical and legal education resources.","007949019993003224","wolterskluwer"],
+
+/* ================= FINANCE ================= */
+
+["E-Tax","Online tax filing and preparation services.","007949027749003958","etax"],
+["E-File","Fast and secure tax filing platform.","007949155896007874","efile"],
+["TaxExtension","Tax extension filing service.","007949121281006198","taxextension"],
+["ezTaxReturn","Simple online tax return software.","eztaxreturn","eztaxreturn"],
+["Incentrev","Cashback and incentive reward programs.","007949047416004897","incentrev"],
+["Survey Junkie","Earn money by completing surveys online.","007949153848007834","surveyjunkie"],
+
+/* ================= HEALTH ================= */
+
+["Fieldtex","Medical supplies and first aid products.","007949120619007379","fieldtex"],
+["Infinite Aloe","Skincare and aloe-based health products.","007949105959006539","infinitealoe"],
+["Nurse Jamie","Beauty and skincare wellness products.","007949155104007841","nursejamie"],
+["Oakstone Medical","Medical education and clinical training.","007949049546004978","oakstone"],
+["Personalabs","Online lab testing and health services.","007949152445007736","personalabs"],
+["Ayurveda Experience","Natural Ayurvedic health and wellness products.","007949126292007580","ayurvedaexperience"],
+
+/* ================= MEDIA ================= */
+
+["Depositphotos","Stock photos, videos, and creative assets.","007949136603007653","depositphotos"],
+["Picador Multimedia","Digital media and publishing content.","007949164712007982","picador"],
+
+/* ================= SERVICES ================= */
+
+["Carmel Car & Limo","Luxury transportation and limo services.","007949021363003587","carmel"]
+
+];
+
+const grid = document.getElementById("grid");
+
+items.forEach(i => {
+  const [name, desc, lc, id] = i;
+
+  const div = document.createElement("div");
+  div.className = "card";
+
+  div.innerHTML = `
+    <img src="https://via.placeholder.com/300x120?text=${encodeURIComponent(name)}">
+    <a href="https://www.linkconnector.com/ta.php?lc=${lc}&id=${id}" target="_blank">${name}</a>
+    <p>${desc}</p>
+  `;
+
+  grid.appendChild(div);
+});
+</script>
+
+</body>
+</html>
