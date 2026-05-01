@@ -5615,7 +5615,7 @@
       "slug": "custom-yard-signs-online-2026-where-to-order-2454",
       "merchant": "gh-buildasign",
       "lc": "007949043344001995",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "Custom Yard Signs Online 2026: Where to Order",
       "category_en": "Print",
@@ -5652,7 +5652,8 @@
           "q": "What languages are buyer guides available in?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-05-01"
     },
     {
       "slug": "best-onetime-purchase-pdf-editors-in-2026-2455",
