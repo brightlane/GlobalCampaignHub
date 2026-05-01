@@ -5094,7 +5094,7 @@
     {
       "slug": "how-to-get-pmp-certified-in-2026-step-by-step-2461",
       "merchant": "gh-pmtraining",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "How to Get PMP Certified in 2026: Step by Step",
       "category_en": "Education",
@@ -5131,7 +5131,8 @@
           "q": "What languages are supported?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-05-01"
     },
     {
       "slug": "best-golf-accessories-online-in-2026-readygolf-reviewed-2462",
