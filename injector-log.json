@@ -4255,5 +4255,34 @@
       "vi",
       "th"
     ]
+  },
+  {
+    "date": "2026-05-01",
+    "slug": "how-to-create-a-selfhosted-photo-gallery-2026-6962",
+    "merchant": "gh-jalbum",
+    "title": "How to Create a Self-Hosted Photo Gallery 2026",
+    "languages_injected": [],
+    "languages_skipped": [
+      "en",
+      "zh",
+      "zh-tw",
+      "es",
+      "fr",
+      "de",
+      "pt",
+      "pt-br",
+      "ja",
+      "ko",
+      "it",
+      "nl",
+      "pl",
+      "hi",
+      "ar",
+      "ru",
+      "tr",
+      "id",
+      "vi",
+      "th"
+    ]
   }
 ]
