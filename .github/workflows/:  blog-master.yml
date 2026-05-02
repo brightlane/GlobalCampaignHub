@@ -36,12 +36,13 @@ jobs:
         run: |
           git config user.name "Seo-bot"
           git config user.email "seo-bot@users.noreply.github.com"
+          git config pull.rebase true
+          git config rebase.autoStash true
 
-      - name: Pull latest
+      - name: Pull latest — hard reset to remote
         run: |
-          git stash || true
-          git pull --rebase origin main || true
-          git stash pop || true
+          git fetch origin main
+          git reset --hard origin/main
 
       - name: Generate blog posts — batch en,es,fr,de
         env:
@@ -302,7 +303,29 @@ jobs:
       - name: Commit and push
         run: |
           git add -A
+
+          # Exit cleanly if nothing changed
           git diff --staged --quiet && echo "Nothing to commit" && exit 0
+
           git commit -m "blog: $(date -u +%Y-%m-%dT%H:%M:%SZ) — auto-generated posts"
-          git pull --rebase -X theirs origin main || (git rebase --abort && git pull --rebase -X theirs origin main)
+
+          # Fetch latest remote
+          git fetch origin main
+
+          # Rebase our commit on top of remote
+          # -X theirs = our generated files always win conflicts
+          if git rebase -X theirs origin/main; then
+            # Rebase succeeded — push
+            git push origin main && exit 0
+          fi
+
+          # Rebase failed — abort cleanly
+          git rebase --abort || true
+
+          # Nuclear option: reset to remote, re-stage all generated files,
+          # recommit, and force push our content
+          git reset --hard origin/main
+          git add -A
+          git diff --staged --quiet && echo "Nothing after reset" && exit 0
+          git commit -m "blog: $(date -u +%Y-%m-%dT%H:%M:%SZ) — auto-generated posts (force)"
           git push origin main
