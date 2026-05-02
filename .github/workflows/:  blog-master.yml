@@ -304,5 +304,5 @@ jobs:
           git add -A
           git diff --staged --quiet && echo "Nothing to commit" && exit 0
           git commit -m "blog: $(date -u +%Y-%m-%dT%H:%M:%SZ) — auto-generated posts"
-          git pull --rebase origin main || git rebase --abort
-          git push origin main || (git pull --rebase origin main && git push origin main)
+          git pull --rebase -X theirs origin main || (git rebase --abort && git pull --rebase -X theirs origin main)
+          git push origin main
