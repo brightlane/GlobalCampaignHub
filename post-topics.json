@@ -6759,7 +6759,7 @@
       "slug": "survey-junkie-review-2026-how-much-can-you-really-earn-6972",
       "merchant": "gh-surveyjunkie",
       "lc": "007949153848007834",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "Survey Junkie Review 2026: How Much Can You Really Earn?",
       "category_en": "Lifestyle",
@@ -6796,7 +6796,8 @@
           "q": "What languages are buyer guides available in?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-05-02"
     },
     {
       "slug": "renoise-review-2026-best-tracker-daw-for-electronic-music-6973",
