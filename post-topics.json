@@ -7683,7 +7683,7 @@
       "slug": "employee-incentive-programs-in-2026-what-actually-works-6663",
       "merchant": "gh-incentrev",
       "lc": "007949151790007794",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "Employee Incentive Programs in 2026: What Actually Works",
       "category_en": "Lifestyle",
@@ -7720,7 +7720,8 @@
           "q": "What languages are buyer guides available in?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-05-02"
     },
     {
       "slug": "hipaa-certification-online-in-2026-fast-and-employeraccepted-6664",
