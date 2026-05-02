@@ -7199,7 +7199,7 @@
       "slug": "best-online-cpr-courses-in-2026-compared-6982",
       "merchant": "gh-learntasticcpr",
       "lc": "007949103653006955",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "Best Online CPR Courses in 2026: Compared",
       "category_en": "Education",
@@ -7236,7 +7236,8 @@
           "q": "What languages are buyer guides available in?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-05-02"
     },
     {
       "slug": "why-graeters-black-raspberry-chip-is-a-cult-favorite-6983",
