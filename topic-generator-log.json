@@ -13,9 +13,9 @@
   },
   "2026-05-02": {
     "date": "2026-05-02",
-    "generated": 0,
-    "pending_after": 50,
-    "timestamp": "2026-05-02T02:34:14.838Z",
+    "generated": 30,
+    "pending_after": 79,
+    "timestamp": "2026-05-02T02:40:26.537Z",
     "merchants": 68
   }
 }
