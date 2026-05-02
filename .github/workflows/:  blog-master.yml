@@ -1,0 +1,307 @@
+name: Blog Master — GlobalCampaignHub
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+    inputs:
+      keyword:
+        description: 'Specific keyword to generate (optional)'
+        required: false
+      lang:
+        description: 'Language batch e.g. en,es,fr,de (optional, default: all)'
+        required: false
+
+permissions:
+  contents: write
+  models: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Git config
+        run: |
+          git config user.name "Seo-bot"
+          git config user.email "seo-bot@users.noreply.github.com"
+
+      - name: Pull latest
+        run: |
+          git stash || true
+          git pull --rebase origin main || true
+          git stash pop || true
+
+      - name: Generate blog posts — batch en,es,fr,de
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          node generate-blog-post.js \
+            ${{ github.event.inputs.keyword && format('--keyword "{0}"', github.event.inputs.keyword) || '' }} \
+            --lang ${{ github.event.inputs.lang || 'en,es,fr,de' }}
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch pt,pt-br,it,nl
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang pt,pt-br,it,nl
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch pl,ru,uk,tr
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang pl,ru,uk,tr
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch ar,fa,hi,bn
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang ar,fa,hi,bn
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch ur,id,ms,th
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang ur,id,ms,th
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch vi,zh,zh-tw,ja
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang vi,zh,zh-tw,ja
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch ko,tl,ta,te
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang ko,tl,ta,te
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch ml,mr,gu,pa
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang ml,mr,gu,pa
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch kn,si,my,km
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang kn,si,my,km
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch lo,am,sw,ha
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang lo,am,sw,ha
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch yo,ig,zu,af
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang yo,ig,zu,af
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch xh,so,rw,mg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang xh,so,rw,mg
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch cs,sk,hu,ro
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang cs,sk,hu,ro
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch bg,hr,sr,bs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang bg,hr,sr,bs
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch sl,mk,sq,lt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang sl,mk,sq,lt
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch lv,et,fi,sv
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang lv,et,fi,sv
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch no,da,is,el
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang no,da,is,el
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch he,ka,hy,az
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang he,ka,hy,az
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch kk,uz,tk,tg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang kk,uz,tk,tg
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch mn,ne,ps,sd
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang mn,ne,ps,sd
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch ku,gl,eu,ca
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang ku,gl,eu,ca
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch cy,ga,mt,lb
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang cy,ga,mt,lb
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch ckb,ky,eo,la
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang ckb,ky,eo,la
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate blog posts — batch haw,mi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-blog-post.js --lang haw,mi
+        continue-on-error: true
+
+      - name: Sleep
+        run: sleep 5
+
+      - name: Generate sitemaps
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: node generate-sitemaps.js
+        continue-on-error: true
+
+      - name: Generate llms.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node generate-llms.js
+        continue-on-error: true
+
+      - name: Commit and push
+        run: |
+          git add -A
+          git diff --staged --quiet || git commit -m "blog: $(date -u +%Y-%m-%dT%H:%M:%SZ) — auto-generated posts"
+          git pull --rebase origin main || true
+          git push origin main
