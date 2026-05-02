@@ -7595,7 +7595,7 @@
       "slug": "heartgard-plus-canada-buy-online-for-less-in-2026-6991",
       "merchant": "gh-canadapetcare",
       "lc": "007949139296006219",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "Heartgard Plus Canada: Buy Online for Less in 2026",
       "category_en": "Pet Care",
@@ -7632,7 +7632,8 @@
           "q": "What languages are buyer guides available in?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-05-02"
     },
     {
       "slug": "best-directtoconsumer-lab-testing-services-in-2026-6662",
