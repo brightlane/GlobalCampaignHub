@@ -5270,5 +5270,34 @@
       "vi",
       "th"
     ]
+  },
+  {
+    "date": "2026-05-02",
+    "slug": "graeters-ice-cream-review-is-it-worth-shipping-6667",
+    "merchant": "gh-graeters",
+    "title": "Graeter's Ice Cream Review: Is It Worth Shipping?",
+    "languages_injected": [],
+    "languages_skipped": [
+      "en",
+      "zh",
+      "zh-tw",
+      "es",
+      "fr",
+      "de",
+      "pt",
+      "pt-br",
+      "ja",
+      "ko",
+      "it",
+      "nl",
+      "pl",
+      "hi",
+      "ar",
+      "ru",
+      "tr",
+      "id",
+      "vi",
+      "th"
+    ]
   }
 ]
