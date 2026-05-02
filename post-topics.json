@@ -8035,7 +8035,7 @@
       "slug": "talavera-pottery-online-2026-best-us-sources-6671",
       "merchant": "gh-lafuente",
       "lc": "007949034143001545",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "Talavera Pottery Online 2026: Best US Sources",
       "category_en": "Auto",
@@ -8072,7 +8072,8 @@
           "q": "What languages are buyer guides available in?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-05-02"
     },
     {
       "slug": "sidify-review-2026-convert-spotify-to-mp3-legit-6672",
