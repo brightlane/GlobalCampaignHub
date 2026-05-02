@@ -36,5 +36,14 @@
     "lang_breakdown": {},
     "timestamp": "2026-05-01T23:36:02.341Z",
     "merchants": 68
+  },
+  "2026-05-02": {
+    "date": "2026-05-02",
+    "generated": 0,
+    "total_before": 700,
+    "total_after": 700,
+    "lang_breakdown": {},
+    "timestamp": "2026-05-02T01:18:09.795Z",
+    "merchants": 68
   }
 }

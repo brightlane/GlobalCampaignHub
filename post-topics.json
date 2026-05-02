@@ -6495,7 +6495,7 @@
       "slug": "filmora-vs-premiere-pro-which-is-better-in-2026-6966",
       "merchant": "gh-filmora",
       "lc": "007949048607004532",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "Filmora vs Premiere Pro: Which Is Better in 2026?",
       "category_en": "Software",
@@ -6532,7 +6532,8 @@
           "q": "What languages are buyer guides available in?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-05-02"
     },
     {
       "slug": "budgetpetworld-review-2026-international-pet-pharmacy-6967",

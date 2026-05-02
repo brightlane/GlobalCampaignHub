@@ -10,5 +10,12 @@
     "pending_after": 57,
     "timestamp": "2026-05-01T23:36:02.294Z",
     "merchants": 68
+  },
+  "2026-05-02": {
+    "date": "2026-05-02",
+    "generated": 0,
+    "pending_after": 56,
+    "timestamp": "2026-05-02T01:18:09.756Z",
+    "merchants": 68
   }
 }
