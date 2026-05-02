@@ -7947,7 +7947,7 @@
       "slug": "where-to-buy-home-improvement-parts-online-in-2026-6669",
       "merchant": "gh-trademarkhardware",
       "lc": "007949113406007272",
-      "published": false,
+      "published": true,
       "publishedDate": null,
       "title_en": "Where to Buy Home Improvement Parts Online in 2026",
       "category_en": "Hardware",
@@ -7984,7 +7984,8 @@
           "q": "What languages are buyer guides available in?",
           "a": "20 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, and more."
         }
-      ]
+      ],
+      "published_date": "2026-05-02"
     },
     {
       "slug": "best-parental-control-apps-for-iphone-2026-ranked-6670",
