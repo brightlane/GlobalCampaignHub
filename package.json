@@ -1,0 +1,14 @@
+{
+  "name": "globalcampaignhub",
+  "version": "1.0.0",
+  "description": "GlobalCampaignHub — LinkConnector affiliate blog engine",
+  "type": "module",
+  "scripts": {
+    "blog": "node generate-blog-post.js",
+    "sitemaps": "node generate-sitemaps.js",
+    "llms": "node generate-llms.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
