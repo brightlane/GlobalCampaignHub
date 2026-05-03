@@ -4,4 +4,4 @@ Allow: /
 Sitemap: https://brightlane.github.io/GlobalCampaignHub/sitemap.xml
 
 # GlobalCampaignHub — Brightlane Affiliate Network
-# Generated: 2026-05-02
+# Generated: 2026-05-03
